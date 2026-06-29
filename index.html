@@ -389,6 +389,22 @@ document.querySelectorAll('.chips[data-single]').forEach(function(group){
 });
 renderSummary();
 
+/* form submit -> compose enquiry email (no backend needed) */
+var form=document.querySelector('form');
+if(form){form.addEventListener('submit',function(e){
+  e.preventDefault();
+  var lines=[];
+  order.forEach(function(k){ if(picks[k]) lines.push(k+': '+picks[k]); });
+  document.querySelectorAll('.control').forEach(function(c){
+    var lab=c.querySelector('.field-label'); var fld=c.querySelector('input,select,textarea');
+    if(lab&&fld&&fld.value&&fld.value.trim()){ lines.push(lab.innerText.trim().replace(/\s+/g,' ')+': '+fld.value.trim()); }
+  });
+  if(!lines.length){ lines.push('(no details selected yet)'); }
+  var subj='Heliskiing enquiry — '+(picks['Package']||'Iceland week');
+  var body='New enquiry via heliskitravel\n\n'+lines.join('\n')+'\n\nReplying within 12 hours.';
+  window.location.href='mailto:hello@heliskitravel.com?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
+});}
+
 var io=new IntersectionObserver(function(entries){
   entries.forEach(function(en){ if(en.isIntersecting){
     var sibs=Array.prototype.slice.call(en.target.parentNode.children).filter(function(c){return c.classList.contains('reveal');});
