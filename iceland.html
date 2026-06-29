@@ -65,8 +65,12 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
 .hero.ready .hero__photo{opacity:1;transform:scale(1);}
 .hero .grade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(10,22,40,.45),rgba(10,22,40,0) 32%,rgba(10,22,40,.5) 72%,var(--ink) 100%),linear-gradient(90deg,rgba(10,22,40,.55),rgba(10,22,40,0) 58%);}
 .hero .shell{position:relative;z-index:3;}
+.scrolldn{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);z-index:4;width:24px;height:38px;border:1.5px solid rgba(195,220,238,.5);border-radius:13px;display:flex;justify-content:center;opacity:0;transition:opacity 1s var(--ease) 1.4s;}
+.hero.ready .scrolldn{opacity:1;}
+.scrolldn span{width:3px;height:8px;border-radius:2px;background:var(--blue);margin-top:7px;animation:scrolldn 1.9s var(--ease) infinite;}
+@keyframes scrolldn{0%{transform:translateY(0);opacity:1;}70%{transform:translateY(14px);opacity:0;}100%{opacity:0;}}
 .hero .eyebrow{margin-bottom:26px;opacity:0;transform:translateY(12px);transition:opacity 1s var(--ease) .5s,transform 1s var(--ease) .5s;}
-.hero .big{margin:0;font-family:var(--sans);font-weight:600;letter-spacing:-.02em;font-size:clamp(40px,5.2vw,80px);line-height:.9;color:var(--cream);opacity:0;transform:translateY(20px);transition:opacity 1.2s var(--ease) .72s,transform 1.2s var(--ease) .72s;}
+.hero .big{margin:0;font-family:var(--sans);font-weight:600;letter-spacing:-.02em;font-size:clamp(32px,3.8vw,56px);line-height:.9;color:var(--cream);opacity:0;transform:translateY(20px);transition:opacity 1.2s var(--ease) .72s,transform 1.2s var(--ease) .72s;}
 .hero .big .s{display:block;font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:0;color:var(--blue-soft);}
 .hero.ready .eyebrow{opacity:1;transform:none;}.hero.ready .big{opacity:1;transform:none;}
 .scrollcue{position:absolute;left:50%;bottom:34px;transform:translateX(-50%);z-index:4;width:26px;height:42px;border:1px solid rgba(195,220,238,.42);border-radius:14px;display:flex;justify-content:center;opacity:0;transition:opacity 1s var(--ease) 1.5s;}
@@ -86,8 +90,9 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
 
 /* PANELS */
 .panels{background:var(--ink);}
-.panel{display:none;padding:58px 0 134px;scroll-margin-top:160px;}
-.panel.active{display:block;animation:fade .6s var(--ease);}
+.panel{display:block;padding:72px 0 24px;scroll-margin-top:150px;border-top:1px solid var(--line);}
+.panel:first-of-type{border-top:0;}
+.panel.active{display:block;}
 @keyframes fade{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
 .phead{max-width:900px;margin:0 0 8px;}
 
@@ -215,6 +220,7 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
 <section class="hero" id="hero">
   <div class="hero__photo" id="heroPhoto"></div>
   <div class="grade"></div>
+  <a class="scrolldn" aria-label="Scroll down" href="#" onclick="window.scrollTo({top:Math.round(innerHeight*0.9),behavior:'smooth'});return false;"><span></span></a>
   <div class="shell">
     <p class="eyebrow">The Guide</p>
     <h1 class="big">Iceland,<span class="s">in detail.</span></h1>
@@ -449,24 +455,15 @@ var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isInt
 function observeReveals(scope){(scope||document).querySelectorAll('.reveal:not(.in)').forEach(function(el){io.observe(el);});}
 observeReveals(document);
 
-/* TABS — pills switch panels */
+/* PILLS — scroll to section (all content visible) + scroll-spy */
 var pills=[].slice.call(document.querySelectorAll('.pill'));
-var tabbar=document.querySelector('.tabbar');
-var pillInd=document.getElementById('pillInd'),pillbar=document.getElementById('pillbar');
-function moveInd(){var cur=pillbar.querySelector('.pill.cur');if(!cur)return;pillInd.style.left=cur.offsetLeft+'px';pillInd.style.width=cur.offsetWidth+'px';pillInd.classList.add('on');}
-window.addEventListener('resize',moveInd);
-requestAnimationFrame(moveInd);
-function showTab(name,scroll){
-  pills.forEach(function(p){var on=p.getAttribute('data-tab')===name;p.classList.toggle('cur',on);p.setAttribute('aria-selected',on?'true':'false');});
-  moveInd();
-  document.querySelectorAll('.panel').forEach(function(s){s.classList.toggle('active',s.id==='p-'+name);});
-  var active=document.getElementById('p-'+name);
-  observeReveals(active);
-  /* kick reveals already in view inside the freshly shown panel */
-  active.querySelectorAll('.reveal').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<window.innerHeight*0.96)el.classList.add('in');});
-  if(scroll){var gy=document.getElementById('guide').getBoundingClientRect().top+window.scrollY;if(window.scrollY>gy-78)window.scrollTo({top:gy-78,behavior:'smooth'});}
-}
-pills.forEach(function(p){p.addEventListener('click',function(){showTab(p.getAttribute('data-tab'),true);});});
+var panels=pills.map(function(p){return document.getElementById('p-'+p.getAttribute('data-tab'));});
+function setCur(name){pills.forEach(function(p){var on=p.getAttribute('data-tab')===name;p.classList.toggle('cur',on);p.setAttribute('aria-selected',on?'true':'false');});}
+pills.forEach(function(p){p.addEventListener('click',function(){var t=document.getElementById('p-'+p.getAttribute('data-tab'));if(!t)return;var y=t.getBoundingClientRect().top+window.scrollY-130;window.scrollTo({top:y,behavior:'smooth'});setCur(p.getAttribute('data-tab'));
+  /* keep the active pill in view inside the scrollable bar */
+  p.scrollIntoView({inline:'center',block:'nearest'});});});
+var spy=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){setCur(en.target.id.replace('p-',''));}});},{rootMargin:'-45% 0px -50% 0px'});
+panels.forEach(function(s){if(s)spy.observe(s);});
 </script>
 </body>
 </html>

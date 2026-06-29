@@ -56,8 +56,12 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
 .hero.ready .hero__photo{opacity:1;transform:scale(1);}
 .hero .grade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(10,22,40,.42),rgba(10,22,40,0) 32%,rgba(10,22,40,.5) 72%,var(--ink) 100%),linear-gradient(90deg,rgba(10,22,40,.55),rgba(10,22,40,0) 58%);}
 .hero .shell{position:relative;z-index:3;}
+.scrolldn{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);z-index:4;width:24px;height:38px;border:1.5px solid rgba(195,220,238,.5);border-radius:13px;display:flex;justify-content:center;opacity:0;transition:opacity 1s var(--ease) 1.4s;}
+.hero.ready .scrolldn{opacity:1;}
+.scrolldn span{width:3px;height:8px;border-radius:2px;background:var(--blue);margin-top:7px;animation:scrolldn 1.9s var(--ease) infinite;}
+@keyframes scrolldn{0%{transform:translateY(0);opacity:1;}70%{transform:translateY(14px);opacity:0;}100%{opacity:0;}}
 .hero .eyebrow{margin-bottom:26px;opacity:0;transform:translateY(12px);transition:opacity 1s var(--ease) .5s,transform 1s var(--ease) .5s;}
-.hero .big{margin:0;font-family:var(--sans);font-weight:600;letter-spacing:-.02em;font-size:clamp(40px,5.2vw,80px);line-height:.92;color:var(--cream);opacity:0;transform:translateY(20px);transition:opacity 1.2s var(--ease) .72s,transform 1.2s var(--ease) .72s;}
+.hero .big{margin:0;font-family:var(--sans);font-weight:600;letter-spacing:-.02em;font-size:clamp(32px,3.8vw,56px);line-height:.92;color:var(--cream);opacity:0;transform:translateY(20px);transition:opacity 1.2s var(--ease) .72s,transform 1.2s var(--ease) .72s;}
 .hero .big .s{display:block;font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:0;color:var(--blue-soft);}
 .hero.ready .eyebrow{opacity:1;transform:none;}.hero.ready .big{opacity:1;transform:none;}
 
@@ -168,6 +172,7 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
 <section class="hero" id="hero">
   <div class="hero__photo" id="heroPhoto"></div>
   <div class="grade"></div>
+  <a class="scrolldn" aria-label="Scroll down" href="#" onclick="window.scrollTo({top:Math.round(innerHeight*0.9),behavior:'smooth'});return false;"><span></span></a>
   <div class="shell">
     <p class="eyebrow">Plan your route · North Iceland</p>
     <h1 class="big">Reach Siglufjörður<span class="s">by air &amp; road.</span></h1>
