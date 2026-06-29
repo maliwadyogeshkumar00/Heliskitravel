@@ -25,12 +25,12 @@ img{max-width:100%;display:block;}a{color:inherit;text-decoration:none;}
 .intro{margin:26px 0 0;color:rgba(244,246,248,.68);font-size:17px;line-height:1.82;max-width:62ch;}
 
 header{position:fixed;top:0;left:0;right:0;z-index:70;transition:background .7s var(--ease),border-color .7s var(--ease);border-bottom:1px solid transparent;}
-header::before{content:"";position:absolute;left:0;right:0;top:0;height:200%;pointer-events:none;z-index:0;background:linear-gradient(180deg,rgba(10,22,40,.85),rgba(10,22,40,.55) 38%,rgba(10,22,40,.22) 70%,rgba(10,22,40,0));opacity:1;transition:opacity .7s var(--ease);}
+header::before{content:"";position:absolute;left:0;right:0;top:0;height:200%;pointer-events:none;z-index:0;background:linear-gradient(180deg,rgba(10,22,40,.92),rgba(10,22,40,.62) 40%,rgba(10,22,40,.24) 72%,rgba(10,22,40,0));opacity:1;transition:opacity .7s var(--ease);}
 header.scrolled{background:rgba(10,22,40,.74);backdrop-filter:saturate(140%) blur(14px);-webkit-backdrop-filter:saturate(140%) blur(14px);border-bottom-color:rgba(138,180,204,.12);}
 header.scrolled::before{opacity:0;}
 .nav{display:flex;align-items:center;justify-content:space-between;height:96px;position:relative;z-index:2;}
-.nav .logo img{height:60px;transition:height .7s var(--ease);}
-header.scrolled .nav{height:80px;}header.scrolled .logo img{height:50px;}
+.nav .logo img{height:64px;transition:height .7s var(--ease);}
+header.scrolled .nav{height:80px;}header.scrolled .logo img{height:54px;}
 .menu{display:flex;align-items:center;gap:40px;}
 .menu a{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,246,248,.85);padding:6px 0;position:relative;transition:color .5s var(--ease);}
 .menu a::after{content:"";position:absolute;left:0;right:100%;bottom:-4px;height:1px;background:var(--blue);transition:right .5s var(--ease);}
@@ -147,15 +147,15 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
 <div class="progress" id="progress"></div>
 
 <header id="siteHeader"><div class="shell nav">
-  <a class="logo" href="https://heliskitravel.com" aria-label="Heliski Travel home"><img src="https://heliskitravel.com/wp-content/uploads/2026/05/Heliski-Updated-Logo.webp" alt="Heliski Travel" width="220" height="108"/></a>
+  <a class="logo" href="home.html" aria-label="Heliski Travel home"><img src="https://heliskitravel.com/wp-content/uploads/2026/05/Heliski-Updated-Logo.webp" alt="Heliski Travel" width="220" height="108"/></a>
   <button class="burger" id="burger" aria-label="Open menu" aria-controls="menu" aria-expanded="false"><span></span><span></span><span></span></button>
   <nav class="menu" id="menu" aria-label="Primary">
-    <a href="https://heliskitravel.com/packages/">Packages<span class="caret">▾</span></a>
-    <a href="https://heliskitravel.com/how-to-get-there/">Travel Here</a>
-    <a href="https://heliskitravel.com/siglo-hotel/">Sigló Hotel</a>
-    <a href="https://heliskitravel.com/iceland/">Iceland</a>
-    <a href="https://heliskitravel.com/about-us/">About Us</a>
-    <a href="https://heliskitravel.com/contact/">Contact</a>
+    <a href="packages.html">Packages<span class="caret">▾</span></a>
+    <a href="travel-here.html">Travel Here</a>
+    <a href="siglo-hotel.html">Sigló Hotel</a>
+    <a href="iceland.html">Iceland</a>
+    <a href="about.html">About Us</a>
+    <a href="index.html">Contact</a>
   </nav>
 </div></header>
 
@@ -166,8 +166,8 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
   <div class="shell">
     <p class="eyebrow">Authorised Agent · Viking Heliskiing</p>
     <div class="slides" id="slides">
-      <div class="slide on"><h1>Two skiers,<br><em>infinite mountain.</em></h1><p>Face the Arctic horizon from the summit. Pure powder underfoot, the shimmering fjord below — every run a memory that lasts a lifetime.</p><a class="btn btn--solid" href="https://heliskitravel.com/contact/"><span>Plan my trip</span> <span class="arw">→</span></a></div>
-      <div class="slide"><h1>Where the mountains<br><em>meet the Arctic sea.</em></h1><p>Untracked powder, soaring peaks, and a wilderness that few skiers ever see. This is heliskiing at the edge of the world.</p><a class="btn btn--solid" href="https://heliskitravel.com/contact/"><span>Enquire now</span> <span class="arw">→</span></a></div>
+      <div class="slide on"><h1>Two skiers,<br><em>infinite mountain.</em></h1><p>Face the Arctic horizon from the summit. Pure powder underfoot, the shimmering fjord below — every run a memory that lasts a lifetime.</p><a class="btn btn--solid" href="index.html"><span>Plan my trip</span> <span class="arw">→</span></a></div>
+      <div class="slide"><h1>Where the mountains<br><em>meet the Arctic sea.</em></h1><p>Untracked powder, soaring peaks, and a wilderness that few skiers ever see. This is heliskiing at the edge of the world.</p><a class="btn btn--solid" href="index.html"><span>Enquire now</span> <span class="arw">→</span></a></div>
       <div class="slide"><h1>Northern lights<br><em>after every descent.</em></h1><p>Comfortable lodge accommodation in Siglufjörður, all meals prepared daily, and the warmth of a fishing village that time forgot.</p><a class="btn btn--solid" href="packages.html"><span>View packages</span> <span class="arw">→</span></a></div>
       <div class="slide"><h1>1,200 metres of<br><em>vertical freedom.</em></h1><p>Iceland's fjord mountains offer dramatic descents accessible only by helicopter — terrain reserved for those who seek the extraordinary.</p><a class="btn btn--solid" href="packages.html"><span>View packages</span> <span class="arw">→</span></a></div>
     </div>
@@ -190,7 +190,7 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
       <div class="qcard"><span class="nx">01</span><h3>Heli-Assist</h3><p>Ski touring with helicopter uplift. Access Iceland's most remote terrain without leaving the touring ethos behind.</p><a class="go" href="heli-assisted-touring.html">Explore Heli-Assist <span class="arw">→</span></a></div>
       <div class="qcard"><span class="nx">02</span><h3>Classic Heliskiing</h3><p>Group packages with Viking Heliskiing — multiple daily runs through Iceland's most spectacular untracked terrain.</p><a class="go" href="packages.html">See Packages <span class="arw">→</span></a></div>
       <div class="qcard"><span class="nx">03</span><h3>Private Heliskiing</h3><p>Exclusive helicopter hire for your group. Your terrain, your schedule, your pace. The ultimate Arctic experience.</p><a class="go" href="private-heliskiing.html">Begin Inquiry <span class="arw">→</span></a></div>
-      <div class="qcard"><span class="nx">04</span><h3>Contact Us</h3><p>Ready to plan? Get in touch for availability, pricing, and bespoke itinerary advice from our team.</p><a class="go" href="https://heliskitravel.com/contact/">Get In Touch <span class="arw">→</span></a></div>
+      <div class="qcard"><span class="nx">04</span><h3>Contact Us</h3><p>Ready to plan? Get in touch for availability, pricing, and bespoke itinerary advice from our team.</p><a class="go" href="index.html">Get In Touch <span class="arw">→</span></a></div>
     </div>
   </div>
 </section>
@@ -199,9 +199,9 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
 <section class="band band--navy" style="padding-top:0;">
   <div class="shell">
     <div class="bigl reveal">
-      <a class="bl" href="https://heliskitravel.com/iceland/"><img src="https://heliskitravel.com/wp-content/uploads/2026/05/DJI_0806-1024x767.webp" alt="How to get there" loading="lazy"/><div class="lbl"><div class="k">The Guide</div><h3>How to Get There <span class="arw">→</span></h3></div></a>
-      <a class="bl" href="https://heliskitravel.com/siglo-hotel/"><img src="https://heliskitravel.com/wp-content/uploads/2026/05/Siglo-Hotel-1024x780.webp" alt="Sigló Hotel" loading="lazy"/><div class="lbl"><div class="k">Your basecamp</div><h3>Sigló Hotel <span class="arw">→</span></h3></div></a>
-      <a class="bl" href="https://heliskitravel.com/contact/"><img src="https://heliskitravel.com/wp-content/uploads/2026/05/004.webp" alt="Enquire now" loading="lazy"/><div class="lbl"><div class="k">Get in touch</div><h3>Enquire Now <span class="arw">→</span></h3></div></a>
+      <a class="bl" href="iceland.html"><img src="https://heliskitravel.com/wp-content/uploads/2026/05/DJI_0806-1024x767.webp" alt="How to get there" loading="lazy"/><div class="lbl"><div class="k">The Guide</div><h3>How to Get There <span class="arw">→</span></h3></div></a>
+      <a class="bl" href="siglo-hotel.html"><img src="https://heliskitravel.com/wp-content/uploads/2026/05/Siglo-Hotel-1024x780.webp" alt="Sigló Hotel" loading="lazy"/><div class="lbl"><div class="k">Your basecamp</div><h3>Sigló Hotel <span class="arw">→</span></h3></div></a>
+      <a class="bl" href="index.html"><img src="https://heliskitravel.com/wp-content/uploads/2026/05/004.webp" alt="Enquire now" loading="lazy"/><div class="lbl"><div class="k">Get in touch</div><h3>Enquire Now <span class="arw">→</span></h3></div></a>
     </div>
   </div>
 </section>
@@ -214,7 +214,7 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
       <h2 class="sectit" style="font-size:clamp(30px,3.8vw,48px);margin-bottom:24px;">The world's most dramatic <span class="s">heliski destination.</span></h2>
       <p class="lead">Heliskitravel.com is your specialist booking partner for Viking Heliskiing, operating from Siglufjörður in northern Iceland — the world's northernmost heliski destination.</p>
       <p>With over a decade of alpine expertise and deep knowledge of Scandinavian mountain culture, we offer a personal, knowledgeable booking experience matched to none.</p>
-      <a class="lnk" href="https://heliskitravel.com/iceland/">How to reach Siglufjörður <span class="arw">→</span></a>
+      <a class="lnk" href="iceland.html">How to reach Siglufjörður <span class="arw">→</span></a>
     </div>
     <div class="imgw reveal"><img src="https://heliskitravel.com/wp-content/uploads/2026/05/heli_-6-1024x580.webp" alt="Helicopter on the Troll Peninsula" loading="lazy"/></div>
   </div>
@@ -222,8 +222,8 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
 
 <!-- FOOTER -->
 <footer class="sf"><div class="shell">
-  <div class="sf__top"><a class="logo" href="https://heliskitravel.com" aria-label="Heliski Travel home"><img src="https://heliskitravel.com/wp-content/uploads/2026/05/Heliski-Updated-Logo.webp" alt="Heliski Travel" width="200" height="98" loading="lazy"/></a>
-    <nav class="sf__nav" aria-label="Footer"><a href="https://heliskitravel.com/packages/">Packages</a><a href="https://heliskitravel.com/how-to-get-there/">Travel Here</a><a href="https://heliskitravel.com/siglo-hotel/">Sigló Hotel</a><a href="https://heliskitravel.com/iceland/">Iceland</a><a href="https://heliskitravel.com/contact/">Contact</a></nav></div>
+  <div class="sf__top"><a class="logo" href="home.html" aria-label="Heliski Travel home"><img src="https://heliskitravel.com/wp-content/uploads/2026/05/Heliski-Updated-Logo.webp" alt="Heliski Travel" width="200" height="98" loading="lazy"/></a>
+    <nav class="sf__nav" aria-label="Footer"><a href="packages.html">Packages</a><a href="travel-here.html">Travel Here</a><a href="siglo-hotel.html">Sigló Hotel</a><a href="iceland.html">Iceland</a><a href="index.html">Contact</a></nav></div>
   <div class="sf__mid"><a class="big" href="mailto:hello@heliskitravel.com">hello@heliskitravel.com</a><div class="sf__trust">Authorised Agent · Viking Heliskiing Iceland · Certified Guides · <b>Reply within 12 hours</b></div></div>
   <div class="sf__base"><span class="cr">© 2026 Heliski Travel. All Rights Reserved.</span><a href="#siteHeader">Back to top ↑</a></div>
 </div></footer>

@@ -33,12 +33,12 @@ img{max-width:100%;display:block;}a{color:inherit;text-decoration:none;}
 .intro{margin:28px 0 0;color:rgba(244,246,248,.68);font-size:17px;line-height:1.8;max-width:60ch;}
 
 header{position:fixed;top:0;left:0;right:0;z-index:70;transition:background .7s var(--ease),border-color .7s var(--ease);border-bottom:1px solid transparent;}
-header::before{content:"";position:absolute;left:0;right:0;top:0;height:200%;pointer-events:none;z-index:0;background:linear-gradient(180deg,rgba(10,22,40,.85),rgba(10,22,40,.55) 38%,rgba(10,22,40,.22) 70%,rgba(10,22,40,0));opacity:1;transition:opacity .7s var(--ease);}
+header::before{content:"";position:absolute;left:0;right:0;top:0;height:200%;pointer-events:none;z-index:0;background:linear-gradient(180deg,rgba(10,22,40,.92),rgba(10,22,40,.62) 40%,rgba(10,22,40,.24) 72%,rgba(10,22,40,0));opacity:1;transition:opacity .7s var(--ease);}
 header.scrolled{background:rgba(10,22,40,.74);backdrop-filter:saturate(140%) blur(14px);-webkit-backdrop-filter:saturate(140%) blur(14px);border-bottom-color:rgba(138,180,204,.12);}
 header.scrolled::before{opacity:0;}
 .nav{display:flex;align-items:center;justify-content:space-between;height:96px;position:relative;z-index:2;}
-.nav .logo img{height:60px;transition:height .7s var(--ease);}
-header.scrolled .nav{height:80px;}header.scrolled .logo img{height:50px;}
+.nav .logo img{height:64px;transition:height .7s var(--ease);}
+header.scrolled .nav{height:80px;}header.scrolled .logo img{height:54px;}
 .menu{display:flex;align-items:center;gap:40px;}
 .menu a{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,246,248,.85);padding:6px 0;position:relative;transition:color .5s var(--ease);}
 .menu a::after{content:"";position:absolute;left:0;right:100%;bottom:-4px;height:1px;background:var(--blue);transition:right .5s var(--ease);}
@@ -191,15 +191,15 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
 <div class="progress" id="progress"></div>
 
 <header id="siteHeader"><div class="shell nav">
-  <a class="logo" href="https://heliskitravel.com" aria-label="Heliski Travel home"><img src="https://heliskitravel.com/wp-content/uploads/2026/05/Heliski-Updated-Logo.webp" alt="Heliski Travel" width="220" height="108"/></a>
+  <a class="logo" href="home.html" aria-label="Heliski Travel home"><img src="https://heliskitravel.com/wp-content/uploads/2026/05/Heliski-Updated-Logo.webp" alt="Heliski Travel" width="220" height="108"/></a>
   <button class="burger" id="burger" aria-label="Open menu" aria-controls="menu" aria-expanded="false"><span></span><span></span><span></span></button>
   <nav class="menu" id="menu" aria-label="Primary">
-    <a href="https://heliskitravel.com/packages/">Packages<span class="caret">▾</span></a>
-    <a href="https://heliskitravel.com/how-to-get-there/">Travel Here</a>
-    <a href="https://heliskitravel.com/siglo-hotel/">Sigló Hotel</a>
-    <a href="https://heliskitravel.com/iceland/" class="active" aria-current="page">Iceland</a>
-    <a href="https://heliskitravel.com/about-us/">About Us</a>
-    <a href="https://heliskitravel.com/contact/">Contact</a>
+    <a href="packages.html">Packages<span class="caret">▾</span></a>
+    <a href="travel-here.html">Travel Here</a>
+    <a href="siglo-hotel.html">Sigló Hotel</a>
+    <a href="iceland.html" class="active" aria-current="page">Iceland</a>
+    <a href="about.html">About Us</a>
+    <a href="index.html">Contact</a>
   </nav>
 </div></header>
 
@@ -412,14 +412,14 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
   <div class="shell">
     <p class="eyebrow reveal">Plan your week</p>
     <h2 class="reveal">Tell us your dates — <span class="s">we'll shape the right Iceland week.</span></h2>
-    <div class="reveal"><a class="btn" href="https://heliskitravel.com/contact/"><span>Request a consultation</span> <span class="arw">→</span></a></div>
+    <div class="reveal"><a class="btn" href="index.html"><span>Request a consultation</span> <span class="arw">→</span></a></div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer class="sf"><div class="shell">
-  <div class="sf__top"><a class="logo" href="https://heliskitravel.com" aria-label="Heliski Travel home"><img src="https://heliskitravel.com/wp-content/uploads/2026/05/Heliski-Updated-Logo.webp" alt="Heliski Travel" width="200" height="98" loading="lazy"/></a>
-    <nav class="sf__nav" aria-label="Footer"><a href="https://heliskitravel.com/packages/">Packages</a><a href="https://heliskitravel.com/siglo-hotel/">Sigló Hotel</a><a href="https://heliskitravel.com/iceland/">Iceland</a><a href="https://heliskitravel.com/about-us/">About</a><a href="https://heliskitravel.com/contact/">Contact</a></nav></div>
+  <div class="sf__top"><a class="logo" href="home.html" aria-label="Heliski Travel home"><img src="https://heliskitravel.com/wp-content/uploads/2026/05/Heliski-Updated-Logo.webp" alt="Heliski Travel" width="200" height="98" loading="lazy"/></a>
+    <nav class="sf__nav" aria-label="Footer"><a href="packages.html">Packages</a><a href="siglo-hotel.html">Sigló Hotel</a><a href="iceland.html">Iceland</a><a href="about.html">About</a><a href="index.html">Contact</a></nav></div>
   <div class="sf__mid"><a class="big" href="mailto:hello@heliskitravel.com">hello@heliskitravel.com</a><div class="sf__trust">Authorised Agent · Viking Heliskiing Iceland · Certified Guides · <b>Reply within 12 hours</b></div></div>
   <div class="sf__base"><span class="cr">© 2026 Heliski Travel. All Rights Reserved.</span><a href="#siteHeader">Back to top ↑</a></div>
 </div></footer>
