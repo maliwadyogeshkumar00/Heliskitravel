@@ -37,6 +37,14 @@ header.scrolled .nav{height:78px;}header.scrolled .logo img{height:48px;}
 .menu a::after{content:"";position:absolute;left:0;right:100%;bottom:-4px;height:1px;background:var(--blue);transition:right .5s var(--ease);}
 .menu a:hover::after,.menu a.active::after{right:0;}.menu a:hover,.menu a.active{color:var(--cream);}
 .menu .caret{font-size:9px;opacity:.6;margin-left:5px;}
+.menu .hassub{position:relative;display:inline-flex;align-items:center;}
+.submenu{position:absolute;top:100%;left:-14px;margin-top:12px;min-width:240px;display:flex;flex-direction:column;gap:2px;padding:10px;background:rgba(10,22,40,.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:8px;box-shadow:0 22px 54px rgba(0,0,0,.46);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .35s var(--ease),transform .35s var(--ease),visibility .35s;z-index:9;}
+.submenu::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px;}
+.menu .hassub:hover .submenu,.menu .hassub:focus-within .submenu{opacity:1;visibility:visible;transform:none;}
+.submenu a{padding:11px 14px;border-radius:5px;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,246,248,.8);}
+.submenu a::after{display:none;}
+.submenu a:hover{background:rgba(168,207,224,.1);color:var(--cream);}
+@media(max-width:900px){.menu .hassub{flex-direction:column;align-items:flex-start;width:100%;}.submenu{position:static;opacity:1;visibility:visible;transform:none;background:none;border:0;box-shadow:none;padding:4px 0 2px 16px;margin:0;min-width:0;}.submenu::before{display:none;}.submenu a{padding:10px 0;font-size:15px;text-transform:none;letter-spacing:.04em;color:rgba(244,246,248,.7);}}
 .burger{display:none;width:44px;height:44px;border:0;background:transparent;cursor:pointer;flex-direction:column;justify-content:center;align-items:flex-end;gap:6px;z-index:71;}
 .burger span{display:block;height:1.5px;background:var(--cream);transition:transform .5s var(--ease),opacity .3s,width .5s;}
 .burger span:nth-child(1){width:26px;}.burger span:nth-child(2){width:20px;}.burger span:nth-child(3){width:26px;}
@@ -163,7 +171,7 @@ body.show-sticky .stickycta{transform:none;}
   <a class="logo" href="home.html" aria-label="Heliski Travel home"><img src="https://heliskitravel.com/wp-content/uploads/2026/05/Heliski-Updated-Logo.webp" alt="Heliski Travel" width="200" height="80"/></a>
   <button class="burger" id="burger" aria-label="Open menu" aria-controls="menu" aria-expanded="false"><span></span><span></span><span></span></button>
   <nav class="menu" id="menu" aria-label="Primary">
-    <a href="packages.html">Packages<span class="caret">▾</span></a>
+    <span class="hassub"><a href="packages.html">Packages<span class="caret">▾</span></a><div class="submenu"><a href="packages.html">All Packages</a><a href="classic-heliskiing.html">Classic Heliskiing</a><a href="heli-assisted-touring.html">Heli-Assisted Touring</a><a href="private-heliskiing.html">Private Heliskiing</a></div></span>
     <a href="travel-here.html">Travel Here</a>
     <a href="siglo-hotel.html">Sigló Hotel</a>
     <a href="iceland.html">Iceland</a>
