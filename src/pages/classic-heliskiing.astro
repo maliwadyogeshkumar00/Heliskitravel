@@ -44,9 +44,9 @@ const body = `
       <div class="pkgm__rail">
         <p class="eyebrow">Choose your week</p>
         <div class="pkgm__weeks">
-          <button class="wk active" type="button" data-days="3" data-vert="45,000"><span class="wk__d">3-Day week</span><span class="wk__v">45,000 ft vertical</span><span class="wk__p">€6,790 · twin per guest</span><span class="wk__pop">★ Most popular</span></button>
-          <button class="wk" type="button" data-days="4" data-vert="60,000"><span class="wk__d">4-Day week</span><span class="wk__v">60,000 ft vertical</span><span class="wk__p">€8,890 · twin per guest</span></button>
-          <button class="wk" type="button" data-days="5" data-vert="75,000"><span class="wk__d">5-Day week</span><span class="wk__v">75,000 ft vertical</span><span class="wk__p">€10,490 · twin per guest</span></button>
+          <button class="wk active" type="button" data-days="3" data-vert="45,000" data-word="three"><span class="wk__d">3-Day week</span><span class="wk__v">45,000 ft vertical</span><span class="wk__p">€6,790 · twin per guest</span><span class="wk__pop">★ Most popular</span></button>
+          <button class="wk" type="button" data-days="4" data-vert="60,000" data-word="four"><span class="wk__d">4-Day week</span><span class="wk__v">60,000 ft vertical</span><span class="wk__p">€8,890 · twin per guest</span></button>
+          <button class="wk" type="button" data-days="5" data-vert="75,000" data-word="five"><span class="wk__d">5-Day week</span><span class="wk__v">75,000 ft vertical</span><span class="wk__p">€10,490 · twin per guest</span></button>
         </div>
         <a class="btn btn--solid pkgm__cta" href="/contact"><span>Request availability</span> <span class="arw">→</span></a>
       </div>
@@ -54,19 +54,36 @@ const body = `
         <h3>What's included</h3>
         <ul class="pkgm__incl">
           <li><b data-count>3</b> × nights at Sigló Hotel (4-star, ocean-front)</li>
-          <li><b data-count>3</b> × three-course dinners at Sigló Restaurant</li>
+          <li><b data-count>3</b> × 3-course dinners at Sigló Restaurant</li>
           <li><b data-count>3</b> × daily breakfast buffet at Sigló Hotel</li>
-          <li><b data-count>3</b> × lunches at the K2 Club House</li>
+          <li><b data-count>3</b> × lunches at the Club House K2 Ski</li>
           <li><b data-vert>45,000</b> ft of vertical skiing</li>
           <li>Full ski equipment — skis, boots, poles</li>
-          <li>BCA avalanche kit — transceiver, shovel, probe, airbag</li>
+          <li>BCA avalanche safety kit — transceiver, shovel, probe, airbag</li>
           <li>Ski shuttle to the clubhouse, 5 minutes away</li>
           <li>Outdoor hot tub &amp; sauna — unlimited access</li>
           <li>Daily yoga &amp; morning stretches</li>
         </ul>
+
         <h3 class="pkgm__h2">Pure heliskiing. Nothing but the descent.</h3>
-        <p>No skins, no climbing, no earning your turns — just the helicopter, your guide, and run after run of untracked Arctic powder. The moment you reach the bottom, the helicopter is already there to lift you back to the top for the next line.</p>
-        <p>The Troll Peninsula is one of the last great untouched ski frontiers on earth, where the mountains rise straight out of the sea. You ski from summits to the shoreline of the North Atlantic — no lift lines, no crowds, often no tracks but your own — guided every run by IFMGA-certified guides who have skied this peninsula their whole lives.</p>
+        <p>This is heliskiing in its purest form — no skins, no climbing, no earning your turns. Just the helicopter, your guide, and run after run of untracked Arctic powder. The moment you reach the bottom, the helicopter is already there to lift you back to the top for the next line.</p>
+        <p>The Troll Peninsula is one of the last great untouched ski frontiers on earth — a vast, largely unexplored wilderness in Northern Iceland where the mountains rise straight out of the sea. You ski from summits all the way down to the shoreline of the North Atlantic, with no lift lines, no crowds, and often no tracks but your own.</p>
+        <p>Ski beneath the midnight sun in spring, or chase the Northern Lights in early season. Powder, spring corn, untouched lines — guided every run by IFMGA-certified guides who have skied this peninsula their whole lives. And at night, a hot tub, a sauna, and a 4-star ocean-front room waiting in the fishing village of Siglufjörður.</p>
+
+        <h3 class="pkgm__h2">A typical day</h3>
+        <p>Your day is measured in vertical feet, not runs. We aim for around 15,000 ft a day — roughly 7–8 long descents — though great conditions can mean far more (our record is 19 runs in a single day). Each morning the helicopter lifts you into fresh terrain; you ski top to bottom, and within minutes you're climbing again. Lunch is somewhere spectacular along the way. The only thing limiting your day is your legs.</p>
+        <p><b data-vert>45,000</b> ft of vertical skiing over <span data-dayword>three</span> days. No lifts, no lines, no skinning — just the helicopter and the descent.</p>
+
+        <p class="pkgm__lbl">Typical heliskiing day<span class="pkgm__ast">*</span></p>
+        <ol class="pkgm__time">
+          <li><span class="t">07:00–09:00</span><span class="d">Enjoy a hearty breakfast at the hotel to fuel up for the day.</span></li>
+          <li><span class="t">08:30–09:00</span><span class="d">Pick-up for a quick 3-minute drive to the Clubhouse, where your skis or snowboard await you for a day of fun and excitement. Our guides will review the day's plan, ensuring you are well-prepared and informed.</span></li>
+          <li><span class="t">09:45–10:00</span><span class="d">Helicopters are ready to take you on an exhilarating day of skiing.</span></li>
+          <li><span class="t">12:30–13:30</span><span class="d">Get ready for lunch with a view! You will get the opportunity to enjoy your meal with stunning views and great company.</span></li>
+          <li><span class="t">15:00–16:00</span><span class="d">Return to the Clubhouse, where après ski awaits. Delicious, freshly prepared food and a variety of drinks to refresh your body and mind. Here you have the chance to talk about the day and exchange stories, photos, and videos with upbeat music in the background. You can also head back to the hotel for a dip in the hot tub, explore the town, try kayaking, visit the local brewery, or join some of the other activities we offer before it's time for dinner.</span></li>
+          <li><span class="t">20:00</span><span class="d">A three-course dinner will be served at the hotel. Throughout your stay, you will get a variety of dishes locally sourced from Icelandic nature, such as cod, salmon, lamb, and more. After dinner is the perfect time for drinks around the fireplace.</span></li>
+        </ol>
+        <p class="pkgm__foot">*This is a sample itinerary as times and schedule may vary depending on weather conditions</p>
       </div>
     </div>
   </div>
