@@ -95,12 +95,10 @@ header.scrolled .nav .logo img{height:52px;}
 .hero .meta{text-align:right;white-space:nowrap;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);line-height:2.3;
   opacity:0;transition:opacity 1.1s var(--ease) 1s;}
 .hero.ready .meta{opacity:1;}
-.h-scroll{position:absolute;left:50%;bottom:34px;transform:translateX(-50%);z-index:4;
-  display:flex;flex-direction:column;align-items:center;gap:9px;font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--muted);
-  opacity:0;transition:opacity 1s var(--ease) 1.2s;}
-.hero.ready .h-scroll{opacity:1;}
-.h-scroll i{display:block;width:1px;height:36px;background:linear-gradient(var(--blue),rgba(168,207,224,0));animation:cue 3s var(--ease) infinite;transform-origin:top;}
-@keyframes cue{0%{transform:scaleY(0);opacity:0;}45%{transform:scaleY(1);opacity:1;}100%{transform:scaleY(1);opacity:0;}}
+.scrolldn{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);z-index:4;width:24px;height:38px;border:1.5px solid rgba(195,220,238,.5);border-radius:13px;display:flex;justify-content:center;opacity:0;transition:opacity 1s var(--ease) 1.4s;}
+.hero.ready .scrolldn{opacity:1;}
+.scrolldn span{width:3px;height:8px;border-radius:2px;background:var(--blue);margin-top:7px;animation:scrolldn 1.9s var(--ease) infinite;}
+@keyframes scrolldn{0%{transform:translateY(0);opacity:1;}70%{transform:translateY(14px);opacity:0;}100%{opacity:0;}}
 
 /* ---------- REQUEST (form) ---------- */
 .request{position:relative;background:var(--navy);padding:120px 0;overflow:hidden;}
@@ -184,8 +182,8 @@ textarea{resize:vertical;min-height:84px;line-height:1.6;}
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .9s var(--ease),transform .9s var(--ease);}
 .reveal.in{opacity:1;transform:none;}
 @media (prefers-reduced-motion:reduce){
-  .reveal,.hero__photo,.hero .mono,.hero .eyebrow,.hero .lead,.hero .big,.hero .meta,.hero .h-scroll{opacity:1!important;transform:none!important;transition:none!important;}
-  .h-scroll i{animation:none;}
+  .reveal,.hero__photo,.hero .mono,.hero .eyebrow,.hero .lead,.hero .big,.hero .meta,.hero .scrolldn{opacity:1!important;transform:none!important;transition:none!important;}
+  .scrolldn span{animation:none;}
 }
 
 @media(max-width:900px){
@@ -196,7 +194,7 @@ textarea{resize:vertical;min-height:84px;line-height:1.6;}
   .hero .meta{text-align:left;}
   .hero .big{font-size:clamp(32px,3.8vw,56px);}
   .hero .mono{font-size:40vh;right:-8%;opacity:.5;}
-  .h-scroll{display:none;}
+  .scrolldn{display:none;}
   .request{padding:88px 0;}
   .grid-2{grid-template-columns:1fr;gap:40px;}
   .inputs{grid-template-columns:1fr;gap:30px;}
@@ -233,7 +231,7 @@ textarea{resize:vertical;min-height:84px;line-height:1.6;}
   <div class="hero__bg" aria-hidden="true"><div class="hero__scroll" id="heroScroll"><div class="hero__mouse" id="heroMouse"><div class="hero__photo"></div></div></div></div>
   <div class="grade" aria-hidden="true"></div>
   <div class="shell"><h1 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;">Contact Heliski Travel</h1></div>
-  <div class="h-scroll" aria-hidden="true"><i></i></div>
+  <a class="scrolldn" aria-label="Scroll down" href="#" onclick="window.scrollTo({top:Math.round(innerHeight*0.9),behavior:'smooth'});return false;"><span></span></a>
 </section>
 
 <!-- REQUEST -->
