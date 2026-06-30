@@ -30,7 +30,7 @@ header::before{content:"";position:absolute;left:0;right:0;top:0;height:200%;poi
 header.scrolled{background:rgba(10,22,40,.72);backdrop-filter:saturate(140%) blur(14px);-webkit-backdrop-filter:saturate(140%) blur(14px);border-bottom-color:rgba(138,180,204,.12);}
 header.scrolled::before{opacity:0;}
 .nav{display:flex;align-items:center;justify-content:space-between;height:96px;position:relative;z-index:2;}
-.nav .logo img{height:56px;transition:height .7s var(--ease);}
+.nav .logo img{height:64px;filter:drop-shadow(0 2px 10px rgba(10,22,40,.5));transition:height .7s var(--ease),filter .7s var(--ease);}
 header.scrolled .nav{height:78px;}header.scrolled .logo img{height:48px;}
 .menu{display:flex;align-items:center;gap:42px;}
 .menu a{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,246,248,.85);padding:6px 0;position:relative;transition:color .5s var(--ease);}
@@ -189,11 +189,7 @@ body.show-sticky .stickycta{transform:none;}
   <div class="hero__bg"><div class="hero__photo" id="heroPhoto"></div></div>
   <div class="grade"></div>
   <a class="scrolldn" aria-label="Scroll down" href="#" onclick="window.scrollTo({top:Math.round(innerHeight*0.9),behavior:'smooth'});return false;"><span></span></a>
-  <div class="shell">
-    <p class="eyebrow">About Heliski Travel</p>
-    <h1><span class="lead">Where every run</span><span class="big">tells a story.</span></h1>
-    <p class="sub">Trusted Agent for Viking Heliskiing Iceland</p>
-  </div>
+  <div class="shell"><h1 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;">About Heliski Travel</h1></div>
 </section>
 
 <!-- WHY (value first) -->
