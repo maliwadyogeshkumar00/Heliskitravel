@@ -29,8 +29,48 @@ const body = `
         <dl><div><dt>Vertical</dt><dd>75,000 ft</dd></div><div><dt>Accommodation</dt><dd>Sigló Hotel</dd></div><div><dt>Meals</dt><dd>Full board</dd></div><div><dt>Season</dt><dd>Mar 10 – Jun 6</dd></div><div><dt>Group</dt><dd>4 skiers + guide</dd></div></dl>
         <a class="btn" href="/contact"><span>Request availability</span> <span class="arw">→</span></a></div>
     </div>
+    <div style="text-align:center;margin-top:38px;"><button class="pkgmore" type="button" data-pkgmodal-open>The full week, in detail <span class="arw">→</span></button></div>
   </div>
 </section>
+
+<!-- THE FULL WEEK MODAL -->
+<div class="pkgm" id="pkgm" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Classic Heliskiing — full week details">
+  <div class="pkgm__panel">
+    <div class="pkgm__head">
+      <div><p class="eyebrow">Classic Heliskiing · Iceland</p><h2>The full week,<span class="s"> in detail.</span></h2></div>
+      <button class="pkgm__x" type="button" data-pkgmodal-close aria-label="Close">&times;</button>
+    </div>
+    <div class="pkgm__body">
+      <div class="pkgm__rail">
+        <p class="eyebrow">Choose your week</p>
+        <div class="pkgm__weeks">
+          <button class="wk active" type="button" data-days="3" data-vert="45,000"><span class="wk__d">3-Day week</span><span class="wk__v">45,000 ft vertical</span><span class="wk__p">€6,790 · twin per guest</span><span class="wk__pop">★ Most popular</span></button>
+          <button class="wk" type="button" data-days="4" data-vert="60,000"><span class="wk__d">4-Day week</span><span class="wk__v">60,000 ft vertical</span><span class="wk__p">€8,890 · twin per guest</span></button>
+          <button class="wk" type="button" data-days="5" data-vert="75,000"><span class="wk__d">5-Day week</span><span class="wk__v">75,000 ft vertical</span><span class="wk__p">€10,490 · twin per guest</span></button>
+        </div>
+        <a class="btn btn--solid pkgm__cta" href="/contact"><span>Request availability</span> <span class="arw">→</span></a>
+      </div>
+      <div class="pkgm__main">
+        <h3>What's included</h3>
+        <ul class="pkgm__incl">
+          <li><b data-count>3</b> × nights at Sigló Hotel (4-star, ocean-front)</li>
+          <li><b data-count>3</b> × three-course dinners at Sigló Restaurant</li>
+          <li><b data-count>3</b> × daily breakfast buffet at Sigló Hotel</li>
+          <li><b data-count>3</b> × lunches at the K2 Club House</li>
+          <li><b data-vert>45,000</b> ft of vertical skiing</li>
+          <li>Full ski equipment — skis, boots, poles</li>
+          <li>BCA avalanche kit — transceiver, shovel, probe, airbag</li>
+          <li>Ski shuttle to the clubhouse, 5 minutes away</li>
+          <li>Outdoor hot tub &amp; sauna — unlimited access</li>
+          <li>Daily yoga &amp; morning stretches</li>
+        </ul>
+        <h3 class="pkgm__h2">Pure heliskiing. Nothing but the descent.</h3>
+        <p>No skins, no climbing, no earning your turns — just the helicopter, your guide, and run after run of untracked Arctic powder. The moment you reach the bottom, the helicopter is already there to lift you back to the top for the next line.</p>
+        <p>The Troll Peninsula is one of the last great untouched ski frontiers on earth, where the mountains rise straight out of the sea. You ski from summits to the shoreline of the North Atlantic — no lift lines, no crowds, often no tracks but your own — guided every run by IFMGA-certified guides who have skied this peninsula their whole lives.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- MORE THAN -->
 <section class="band band--navy">
