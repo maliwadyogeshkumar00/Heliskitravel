@@ -174,14 +174,12 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
 @media(max-width:900px){.menu .hassub{flex-direction:column;align-items:flex-start;width:100%;}.submenu{position:static;opacity:1;visibility:visible;transform:none;background:none;border:0;box-shadow:none;padding:4px 0 2px 16px;margin:0;min-width:0;}.submenu::before{display:none;}.submenu a{padding:10px 0;font-size:15px;text-transform:none;letter-spacing:.04em;color:rgba(244,246,248,.7);}}
 
 /* ---------- HERO · Serif Monogram ---------- */
-.hero{position:relative;min-height:106vh;display:flex;align-items:flex-end;padding:0 0 128px;overflow:hidden;background:var(--navy);}
+.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;padding:0 0 128px;overflow:hidden;background:var(--navy);}
 .hero__bg{position:absolute;inset:0;z-index:0;overflow:hidden;}
 .hero__scroll{position:absolute;inset:-3%;will-change:transform;}
 .hero__mouse{position:absolute;inset:-3%;will-change:transform;transition:transform 1.4s var(--ease);}
 .hero__photo{position:absolute;inset:0;opacity:0;transform:scale(1.08);
-  transition:opacity 2s var(--ease),transform 2.6s var(--ease);background:var(--photo) 60% 58%/cover no-repeat;background-color:var(--navy);
-  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 66%,rgba(0,0,0,.88) 77%,rgba(0,0,0,.55) 87%,rgba(0,0,0,.22) 95%,transparent 100%);
-          mask-image:linear-gradient(180deg,#000 0%,#000 66%,rgba(0,0,0,.88) 77%,rgba(0,0,0,.55) 87%,rgba(0,0,0,.22) 95%,transparent 100%);}
+  transition:opacity 2s var(--ease),transform 2.6s var(--ease);background:var(--photo) 60% 58%/cover no-repeat;background-color:var(--navy);}
 .hero.ready .hero__photo{opacity:1;transform:scale(1);}
 .hero .mono{position:absolute;right:4%;top:50%;transform:translateY(-50%);z-index:2;
   font-family:var(--serif);font-style:italic;font-weight:500;font-size:58vh;line-height:.8;
