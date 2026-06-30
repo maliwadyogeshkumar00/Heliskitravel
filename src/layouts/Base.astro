@@ -23,7 +23,7 @@ const pkgActive = active === 'packages';
   <a class="logo" href="/" aria-label="Heliski Travel home"><img src={LOGO} alt="Heliski Travel" width="220" height="108" /></a>
   <button class="burger" id="burger" aria-label="Open menu" aria-controls="menu" aria-expanded="false"><span></span><span></span><span></span></button>
   <nav class="menu" id="menu" aria-label="Primary">
-    <a href="/packages" class={pkgActive ? 'active' : undefined}>Packages</a>
+    <span class="hassub"><a href="/packages" class={pkgActive ? 'active' : undefined}>Packages<span class="caret">▾</span></a><div class="submenu"><a href="/classic-heliskiing">Classic Heliskiing</a><a href="/heli-assisted-touring">Heli-Assisted Touring</a><a href="/private-heliskiing">Private Heliskiing</a></div></span>
     <a href="/travel-here" class={active === 'travel' ? 'active' : undefined}>Travel Here</a>
     <a href="/siglo-hotel" class={active === 'siglo' ? 'active' : undefined}>Sigló Hotel</a>
     <a href="/iceland" class={active === 'iceland' ? 'active' : undefined}>Iceland</a>
