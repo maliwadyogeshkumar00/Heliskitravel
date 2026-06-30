@@ -19,12 +19,12 @@ const body = `
       <p class="intro">The full helicopter week. Powder, stable spring corn, exposed lines you only find in the Arctic. Up to 1,500 m of vertical drop in a single run, and a normal day in the 18,000–25,000 ft range. The mountain sets the limit, not the program.</p>
     </div>
     <div class="tiers">
-      <div class="tier feat reveal"><span class="badge">Most popular</span><p class="dur">Three days</p><div class="price">€6,790</div><p class="per">twin per guest</p>
+      <div class="tier reveal"><p class="dur">Three days</p><div class="price">€6,790</div><p class="per">twin per guest</p>
         <dl><div><dt>Vertical</dt><dd>45,000 ft</dd></div><div><dt>Accommodation</dt><dd>Sigló Hotel</dd></div><div><dt>Meals</dt><dd>Full board</dd></div><div><dt>Season</dt><dd>Mar 10 – Jun 6</dd></div><div><dt>Group</dt><dd>4 skiers + guide</dd></div></dl>
-        <a class="btn btn--solid" href="/contact"><span>Request availability</span> <span class="arw">→</span></a></div>
-      <div class="tier reveal"><p class="dur">Four days</p><div class="price">€8,890</div><p class="per">twin per guest</p>
-        <dl><div><dt>Vertical</dt><dd>60,000 ft</dd></div><div><dt>Accommodation</dt><dd>Sigló Hotel</dd></div><div><dt>Meals</dt><dd>Full board</dd></div><div><dt>Season</dt><dd>Mar 10 – Jun 6</dd></div><div><dt>Group</dt><dd>4 skiers + guide</dd></div></dl>
         <a class="btn" href="/contact"><span>Request availability</span> <span class="arw">→</span></a></div>
+      <div class="tier feat reveal"><span class="badge">Most popular</span><p class="dur">Four days</p><div class="price">€8,890</div><p class="per">twin per guest</p>
+        <dl><div><dt>Vertical</dt><dd>60,000 ft</dd></div><div><dt>Accommodation</dt><dd>Sigló Hotel</dd></div><div><dt>Meals</dt><dd>Full board</dd></div><div><dt>Season</dt><dd>Mar 10 – Jun 6</dd></div><div><dt>Group</dt><dd>4 skiers + guide</dd></div></dl>
+        <a class="btn btn--solid" href="/contact"><span>Request availability</span> <span class="arw">→</span></a></div>
       <div class="tier reveal"><p class="dur">Five days</p><div class="price">€10,490</div><p class="per">twin per guest</p>
         <dl><div><dt>Vertical</dt><dd>75,000 ft</dd></div><div><dt>Accommodation</dt><dd>Sigló Hotel</dd></div><div><dt>Meals</dt><dd>Full board</dd></div><div><dt>Season</dt><dd>Mar 10 – Jun 6</dd></div><div><dt>Group</dt><dd>4 skiers + guide</dd></div></dl>
         <a class="btn" href="/contact"><span>Request availability</span> <span class="arw">→</span></a></div>
@@ -44,8 +44,8 @@ const body = `
       <div class="pkgm__rail">
         <p class="eyebrow">Choose your week</p>
         <div class="pkgm__weeks">
-          <button class="wk active" type="button" data-days="3" data-vert="45,000" data-word="three"><span class="wk__d">3-Day week</span><span class="wk__v">45,000 ft vertical</span><span class="wk__p">€6,790 · twin per guest</span><span class="wk__pop">★ Most popular</span></button>
-          <button class="wk" type="button" data-days="4" data-vert="60,000" data-word="four"><span class="wk__d">4-Day week</span><span class="wk__v">60,000 ft vertical</span><span class="wk__p">€8,890 · twin per guest</span></button>
+          <button class="wk" type="button" data-days="3" data-vert="45,000" data-word="three"><span class="wk__d">3-Day week</span><span class="wk__v">45,000 ft vertical</span><span class="wk__p">€6,790 · twin per guest</span></button>
+          <button class="wk active" type="button" data-days="4" data-vert="60,000" data-word="four"><span class="wk__d">4-Day week</span><span class="wk__v">60,000 ft vertical</span><span class="wk__p">€8,890 · twin per guest</span><span class="wk__pop">★ Most popular</span></button>
           <button class="wk" type="button" data-days="5" data-vert="75,000" data-word="five"><span class="wk__d">5-Day week</span><span class="wk__v">75,000 ft vertical</span><span class="wk__p">€10,490 · twin per guest</span></button>
         </div>
         <a class="btn btn--solid pkgm__cta" href="/contact"><span>Request availability</span> <span class="arw">→</span></a>
@@ -53,11 +53,11 @@ const body = `
       <div class="pkgm__main">
         <h3>What's included</h3>
         <ul class="pkgm__incl">
-          <li><b data-count>3</b> × nights at Sigló Hotel (4-star, ocean-front)</li>
-          <li><b data-count>3</b> × 3-course dinners at Sigló Restaurant</li>
-          <li><b data-count>3</b> × daily breakfast buffet at Sigló Hotel</li>
-          <li><b data-count>3</b> × lunches at the Club House K2 Ski</li>
-          <li><b data-vert>45,000</b> ft of vertical skiing</li>
+          <li><b data-count>4</b> × nights at Sigló Hotel (4-star, ocean-front)</li>
+          <li><b data-count>4</b> × 3-course dinners at Sigló Restaurant</li>
+          <li><b data-count>4</b> × daily breakfast buffet at Sigló Hotel</li>
+          <li><b data-count>4</b> × lunches at the Club House K2 Ski</li>
+          <li><b data-vert>60,000</b> ft of vertical skiing</li>
           <li>Full ski equipment — skis, boots, poles</li>
           <li>BCA avalanche safety kit — transceiver, shovel, probe, airbag</li>
           <li>Ski shuttle to the clubhouse, 5 minutes away</li>
@@ -72,7 +72,7 @@ const body = `
 
         <h3 class="pkgm__h2">A typical day</h3>
         <p>Your day is measured in vertical feet, not runs. We aim for around 15,000 ft a day — roughly 7–8 long descents — though great conditions can mean far more (our record is 19 runs in a single day). Each morning the helicopter lifts you into fresh terrain; you ski top to bottom, and within minutes you're climbing again. Lunch is somewhere spectacular along the way. The only thing limiting your day is your legs.</p>
-        <p><b data-vert>45,000</b> ft of vertical skiing over <span data-dayword>three</span> days. No lifts, no lines, no skinning — just the helicopter and the descent.</p>
+        <p><b data-vert>60,000</b> ft of vertical skiing over <span data-dayword>four</span> days. No lifts, no lines, no skinning — just the helicopter and the descent.</p>
 
         <p class="pkgm__lbl">Typical heliskiing day<span class="pkgm__ast">*</span></p>
         <ol class="pkgm__time">
