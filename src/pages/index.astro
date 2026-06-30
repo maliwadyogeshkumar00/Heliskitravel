@@ -5,7 +5,7 @@ const body = `
 <!-- HERO SLIDER -->
 <section class="hero" id="hero">
   <div class="hero__photo" id="heroPhoto"></div>
-  <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="/videos/heli-poster.jpg"><source src="/videos/heli-teaser.mp4" type="video/mp4" /></video>
+  <video class="hero__video" autoplay muted loop playsinline preload="metadata" poster="/videos/heli-poster.jpg" data-desktop="/videos/heli-teaser.mp4" data-mobile="/videos/heli-mobile.mp4" data-poster-mobile="/videos/heli-poster-mobile.jpg"></video>
   <div class="grade"></div>
   <a class="scrolldn" aria-label="Scroll down" href="#" onclick="window.scrollTo({top:Math.round(innerHeight*0.9),behavior:'smooth'});return false;"><span></span></a>
   <div class="shell"><h1 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;">Heliski Travel — Iceland Heliskiing</h1></div>
@@ -212,6 +212,8 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
 </style>
 
 <script is:inline>
+/* hero video: load mobile variant on small screens, desktop variant otherwise */
+(function(){var v=document.querySelector('.hero__video');if(!v)return;var m=window.matchMedia('(max-width:768px)').matches;if(m&&v.dataset.posterMobile)v.poster=v.dataset.posterMobile;v.src=m?v.dataset.mobile:v.dataset.desktop;v.load();var p=v.play();if(p&&p.catch)p.catch(function(){});})();
 var hdr=document.getElementById('siteHeader'),prog=document.getElementById('progress'),heroEl=document.getElementById('hero'),hp=document.getElementById('heroPhoto');
 function onScroll(){var y=window.scrollY,vh=window.innerHeight;hdr.classList.toggle('scrolled',y>40);var h=document.documentElement.scrollHeight-vh;prog.style.width=(h>0?(y/h*100):0)+'%';if(y<vh&&hp){hp.style.transform='translateY('+(y*0.12)+'px) scale(1.05)';}}
 onScroll();window.addEventListener('scroll',onScroll,{passive:true});
