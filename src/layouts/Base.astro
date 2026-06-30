@@ -94,12 +94,12 @@ const pkgActive = active === 'packages';
 .pkgmore{display:inline-flex;align-items:center;gap:12px;background:none;border:0;color:var(--blue-soft);font-family:var(--sans);font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;padding:10px 0;}
 .pkgmore .arw{transition:transform .4s var(--ease);}
 .pkgmore:hover .arw{transform:translateX(5px);}
-/* info icon next to each tier price -> opens modal on that week */
-.tier .price{display:flex;align-items:center;gap:13px;}
-.priceinfo{display:inline-flex;align-items:center;justify-content:center;flex:none;width:30px;height:30px;padding:0;border:0;border-radius:50%;background:rgba(168,207,224,.1);color:var(--blue-soft);cursor:pointer;transition:background .3s var(--ease),color .3s var(--ease),transform .3s var(--ease);}
-.priceinfo svg{width:17px;height:17px;}
-.priceinfo:hover{background:var(--blue);color:var(--ink);transform:translateY(-2px);}
-.priceinfo:active{transform:scale(.92);}
+/* "More information" trigger inside each tier card -> opens modal on that week */
+.tiers .tier .per{margin:0 0 9px;}
+.moreinfo{display:inline-flex;align-items:center;gap:9px;margin:0 0 26px;padding:0;background:none;border:0;cursor:pointer;color:var(--blue-soft);font-family:var(--sans);font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;transition:color .35s var(--ease);}
+.moreinfo .arw{transition:transform .4s var(--ease);}
+.moreinfo:hover{color:var(--cream);}
+.moreinfo:hover .arw{transform:translateX(5px);}
 .pkgm{position:fixed;inset:0;z-index:210;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(8,16,28,.74);-webkit-backdrop-filter:blur(9px);backdrop-filter:blur(9px);opacity:0;transition:opacity .4s var(--ease);}
 .pkgm.open{display:flex;opacity:1;}
 .pkgm__panel{position:relative;width:min(1080px,100%);max-height:90vh;overflow:auto;background:linear-gradient(180deg,rgba(18,34,52,.97),rgba(11,22,38,.99));border:1px solid rgba(138,180,204,.28);border-radius:14px;box-shadow:0 50px 120px rgba(0,0,0,.6);transform:translateY(20px) scale(.98);transition:transform .5s var(--ease);}
