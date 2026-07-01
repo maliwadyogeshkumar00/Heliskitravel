@@ -1,8 +1,13 @@
 ---
 // Shared layout: one source of truth for <head>, header and footer across every page.
-const { title, description = '', active = '' } = Astro.props;
+const { title, description = '', active = '', image } = Astro.props;
 const LOGO = 'https://heliskitravel.com/wp-content/uploads/2026/05/Heliski-Updated-Logo.webp';
 const pkgActive = active === 'packages';
+const SITE = 'https://heliskitravel.vercel.app';
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const canonical = SITE + (path === '/' ? '' : path);
+const ogImage = SITE + (image || '/images/packages-hero.jpg');
+const FAVICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230A1628'/%3E%3Cpath d='M5 24 L13 11 L18 19 L21 15 L27 24 Z' fill='%23A8CFE0'/%3E%3Ccircle cx='23' cy='9' r='2' fill='%23C3DCEE'/%3E%3C/svg%3E";
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -11,10 +16,38 @@ const pkgActive = active === 'packages';
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{title}</title>
   {description && <meta name="description" content={description} />}
+  <link rel="canonical" href={canonical} />
+  <link rel="icon" href={FAVICON} />
+  <link rel="apple-touch-icon" href={FAVICON} />
+  <meta name="theme-color" content="#0A1628" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Heliski Travel" />
+  <meta property="og:title" content={title} />
+  {description && <meta property="og:description" content={description} />}
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="800" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  {description && <meta name="twitter:description" content={description} />}
+  <meta name="twitter:image" content={ogImage} />
   <link rel="stylesheet" href="https://use.typekit.net/ncf8pad.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context":"https://schema.org",
+    "@type":"TravelAgency",
+    "name":"Heliski Travel",
+    "url":SITE,
+    "logo":LOGO,
+    "image":ogImage,
+    "email":"hello@heliskitravel.com",
+    "description":"Authorised booking agent for Viking Heliskiing in Siglufjörður, North Iceland — 3, 4 and 5-day heliskiing weeks with IFMGA-certified guides.",
+    "areaServed":{"@type":"Place","name":"Troll Peninsula, North Iceland"},
+    "priceRange":"€€€€"
+  })} />
 </head>
 <body>
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -43,7 +76,7 @@ const pkgActive = active === 'packages';
 
 <footer class="sf"><div class="shell">
   <div class="sf__top"><a class="logo" href="/" aria-label="Heliski Travel home"><img src={LOGO} alt="Heliski Travel" width="200" height="98" loading="lazy" /></a>
-    <nav class="sf__nav" aria-label="Footer"><a href="/packages">Packages</a><a href="/travel-here">Travel Here</a><a href="/siglo-hotel">Sigló Hotel</a><a href="/iceland">Iceland</a><a href="/contact">Contact</a></nav></div>
+    <nav class="sf__nav" aria-label="Footer"><a href="/packages">Packages</a><a href="/travel-here">Travel Here</a><a href="/siglo-hotel">Sigló Hotel</a><a href="/iceland">Iceland</a><a href="/about">About Us</a><a href="/contact">Contact</a></nav></div>
   <div class="sf__mid"><a class="big" href="mailto:hello@heliskitravel.com">hello@heliskitravel.com</a><div class="sf__trust">Authorised Agent · Viking Heliskiing Iceland · Certified Guides · <b>Reply within 12 hours</b></div></div>
   <div class="sf__base"><span class="cr">© 2026 Heliski Travel. All Rights Reserved.</span><a href="#siteHeader">Back to top ↑</a></div>
 </div></footer>
@@ -76,8 +109,9 @@ const pkgActive = active === 'packages';
   var links=[].slice.call(document.querySelectorAll('.gal a[href]'));
   if(!links.length)return;
   var srcs=links.map(function(a){return a.getAttribute('href');});
+  var alts=links.map(function(a){var im=a.querySelector('img');return im?(im.getAttribute('alt')||''):'';});
   var i=0;
-  function show(n){i=(n+srcs.length)%srcs.length;img.src=srcs[i];cnt.textContent=(i+1)+' / '+srcs.length;}
+  function show(n){i=(n+srcs.length)%srcs.length;img.src=srcs[i];img.alt=alts[i]||'Heliski Travel gallery image';cnt.textContent=(i+1)+' / '+srcs.length;}
   function open(n){show(n);lb.classList.add('open');lb.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
   function close(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');document.body.style.overflow='';setTimeout(function(){img.src='';},350);}
   links.forEach(function(a,n){a.addEventListener('click',function(e){e.preventDefault();open(n);});});
