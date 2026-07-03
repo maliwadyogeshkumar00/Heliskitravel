@@ -23,10 +23,22 @@ const body = `
 <section class="band band--ink">
   <div class="shell">
     <div class="qcards reveal">
-      <div class="qcard"><span class="nx">01</span><h3>Heli-Assist</h3><p>Ski touring with helicopter uplift. Access Iceland's most remote terrain without leaving the touring ethos behind.</p><a class="go" href="/heli-assisted-touring">Explore Heli-Assist <span class="arw">→</span></a></div>
-      <div class="qcard"><span class="nx">02</span><h3>Classic Heliskiing</h3><p>Group packages with Viking Heliskiing — multiple daily runs through Iceland's most spectacular untracked terrain.</p><a class="go" href="/packages">See Packages <span class="arw">→</span></a></div>
-      <div class="qcard"><span class="nx">03</span><h3>Private Heliskiing</h3><p>Exclusive helicopter hire for your group. Your terrain, your schedule, your pace. The ultimate Arctic experience.</p><a class="go" href="/private-heliskiing">Begin Inquiry <span class="arw">→</span></a></div>
-      <div class="qcard"><span class="nx">04</span><h3>Contact Us</h3><p>Ready to plan? Get in touch for availability, pricing, and bespoke itinerary advice from our team.</p><a class="go" href="/contact">Get In Touch <span class="arw">→</span></a></div>
+      <a class="qcard" href="/heli-assisted-touring" style="--img:url('/images/gallery/heliskiers-sunset-arctic-ocean-iceland.jpg')" aria-label="Heli-Assist">
+        <span class="nx">01</span>
+        <div class="qc__body"><h3>Heli-Assist</h3><p>Ski touring with helicopter uplift. Access Iceland's most remote terrain without leaving the touring ethos behind.</p><span class="go">Explore Heli-Assist <span class="arw">→</span></span></div>
+      </a>
+      <a class="qcard" href="/packages" style="--img:url('/images/gallery/helicopter-cockpit-view-iceland-peaks.jpg')" aria-label="Classic Heliskiing">
+        <span class="nx">02</span>
+        <div class="qc__body"><h3>Classic Heliskiing</h3><p>Group packages with Viking Heliskiing — multiple daily runs through Iceland's most spectacular untracked terrain.</p><span class="go">See Packages <span class="arw">→</span></span></div>
+      </a>
+      <a class="qcard" href="/private-heliskiing" style="--img:url('/images/gallery/heliski-guides-ridge-sunset-iceland.jpg')" aria-label="Private Heliskiing">
+        <span class="nx">03</span>
+        <div class="qc__body"><h3>Private Heliskiing</h3><p>Exclusive helicopter hire for your group. Your terrain, your schedule, your pace. The ultimate Arctic experience.</p><span class="go">Begin Inquiry <span class="arw">→</span></span></div>
+      </a>
+      <a class="qcard" href="/contact" style="--img:url('/images/gallery/heliski-mountain-field-lunch-iceland.jpg')" aria-label="Contact Us">
+        <span class="nx">04</span>
+        <div class="qc__body"><h3>Contact Us</h3><p>Ready to plan? Get in touch for availability, pricing, and bespoke itinerary advice from our team.</p><span class="go">Get In Touch <span class="arw">→</span></span></div>
+      </a>
     </div>
   </div>
 </section>
@@ -141,15 +153,22 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
 .head{max-width:840px;margin:0 0 56px;}
 
 /* four numbered cards (01-04) */
-.qcards{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
-.qcard{background:var(--ink);padding:44px 34px 40px;display:flex;flex-direction:column;transition:background .5s var(--ease);}
-.qcard:hover{background:rgba(168,207,224,.04);}
-.qcard .nx{font-family:var(--serif);font-style:italic;font-size:26px;color:var(--blue);}
-.qcard h3{margin:18px 0 14px;font-weight:600;font-size:20px;line-height:1.2;color:var(--cream);}
-.qcard p{margin:0 0 26px;color:rgba(244,246,248,.68);font-size:14.5px;line-height:1.7;}
-.qcard .go{margin-top:auto;display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-soft);}
+.qcards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.qcard{position:relative;display:block;aspect-ratio:3/4.2;border-radius:12px;overflow:hidden;background:var(--navy);box-shadow:inset 0 0 0 1px rgba(138,180,204,.1);transition:box-shadow .5s var(--ease),transform .5s var(--ease);}
+.qcard::before{content:"";position:absolute;inset:0;z-index:0;background:var(--img) center/cover no-repeat;transform:scale(1.02);transition:transform 1.2s var(--ease);}
+.qcard::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(10,22,40,.12) 0%,rgba(10,22,40,0) 32%,rgba(10,22,40,.55) 66%,rgba(10,22,40,.9) 100%);transition:background .5s var(--ease);}
+.qcard:hover{box-shadow:inset 0 0 0 1px rgba(168,207,224,.4);transform:translateY(-4px);}
+.qcard:hover::before{transform:scale(1.09);}
+.qcard:hover::after{background:linear-gradient(180deg,rgba(10,22,40,.22) 0%,rgba(10,22,40,.08) 26%,rgba(10,22,40,.72) 60%,rgba(10,22,40,.95) 100%);}
+.qcard .nx{position:absolute;top:24px;left:26px;z-index:2;font-family:var(--serif);font-style:italic;font-size:30px;color:var(--blue-soft);text-shadow:0 2px 22px rgba(10,22,40,.7);}
+.qc__body{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:26px 26px 28px;}
+.qcard h3{margin:0;font-family:var(--sans);font-weight:600;font-size:22px;line-height:1.12;letter-spacing:-.01em;color:var(--cream);text-shadow:0 2px 18px rgba(10,22,40,.55);}
+.qcard p{margin:0;max-height:0;opacity:0;overflow:hidden;color:rgba(244,246,248,.85);font-size:13.5px;line-height:1.6;transition:max-height .55s var(--ease),opacity .5s var(--ease),margin .55s var(--ease);}
+.qcard:hover p,.qcard:focus-visible p{max-height:140px;opacity:1;margin:13px 0 0;}
+.qcard .go{display:inline-flex;align-items:center;gap:10px;margin-top:16px;font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-soft);transition:color .4s var(--ease);}
 .qcard:hover .go{color:var(--cream);}
 .qcard .go .arw{transition:transform .5s var(--ease);}.qcard:hover .go .arw{transform:translateX(6px);}
+@media(hover:none){.qcard p{max-height:140px;opacity:1;margin:13px 0 0;}}
 
 /* three big quick links */
 .bigl{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
@@ -206,6 +225,7 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
   .trust .shell{grid-template-columns:1fr;}.trust .t{border-left:0;border-top:1px solid var(--line);}.trust .t:first-child{border-top:0;}
   .band{padding:76px 0;}
   .qcards{grid-template-columns:1fr;}
+  .qcard{aspect-ratio:16/11;}
   .sf__top,.sf__base{flex-direction:column;align-items:flex-start;gap:14px;}
 }
 @media(max-width:560px){.eyebrow{flex-wrap:wrap;letter-spacing:.2em;}}
