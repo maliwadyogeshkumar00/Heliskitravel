@@ -13,10 +13,10 @@ const body = `
 
 <!-- TRUST STRIP -->
 <div class="trust"><div class="shell reveal">
-  <div class="t"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 2.6v5.1c0 4.3-2.9 7.4-7 8.8-4.1-1.4-7-4.5-7-8.8V5.6L12 3z"/><path d="M8.8 11.7l2.2 2.2 4.2-4.4"/></svg></span>Authorised Agent · Viking Heliskiing</div>
-  <div class="t"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21c4-4.2 6-7.5 6-10.4A6 6 0 006 10.6C6 13.5 8 16.8 12 21z"/><circle cx="12" cy="10.5" r="2.3"/></svg></span>Iceland's northernmost heliski base</div>
-  <div class="t"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18.5l5.5-9 3.4 5.3L14.5 11l6 7.5z"/></svg></span>IFMGA-certified guides</div>
-  <div class="t"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.4"/><path d="M12 7.4V12l3.1 1.9"/></svg></span>Reply within 12 hours</div>
+  <div class="t"><span class="k">Authorised Agent</span><span class="v">Viking Heliskiing, Iceland</span></div>
+  <div class="t"><span class="k">Northernmost Base</span><span class="v">Siglufjörður · Troll Peninsula</span></div>
+  <div class="t"><span class="k">IFMGA Guides</span><span class="v">Fully certified, every run</span></div>
+  <div class="t"><span class="k">12-Hour Reply</span><span class="v">A person, not a bot</span></div>
 </div></div>
 
 <!-- FOUR NUMBERED CARDS -->
@@ -144,12 +144,13 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
 
 /* trust strip */
 .trust{background:var(--navy);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-.trust .shell{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:16px clamp(18px,2.4vw,44px);padding:24px 36px;}
-.trust .t{display:inline-flex;align-items:center;gap:10px;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-soft);white-space:nowrap;transition:color .45s var(--ease),transform .45s var(--ease);}
-.trust .t:hover{color:var(--cream);transform:translateY(-2px);}
-.trust .ic{flex:none;width:32px;height:32px;border-radius:50%;border:1px solid var(--cta-line);background:rgba(168,207,224,.05);display:inline-flex;align-items:center;justify-content:center;color:var(--blue);transition:background .45s var(--ease),border-color .45s var(--ease),color .45s var(--ease);}
-.trust .t:hover .ic{background:rgba(168,207,224,.15);border-color:rgba(168,207,224,.7);color:var(--blue-soft);}
-.trust .ic svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+.trust .shell{display:grid;grid-template-columns:repeat(4,1fr);gap:0;padding:0;}
+.trust .t{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:9px;padding:42px 28px;border-left:1px solid var(--line);transition:background .6s var(--ease);}
+.trust .t:first-child{border-left:0;}
+.trust .t:hover{background:rgba(168,207,224,.035);}
+.trust .k{font-family:var(--serif);font-style:italic;font-weight:500;font-size:24px;line-height:1;color:var(--cream);letter-spacing:.01em;transition:color .5s var(--ease);}
+.trust .t:hover .k{color:var(--blue-soft);}
+.trust .v{font-size:9.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(195,220,238,.5);}
 
 .band{padding:118px 0;}
 .band--ink{background:var(--ink);}.band--navy{background:var(--navy);}
@@ -218,14 +219,14 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
 @media (prefers-reduced-motion:reduce){.reveal,.hero__photo,.hero__video,.hero .eyebrow{opacity:1!important;transform:none!important;transition:none!important;}*{scroll-behavior:auto!important;}}
 
 @media(max-width:1080px){.qcards{grid-template-columns:1fr 1fr;}}
-@media(max-width:980px){.trust .shell{gap:16px 40px;padding:24px;}.about{grid-template-columns:1fr;}.about .imgw{order:-1;}.bigl{grid-template-columns:1fr;}.bl{aspect-ratio:16/9;}}
+@media(max-width:980px){.trust .shell{grid-template-columns:1fr 1fr;}.trust .t:nth-child(3){border-left:0;}.trust .t:nth-child(n+3){border-top:1px solid var(--line);}.about{grid-template-columns:1fr;}.about .imgw{order:-1;}.bigl{grid-template-columns:1fr;}.bl{aspect-ratio:16/9;}}
 @media(max-width:900px){
   .shell{padding:0 24px;}.burger{display:flex;}
   .menu{position:fixed;top:0;right:0;bottom:0;width:min(80vw,360px);background:rgba(10,22,40,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);flex-direction:column;align-items:flex-start;justify-content:center;gap:6px;padding:40px 36px;transform:translateX(100%);transition:transform .6s var(--ease);}
   body.nav-open .menu{transform:none;}
   .menu a{font-size:18px;letter-spacing:.06em;text-transform:none;padding:14px 0;color:var(--cream);}.menu a::after{display:none;}
   .hero{min-height:92vh;padding-bottom:60px;}
-  .trust .shell{flex-direction:column;align-items:flex-start;gap:18px;padding:30px 26px;max-width:360px;}
+  .trust .shell{grid-template-columns:1fr;}.trust .t{border-left:0;padding:30px 24px;}.trust .t:not(:first-child){border-top:1px solid var(--line);}
   .band{padding:76px 0;}
   .qcards{grid-template-columns:1fr;}
   .qcard{aspect-ratio:16/11;}
