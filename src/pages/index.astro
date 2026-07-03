@@ -12,11 +12,11 @@ const body = `
 </section>
 
 <!-- TRUST STRIP -->
-<div class="trust"><div class="shell">
-  <div class="t">Authorised Agent · Viking Heliskiing</div>
-  <div class="t">Iceland's northernmost heliski base</div>
-  <div class="t">IFMGA-certified guides</div>
-  <div class="t">Reply within 12 hours</div>
+<div class="trust"><div class="shell reveal">
+  <div class="t"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 2.6v5.1c0 4.3-2.9 7.4-7 8.8-4.1-1.4-7-4.5-7-8.8V5.6L12 3z"/><path d="M8.8 11.7l2.2 2.2 4.2-4.4"/></svg></span>Authorised Agent · Viking Heliskiing</div>
+  <div class="t"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21c4-4.2 6-7.5 6-10.4A6 6 0 006 10.6C6 13.5 8 16.8 12 21z"/><circle cx="12" cy="10.5" r="2.3"/></svg></span>Iceland's northernmost heliski base</div>
+  <div class="t"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18.5l5.5-9 3.4 5.3L14.5 11l6 7.5z"/></svg></span>IFMGA-certified guides</div>
+  <div class="t"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.4"/><path d="M12 7.4V12l3.1 1.9"/></svg></span>Reply within 12 hours</div>
 </div></div>
 
 <!-- FOUR NUMBERED CARDS -->
@@ -144,10 +144,12 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
 
 /* trust strip */
 .trust{background:var(--navy);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-.trust .shell{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0 clamp(30px,4.6vw,72px);padding:26px 48px;}
-.trust .t{position:relative;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-soft);white-space:nowrap;transition:color .45s var(--ease);}
-.trust .t:hover{color:var(--cream);}
-.trust .t:not(:last-child)::after{content:"";position:absolute;top:50%;right:calc(-1 * clamp(15px,2.3vw,36px));transform:translateY(-50%) rotate(45deg);width:5px;height:5px;background:var(--blue);opacity:.55;}
+.trust .shell{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:18px clamp(30px,4.6vw,78px);padding:28px 48px;}
+.trust .t{display:inline-flex;align-items:center;gap:13px;font-size:11px;font-weight:600;letter-spacing:.17em;text-transform:uppercase;color:var(--blue-soft);white-space:nowrap;transition:color .45s var(--ease),transform .45s var(--ease);}
+.trust .t:hover{color:var(--cream);transform:translateY(-2px);}
+.trust .ic{flex:none;width:38px;height:38px;border-radius:50%;border:1px solid var(--cta-line);background:rgba(168,207,224,.05);display:inline-flex;align-items:center;justify-content:center;color:var(--blue);transition:background .45s var(--ease),border-color .45s var(--ease),color .45s var(--ease);}
+.trust .t:hover .ic{background:rgba(168,207,224,.15);border-color:rgba(168,207,224,.7);color:var(--blue-soft);}
+.trust .ic svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
 
 .band{padding:118px 0;}
 .band--ink{background:var(--ink);}.band--navy{background:var(--navy);}
@@ -223,7 +225,7 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
   body.nav-open .menu{transform:none;}
   .menu a{font-size:18px;letter-spacing:.06em;text-transform:none;padding:14px 0;color:var(--cream);}.menu a::after{display:none;}
   .hero{min-height:92vh;padding-bottom:60px;}
-  .trust .shell{flex-direction:column;gap:15px;padding:24px;}.trust .t:not(:last-child)::after{display:none;}
+  .trust .shell{flex-direction:column;align-items:flex-start;gap:18px;padding:30px 26px;max-width:360px;}
   .band{padding:76px 0;}
   .qcards{grid-template-columns:1fr;}
   .qcard{aspect-ratio:16/11;}
