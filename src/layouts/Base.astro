@@ -102,6 +102,9 @@ const FAVICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' vi
 .lb__nav:hover{background:rgba(168,207,224,.3);}
 .lb__count{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);font-size:12px;letter-spacing:.2em;color:rgba(195,220,238,.7);}
 @media(max-width:700px){.lb__nav{width:44px;height:44px;font-size:24px;}.lb__prev{left:8px;}.lb__next{right:8px;}.lb__x{top:12px;right:12px;}.lb__img{max-width:96vw;}}
+/* footer logo — constrained on every page (higher specificity wins over per-page rules) */
+footer.sf .logo img{height:52px!important;width:auto!important;}
+@media(max-width:900px){footer.sf .logo img{height:44px!important;}}
 </style>
 <script is:inline>
 (function(){
