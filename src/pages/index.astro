@@ -4,20 +4,39 @@ const body = `
 
 <!-- HERO SLIDER -->
 <section class="hero" id="hero">
-  <div class="hero__photo" id="heroPhoto"></div>
-  <video class="hero__video" autoplay muted loop playsinline preload="metadata" poster="/videos/heli-poster.jpg" data-desktop="/videos/heli-teaser.mp4" data-mobile="/videos/heli-mobile.mp4" data-poster-mobile="/videos/heli-poster-mobile.jpg"></video>
+  <div class="hbg on" style="--bg:url('https://heliskitravel.com/wp-content/uploads/2026/05/17-scaled.webp')"></div>
+  <div class="hbg" style="--bg:url('https://heliskitravel.com/wp-content/uploads/2026/05/IMG_1290-scaled.webp')"></div>
+  <div class="hbg" style="--bg:url('https://heliskitravel.com/wp-content/uploads/2026/05/JRJ06349.webp')"></div>
+  <div class="hbg" style="--bg:url('https://heliskitravel.com/wp-content/uploads/2026/05/19-1-scaled.webp')"></div>
   <div class="grade"></div>
+  <button class="harrow harrow--prev" id="hprev" aria-label="Previous slide">‹</button>
+  <button class="harrow harrow--next" id="hnext" aria-label="Next slide">›</button>
   <a class="scrolldn" aria-label="Scroll down" href="#" onclick="window.scrollTo({top:Math.round(innerHeight*0.9),behavior:'smooth'});return false;"><span></span></a>
   <div class="shell">
-    <div class="hero__in">
-      <p class="eyebrow">Authorised Agent · Viking Heliskiing</p>
-      <h1 class="hero__h1">The world's northernmost <em>heliskiing.</em></h1>
-      <p class="hero__sub">Private Arctic descents from Siglufjörður, Iceland — where the runs begin at the summit and end at the sea.</p>
-      <div class="hero__cta">
-        <a class="btn btn--solid" href="/packages"><span>View the Packages</span> <span class="arw">→</span></a>
-        <a class="btn" href="/contact"><span>Plan Your Trip</span> <span class="arw">→</span></a>
+    <h1 class="sr-only">Heliski Travel — Heliskiing in Iceland with Viking Heliskiing</h1>
+    <div class="slides">
+      <div class="slide on">
+        <h2>Two skiers,<br><em>infinite mountain</em></h2>
+        <p>Face the Arctic horizon from the summit. Pure powder underfoot, the shimmering fjord below — every run a memory that lasts a lifetime.</p>
+        <a class="btn btn--solid" href="/contact"><span>Plan My Trip</span> <span class="arw">→</span></a>
+      </div>
+      <div class="slide">
+        <h2>Where the <em>mountains</em><br>meet the Arctic sea</h2>
+        <p>Untracked powder, soaring peaks, and a wilderness that few skiers ever see. This is heliskiing at the edge of the world.</p>
+        <a class="btn btn--solid" href="/contact"><span>Enquire Now</span> <span class="arw">→</span></a>
+      </div>
+      <div class="slide">
+        <h2>Northern lights<br>after every <em>descent</em></h2>
+        <p>Comfortable lodge accommodation in Siglufjörður, all meals prepared daily, and the warmth of a fishing village that time forgot.</p>
+        <a class="btn btn--solid" href="/packages"><span>View Packages</span> <span class="arw">→</span></a>
+      </div>
+      <div class="slide">
+        <h2>1,200 metres of<br><em>vertical freedom</em></h2>
+        <p>Iceland's fjord mountains offer dramatic descents accessible only by helicopter — terrain reserved for those who seek the extraordinary.</p>
+        <a class="btn btn--solid" href="/packages"><span>View Packages</span> <span class="arw">→</span></a>
       </div>
     </div>
+    <div class="dots" id="dots"></div>
   </div>
 </section>
 
@@ -136,12 +155,15 @@ body.nav-open .burger span:nth-child(2){opacity:0;}
 body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg);width:26px;}
 
 /* HERO slider (4 slides, each its own CTA) */
-.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;padding:0 0 96px;overflow:hidden;background:var(--ink);}
-.hero__photo{position:absolute;inset:-3%;z-index:0;background:var(--hero) center 38%/cover no-repeat;opacity:0;transform:scale(1.08);transition:opacity 1.8s var(--ease),transform 7s linear;}
-.hero.ready .hero__photo{opacity:1;transform:scale(1.05);}
-.hero__video{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.6s var(--ease);}
-.hero.ready .hero__video{opacity:1;}
-.hero .grade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(10,22,40,.5),rgba(10,22,40,.1) 32%,rgba(10,22,40,.5) 70%,var(--ink) 100%),linear-gradient(90deg,rgba(10,22,40,.55),rgba(10,22,40,0) 60%);}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:118px 0 96px;overflow:hidden;background:var(--ink);}
+.hbg{position:absolute;inset:0;z-index:0;background:var(--bg,none) center 42%/cover no-repeat;opacity:0;transform:scale(1.065);transition:opacity 1.3s var(--ease);}
+.hbg.on{opacity:1;transform:scale(1.005);transition:opacity 1.4s var(--ease),transform 8.5s linear;}
+.hero .grade{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(10,22,40,.84) 0%,rgba(10,22,40,.52) 32%,rgba(10,22,40,.06) 66%,rgba(10,22,40,0) 100%),linear-gradient(180deg,rgba(10,22,40,.42),rgba(10,22,40,0) 26%,rgba(10,22,40,.32) 66%,var(--ink) 100%);}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;}
+.harrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:54px;height:54px;border:1px solid var(--cta-line);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--cream);background:rgba(10,22,40,.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);font-size:24px;line-height:1;cursor:pointer;padding:0 0 3px;opacity:0;transition:opacity 1s var(--ease) 1s,background .4s var(--ease),border-color .4s var(--ease);}
+.hero.ready .harrow{opacity:1;}
+.harrow:hover{background:rgba(10,22,40,.5);border-color:var(--blue);}
+.harrow--prev{left:38px;}.harrow--next{right:38px;}
 .hero .shell{position:relative;z-index:3;}
 .scrolldn{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);z-index:4;width:24px;height:38px;border:1.5px solid rgba(195,220,238,.5);border-radius:13px;display:flex;justify-content:center;opacity:0;transition:opacity 1s var(--ease) 1.4s;}
 .hero.ready .scrolldn{opacity:1;}
@@ -158,13 +180,13 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
 .hero.ready .hero__h1{opacity:1;transform:none;transition-delay:.6s;}
 .hero.ready .hero__sub{opacity:1;transform:none;transition-delay:.78s;}
 .hero.ready .hero__cta{opacity:1;transform:none;transition-delay:.96s;}
-.slides{position:relative;min-height:clamp(300px,40vh,400px);}
+.slides{position:relative;min-height:clamp(360px,48vh,470px);max-width:760px;}
 .slide{position:absolute;inset:0;opacity:0;transform:translateY(16px);transition:opacity .55s var(--ease),transform .7s var(--ease);pointer-events:none;}
 .slide.on{opacity:1;transform:none;pointer-events:auto;}
-.slide h1{margin:0;font-family:var(--sans);font-weight:600;letter-spacing:-.02em;font-size:clamp(30px,3.6vw,52px);line-height:.96;color:var(--cream);}
-.slide h1 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--blue-soft);}
-.slide p{margin:22px 0 0;max-width:48ch;color:rgba(244,246,248,.82);font-size:17px;line-height:1.7;}
-.slide .btn{margin-top:32px;}
+.slide h2{margin:0;font-family:var(--serif);font-weight:600;letter-spacing:-.005em;font-size:clamp(42px,5.8vw,84px);line-height:1.0;color:var(--cream);text-shadow:0 3px 44px rgba(10,22,40,.55);}
+.slide h2 em{font-style:italic;font-weight:500;color:var(--blue-soft);}
+.slide p{margin:24px 0 0;max-width:46ch;color:rgba(244,246,248,.9);font-size:clamp(16px,1.35vw,18.5px);line-height:1.72;text-shadow:0 2px 18px rgba(10,22,40,.55);}
+.slide .btn{margin-top:34px;}
 .dots{position:relative;z-index:3;display:flex;gap:10px;margin-top:34px;}
 .dot{width:30px;height:3px;border-radius:2px;background:rgba(195,220,238,.3);border:0;cursor:pointer;padding:0;transition:background .4s var(--ease);}
 .dot.on{background:var(--blue);}
@@ -274,13 +296,16 @@ burger.addEventListener('click',function(){setMenu(!document.body.classList.cont
 document.querySelectorAll('#menu a').forEach(function(a){a.addEventListener('click',function(){setMenu(false);});});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false);});
 
-var slides=[].slice.call(document.querySelectorAll('.slide')),dotsWrap=document.getElementById('dots'),idx=0,timer;
+var slides=[].slice.call(document.querySelectorAll('.slide')),bgs=[].slice.call(document.querySelectorAll('.hbg')),dotsWrap=document.getElementById('dots'),idx=0,timer;
 slides.forEach(function(s,i){var b=document.createElement('button');b.className='dot'+(i===0?' on':'');b.setAttribute('aria-label','Slide '+(i+1));b.addEventListener('click',function(){go(i);reset();});dotsWrap.appendChild(b);});
 var dots=dotsWrap?[].slice.call(dotsWrap.children):[];
 var swapping=false;
-function go(n){if(swapping)return;swapping=true;slides[idx].classList.remove('on');dots[idx].classList.remove('on');var nx=(n+slides.length)%slides.length;dots[nx].classList.add('on');setTimeout(function(){idx=nx;slides[idx].classList.add('on');swapping=false;},470);}
-function reset(){clearInterval(timer);timer=setInterval(function(){go(idx+1);},5500);}
-if(slides.length)reset();
+function go(n){var nx=((n%slides.length)+slides.length)%slides.length;if(swapping||nx===idx)return;swapping=true;slides[idx].classList.remove('on');dots[idx].classList.remove('on');if(bgs[idx])bgs[idx].classList.remove('on');if(bgs[nx])bgs[nx].classList.add('on');dots[nx].classList.add('on');setTimeout(function(){idx=nx;slides[idx].classList.add('on');swapping=false;},470);}
+function reset(){clearInterval(timer);timer=setInterval(function(){go(idx+1);},6000);}
+var hprev=document.getElementById('hprev'),hnext=document.getElementById('hnext');
+if(hprev)hprev.addEventListener('click',function(){go(idx-1);reset();});
+if(hnext)hnext.addEventListener('click',function(){go(idx+1);reset();});
+if(slides.length>1)reset();
 
 var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){var sibs=Array.prototype.slice.call(en.target.parentNode.children).filter(function(c){return c.classList.contains('reveal');});en.target.style.transitionDelay=(Math.max(0,sibs.indexOf(en.target))*0.05)+'s';en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:0.08,rootMargin:'0px 0px -5% 0px'});
 document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
