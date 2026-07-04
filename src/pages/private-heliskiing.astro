@@ -1,5 +1,19 @@
 ---
 import Base from '../layouts/Base.astro';
+const S = 'https://heliskitravel.vercel.app';
+const productSchema = {
+  "@type":"Product",
+  "name":"Private Heliskiing — Iceland (Exclusive Helicopter Charter)",
+  "description":"Your own helicopter, schedule and Troll Peninsula playground. Up to four skiers plus an IFMGA guide, based at Sigló Hótel, North Iceland.",
+  "brand":{"@type":"Organization","name":"Viking Heliskiing"},
+  "category":"Private heliskiing charter",
+  "image": S + "/images/private-hero.jpg",
+  "offers":[
+    {"@type":"Offer","name":"3-Day Private Charter","price":"48990","priceCurrency":"EUR","availability":"https://schema.org/InStock","url": S + "/private-heliskiing"},
+    {"@type":"Offer","name":"4-Day Private Charter","price":"64990","priceCurrency":"EUR","availability":"https://schema.org/InStock","url": S + "/private-heliskiing"},
+    {"@type":"Offer","name":"5-Day Private Charter","price":"82990","priceCurrency":"EUR","availability":"https://schema.org/InStock","url": S + "/private-heliskiing"}
+  ]
+};
 const body = `
 
 <!-- HERO -->
@@ -128,7 +142,7 @@ const body = `
 <!-- FOOTER -->
 `;
 ---
-<Base title="Private Heliskiing Iceland: Custom Helicopter Charter | Heliski Travel" description="Private heliskiing in Iceland: your own helicopter, schedule and Troll Peninsula playground. Up to 4 skiers + guide, Sigló Hotel, IFMGA. From €48,990." active="packages">
+<Base title="Private Heliskiing Iceland: Custom Helicopter Charter | Heliski Travel" description="Private heliskiing in Iceland: your own helicopter, schedule and Troll Peninsula playground. Up to 4 skiers + guide, Sigló Hotel, IFMGA. From €48,990." active="packages" schema={productSchema}>
   <Fragment set:html={body} />
 </Base>
 

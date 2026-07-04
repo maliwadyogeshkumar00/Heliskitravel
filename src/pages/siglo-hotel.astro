@@ -1,5 +1,20 @@
 ---
 import Base from '../layouts/Base.astro';
+const S = 'https://heliskitravel.vercel.app';
+const hotelSchema = {
+  "@type":"Hotel",
+  "name":"Sigló Hótel",
+  "description":"4-star design hotel on the harbour in Siglufjörður, North Iceland — the basecamp for Viking Heliskiing, a five-minute walk from the helipad.",
+  "image": S + "/images/siglo-hero.jpg",
+  "starRating":{"@type":"Rating","ratingValue":"4"},
+  "address":{"@type":"PostalAddress","addressLocality":"Siglufjörður","addressCountry":"IS"},
+  "geo":{"@type":"GeoCoordinates","latitude":66.1516,"longitude":-18.9075},
+  "amenityFeature":[
+    {"@type":"LocationFeatureSpecification","name":"Restaurant","value":true},
+    {"@type":"LocationFeatureSpecification","name":"Geothermal hot tubs","value":true},
+    {"@type":"LocationFeatureSpecification","name":"Harbour-front location","value":true}
+  ]
+};
 const body = `
 
 <!-- HERO -->
@@ -86,7 +101,7 @@ const body = `
 <!-- FOOTER -->
 `;
 ---
-<Base title="Sigló Hotel: Heliskiing Basecamp in North Iceland | Heliski Travel" description="Stay at Sigló Hotel in Siglufjörður, Iceland's northernmost heliski basecamp. Design-led harbour rooms, Nordic cuisine, 5-min walk to the helipad." active="siglo">
+<Base title="Sigló Hotel: Heliskiing Basecamp in North Iceland | Heliski Travel" description="Stay at Sigló Hotel in Siglufjörður, Iceland's northernmost heliski basecamp. Design-led harbour rooms, Nordic cuisine, 5-min walk to the helipad." active="siglo" schema={hotelSchema}>
   <Fragment set:html={body} />
 </Base>
 

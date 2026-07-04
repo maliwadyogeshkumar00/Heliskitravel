@@ -1,5 +1,19 @@
 ---
 import Base from '../layouts/Base.astro';
+const S = 'https://heliskitravel.vercel.app';
+const productSchema = {
+  "@type":"Product",
+  "name":"Heli-Assisted Ski Touring — North Iceland",
+  "description":"Earn-your-turns ski touring with two helicopter lifts per day on the Troll Peninsula, North Iceland. IFMGA-guided, based at Sigló Hótel.",
+  "brand":{"@type":"Organization","name":"Viking Heliskiing"},
+  "category":"Ski touring holiday",
+  "image": S + "/images/heli-assisted-hero.jpg",
+  "offers":[
+    {"@type":"Offer","name":"3-Day Touring Week","price":"3490","priceCurrency":"EUR","availability":"https://schema.org/InStock","url": S + "/heli-assisted-touring"},
+    {"@type":"Offer","name":"4-Day Touring Week","price":"4690","priceCurrency":"EUR","availability":"https://schema.org/InStock","url": S + "/heli-assisted-touring"},
+    {"@type":"Offer","name":"5-Day Touring Week","price":"5590","priceCurrency":"EUR","availability":"https://schema.org/InStock","url": S + "/heli-assisted-touring"}
+  ]
+};
 const body = `
 
 <!-- HERO -->
@@ -126,7 +140,7 @@ const body = `
 <!-- FOOTER -->
 `;
 ---
-<Base title="Heli-Assisted Ski Touring Iceland: Earn-Your-Turns Powder | Heliski Travel" description="Heli-assisted ski touring in Iceland: two helicopter runs + skinned ascents daily. Earn-your-turns powder with IFMGA guides. From €3,490." active="packages">
+<Base title="Heli-Assisted Ski Touring Iceland: Earn-Your-Turns Powder | Heliski Travel" description="Heli-assisted ski touring in Iceland: two helicopter runs + skinned ascents daily. Earn-your-turns powder with IFMGA guides. From €3,490." active="packages" schema={productSchema}>
   <Fragment set:html={body} />
 </Base>
 

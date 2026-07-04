@@ -1,5 +1,19 @@
 ---
 import Base from '../layouts/Base.astro';
+const S = 'https://heliskitravel.vercel.app';
+const productSchema = {
+  "@type":"Product",
+  "name":"Classic Heliskiing — Troll Peninsula, Iceland",
+  "description":"3, 4 or 5-day classic helicopter skiing week on the Troll Peninsula, North Iceland. Four skiers plus an IFMGA guide, based at Sigló Hótel, full board.",
+  "brand":{"@type":"Organization","name":"Viking Heliskiing"},
+  "category":"Heliskiing holiday",
+  "image": S + "/images/classic-hero.jpg",
+  "offers":[
+    {"@type":"Offer","name":"3-Day Heliski Week","price":"6790","priceCurrency":"EUR","availability":"https://schema.org/InStock","url": S + "/classic-heliskiing"},
+    {"@type":"Offer","name":"4-Day Heliski Week","price":"8890","priceCurrency":"EUR","availability":"https://schema.org/InStock","url": S + "/classic-heliskiing"},
+    {"@type":"Offer","name":"5-Day Heliski Week","price":"10490","priceCurrency":"EUR","availability":"https://schema.org/InStock","url": S + "/classic-heliskiing"}
+  ]
+};
 const body = `
 
 <!-- HERO -->
@@ -128,7 +142,7 @@ const body = `
 <!-- FOOTER -->
 `;
 ---
-<Base title="Classic Heliskiing Iceland: 3-5 Day Group Week | Heliski Travel" description="Classic Heliskiing in Iceland: 3, 4 or 5-day group week with 4 skiers + guide, 45,000ft per week, Sigló Hotel, IFMGA guides. From €6,790." active="packages">
+<Base title="Classic Heliskiing Iceland: 3-5 Day Group Week | Heliski Travel" description="Classic Heliskiing in Iceland: 3, 4 or 5-day group week with 4 skiers + guide, 45,000ft per week, Sigló Hotel, IFMGA guides. From €6,790." active="packages" schema={productSchema}>
   <Fragment set:html={body} />
 </Base>
 

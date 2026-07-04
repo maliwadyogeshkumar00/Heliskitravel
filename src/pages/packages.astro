@@ -1,5 +1,15 @@
 ---
 import Base from '../layouts/Base.astro';
+const S = 'https://heliskitravel.vercel.app';
+const listSchema = {
+  "@type":"ItemList",
+  "name":"Heliskiing Packages — Troll Peninsula, Iceland",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Classic Heliskiing","url": S + "/classic-heliskiing"},
+    {"@type":"ListItem","position":2,"name":"Heli-Assisted Touring","url": S + "/heli-assisted-touring"},
+    {"@type":"ListItem","position":3,"name":"Private Heliskiing","url": S + "/private-heliskiing"}
+  ]
+};
 const body = `
 
 <!-- HERO -->
@@ -99,7 +109,7 @@ const body = `
 <!-- FOOTER -->
 `;
 ---
-<Base title="Heliskiing Packages Iceland: Classic, Heli-Assisted & Private | Heliski Travel" description="Three ways to ski the Troll Peninsula: Classic Heliskiing, Heli-Assisted Touring, and Private Heliskiing. 3–5 day weeks at Sigló Hotel with IFMGA guides." active="packages">
+<Base title="Heliskiing Packages Iceland: Classic, Heli-Assisted & Private | Heliski Travel" description="Three ways to ski the Troll Peninsula: Classic Heliskiing, Heli-Assisted Touring, and Private Heliskiing. 3–5 day weeks at Sigló Hotel with IFMGA guides." active="packages" schema={listSchema}>
   <Fragment set:html={body} />
 </Base>
 
