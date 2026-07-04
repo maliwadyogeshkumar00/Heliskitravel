@@ -1,6 +1,6 @@
 ---
 // Shared layout: one source of truth for <head>, header and footer across every page.
-const { title, description = '', active = '', image, schema } = Astro.props;
+const { title, description = '', active = '', image, schema, heroImage } = Astro.props;
 const LOGO = 'https://heliskitravel.com/wp-content/uploads/2026/05/Heliski-Updated-Logo.webp';
 const pkgActive = active === 'packages';
 const SITE = 'https://heliskitravel.vercel.app';
@@ -80,9 +80,17 @@ const FAVICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' vi
   <meta name="twitter:title" content={title} />
   {description && <meta name="twitter:description" content={description} />}
   <meta name="twitter:image" content={ogImage} />
-  <!-- Self-hosted fonts (in-house — no render-blocking external CSS) -->
+  {/* LCP hero preload — responsive: tiny 768w on mobile, full on desktop. Highest priority for first paint. */}
+  {heroImage && (
+    <>
+      <link rel="preload" as="image" href={`/images/${heroImage}-768.webp`} media="(max-width: 767px)" fetchpriority="high" />
+      <link rel="preload" as="image" href={`/images/${heroImage}.webp`} media="(min-width: 768px)" fetchpriority="high" />
+    </>
+  )}
+  {/* Home hero is a video — preload its poster (the LCP frame) */}
+  {path === '/' && <link rel="preload" as="image" href="/videos/heli-poster-mobile.jpg" media="(max-width: 767px)" fetchpriority="high" />}
+  <!-- Self-hosted fonts (in-house — no render-blocking external CSS). Preload only the above-the-fold weights. -->
   <link rel="preload" href="/fonts/mulish-400.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/fonts/mulish-600.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/cormorant-500-italic.woff2" as="font" type="font/woff2" crossorigin />
   <style>
     @font-face{font-family:'Mulish';font-style:normal;font-weight:300;font-display:swap;src:url('/fonts/mulish-300.woff2') format('woff2');}
@@ -98,8 +106,17 @@ const FAVICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' vi
   <!-- Proxima Nova (Adobe-licensed — cannot be legally self-hosted) loaded async so it never blocks render; self-hosted Mulish is the instant baseline -->
   <link rel="preconnect" href="https://use.typekit.net" crossorigin />
   <link rel="preconnect" href="https://p.typekit.net" crossorigin />
+  <link rel="dns-prefetch" href="https://use.typekit.net" />
   <link rel="stylesheet" href="https://use.typekit.net/ncf8pad.css" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://use.typekit.net/ncf8pad.css" /></noscript>
+  {/* Prefetch the most likely next routes from the homepage — makes onward nav feel instant */}
+  {path === '/' && (
+    <>
+      <link rel="prefetch" href="/packages/" />
+      <link rel="prefetch" href="/iceland/" />
+      <link rel="prefetch" href="/siglo-hotel/" />
+    </>
+  )}
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 </head>
 <body>
