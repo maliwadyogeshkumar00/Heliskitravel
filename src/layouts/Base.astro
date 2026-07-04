@@ -131,6 +131,7 @@ footer.sf .sf__mid .big{font-size:clamp(26px,4vw,44px)!important;}
 /* shared chrome (header/nav/base) — so standalone pages (e.g. legal) get a properly styled, working header. Identical values to per-page blocks, so no effect on content pages. */
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
+body{margin:0;background:var(--ink);color:var(--cream);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
 img{max-width:100%;display:block;}
 a{color:inherit;text-decoration:none;}
 .shell{max-width:var(--maxw);margin:0 auto;padding:0 48px;width:100%;}
@@ -163,6 +164,28 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
 .submenu a::after{display:none;}
 .submenu a:hover{background:rgba(168,207,224,.1);color:var(--cream);}
 @media(max-width:900px){.shell{padding:0 24px;}.burger{display:flex;}.menu .hassub{flex-direction:column;align-items:flex-start;width:100%;}}
+/* shared footer layout so standalone pages (e.g. legal) get a properly styled footer. Identical values to per-page blocks. */
+.sf{position:relative;background:var(--ink);overflow:hidden;}
+.sf .shell{position:relative;z-index:2;padding:62px 0 36px;}
+.sf__top{display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;padding-bottom:50px;}
+.sf__top .logo img{height:50px;width:auto;}
+.sf__nav{display:flex;flex-wrap:wrap;gap:30px;}
+.sf__nav a{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(244,246,248,.72);position:relative;transition:color .5s var(--ease);}
+.sf__nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-6px;height:1px;background:var(--blue);transition:right .5s var(--ease);}
+.sf__nav a:hover{color:var(--blue-soft);}
+.sf__nav a:hover::after{right:0;}
+.sf__mid{text-align:center;border-top:1px solid var(--line);padding:58px 0 0;}
+.sf__mid .big{display:inline-block;font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(30px,5.6vw,72px);line-height:1.04;color:var(--cream);position:relative;padding-bottom:12px;transition:color .6s var(--ease);}
+.sf__mid .big::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,rgba(168,207,224,.2),var(--blue),rgba(168,207,224,.2));transform:scaleX(.35);transition:transform .7s var(--ease);}
+.sf__mid .big:hover{color:var(--blue);}
+.sf__mid .big:hover::after{transform:scaleX(1);}
+.sf__trust{margin:34px 0 56px;text-align:center;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(195,220,238,.5);}
+.sf__trust b{font-weight:600;color:var(--blue-soft);}
+.sf__base{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:24px;}
+.sf__base .cr{font-size:11px;letter-spacing:.06em;color:rgba(244,246,248,.32);}
+.sf__base>a{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(168,207,224,.72);transition:color .5s var(--ease);}
+.sf__base>a:hover{color:var(--blue-soft);}
+@media(max-width:900px){.sf__top{flex-direction:column;align-items:flex-start;gap:18px;padding-bottom:38px;}.sf__mid{padding-top:42px;}.sf__base{flex-direction:column;align-items:flex-start;gap:12px;}}
 /* legal pages */
 .legalpage{background:var(--ink);padding:clamp(120px,16vh,168px) 0 90px;min-height:60vh;}
 .legalpage .shell{max-width:880px;margin:0 auto;padding:0 48px;width:100%;}
