@@ -74,27 +74,8 @@ const body = `
   </div>
 </section>
 
-<!-- EVERY WEEK -->
-<section class="band band--navy">
-  <div class="shell">
-    <div class="head reveal">
-      <p class="eyebrow">In every week</p>
-      <h2 class="sectit">What every <span class="s">package includes.</span></h2>
-      <p class="intro">Whichever week you choose, the essentials are the same — a 4-star ocean-front base, full board, current-year K2 gear, and guides who have skied this peninsula their whole lives.</p>
-    </div>
-    <div class="features reveal">
-      <div class="feature"><h4>Sigló Hotel</h4><p>Nights at the 4-star, ocean-front hotel, with unlimited hot tub &amp; sauna.</p></div>
-      <div class="feature"><h4>Full board</h4><p>Daily breakfast, mountain lunch, and a three-course Sigló dinner.</p></div>
-      <div class="feature"><h4>K2 equipment</h4><p>Current-year K2 freeride skis &amp; boards, Marker bindings, K2 poles.</p></div>
-      <div class="feature"><h4>BCA safety kit</h4><p>Transceiver, shovel, probe and airbag — checked each morning.</p></div>
-      <div class="feature"><h4>IFMGA guides</h4><p>Certified mountain guides who know the terrain personally.</p></div>
-      <div class="feature"><h4>Season</h4><p>March 10 to June 6 — ten weeks of stable Arctic light.</p></div>
-    </div>
-  </div>
-</section>
-
 <!-- ELEVEN ZONES -->
-<section class="band band--ink">
+<section class="band band--navy">
   <div class="shell zones__grid">
     <div class="zones__img reveal"><img src="https://heliskitravel.com/wp-content/uploads/2026/06/vegard_map.jpg" alt="Viking Heliskiing zones map across the Troll Peninsula" loading="lazy"/></div>
     <div class="reveal">
@@ -186,8 +167,7 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
 .pcards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start;}
 .pcard{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:rgba(168,207,224,.02);display:flex;flex-direction:column;transition:border-color .5s var(--ease),transform .5s var(--ease);}
 .pcard:hover{border-color:var(--line-2);transform:translateY(-5px);}
-.pcard.pop{border-color:rgba(168,207,224,.5);background:rgba(168,207,224,.05);}
-@media(min-width:981px){.pcard.pop{margin-top:-26px;}}
+/* all three cards uniform — no raised or tinted middle */
 .pcard__img{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--panel);}
 .pcard__img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease);}
 .pcard:hover .pcard__img img{transform:scale(1.05);}
@@ -205,12 +185,10 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
 .pcard .mk{display:block;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);}
 .pcard .mk::before{content:"— ";}
 .pcard .mv{display:block;margin-top:8px;font-size:15px;font-weight:500;line-height:1.5;color:var(--cream);}
-.pcard .pbtn{margin-top:30px;display:flex;align-items:center;justify-content:center;gap:11px;border:1px solid var(--cta-line);border-radius:3px;padding:16px 20px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);transition:border-color .5s var(--ease),background .5s var(--ease);}
+.pcard .pbtn{margin-top:30px;display:flex;align-items:center;justify-content:center;gap:11px;border:0;border-radius:4px;padding:18px 22px;font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);background:var(--blue-soft);box-shadow:0 8px 22px rgba(168,207,224,.14);transition:background .4s var(--ease),transform .4s var(--ease),box-shadow .4s var(--ease);}
 .pcard .pbtn .arw{transition:transform .5s var(--ease);}
-.pcard:hover .pbtn{border-color:rgba(168,207,224,.8);}
+.pcard:hover .pbtn{background:var(--blue);transform:translateY(-2px);box-shadow:0 12px 28px rgba(168,207,224,.22);}
 .pcard:hover .pbtn .arw{transform:translateX(6px);}
-.pcard .pbtn--solid{background:var(--blue-soft);border-color:var(--blue-soft);color:var(--ink);}
-.pcard:hover .pbtn--solid{background:var(--blue);border-color:var(--blue);}
 
 /* eleven zones split */
 .zones__grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(40px,6vw,78px);align-items:center;}
