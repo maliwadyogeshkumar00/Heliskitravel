@@ -1,6 +1,8 @@
 import { defineConfig } from 'astro/config';
 
 // Static site. Clean URLs (directory format) + redirects from the old .html paths.
+// NOTE: when the production domain goes live, change `site` to https://heliskitravel.com
+// — canonical tags (Base.astro), robots.txt and public/sitemap.xml all reference it.
 export default defineConfig({
   site: 'https://heliskitravel.vercel.app',
   build: { format: 'directory' },
