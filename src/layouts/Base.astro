@@ -79,7 +79,7 @@ const FAVICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' vi
   <div class="sf__top"><a class="logo" href="/" aria-label="Heliski Travel home"><img src={LOGO} alt="Heliski Travel" width="200" height="98" loading="lazy" /></a>
     <nav class="sf__nav" aria-label="Footer"><a href="/packages">Packages</a><a href="/travel-here">Travel Here</a><a href="/siglo-hotel">Sigló Hotel</a><a href="/iceland">Iceland</a><a href="/gallery">Gallery</a><a href="/about">About Us</a><a href="/contact">Contact</a></nav></div>
   <div class="sf__mid"><a class="big" href="mailto:hello@heliskitravel.com">hello@heliskitravel.com</a><div class="sf__trust">Authorised Agent · Viking Heliskiing Iceland · Certified Guides · <b>Reply within 12 hours</b></div></div>
-  <div class="sf__base"><span class="cr">© 2026 Heliski Travel. All Rights Reserved.</span><a href="#siteHeader">Back to top ↑</a></div>
+  <div class="sf__base"><span class="cr">© 2026 Heliski Travel. All Rights Reserved.</span><nav class="sf__legal" aria-label="Legal"><a href="/privacy-policy">Privacy Policy</a><a href="/terms">Terms &amp; Conditions</a><a href="/cookie-policy">Cookie Policy</a><a href="/imprint">Imprint</a></nav><a href="#siteHeader">Back to top ↑</a></div>
 </div></footer>
 
 <!-- floating action buttons -->
@@ -119,8 +119,34 @@ footer.sf .logo img{height:52px!important;width:auto!important;}
 /* footer content width — match the rest of the site (per-page rule sets 0 side padding) */
 footer.sf .shell{padding-left:48px!important;padding-right:48px!important;}
 @media(max-width:900px){footer.sf .shell{padding-left:24px!important;padding-right:24px!important;}}
+/* footer email — refined, less oversized */
+footer.sf .sf__mid .big{font-size:clamp(26px,4vw,44px)!important;}
+/* footer legal links */
+.sf__legal{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:center;}
+.sf__legal a{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(195,220,238,.55);transition:color .4s var(--ease);}
+.sf__legal a:hover{color:var(--blue-soft);}
+/* shared tokens so standalone pages (legal) render with brand colours */
+:root{--ink:#0A1628;--navy:#172D42;--panel:#15293c;--cream:#F4F6F8;--blue:#A8CFE0;--blue-soft:#C3DCEE;--muted:rgba(195,220,238,.55);--line:rgba(138,180,204,.16);--line-2:rgba(138,180,204,.30);--cta-line:rgba(168,207,224,.45);--ease:cubic-bezier(.16,1,.3,1);--sans:"proxima-nova","Mulish",-apple-system,"Segoe UI",Roboto,sans-serif;--serif:"Cormorant Garamond",Georgia,serif;}
+/* legal pages */
+.legalpage{background:var(--ink);padding:clamp(120px,16vh,168px) 0 90px;min-height:60vh;}
+.legalpage .shell{max-width:880px;margin:0 auto;padding:0 48px;width:100%;}
+.legalpage .eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:11.5px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--blue-soft);}
+.legalpage .eyebrow::before{content:"";width:30px;height:1px;background:var(--blue);}
+.legalpage h1{font-family:var(--serif);font-weight:500;font-size:clamp(38px,5vw,58px);line-height:1.04;letter-spacing:-.005em;color:var(--cream);margin:18px 0 10px;}
+.legalpage .updated{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
+.legal-body{margin-top:46px;}
+.legal-body h2{font-family:var(--sans);font-weight:600;font-size:20px;letter-spacing:-.01em;color:var(--cream);margin:42px 0 12px;}
+.legal-body h3{font-family:var(--sans);font-weight:600;font-size:14.5px;color:var(--blue-soft);margin:24px 0 8px;}
+.legal-body p,.legal-body li{color:rgba(244,246,248,.72);font-size:15.5px;line-height:1.82;margin:0 0 14px;}
+.legal-body ul{margin:0 0 18px;padding-left:20px;}
+.legal-body li{margin-bottom:8px;}
+.legal-body a{color:var(--blue-soft);text-decoration:underline;text-underline-offset:3px;}
+.legal-body strong{color:var(--cream);font-weight:600;}
+.legal-body .fill{color:var(--blue-soft);background:rgba(168,207,224,.09);padding:1px 6px;border-radius:3px;font-style:normal;}
+.legal-body .note{font-size:13.5px;color:rgba(244,246,248,.6);background:rgba(168,207,224,.045);border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin:20px 0;line-height:1.7;}
+@media(max-width:900px){.legalpage .shell{padding:0 24px;}}
 /* floating action buttons — WhatsApp + Request consultation (brand styled) */
-.fab-stack{position:fixed;right:24px;bottom:24px;z-index:120;display:flex;flex-direction:column;align-items:flex-end;gap:12px;}
+.fab-stack{position:fixed;right:24px;bottom:24px;z-index:120;display:flex;flex-direction:row;align-items:center;gap:12px;}
 .fab{display:inline-flex;align-items:center;gap:10px;font-family:"proxima-nova","Mulish",-apple-system,"Segoe UI",Roboto,sans-serif;font-weight:700;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;padding:15px 24px;border-radius:999px;box-shadow:0 12px 30px rgba(10,22,40,.4);cursor:pointer;transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s cubic-bezier(.16,1,.3,1),background .4s cubic-bezier(.16,1,.3,1),border-color .4s cubic-bezier(.16,1,.3,1);}
 .fab .arw{transition:transform .4s cubic-bezier(.16,1,.3,1);}
 .fab:hover{transform:translateY(-3px);box-shadow:0 18px 42px rgba(10,22,40,.5);}
