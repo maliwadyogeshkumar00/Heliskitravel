@@ -21,21 +21,54 @@ const body = `
     <div class="pcards">
       <a class="pcard reveal" href="/classic-heliskiing">
         <div class="pcard__img"><img src="https://heliskitravel.com/wp-content/uploads/2026/05/JRJ06349-1024x683.webp" alt="Classic Heliskiing" loading="lazy"/></div>
-        <div class="pcard__body"><span class="ix">Package I</span><h3>Classic Heliskiing.</h3><p>The full helicopter week — run after run of untracked Arctic powder, up to 75,000 ft of vertical, no skinning.</p>
-          <div class="from"><span class="lbl">From</span><span class="amt">€6,790</span></div>
-          <span class="go">Explore Classic <span class="arw">→</span></span></div>
+        <div class="pcard__body">
+          <span class="num">I.</span>
+          <span class="plabel">Package One</span>
+          <h3 class="pname">Classic <em>Heliskiing.</em></h3>
+          <p class="ptag">For skiers who want maximum descents — all helicopter, no climbing.</p>
+          <p class="pdesc">The full helicopter week. Powder, spring corn, and exposed Arctic lines from summit to ocean. Around 15,000 vertical feet on the right day, with the mountain setting the pace.</p>
+          <div class="pmeta">
+            <div class="mr"><span class="mk">Days &amp; Pricing</span><span class="mv">3 / 4 / 5 day weeks · from €6,790</span></div>
+            <div class="mr"><span class="mk">Group Size</span><span class="mv">4 skiers, 1 mountain guide</span></div>
+            <div class="mr"><span class="mk">Vertical</span><span class="mv">45,000 – 75,000 ft of skiing per week</span></div>
+            <div class="mr"><span class="mk">Included</span><span class="mv">Sigló Hotel · full board · K2 setup · après-ski</span></div>
+          </div>
+          <span class="pbtn">Explore Classic <span class="arw">→</span></span>
+        </div>
       </a>
-      <a class="pcard reveal" href="/heli-assisted-touring">
-        <div class="pcard__img"><img src="https://heliskitravel.com/wp-content/uploads/2026/05/Drone-2-1024x576.webp" alt="Heli-Assisted Touring" loading="lazy"/></div>
-        <div class="pcard__body"><span class="ix">Package II</span><h3>Heli-Assisted Touring.</h3><p>Two heli lifts and skinned ascents daily — earn your turns into silent valleys few people ever reach.</p>
-          <div class="from"><span class="lbl">From</span><span class="amt">€3,490</span></div>
-          <span class="go">Explore Heli-Assisted <span class="arw">→</span></span></div>
+      <a class="pcard pop reveal" href="/heli-assisted-touring">
+        <div class="pcard__img"><img src="https://heliskitravel.com/wp-content/uploads/2026/05/Drone-2-1024x576.webp" alt="Heli-Assisted Touring" loading="lazy"/><span class="pop__tag">Most Popular</span></div>
+        <div class="pcard__body">
+          <span class="num">II.</span>
+          <span class="plabel">Package Two</span>
+          <h3 class="pname">Heli-Assisted <em>touring.</em></h3>
+          <p class="ptag">For those who love to earn their turns — the freedom of touring, the reach of the rotor.</p>
+          <p class="pdesc">The hybrid week. Two helicopter lifts and two skinned ascents every day — the adventure of touring with helicopter access to terrain you'd never reach on foot, and more runs when conditions allow.</p>
+          <div class="pmeta">
+            <div class="mr"><span class="mk">Days &amp; Pricing</span><span class="mv">3 / 4 / 5 day weeks · from €3,490</span></div>
+            <div class="mr"><span class="mk">Group Size</span><span class="mv">4 skiers, 1 mountain guide</span></div>
+            <div class="mr"><span class="mk">A Typical Day</span><span class="mv">2 heli lifts, 2 ascents, 4 descents · lunch in the field</span></div>
+            <div class="mr"><span class="mk">Included</span><span class="mv">Sigló Hotel · full board · K2 setup · après-ski</span></div>
+          </div>
+          <span class="pbtn pbtn--solid">Explore Heli-Assisted <span class="arw">→</span></span>
+        </div>
       </a>
       <a class="pcard reveal" href="/private-heliskiing">
         <div class="pcard__img"><img src="https://heliskitravel.com/wp-content/uploads/2026/05/DJI_0806-1024x767.webp" alt="Private Heliskiing" loading="lazy"/></div>
-        <div class="pcard__body"><span class="ix">Package III</span><h3>Private Heliskiing.</h3><p>One helicopter, one guide, your group alone. Your terrain, your schedule, your pace — entirely yours.</p>
-          <div class="from"><span class="lbl">From</span><span class="amt">€48,990</span></div>
-          <span class="go">Explore Private <span class="arw">→</span></span></div>
+        <div class="pcard__body">
+          <span class="num">III.</span>
+          <span class="plabel">Package Three</span>
+          <h3 class="pname">Private <em>Heliskiing.</em></h3>
+          <p class="ptag">For those who want the mountain entirely to themselves.</p>
+          <p class="pdesc">The exclusive week. A dedicated helicopter and private guide, entirely on your terms. Choose your lines, set your pace, and fly when you want. The mountain, yours alone.</p>
+          <div class="pmeta">
+            <div class="mr"><span class="mk">Days &amp; Pricing</span><span class="mv">3 / 4 / 5 day weeks · price on request</span></div>
+            <div class="mr"><span class="mk">Season</span><span class="mv">March 10 to mid-May</span></div>
+            <div class="mr"><span class="mk">Terrain</span><span class="mv">Couloirs, alpine bowls, peak-to-ocean</span></div>
+            <div class="mr"><span class="mk">Included</span><span class="mv">Sigló Hotel · full board · K2 setup · après-ski</span></div>
+          </div>
+          <span class="pbtn">Explore Private <span class="arw">→</span></span>
+        </div>
       </a>
     </div>
   </div>
@@ -136,23 +169,35 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
 .band--ink{background:var(--ink);}.band--navy{background:var(--navy);}
 .head{max-width:840px;margin:0 0 60px;}
 
-/* package cards */
-.pcards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-.pcard{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:rgba(168,207,224,.02);display:flex;flex-direction:column;transition:border-color .5s var(--ease),transform .5s var(--ease);}
+/* package cards — image top + roman numeral detail */
+.pcards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start;}
+.pcard{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:rgba(168,207,224,.02);display:flex;flex-direction:column;transition:border-color .5s var(--ease),transform .5s var(--ease);}
 .pcard:hover{border-color:var(--line-2);transform:translateY(-5px);}
-.pcard__img{aspect-ratio:4/3;overflow:hidden;background:var(--panel);}
-.pcard__img img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease);}
+.pcard.pop{border-color:rgba(168,207,224,.5);background:rgba(168,207,224,.05);}
+@media(min-width:981px){.pcard.pop{margin-top:-26px;}}
+.pcard__img{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--panel);}
+.pcard__img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease);}
 .pcard:hover .pcard__img img{transform:scale(1.05);}
-.pcard__body{padding:34px 30px 32px;display:flex;flex-direction:column;flex:1;}
-.pcard .ix{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);}
-.pcard h3{margin:10px 0 14px;font-family:var(--serif);font-style:italic;font-weight:400;font-size:30px;color:var(--cream);line-height:1.05;}
-.pcard p{margin:0 0 22px;color:rgba(244,246,248,.68);font-size:15px;line-height:1.7;}
-.pcard .from{margin-top:auto;display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-top:20px;border-top:1px solid var(--line);}
-.pcard .from .lbl{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);}
-.pcard .from .amt{font-family:var(--sans);font-weight:600;font-size:26px;color:var(--cream);letter-spacing:-.01em;}
-.pcard .go{margin-top:22px;display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-soft);}
-.pcard:hover .go{color:var(--cream);}
-.pcard .go .arw{transition:transform .5s var(--ease);}.pcard:hover .go .arw{transform:translateX(6px);}
+.pop__tag{position:absolute;top:16px;left:50%;transform:translateX(-50%);background:rgba(10,22,40,.88);color:var(--blue-soft);border:1px solid rgba(168,207,224,.4);font-size:9.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:9px 16px;border-radius:999px;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);white-space:nowrap;}
+.pcard__body{padding:36px 32px 34px;display:flex;flex-direction:column;flex:1;}
+.pcard .num{font-family:var(--serif);font-weight:500;font-size:60px;line-height:.8;color:var(--cream);}
+.pcard .plabel{margin-top:20px;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);}
+.pcard .plabel::before{content:"— ";}
+.pcard .pname{margin:12px 0 0;font-family:var(--sans);font-weight:600;font-size:28px;line-height:1.06;letter-spacing:-.01em;color:var(--cream);}
+.pcard .pname em{display:block;font-family:var(--serif);font-style:italic;font-weight:400;font-size:1.06em;color:var(--blue-soft);}
+.pcard .ptag{margin:22px 0 0;border-left:2px solid var(--line-2);padding-left:16px;font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.42;color:var(--blue-soft);}
+.pcard .pdesc{margin:22px 0 0;color:rgba(244,246,248,.66);font-size:15px;line-height:1.72;}
+.pcard .pmeta{margin:26px 0 0;display:flex;flex-direction:column;}
+.pcard .mr{padding:16px 0;border-top:1px solid var(--line);}
+.pcard .mk{display:block;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);}
+.pcard .mk::before{content:"— ";}
+.pcard .mv{display:block;margin-top:8px;font-size:15px;font-weight:500;line-height:1.5;color:var(--cream);}
+.pcard .pbtn{margin-top:30px;display:flex;align-items:center;justify-content:center;gap:11px;border:1px solid var(--cta-line);border-radius:3px;padding:16px 20px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);transition:border-color .5s var(--ease),background .5s var(--ease);}
+.pcard .pbtn .arw{transition:transform .5s var(--ease);}
+.pcard:hover .pbtn{border-color:rgba(168,207,224,.8);}
+.pcard:hover .pbtn .arw{transform:translateX(6px);}
+.pcard .pbtn--solid{background:var(--blue-soft);border-color:var(--blue-soft);color:var(--ink);}
+.pcard:hover .pbtn--solid{background:var(--blue);border-color:var(--blue);}
 
 /* every-week strip */
 .features{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
