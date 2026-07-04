@@ -57,9 +57,9 @@ const body = `
       <h2 class="sectit">Everything <span class="s">around the skiing.</span></h2>
     </div>
     <div class="plan reveal">
-      <a class="prow" href="/iceland"><img class="pthumb" src="https://heliskitravel.com/wp-content/uploads/2026/05/DJI_0806-1024x767.webp" alt="How to get there" loading="lazy"/><div class="ptx"><span class="pk">The Guide</span><span class="pt">How to Get There</span></div><span class="pgo">→</span></a>
-      <a class="prow" href="/siglo-hotel"><img class="pthumb" src="https://heliskitravel.com/wp-content/uploads/2026/05/Siglo-Hotel-1024x780.webp" alt="Sigló Hotel" loading="lazy"/><div class="ptx"><span class="pk">Your Basecamp</span><span class="pt">Sigló Hotel</span></div><span class="pgo">→</span></a>
-      <a class="prow" href="/contact"><img class="pthumb" src="https://heliskitravel.com/wp-content/uploads/2026/05/004.webp" alt="Enquire now" loading="lazy"/><div class="ptx"><span class="pk">Get in Touch</span><span class="pt">Enquire Now</span></div><span class="pgo">→</span></a>
+      <a class="prow" href="/iceland"><span class="pk plab">The Guide</span><span class="pt">How to Get There</span><img class="pthumb" src="https://heliskitravel.com/wp-content/uploads/2026/05/DJI_0806-1024x767.webp" alt="How to get there" loading="lazy"/><span class="pgo">→</span></a>
+      <a class="prow" href="/siglo-hotel"><span class="pk plab">Your Basecamp</span><span class="pt">Sigló Hotel</span><img class="pthumb" src="https://heliskitravel.com/wp-content/uploads/2026/05/Siglo-Hotel-1024x780.webp" alt="Sigló Hotel" loading="lazy"/><span class="pgo">→</span></a>
+      <a class="prow" href="/contact"><span class="pk plab">Get in Touch</span><span class="pt">Enquire Now</span><img class="pthumb" src="https://heliskitravel.com/wp-content/uploads/2026/05/004.webp" alt="Enquire now" loading="lazy"/><span class="pgo">→</span></a>
     </div>
   </div>
 </section>
@@ -206,17 +206,23 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
 .bl .lbl h3{margin:8px 0 0;font-family:var(--serif);font-style:italic;font-weight:400;font-size:30px;color:var(--cream);display:flex;align-items:center;gap:14px;}
 .bl .lbl .arw{transition:transform .5s var(--ease);}.bl:hover .lbl .arw{transform:translateX(6px);}
 
-/* plan-your-trip editorial index rows */
-.plan .prow{display:grid;grid-template-columns:110px 1fr auto;align-items:center;gap:34px;padding:30px 12px;border-top:1px solid var(--line);transition:padding .5s var(--ease),background .5s var(--ease);}
+/* plan-your-trip — vertical-rule split index rows */
+.plan .prow{display:grid;grid-template-columns:210px 1fr 118px auto;align-items:center;gap:36px;padding:30px 12px;border-top:1px solid var(--line);transition:background .5s var(--ease);}
 .plan .prow:last-child{border-bottom:1px solid var(--line);}
-.plan .prow:hover{padding-left:28px;background:rgba(168,207,224,.03);}
-.plan .pthumb{width:110px;height:78px;border-radius:5px;object-fit:cover;}
-.plan .pk{display:block;font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);}
-.plan .pt{display:block;margin-top:6px;font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(27px,3vw,37px);line-height:1;color:var(--cream);transition:color .5s var(--ease);}
+.plan .prow:hover{background:rgba(168,207,224,.03);}
+.plan .plab{border-right:1px solid var(--line-2);padding-right:32px;font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);}
+.plan .pt{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(26px,2.9vw,37px);line-height:1;color:var(--cream);transition:color .5s var(--ease);}
 .plan .prow:hover .pt{color:var(--blue-soft);}
-.plan .pgo{font-size:22px;color:var(--blue);transition:transform .5s var(--ease),color .5s var(--ease);}
-.plan .prow:hover .pgo{transform:translateX(9px);color:var(--blue-soft);}
-@media(max-width:900px){.plan .prow{grid-template-columns:74px 1fr auto;gap:20px;padding:24px 6px;}.plan .prow:hover{padding-left:14px;}.plan .pthumb{width:74px;height:58px;}}
+.plan .pthumb{width:118px;height:76px;border-radius:5px;object-fit:cover;}
+.plan .pgo{font-size:22px;color:var(--blue);justify-self:end;transition:transform .5s var(--ease),color .5s var(--ease);}
+.plan .prow:hover .pgo{transform:translateX(8px);color:var(--blue-soft);}
+@media(max-width:900px){
+  .plan .prow{grid-template-columns:1fr auto;grid-template-rows:auto auto;column-gap:16px;row-gap:5px;padding:24px 6px;}
+  .plan .plab{border-right:0;padding-right:0;grid-column:1;grid-row:1;}
+  .plan .pt{grid-column:1;grid-row:2;font-size:26px;}
+  .plan .pthumb{display:none;}
+  .plan .pgo{grid-column:2;grid-row:1 / span 2;align-self:center;}
+}
 
 /* about split */
 .about{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,84px);align-items:center;}
