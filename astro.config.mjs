@@ -5,7 +5,8 @@ import { defineConfig } from 'astro/config';
 // — canonical tags (Base.astro), robots.txt and public/sitemap.xml all reference it.
 export default defineConfig({
   site: 'https://heliskitravel.vercel.app',
-  build: { format: 'directory' },
+  // Inline all CSS into each page's <head> — removes the render-blocking stylesheet request (mobile FCP/LCP win).
+  build: { format: 'directory', inlineStylesheets: 'always' },
   redirects: {
     '/home.html': '/',
     '/about.html': '/about',
