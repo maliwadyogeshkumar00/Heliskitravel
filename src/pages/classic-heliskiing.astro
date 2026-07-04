@@ -142,7 +142,7 @@ const body = `
 <!-- FOOTER -->
 `;
 ---
-<Base title="Classic Heliskiing Iceland: 3-5 Day Group Week | Heliski Travel" description="Classic Heliskiing in Iceland: 3, 4 or 5-day group week with 4 skiers + guide, 45,000ft per week, Sigló Hotel, IFMGA guides. From €6,790." active="packages" schema={productSchema}>
+<Base heroImage="classic-hero" title="Classic Heliskiing Iceland: 3-5 Day Group Week | Heliski Travel" description="Classic Heliskiing in Iceland: 3, 4 or 5-day group week with 4 skiers + guide, 45,000ft per week, Sigló Hotel, IFMGA guides. From €6,790." active="packages" schema={productSchema}>
   <Fragment set:html={body} />
 </Base>
 
@@ -293,6 +293,7 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
   .gal{column-count:1;}
   .sf__top,.sf__base{flex-direction:column;align-items:flex-start;gap:14px;}
 }
+@media(max-width:767px){:root{--hero:url("/images/classic-hero-768.webp");}}
 </style>
 
 <script is:inline>

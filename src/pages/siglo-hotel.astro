@@ -101,7 +101,7 @@ const body = `
 <!-- FOOTER -->
 `;
 ---
-<Base title="Sigló Hotel: Heliskiing Basecamp in North Iceland | Heliski Travel" description="Stay at Sigló Hotel in Siglufjörður, Iceland's northernmost heliski basecamp. Design-led harbour rooms, Nordic cuisine, 5-min walk to the helipad." active="siglo" schema={hotelSchema}>
+<Base heroImage="siglo-hero" title="Sigló Hotel: Heliskiing Basecamp in North Iceland | Heliski Travel" description="Stay at Sigló Hotel in Siglufjörður, Iceland's northernmost heliski basecamp. Design-led harbour rooms, Nordic cuisine, 5-min walk to the helipad." active="siglo" schema={hotelSchema}>
   <Fragment set:html={body} />
 </Base>
 
@@ -240,6 +240,7 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
   .gal{grid-template-columns:1fr;grid-auto-rows:260px;}
   .sf__top,.sf__base{flex-direction:column;align-items:flex-start;gap:14px;}
 }
+@media(max-width:767px){:root{--hero:url("/images/siglo-hero-768.webp");}}
 </style>
 
 <script is:inline>

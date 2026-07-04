@@ -84,7 +84,7 @@ const body = `
 <!-- FOOTER -->
 `;
 ---
-<Base title="How to Get to Siglufjörður: Travel to Iceland Heliskiing | Heliski Travel" description="Reach Siglufjörður for Iceland heliskiing: direct flights to Reykjavik (KEF) or Akureyri (AEY), then a scenic drive north along the Troll Peninsula." active="travel">
+<Base heroImage="travel-here-hero" title="How to Get to Siglufjörður: Travel to Iceland Heliskiing | Heliski Travel" description="Reach Siglufjörður for Iceland heliskiing: direct flights to Reykjavik (KEF) or Akureyri (AEY), then a scenic drive north along the Troll Peninsula." active="travel">
   <Fragment set:html={body} />
 </Base>
 
@@ -229,6 +229,7 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
   .ftable td:not(:first-child)::before{content:attr(data-l) " — ";color:var(--muted);font-size:11px;letter-spacing:.1em;text-transform:uppercase;}
   .sf__top,.sf__base{flex-direction:column;align-items:flex-start;gap:14px;}
 }
+@media(max-width:767px){:root{--hero:url("/images/travel-here-hero-768.webp");}}
 </style>
 
 <script is:inline>

@@ -142,7 +142,7 @@ const body = `
 <!-- FOOTER -->
 `;
 ---
-<Base title="Private Heliskiing Iceland: Custom Helicopter Charter | Heliski Travel" description="Private heliskiing in Iceland: your own helicopter, schedule and Troll Peninsula playground. Up to 4 skiers + guide, Sigló Hotel, IFMGA. From €48,990." active="packages" schema={productSchema}>
+<Base heroImage="private-hero" title="Private Heliskiing Iceland: Custom Helicopter Charter | Heliski Travel" description="Private heliskiing in Iceland: your own helicopter, schedule and Troll Peninsula playground. Up to 4 skiers + guide, Sigló Hotel, IFMGA. From €48,990." active="packages" schema={productSchema}>
   <Fragment set:html={body} />
 </Base>
 
@@ -281,6 +281,7 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
   .gal{column-count:1;}
   .sf__top,.sf__base{flex-direction:column;align-items:flex-start;gap:14px;}
 }
+@media(max-width:767px){:root{--hero:url("/images/private-hero-768.webp");}}
 </style>
 
 <script is:inline>

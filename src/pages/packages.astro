@@ -109,7 +109,7 @@ const body = `
 <!-- FOOTER -->
 `;
 ---
-<Base title="Heliskiing Packages Iceland: Classic, Heli-Assisted & Private | Heliski Travel" description="Three ways to ski the Troll Peninsula: Classic Heliskiing, Heli-Assisted Touring, and Private Heliskiing. 3–5 day weeks at Sigló Hotel with IFMGA guides." active="packages" schema={listSchema}>
+<Base heroImage="packages-hero" title="Heliskiing Packages Iceland: Classic, Heli-Assisted & Private | Heliski Travel" description="Three ways to ski the Troll Peninsula: Classic Heliskiing, Heli-Assisted Touring, and Private Heliskiing. 3–5 day weeks at Sigló Hotel with IFMGA guides." active="packages" schema={listSchema}>
   <Fragment set:html={body} />
 </Base>
 
@@ -252,6 +252,7 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
   .features{grid-template-columns:1fr;}
   .sf__top,.sf__base{flex-direction:column;align-items:flex-start;gap:14px;}
 }
+@media(max-width:767px){:root{--hero:url("/images/packages-hero-768.webp");}}
 </style>
 
 <script is:inline>

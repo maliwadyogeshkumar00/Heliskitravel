@@ -140,7 +140,7 @@ const body = `
 <!-- FOOTER -->
 `;
 ---
-<Base title="Heli-Assisted Ski Touring Iceland: Earn-Your-Turns Powder | Heliski Travel" description="Heli-assisted ski touring in Iceland: two helicopter runs + skinned ascents daily. Earn-your-turns powder with IFMGA guides. From €3,490." active="packages" schema={productSchema}>
+<Base heroImage="heli-assisted-hero" title="Heli-Assisted Ski Touring Iceland: Earn-Your-Turns Powder | Heliski Travel" description="Heli-assisted ski touring in Iceland: two helicopter runs + skinned ascents daily. Earn-your-turns powder with IFMGA guides. From €3,490." active="packages" schema={productSchema}>
   <Fragment set:html={body} />
 </Base>
 
@@ -286,6 +286,7 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
   .gal{column-count:1;}
   .sf__top,.sf__base{flex-direction:column;align-items:flex-start;gap:14px;}
 }
+@media(max-width:767px){:root{--hero:url("/images/heli-assisted-hero-768.webp");}}
 </style>
 
 <script is:inline>

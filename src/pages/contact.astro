@@ -105,7 +105,7 @@ const body = `
 <!-- FOOTER -->
 `;
 ---
-<Base title="Contact Heliski Travel: Plan Your Iceland Heliskiing Week" description="Send us your Iceland heliskiing preferences — package, month, group size, vibe — and we reply within 12 hours with a tailored proposal." active="contact">
+<Base heroImage="contact-hero" title="Contact Heliski Travel: Plan Your Iceland Heliskiing Week" description="Send us your Iceland heliskiing preferences — package, month, group size, vibe — and we reply within 12 hours with a tailored proposal." active="contact">
   <Fragment set:html={body} />
 </Base>
 
@@ -315,6 +315,7 @@ textarea{resize:vertical;min-height:84px;line-height:1.6;}
   .sf__ghost{font-size:46vh;}
   .sf__base{flex-direction:column;align-items:flex-start;gap:12px;}
 }
+@media(max-width:767px){:root{--photo:url("/images/contact-hero-768.webp");}}
 </style>
 
 <script is:inline>

@@ -90,7 +90,7 @@ const body = `
 <!-- FOOTER -->
 `;
 ---
-<Base title="About Heliski Travel: Norwegian-Run, Iceland-Based Agent" description="Heliski Travel is the trusted agent for Viking Heliskiing Iceland — founded by Norwegian ex-racer Vegard Knudsen to match skiers with the right Arctic powder week." active="about">
+<Base heroImage="about-hero" title="About Heliski Travel: Norwegian-Run, Iceland-Based Agent" description="Heliski Travel is the trusted agent for Viking Heliskiing Iceland — founded by Norwegian ex-racer Vegard Knudsen to match skiers with the right Arctic powder week." active="about">
   <Fragment set:html={body} />
 </Base>
 
@@ -247,6 +247,7 @@ body.show-sticky .stickycta{transform:none;}
   .stickycta .inner{padding:12px 26px;}.stickycta .t{font-size:15px;}.stickycta .b{padding:11px 22px;}
   .sf__top,.sf__base{flex-direction:column;align-items:flex-start;gap:14px;}
 }
+@media(max-width:767px){:root{--photo:url("/images/about-hero-768.webp");}}
 </style>
 
 <script is:inline>

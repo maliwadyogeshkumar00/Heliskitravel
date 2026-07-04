@@ -1,5 +1,22 @@
 ---
 import Base from '../layouts/Base.astro';
+const faqSchema = {
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"How are the groups organised?","acceptedAnswer":{"@type":"Answer","text":"Classic: 4 guests + 1 guide, 2–3 groups per helicopter. Private: helicopter exclusively to your group. Semi-Private: 2 groups per helicopter, more flexibility and premium access."}},
+    {"@type":"Question","name":"How much skiing per day?","acceptedAnswer":{"@type":"Answer","text":"Typical day 15,000–25,000 vertical feet, around 7–14 runs depending on conditions. Record: 29 runs and 64,000 vertical feet in a single day. You can purchase additional vertical when the snow allows."}},
+    {"@type":"Question","name":"Do I need to be an expert skier?","acceptedAnswer":{"@type":"Answer","text":"Not at all. The terrain ranges from gentle, rolling lines for confident intermediates to steeper lines for advanced and expert riders. Strong intermediates and even beginners are welcome — fitness and a willingness for adventure are the only essentials."}},
+    {"@type":"Question","name":"What snow conditions can I expect?","acceptedAnswer":{"@type":"Answer","text":"The season runs March to early June. Powder and light backcountry snow early; Iceland's famous spring corn snow later, often skied under the midnight sun."}},
+    {"@type":"Question","name":"How do you handle avalanche safety?","acceptedAnswer":{"@type":"Answer","text":"IFMGA-certified guides assess the snowpack and make informed decisions every day. Every guest is equipped with top-of-the-line BCA avalanche safety gear — transceiver, shovel, probe, airbag — and receives a full safety briefing before skiing."}},
+    {"@type":"Question","name":"What helicopters do you use?","acceptedAnswer":{"@type":"Answer","text":"Modern, well-maintained AS-350 B3 (Airbus H125). Pilots are provided by SENNAIR — highly experienced, Arctic-trained, focused on safety, comfort and the experience."}},
+    {"@type":"Question","name":"Can minors participate?","acceptedAnswer":{"@type":"Answer","text":"Yes, under-18s are welcome with parental approval. A signed waiver from a parent or guardian is required, confirming the minor is fit to participate and agrees to the operator's terms."}},
+    {"@type":"Question","name":"Can I bring my own gear?","acceptedAnswer":{"@type":"Answer","text":"Yes — though K2 freeride skis or snowboards and full avalanche gear are included. We recommend bringing your own ski / snowboard boots and helmet for the best fit and comfort."}},
+    {"@type":"Question","name":"Do I need travel insurance?","acceptedAnswer":{"@type":"Answer","text":"Yes. Comprehensive cover is recommended. Global Rescue is a reliable provider — trip cancellation, gear loss and medical emergencies."}},
+    {"@type":"Question","name":"Can I see the Northern Lights?","acceptedAnswer":{"@type":"Answer","text":"Yes. Best viewing window is early March through mid-April. On clear nights, the lights often appear above the mountains and fjords — visible right from the hot tub at Hotel Sigló."}},
+    {"@type":"Question","name":"Why vertical feet, not flight time?","acceptedAnswer":{"@type":"Answer","text":"Transparency and fairness. You get a guaranteed amount of skiing, and decisions made for safety or weather don't reduce what you've already paid for. Vertical feet are easy to track via modern GPS apps."}},
+    {"@type":"Question","name":"How do I book?","acceptedAnswer":{"@type":"Answer","text":"Send a message via the contact page, or speak directly with us. From the first message to the helicopter — every detail handled by one relationship."}}
+  ]
+};
 const body = `
 
 <!-- HERO -->
@@ -207,7 +224,7 @@ const body = `
 <!-- FOOTER -->
 `;
 ---
-<Base title="Iceland Heliskiing: The Complete Guide | Heliski Travel" description="Plan your Iceland heliskiing trip: best season, Tröllaskagi terrain, IFMGA-certified guides, Arctic powder. Authorised Viking Heliskiing agent." active="iceland">
+<Base heroImage="iceland-hero" title="Iceland Heliskiing: The Complete Guide | Heliski Travel" description="Plan your Iceland heliskiing trip: best season, Tröllaskagi terrain, IFMGA-certified guides, Arctic powder. Authorised Viking Heliskiing agent." active="iceland" schema={faqSchema}>
   <Fragment set:html={body} />
 </Base>
 
@@ -400,6 +417,7 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
   .ski p{max-width:60ch;}
   .sf__top,.sf__base{flex-direction:column;align-items:flex-start;gap:14px;}
 }
+@media(max-width:767px){:root{--photo:url("/images/iceland-hero-768.webp");}}
 </style>
 
 <script is:inline>
