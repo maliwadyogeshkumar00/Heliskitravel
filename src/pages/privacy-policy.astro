@@ -66,4 +66,13 @@ const body = `
 ---
 <Base title="Privacy Policy | Heliski Travel" description="How Heliski Travel collects, uses and protects your personal data, in line with the Swiss FADP and the GDPR." active="">
   <Fragment set:html={body} />
+  <script is:inline>
+    (function(){var hdr=document.getElementById('siteHeader'),prog=document.getElementById('progress'),burger=document.getElementById('burger');
+      function onScroll(){var y=window.scrollY,vh=window.innerHeight;if(hdr)hdr.classList.toggle('scrolled',y>40);if(prog){var h=document.documentElement.scrollHeight-vh;prog.style.width=(h>0?(y/h*100):0)+'%';}}
+      onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+      if(burger){var setMenu=function(o){document.body.classList.toggle('nav-open',o);burger.setAttribute('aria-expanded',o?'true':'false');};
+        burger.addEventListener('click',function(){setMenu(!document.body.classList.contains('nav-open'));});
+        document.querySelectorAll('#menu a').forEach(function(a){a.addEventListener('click',function(){setMenu(false);});});}
+    })();
+  </script>
 </Base>
