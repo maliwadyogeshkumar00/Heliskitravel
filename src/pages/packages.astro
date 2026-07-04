@@ -74,6 +74,19 @@ const body = `
   </div>
 </section>
 
+<!-- ELEVEN ZONES -->
+<section class="band band--navy">
+  <div class="shell zones__grid">
+    <div class="zones__img reveal"><img src="https://heliskitravel.com/wp-content/uploads/2026/06/vegard_map.jpg" alt="Viking Heliskiing zones map across the Troll Peninsula" loading="lazy"/></div>
+    <div class="reveal">
+      <p class="eyebrow">On the ground in Siglufjörður</p>
+      <h2 class="zones__h">Eleven zones across the Troll Peninsula</h2>
+      <p class="zones__p">Every week is flown across our home terrain in North Iceland — eleven mapped heliskiing zones rising straight from the Arctic sea, scouted and guided by the Viking Heliskiing team.</p>
+      <p class="zones__p">Whichever package you choose, this is where your week takes shape.</p>
+    </div>
+  </div>
+</section>
+
 <!-- EVERY WEEK -->
 <section class="band band--navy">
   <div class="shell">
@@ -198,6 +211,14 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
 .pcard:hover .pbtn .arw{transform:translateX(6px);}
 .pcard .pbtn--solid{background:var(--blue-soft);border-color:var(--blue-soft);color:var(--ink);}
 .pcard:hover .pbtn--solid{background:var(--blue);border-color:var(--blue);}
+
+/* eleven zones split */
+.zones__grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(40px,6vw,78px);align-items:center;}
+.zones__img{border-radius:12px;overflow:hidden;box-shadow:0 40px 90px rgba(0,0,0,.42);}
+.zones__img img{width:100%;display:block;}
+.zones__h{font-family:var(--sans);font-weight:600;letter-spacing:-.01em;font-size:clamp(30px,3.6vw,48px);line-height:1.06;color:var(--cream);margin:18px 0 22px;}
+.zones__p{color:rgba(244,246,248,.66);font-size:16.5px;line-height:1.8;margin:0 0 16px;max-width:54ch;}
+@media(max-width:980px){.zones__grid{grid-template-columns:1fr;gap:36px;}.zones__img{order:-1;}}
 
 /* every-week strip */
 .features{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
