@@ -1,0 +1,45 @@
+---
+import Base from '../layouts/Base.astro';
+const body = `
+<section class="legalpage">
+  <div class="shell">
+    <p class="eyebrow">Legal</p>
+    <h1>Cookie Policy</h1>
+    <p class="updated">Last updated: July 2026</p>
+    <div class="legal-body">
+      <p>This Cookie Policy explains how heliskitravel.com uses cookies and similar technologies. It should be read together with our <a href="/privacy-policy">Privacy Policy</a>.</p>
+
+      <h2>1. What cookies are</h2>
+      <p>Cookies are small text files placed on your device when you visit a website. They help the site work, remember your preferences, and understand how the site is used. Similar technologies (such as local storage) work in a comparable way.</p>
+
+      <h2>2. Cookies we use</h2>
+      <h3>Strictly necessary</h3>
+      <p>Required for the website to function and to keep it secure. These are always active and cannot be switched off.</p>
+      <h3>Functional</h3>
+      <p>Remember choices you make (such as a closed banner) to improve your experience.</p>
+      <h3>Analytics (if enabled)</h3>
+      <p>Help us understand, in aggregate, how visitors use the site so we can improve it. These are only set with your consent where required.</p>
+
+      <h2>3. Third-party content</h2>
+      <p>Some pages embed content from third parties that may set their own cookies:</p>
+      <ul>
+        <li><strong>Google Maps</strong> — embedded maps on our Travel Here page, subject to Google's own privacy and cookie policies.</li>
+        <li><strong>Video / social embeds</strong>, where used, may set cookies when you play or interact with them.</li>
+      </ul>
+
+      <h2>4. Managing cookies</h2>
+      <p>You can accept or decline non-essential cookies via any cookie banner shown on the site, and you can control or delete cookies at any time through your browser settings. Blocking some cookies may affect how the site works.</p>
+
+      <h2>5. Changes</h2>
+      <p>We may update this policy as our use of cookies changes. The current version is always published on this page.</p>
+
+      <h2>6. Contact</h2>
+      <p>Questions? Email <a href="mailto:hello@heliskitravel.com">hello@heliskitravel.com</a>.</p>
+    </div>
+  </div>
+</section>
+`;
+---
+<Base title="Cookie Policy | Heliski Travel" description="How heliskitravel.com uses cookies and similar technologies, and how you can manage them." active="">
+  <Fragment set:html={body} />
+</Base>

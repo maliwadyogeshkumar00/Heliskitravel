@@ -1,0 +1,55 @@
+---
+import Base from '../layouts/Base.astro';
+const body = `
+<section class="legalpage">
+  <div class="shell">
+    <p class="eyebrow">Legal</p>
+    <h1>Imprint</h1>
+    <p class="updated">Legal notice · Impressum</p>
+    <div class="legal-body">
+      <p class="note">The details in <span class="fill">[square brackets]</span> below must be completed with Heliski Travel's official company information before publishing. Swiss law requires accurate provider identification.</p>
+
+      <h2>Company</h2>
+      <p>
+        <strong>Heliski Travel</strong> — <span class="fill">[Registered company name / legal form, e.g. GmbH / AG]</span><br/>
+        <span class="fill">[Street and number]</span><br/>
+        <span class="fill">[Postcode and city]</span><br/>
+        Switzerland
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Email: <a href="mailto:hello@heliskitravel.com">hello@heliskitravel.com</a><br/>
+        Telephone: +41 79 703 0917 · +47 9412 9999
+      </p>
+
+      <h2>Commercial register</h2>
+      <p>
+        Registered in the Commercial Register of the Canton of <span class="fill">[Canton]</span><br/>
+        Company identification number (UID): <span class="fill">[CHE-XXX.XXX.XXX]</span>
+      </p>
+
+      <h2>VAT</h2>
+      <p>VAT number: <span class="fill">[CHE-XXX.XXX.XXX MWST]</span></p>
+
+      <h2>Represented by</h2>
+      <p><span class="fill">[Name of managing director / authorised representative]</span></p>
+
+      <h2>Responsible for content</h2>
+      <p><span class="fill">[Name]</span>, at the address above.</p>
+
+      <h2>Disclaimer</h2>
+      <p>We prepare the content of this website with care but give no guarantee as to its accuracy, completeness or timeliness. Heliskiing and related services are provided by our partner operator Viking Heliskiing; details on their offering are subject to their own terms. Where this site links to external websites, we are not responsible for their content.</p>
+
+      <h2>Copyright</h2>
+      <p>All content, text, images and design on this website are protected by copyright. Photography and film are used with permission of the respective owners. Any use beyond what copyright law permits requires our prior written consent.</p>
+
+      <p>See also our <a href="/privacy-policy">Privacy Policy</a>, <a href="/terms">Terms &amp; Conditions</a> and <a href="/cookie-policy">Cookie Policy</a>.</p>
+    </div>
+  </div>
+</section>
+`;
+---
+<Base title="Imprint | Heliski Travel" description="Legal notice and company information for Heliski Travel, an authorised agent for Viking Heliskiing in Iceland." active="">
+  <Fragment set:html={body} />
+</Base>

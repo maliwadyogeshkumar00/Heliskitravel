@@ -1,0 +1,53 @@
+---
+import Base from '../layouts/Base.astro';
+const body = `
+<section class="legalpage">
+  <div class="shell">
+    <p class="eyebrow">Legal</p>
+    <h1>Terms &amp; Conditions</h1>
+    <p class="updated">Last updated: July 2026</p>
+    <div class="legal-body">
+      <p>These Terms &amp; Conditions govern your use of heliskitravel.com and any booking you make through Heliski Travel. Please read them carefully. By submitting an enquiry or booking, you agree to these terms.</p>
+
+      <p class="note">Company details to be completed by Heliski Travel: <span class="fill">[Registered company name]</span>, <span class="fill">[Address]</span>, Switzerland — see our <a href="/imprint">Imprint</a>.</p>
+
+      <h2>1. Our role</h2>
+      <p>Heliski Travel is an authorised booking agent for <strong>Viking Heliskiing</strong> in North Iceland. The heliskiing, guiding, helicopter and accommodation services are provided by Viking Heliskiing and its partners (including Sigló Hótel), who are responsible for the operation and delivery of those services. We arrange and administer your booking with them.</p>
+
+      <h2>2. Enquiries and bookings</h2>
+      <p>An enquiry or consultation request is not a confirmed booking. A booking is confirmed only once we have confirmed availability in writing and you have paid the required deposit. At that point a contract is formed on these terms and any specific booking terms we provide.</p>
+
+      <h2>3. Prices and payment</h2>
+      <p>Prices are quoted per guest or per group as shown, and are subject to availability and confirmation. A deposit is required to secure a booking, with the balance due before the trip as stated in your booking confirmation. Accepted payment methods and currency are set out at the time of booking. You are responsible for any bank or card fees.</p>
+
+      <h2>4. Changes and cancellations</h2>
+      <p>If you need to change or cancel, contact us as early as possible. Cancellation charges and refund conditions depend on how far in advance you cancel and are set out in your booking confirmation. Because mountain capacity is limited and reserved in advance, deposits and later payments may be non-refundable. We strongly recommend cancellation insurance.</p>
+
+      <h2>5. Insurance</h2>
+      <p>Comprehensive travel insurance is a condition of travel. Your policy must cover heliskiing / off-piste skiing, mountain rescue, helicopter evacuation, medical treatment and repatriation, as well as trip cancellation and curtailment. You are responsible for holding adequate insurance for the whole trip.</p>
+
+      <h2>6. Fitness, ability and risk</h2>
+      <p>Heliskiing and ski touring are <strong>high-risk mountain activities</strong> that take place in remote, avalanche-prone terrain. They carry an inherent risk of serious injury or death. You must be a competent off-piste skier or snowboarder in good health and physical condition, and you take part at your own risk. You must follow the instructions of the guides at all times; guides may exclude any participant or change the programme for safety reasons, and their decisions are final.</p>
+
+      <h2>7. Weather, conditions and force majeure</h2>
+      <p>Flying and skiing depend on weather, snow and avalanche conditions. Days may be lost or programmes altered, and neither we nor the operator can guarantee a set number of flights, runs or vertical. Neither party is liable for failure or delay caused by events beyond reasonable control (including weather, avalanche risk, technical or air-traffic restrictions, illness, strikes or force majeure).</p>
+
+      <h2>8. Liability</h2>
+      <p>Heliski Travel acts as a booking agent and is not liable for the acts, omissions or default of the operator or other third-party suppliers, nor for loss or injury arising from the activities themselves. Nothing in these terms excludes or limits any liability that cannot be excluded or limited under mandatory Swiss law.</p>
+
+      <h2>9. Complaints</h2>
+      <p>If something is not right during your trip, please raise it immediately with the guides or hotel so it can be addressed on the spot. Any subsequent complaint should be sent to us in writing at <a href="mailto:hello@heliskitravel.com">hello@heliskitravel.com</a>.</p>
+
+      <h2>10. Governing law and jurisdiction</h2>
+      <p>These terms are governed by Swiss law. The place of jurisdiction is <span class="fill">[registered seat of the company]</span>, Switzerland, subject to any mandatory place of jurisdiction provided by law for consumers.</p>
+
+      <h2>11. Contact</h2>
+      <p>Email <a href="mailto:hello@heliskitravel.com">hello@heliskitravel.com</a> or see our <a href="/contact">contact page</a>.</p>
+    </div>
+  </div>
+</section>
+`;
+---
+<Base title="Terms & Conditions | Heliski Travel" description="Booking terms and conditions for heliskiing trips arranged through Heliski Travel, an authorised agent for Viking Heliskiing in Iceland." active="">
+  <Fragment set:html={body} />
+</Base>

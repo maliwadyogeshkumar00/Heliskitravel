@@ -1,0 +1,69 @@
+---
+import Base from '../layouts/Base.astro';
+const body = `
+<section class="legalpage">
+  <div class="shell">
+    <p class="eyebrow">Legal</p>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: July 2026</p>
+    <div class="legal-body">
+      <p>This Privacy Policy explains how Heliski Travel ("we", "us", "our") collects, uses and protects your personal data when you visit heliskitravel.com or contact us about a heliskiing trip. We process personal data in accordance with the Swiss Federal Act on Data Protection (revised FADP / nFADP) and, where it applies, the EU General Data Protection Regulation (GDPR).</p>
+
+      <p class="note">Company details to be completed by Heliski Travel: <span class="fill">[Registered company name]</span>, <span class="fill">[Street address, Postcode, City]</span>, Switzerland. These are also shown on our <a href="/imprint">Imprint</a>.</p>
+
+      <h2>1. Who is responsible for your data</h2>
+      <p>The controller responsible for the processing of your personal data is <strong>Heliski Travel</strong>, <span class="fill">[Registered company name and address]</span>, Switzerland. You can reach us by email at <a href="mailto:hello@heliskitravel.com">hello@heliskitravel.com</a>.</p>
+
+      <h2>2. What data we collect</h2>
+      <ul>
+        <li><strong>Enquiry &amp; booking data</strong> you provide via our contact form or by email — your name, email address, telephone number, preferred dates, group size and the content of your message.</li>
+        <li><strong>Booking &amp; travel data</strong> needed to arrange a trip with our partner operator, such as participant names and any information relevant to your stay.</li>
+        <li><strong>Technical data</strong> automatically collected by our hosting provider when you visit the site — IP address, browser type, device and access times, in standard server logs.</li>
+        <li><strong>Cookie data</strong> as described in our <a href="/cookie-policy">Cookie Policy</a>.</li>
+      </ul>
+
+      <h2>3. Why we use your data and our legal basis</h2>
+      <ul>
+        <li>To respond to your enquiry and provide information — on the basis of your request and our legitimate interest in answering you.</li>
+        <li>To arrange and administer your booking with our partner operator — on the basis of the contract or pre-contractual steps taken at your request.</li>
+        <li>To operate, secure and improve our website — on the basis of our legitimate interest.</li>
+        <li>To meet legal and accounting obligations under Swiss law.</li>
+      </ul>
+
+      <h2>4. Who we share your data with</h2>
+      <p>We share your data only where necessary to arrange your trip or run our website, including:</p>
+      <ul>
+        <li><strong>Viking Heliskiing</strong>, the mountain operator, and <strong>Sigló Hótel</strong>, for booking and accommodation.</li>
+        <li>Service providers who host our website and process contact-form submissions on our behalf.</li>
+        <li>Providers of embedded maps (Google Maps) on our Travel Here page.</li>
+      </ul>
+      <p>We do <strong>not</strong> sell your personal data.</p>
+
+      <h2>5. International transfers</h2>
+      <p>Some of our providers process data outside Switzerland and the EEA (for example website hosting in the United States). Where this happens, we rely on recognised safeguards such as the European Commission's Standard Contractual Clauses and equivalent measures accepted under Swiss law.</p>
+
+      <h2>6. How long we keep your data</h2>
+      <p>We keep enquiry data only as long as needed to handle your request and any follow-up. Booking and accounting records are kept for the periods required by Swiss law. After that, data is deleted or anonymised.</p>
+
+      <h2>7. Your rights</h2>
+      <p>Subject to applicable law, you have the right to access your data, to have it corrected or deleted, to restrict or object to its processing, to receive it in a portable form, and to withdraw any consent you have given. To exercise a right, email <a href="mailto:hello@heliskitravel.com">hello@heliskitravel.com</a>. You may also lodge a complaint with the Swiss Federal Data Protection and Information Commissioner (FDPIC) or, if the GDPR applies to you, your local supervisory authority.</p>
+
+      <h2>8. Cookies</h2>
+      <p>We use a small number of cookies as described in our <a href="/cookie-policy">Cookie Policy</a>.</p>
+
+      <h2>9. Security</h2>
+      <p>We use appropriate technical and organisational measures, including encryption in transit (HTTPS), to protect your data against loss, misuse and unauthorised access.</p>
+
+      <h2>10. Changes to this policy</h2>
+      <p>We may update this policy from time to time. The current version is always published on this page with its effective date.</p>
+
+      <h2>11. Contact</h2>
+      <p>Questions about this policy or your data? Email <a href="mailto:hello@heliskitravel.com">hello@heliskitravel.com</a> or see our <a href="/contact">contact page</a>.</p>
+    </div>
+  </div>
+</section>
+`;
+---
+<Base title="Privacy Policy | Heliski Travel" description="How Heliski Travel collects, uses and protects your personal data, in line with the Swiss FADP and the GDPR." active="">
+  <Fragment set:html={body} />
+</Base>
