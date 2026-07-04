@@ -5,7 +5,7 @@ const body = `
 <!-- HERO SLIDER -->
 <section class="hero" id="hero">
   <div class="hero__photo" id="heroPhoto"></div>
-  <video class="hero__video" autoplay muted loop playsinline preload="metadata" poster="/videos/heli-poster.jpg" data-desktop="/videos/heli-teaser.mp4" data-mobile="/videos/heli-mobile.mp4" data-poster-mobile="/videos/heli-poster-mobile.jpg"><track kind="captions" src="/videos/empty.vtt" srclang="en" label="No dialogue" /></video>
+  <video class="hero__video" autoplay muted loop playsinline preload="none" poster="/videos/heli-poster.webp" data-desktop="/videos/heli-teaser.mp4" data-mobile="/videos/heli-mobile.mp4" data-poster-mobile="/videos/heli-poster-mobile.webp"><track kind="captions" src="/videos/empty.vtt" srclang="en" label="No dialogue" /></video>
   <div class="grade"></div>
   <a class="scrolldn" aria-label="Scroll down" href="#" onclick="window.scrollTo({top:Math.round(innerHeight*0.9),behavior:'smooth'});return false;"><span></span></a>
   <div class="shell">
@@ -128,7 +128,8 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
 
 /* HERO slider (4 slides, each its own CTA) */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:118px 0 96px;overflow:hidden;background:var(--ink);}
-.hero__photo{position:absolute;inset:-2%;z-index:0;background:#0A1628 url('/videos/heli-poster.jpg') center 40%/cover no-repeat;transform:scale(1.04);}
+.hero__photo{position:absolute;inset:-2%;z-index:0;background:#0A1628 url('/videos/heli-poster.webp') center 40%/cover no-repeat;transform:scale(1.04);}
+@media(max-width:767px){.hero__photo{background-image:url('/videos/heli-poster-mobile.webp');}}
 .hero__video{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.5s var(--ease);}
 .hero.ready .hero__video{opacity:1;}
 .hero .grade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(10,22,40,.5) 0%,rgba(10,22,40,0) 20%,rgba(10,22,40,0) 60%,rgba(10,22,40,.5) 86%,var(--ink) 100%);}
@@ -278,11 +279,13 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
 </style>
 
 <script is:inline>
-/* hero video: load mobile variant on small screens, desktop variant otherwise */
-(function(){var v=document.querySelector('.hero__video');if(!v)return;var m=window.matchMedia('(max-width:768px)').matches;if(m&&v.dataset.posterMobile)v.poster=v.dataset.posterMobile;v.src=m?v.dataset.mobile:v.dataset.desktop;v.load();var p=v.play();if(p&&p.catch)p.catch(function(){});})();
+/* hero video: poster is the LCP; defer the video download until after load so it never competes with first paint */
+(function(){var v=document.querySelector('.hero__video');if(!v)return;var m=window.matchMedia('(max-width:768px)').matches;if(m&&v.dataset.posterMobile)v.poster=v.dataset.posterMobile;function go(){v.src=m?v.dataset.mobile:v.dataset.desktop;v.load();var p=v.play();if(p&&p.catch)p.catch(function(){});}if(document.readyState==='complete')setTimeout(go,200);else window.addEventListener('load',function(){setTimeout(go,200);});})();
 var hdr=document.getElementById('siteHeader'),prog=document.getElementById('progress'),heroEl=document.getElementById('hero'),hp=document.getElementById('heroPhoto');
-function onScroll(){var y=window.scrollY,vh=window.innerHeight;hdr.classList.toggle('scrolled',y>40);var h=document.documentElement.scrollHeight-vh;prog.style.width=(h>0?(y/h*100):0)+'%';if(y<vh&&hp){hp.style.transform='translateY('+(y*0.12)+'px) scale(1.05)';}}
-onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+/* cache layout metrics so the scroll handler never reads scrollHeight (avoids forced reflow) */
+var maxS=0,vhc=0;function recalc(){vhc=window.innerHeight;maxS=document.documentElement.scrollHeight-vhc;}
+function onScroll(){var y=window.scrollY;hdr.classList.toggle('scrolled',y>40);if(prog)prog.style.width=(maxS>0?(y/maxS*100):0)+'%';if(y<vhc&&hp){hp.style.transform='translateY('+(y*0.12)+'px) scale(1.05)';}}
+recalc();onScroll();window.addEventListener('scroll',onScroll,{passive:true});window.addEventListener('resize',recalc,{passive:true});window.addEventListener('load',recalc);
 requestAnimationFrame(function(){setTimeout(function(){heroEl.classList.add('ready');},140);});
 var burger=document.getElementById('burger');function setMenu(o){document.body.classList.toggle('nav-open',o);burger.setAttribute('aria-expanded',o?'true':'false');}
 burger.addEventListener('click',function(){setMenu(!document.body.classList.contains('nav-open'));});
