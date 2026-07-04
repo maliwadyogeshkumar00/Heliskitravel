@@ -87,8 +87,13 @@ const FAVICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' vi
       <link rel="preload" as="image" href={`/images/${heroImage}.webp`} media="(min-width: 768px)" fetchpriority="high" />
     </>
   )}
-  {/* Home hero is a video — preload its poster (the LCP frame) */}
-  {path === '/' && <link rel="preload" as="image" href="/videos/heli-poster-mobile.jpg" media="(max-width: 767px)" fetchpriority="high" />}
+  {/* Home hero is a video — preload its poster (the LCP frame), responsive */}
+  {path === '/' && (
+    <>
+      <link rel="preload" as="image" href="/videos/heli-poster-mobile.webp" media="(max-width: 767px)" fetchpriority="high" />
+      <link rel="preload" as="image" href="/videos/heli-poster.webp" media="(min-width: 768px)" fetchpriority="high" />
+    </>
+  )}
   <!-- Self-hosted fonts (in-house — no render-blocking external CSS). Preload only the above-the-fold weights. -->
   <link rel="preload" href="/fonts/mulish-400.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/cormorant-500-italic.woff2" as="font" type="font/woff2" crossorigin />
