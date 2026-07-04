@@ -83,7 +83,7 @@ const FAVICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' vi
 </div></footer>
 
 <!-- floating action buttons -->
-<div class="fab-stack" id="fabStack">
+<div class="fab-stack hidden" id="fabStack">
   <button class="fab-hide" id="fabHide" type="button" aria-label="Hide contact buttons" title="Hide">&times;</button>
   <a class="fab fab--wa" href="https://wa.me/4794129999?text=Hi%20Heliski%20Travel%2C%20I%27d%20like%20to%20chat%20about%20a%20heliski%20week." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
     <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 .5C7.4.5.5 7.4.5 16c0 2.82.74 5.46 2.04 7.75L.5 31.5l7.9-2.07A15.4 15.4 0 0 0 16 31.5c8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5zm0 28.2c-2.5 0-4.83-.67-6.84-1.84l-.49-.29-4.69 1.23 1.25-4.57-.32-.5A12.66 12.66 0 0 1 3.3 16C3.3 8.98 8.98 3.3 16 3.3S28.7 8.98 28.7 16 23.02 28.7 16 28.7zm7.06-9.46c-.38-.19-2.28-1.12-2.63-1.25-.35-.13-.61-.19-.87.19-.26.38-1 1.25-1.23 1.51-.22.26-.45.29-.83.1-.38-.19-1.62-.6-3.08-1.9-1.14-1.02-1.91-2.28-2.13-2.66-.22-.38-.02-.59.17-.78.17-.17.38-.45.58-.67.19-.22.26-.38.38-.64.13-.26.06-.48-.03-.67-.1-.19-.87-2.09-1.19-2.86-.31-.75-.63-.65-.87-.66l-.74-.01c-.26 0-.67.1-1.02.48s-1.35 1.32-1.35 3.22 1.38 3.73 1.58 3.99c.19.26 2.72 4.15 6.59 5.82.92.4 1.64.64 2.2.82.92.29 1.76.25 2.42.15.74-.11 2.28-.93 2.6-1.83.32-.9.32-1.67.22-1.83-.09-.16-.35-.26-.73-.45z"/></svg>
@@ -93,7 +93,7 @@ const FAVICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' vi
     <span>Request consultation</span> <span class="arw">&#8594;</span>
   </a>
 </div>
-<button class="fab-launch" id="fabShow" type="button" aria-label="Show contact options" title="Contact us">
+<button class="fab-launch show" id="fabShow" type="button" aria-label="Show contact options" title="Contact us">
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 5.94 2 10.8c0 2.7 1.38 5.11 3.55 6.73L4.5 22l4.02-2.02c1.08.34 2.25.52 3.48.52 5.52 0 10-3.94 10-8.8S17.52 2 12 2z"/></svg>
 </button>
 
@@ -125,9 +125,13 @@ footer.sf .shell{padding-left:48px!important;padding-right:48px!important;}
 @media(max-width:900px){footer.sf .shell{padding-left:24px!important;padding-right:24px!important;}}
 /* footer email — refined, less oversized */
 footer.sf .sf__mid .big{font-size:clamp(26px,4vw,44px)!important;}
+/* footer contrast — meet WCAG AA on the dark background (override duplicated per-page rules) */
+footer.sf .sf__trust{color:rgba(208,226,242,.92)!important;}
+footer.sf .sf__trust b{color:var(--blue-soft)!important;}
+footer.sf .sf__base .cr{color:rgba(232,240,248,.74)!important;}
 /* footer legal links */
 .sf__legal{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:center;}
-.sf__legal a{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(195,220,238,.55);transition:color .4s var(--ease);}
+.sf__legal a{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(200,222,240,.78);transition:color .4s var(--ease);}
 .sf__legal a:hover{color:var(--blue-soft);}
 /* shared tokens so standalone pages (legal) render with brand colours */
 :root{--ink:#0A1628;--navy:#172D42;--panel:#15293c;--cream:#F4F6F8;--blue:#A8CFE0;--blue-soft:#C3DCEE;--muted:rgba(195,220,238,.55);--line:rgba(138,180,204,.16);--line-2:rgba(138,180,204,.30);--cta-line:rgba(168,207,224,.45);--ease:cubic-bezier(.16,1,.3,1);--maxw:1240px;--radius:2px;--sans:"proxima-nova","Mulish",-apple-system,"Segoe UI",Roboto,sans-serif;--serif:"Cormorant Garamond",Georgia,serif;}
@@ -402,11 +406,12 @@ body.pkgm-open{overflow:hidden;}
 })();
 </script>
 <script is:inline>
-(function(){var s=document.getElementById('fabStack'),h=document.getElementById('fabHide'),show=document.getElementById('fabShow');if(!s||!h)return;
-  function setHidden(hide){s.classList.toggle('hidden',hide);if(show)show.classList.toggle('show',hide);try{sessionStorage.setItem('fabHidden',hide?'1':'0');}catch(e){}}
-  try{if(sessionStorage.getItem('fabHidden')==='1')setHidden(true);}catch(e){}
-  h.addEventListener('click',function(){setHidden(true);});
-  if(show)show.addEventListener('click',function(){setHidden(false);});})();
+(function(){var s=document.getElementById('fabStack'),h=document.getElementById('fabHide'),show=document.getElementById('fabShow');if(!s||!show)return;
+  function setOpen(open){s.classList.toggle('hidden',!open);show.classList.toggle('show',!open);try{sessionStorage.setItem('fabOpen',open?'1':'0');}catch(e){}}
+  var opened=false;try{opened=sessionStorage.getItem('fabOpen')==='1';}catch(e){}
+  if(opened)setOpen(true); /* default is collapsed (launcher only); open only if user opened it this session */
+  show.addEventListener('click',function(){setOpen(true);});
+  if(h)h.addEventListener('click',function(){setOpen(false);});})();
 </script>
 </body>
 </html>
