@@ -103,12 +103,15 @@ const FAVICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' vi
     @font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400;font-display:swap;src:url('/fonts/cormorant-400-italic.woff2') format('woff2');}
     @font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:500;font-display:swap;src:url('/fonts/cormorant-500-italic.woff2') format('woff2');}
   </style>
-  <!-- Proxima Nova (Adobe-licensed — cannot be legally self-hosted) loaded async so it never blocks render; self-hosted Mulish is the instant baseline -->
-  <link rel="preconnect" href="https://use.typekit.net" crossorigin />
-  <link rel="preconnect" href="https://p.typekit.net" crossorigin />
-  <link rel="dns-prefetch" href="https://use.typekit.net" />
-  <link rel="stylesheet" href="https://use.typekit.net/ncf8pad.css" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="https://use.typekit.net/ncf8pad.css" /></noscript>
+  {/* Proxima Nova (Adobe Fonts) is licensed to the production domain only. Load it there alone —
+      on the vercel.app preview the kit's p.typekit.net beacon 503s and logs a console error.
+      Self-hosted Mulish is the instant baseline on every domain. */}
+  <script is:inline>
+    (function(){var h=location.hostname;if(h==='heliskitravel.com'||h==='www.heliskitravel.com'){
+      var pc=document.createElement('link');pc.rel='preconnect';pc.href='https://use.typekit.net';pc.crossOrigin='anonymous';document.head.appendChild(pc);
+      var l=document.createElement('link');l.rel='stylesheet';l.href='https://use.typekit.net/ncf8pad.css';document.head.appendChild(l);
+    }})();
+  </script>
   {/* Prefetch the most likely next routes from the homepage — makes onward nav feel instant */}
   {path === '/' && (
     <>
