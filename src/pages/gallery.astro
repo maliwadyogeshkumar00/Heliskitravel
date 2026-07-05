@@ -1,5 +1,25 @@
 ---
 import Base from '../layouts/Base.astro';
+const videoLd = [
+  {
+    "@type": "VideoObject",
+    "name": "Viking Heliskiing — 2026 Teaser Film",
+    "description": "The 2026 teaser film: heliskiing on the Tröllaskagi (Troll) Peninsula in North Iceland — the helicopter, Arctic powder lines, fjord views and midnight-sun light.",
+    "thumbnailUrl": "https://heliskitravel.vercel.app/videos/gallery-teaser-poster.jpg",
+    "uploadDate": "2026-07-01",
+    "duration": "PT1M1S",
+    "contentUrl": "https://heliskitravel.vercel.app/videos/gallery-teaser.mp4"
+  },
+  {
+    "@type": "VideoObject",
+    "name": "Aerial Film of Siglufjörður and the Fjords",
+    "description": "An aerial film over Siglufjörður and the fjords of North Iceland — the harbour town, Sigló Hotel and the Arctic coastline that frames the heliskiing terrain.",
+    "thumbnailUrl": "https://heliskitravel.vercel.app/videos/gallery-vh-poster.jpg",
+    "uploadDate": "2026-07-01",
+    "duration": "PT24S",
+    "contentUrl": "https://heliskitravel.vercel.app/videos/gallery-vh.mp4"
+  }
+];
 const body = `
 
 <!-- HERO -->
@@ -83,12 +103,12 @@ const body = `
 <!-- FOOTER -->
 `;
 ---
-<Base heroImage="gallery-hero" title="Gallery: Iceland Heliskiing in Film & Photos | Heliski Travel" description="A gallery of Viking Heliskiing on the Troll Peninsula, North Iceland — films and photographs of powder skiing, the helicopter, fjords, midnight sun and the Northern Lights." active="gallery" image="/images/gallery/northern-lights-heliski-helicopter-iceland.jpg">
+<Base heroImage="gallery-hero" title="Gallery: Iceland Heliskiing in Film & Photos | Heliski Travel" description="A gallery of Viking Heliskiing on the Troll Peninsula, North Iceland — films and photographs of powder skiing, the helicopter, fjords, midnight sun and the Northern Lights." active="gallery" image="/images/gallery/northern-lights-heliski-helicopter-iceland.jpg" schema={videoLd}>
   <Fragment set:html={body} />
 </Base>
 
 <style is:global>
-:root{--ink:#0A1628;--navy:#172D42;--panel:#15293c;--cream:#F4F6F8;--blue:#A8CFE0;--blue-soft:#C3DCEE;--muted:rgba(195,220,238,.55);--line:rgba(138,180,204,.16);--line-2:rgba(138,180,204,.30);--cta-line:rgba(168,207,224,.45);--radius:3px;--ease:cubic-bezier(.16,1,.3,1);--maxw:1240px;--sans:"proxima-nova","Mulish",-apple-system,"Segoe UI",Roboto,sans-serif;--serif:"Cormorant Garamond",Georgia,serif;--hero:url("/images/gallery-hero.webp");}
+:root{--ink:#0A1628;--navy:#172D42;--panel:#15293c;--cream:#F4F6F8;--blue:#A8CFE0;--blue-soft:#C3DCEE;--muted:rgba(195,220,238,.55);--line:rgba(138,180,204,.16);--line-2:rgba(138,180,204,.30);--cta-line:rgba(168,207,224,.45);--radius:3px;--ease:cubic-bezier(.16,1,.3,1);--maxw:1240px;--sans:"Mulish",-apple-system,"Segoe UI",Roboto,sans-serif;--serif:"Cormorant Garamond",Georgia,serif;--hero:url("/images/gallery-hero.webp");}
 *{box-sizing:border-box;}html{scroll-behavior:smooth;}
 body{margin:0;background:var(--ink);color:var(--cream);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
 body.nav-open{overflow:hidden;}

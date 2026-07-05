@@ -1,5 +1,14 @@
 ---
 import Base from '../layouts/Base.astro';
+const videoLd = {
+  "@type": "VideoObject",
+  "name": "Heliskiing in Iceland — Aerial Teaser",
+  "description": "Aerial film of heliskiing on the Tröllaskagi (Troll) Peninsula, North Iceland — a helicopter accessing Arctic peaks that rise straight from the sea, with powder descents to the fjord.",
+  "thumbnailUrl": "https://heliskitravel.vercel.app/videos/heli-poster.jpg",
+  "uploadDate": "2026-07-01",
+  "duration": "PT26S",
+  "contentUrl": "https://heliskitravel.vercel.app/videos/heli-teaser.mp4"
+};
 const body = `
 
 <!-- HERO SLIDER -->
@@ -86,7 +95,7 @@ const body = `
 <!-- FOOTER -->
 `;
 ---
-<Base title="Heliski Travel Iceland | Trusted Heliskiing Travel Agent" description="World-class heliskiing in Iceland with Heliskitravel.com — authorised Viking Heliskiing agent, IFMGA-certified guides, Arctic powder, reply within 12 hours." active="home">
+<Base title="Heliski Travel Iceland | Trusted Heliskiing Travel Agent" description="World-class heliskiing in Iceland with Heliskitravel.com — authorised Viking Heliskiing agent, IFMGA-certified guides, Arctic powder, reply within 12 hours." active="home" schema={videoLd}>
   <Fragment set:html={body} />
 </Base>
 
