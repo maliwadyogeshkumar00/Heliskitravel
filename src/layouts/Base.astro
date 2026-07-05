@@ -1,7 +1,7 @@
 ---
 // Shared layout: one source of truth for <head>, header and footer across every page.
 const { title, description = '', active = '', image, schema, heroImage } = Astro.props;
-const LOGO = '/_vercel/image?url=https%3A%2F%2Fheliskitravel.com%2Fwp-content%2Fuploads%2F2026%2F05%2FHeliski-Updated-Logo.webp&w=240&q=80';
+const LOGO = '/_vercel/image?url=https%3A%2F%2Fheliskitravel.com%2Fwp-content%2Fuploads%2F2026%2F05%2FHeliski-Updated-Logo.webp&w=320&q=80';
 const pkgActive = active === 'packages';
 const SITE = 'https://heliskitravel.vercel.app';
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
