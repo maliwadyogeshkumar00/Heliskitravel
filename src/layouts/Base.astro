@@ -112,14 +112,15 @@ const FAVICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' vi
   {/* Prefetch the most likely next routes from the homepage — makes onward nav feel instant */}
   {path === '/' && (
     <>
-      <link rel="prefetch" href="/packages/" />
-      <link rel="prefetch" href="/iceland/" />
-      <link rel="prefetch" href="/siglo-hotel/" />
+      <link rel="prefetch" href="/packages" />
+      <link rel="prefetch" href="/iceland" />
+      <link rel="prefetch" href="/siglo-hotel" />
     </>
   )}
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to content</a>
 <div class="progress" id="progress" aria-hidden="true"></div>
 
 <header id="siteHeader"><div class="shell nav">
@@ -143,7 +144,7 @@ const FAVICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' vi
   </nav>
 </div></header>
 
-<slot />
+<main id="main"><slot /></main>
 
 <footer class="sf"><div class="shell">
   <div class="sf__top"><a class="logo" href="/" aria-label="Heliski Travel home"><img src={LOGO} alt="Heliski Travel" width="200" height="98" loading="lazy" /></a>
@@ -209,6 +210,8 @@ footer.sf .sf__base .cr{color:rgba(232,240,248,.74)!important;}
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{margin:0;background:var(--ink);color:var(--cream);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+.skip-link{position:absolute;left:8px;top:-48px;z-index:2000;background:var(--blue);color:var(--ink);padding:11px 20px;font-weight:700;font-size:13px;letter-spacing:.04em;border-radius:0 0 8px 8px;text-decoration:none;transition:top .2s var(--ease);}
+.skip-link:focus{top:0;outline:2px solid var(--cream);outline-offset:2px;}
 img{max-width:100%;display:block;}
 a{color:inherit;text-decoration:none;}
 .shell{max-width:var(--maxw);margin:0 auto;padding:0 48px;width:100%;}
