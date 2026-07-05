@@ -7,14 +7,14 @@ const videoLd = {
   "thumbnailUrl": "https://heliskitravel.vercel.app/videos/heli-poster.jpg",
   "uploadDate": "2026-07-01",
   "duration": "PT26S",
-  "contentUrl": "https://heliskitravel.vercel.app/videos/heli-teaser.mp4"
+  "contentUrl": "https://heliskitravel.vercel.app/videos/heli-teaser-hd.mp4"
 };
 const body = `
 
 <!-- HERO SLIDER -->
 <section class="hero" id="hero">
   <div class="hero__photo" id="heroPhoto"></div>
-  <video class="hero__video" autoplay muted loop playsinline preload="none" poster="/videos/heli-poster.webp" data-desktop="/videos/heli-teaser.mp4" data-mobile="/videos/heli-mobile.mp4" data-poster-mobile="/videos/heli-poster-mobile.webp"><track kind="captions" src="/videos/empty.vtt" srclang="en" label="No dialogue" /></video>
+  <video class="hero__video" autoplay muted loop playsinline preload="none" poster="/videos/heli-poster.webp" data-desktop="/videos/heli-teaser-hd.mp4" data-mobile="/videos/heli-mobile-hd.mp4" data-poster-mobile="/videos/heli-poster-mobile.webp"><track kind="captions" src="/videos/empty.vtt" srclang="en" label="No dialogue" /></video>
   {/* LQIP blur-up: inline data-URI placeholder paints instantly (0 network) and is the LCP element.
       It blurs up to the sharp poster (same frame), which then dissolves into the playing video. */}
   <picture class="hero__lqip" id="heroLqip" aria-hidden="true">
@@ -302,7 +302,28 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
 /* hero video: poster is the LCP; defer the video download until after load so it never competes with first paint */
 /* LQIP blur-up: dissolve the inline placeholder once the sharp poster has decoded (stage 2 of 3) */
 (function(){var hero=document.getElementById('hero');if(!hero)return;var m=window.matchMedia('(max-width:767px)').matches;var poster=m?'/videos/heli-poster-mobile.webp':'/videos/heli-poster.webp';var done=false;function reveal(){if(done)return;done=true;hero.classList.add('poster-ready');}var im=new Image();im.onload=reveal;im.onerror=reveal;im.src=poster;if(im.complete)reveal();setTimeout(reveal,2500);})();
-(function(){var v=document.querySelector('.hero__video');if(!v)return;var m=window.matchMedia('(max-width:768px)').matches;if(m&&v.dataset.posterMobile)v.poster=v.dataset.posterMobile;function go(){v.src=m?v.dataset.mobile:v.dataset.desktop;v.load();var p=v.play();if(p&&p.catch)p.catch(function(){});}if(document.readyState==='complete')setTimeout(go,200);else window.addEventListener('load',function(){setTimeout(go,200);});})();
+/* Progressive quality ramp (ABR-lite): poster is instant, then a light tier starts fast, then it
+   hot-swaps up to the best local tier once fully buffered — seamless because it's a muted loop.
+   Gated on connection: data-saver and 2G stay on the light tier. */
+(function(){var v=document.querySelector('.hero__video');if(!v)return;
+  var mob=window.matchMedia('(max-width:768px)').matches;
+  if(mob&&v.dataset.posterMobile)v.poster=v.dataset.posterMobile;
+  var fast=v.dataset.mobile,best=v.dataset.desktop;
+  var c=navigator.connection||{},saveData=c.saveData===true,slow=/2g/.test(c.effectiveType||'');
+  function climb(){
+    if(mob||saveData||slow||!best||best===fast)return;
+    var hi=document.createElement('video');hi.muted=true;hi.preload='auto';
+    hi.addEventListener('canplaythrough',function(){
+      var t=v.currentTime||0;
+      v.addEventListener('loadeddata',function sw(){try{v.currentTime=t%(v.duration||1);}catch(e){}var pp=v.play();if(pp&&pp.catch)pp.catch(function(){});v.removeEventListener('loadeddata',sw);});
+      v.src=best;v.load();
+    },{once:true});
+    hi.src=best;hi.load();
+  }
+  function go(){v.src=fast;v.load();var p=v.play();if(p&&p.catch)p.catch(function(){});
+    if('requestIdleCallback' in window)requestIdleCallback(climb,{timeout:4000});else setTimeout(climb,2600);}
+  if(document.readyState==='complete')setTimeout(go,200);else window.addEventListener('load',function(){setTimeout(go,200);});
+})();
 var hdr=document.getElementById('siteHeader'),prog=document.getElementById('progress'),heroEl=document.getElementById('hero'),hp=document.getElementById('heroPhoto');
 /* cache layout metrics so the scroll handler never reads scrollHeight (avoids forced reflow) */
 var maxS=0,vhc=0;function recalc(){vhc=window.innerHeight;maxS=document.documentElement.scrollHeight-vhc;}

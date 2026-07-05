@@ -8,7 +8,7 @@ const videoLd = [
     "thumbnailUrl": "https://heliskitravel.vercel.app/videos/gallery-teaser-poster.jpg",
     "uploadDate": "2026-07-01",
     "duration": "PT1M1S",
-    "contentUrl": "https://heliskitravel.vercel.app/videos/gallery-teaser.mp4"
+    "contentUrl": "https://heliskitravel.vercel.app/videos/gallery-teaser-hd.mp4"
   },
   {
     "@type": "VideoObject",
@@ -17,7 +17,7 @@ const videoLd = [
     "thumbnailUrl": "https://heliskitravel.vercel.app/videos/gallery-vh-poster.jpg",
     "uploadDate": "2026-07-01",
     "duration": "PT24S",
-    "contentUrl": "https://heliskitravel.vercel.app/videos/gallery-vh.mp4"
+    "contentUrl": "https://heliskitravel.vercel.app/videos/gallery-vh-hd.mp4"
   }
 ];
 const body = `
@@ -39,12 +39,12 @@ const body = `
       <p class="intro">Two short films from the Troll Peninsula. Tap either to play with sound.</p>
     </div>
     <div class="films reveal">
-      <button class="vcard" type="button" data-video="/videos/gallery-teaser.mp4" aria-label="Play the 2026 teaser film">
+      <button class="vcard" type="button" data-video="/videos/gallery-teaser-hd.mp4" aria-label="Play the 2026 teaser film">
         <img src="/videos/gallery-teaser-poster.jpg" alt="Helicopter flying through a sunlit snow couloir in Iceland" loading="lazy"  decoding="async" width="1000" height="750"/>
         <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
         <span class="vmeta"><span class="vt">The 2026 Teaser</span><span class="vd">Viking Heliskiing · 1:00</span></span>
       </button>
-      <button class="vcard" type="button" data-video="/videos/gallery-vh.mp4" aria-label="Play the aerial film of Siglufjörður and the fjords">
+      <button class="vcard" type="button" data-video="/videos/gallery-vh-hd.mp4" aria-label="Play the aerial film of Siglufjörður and the fjords">
         <img src="/videos/gallery-vh-poster.jpg" alt="Aerial view over the fjords around Siglufjörður, North Iceland" loading="lazy"  decoding="async" width="1000" height="750"/>
         <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
         <span class="vmeta"><span class="vt">Sigló &amp; the Fjords</span><span class="vd">Aerial film · 0:24</span></span>
