@@ -323,10 +323,11 @@ var hdr=document.getElementById('siteHeader'), prog=document.getElementById('pro
 var heroEl=document.getElementById('hero'), heroScroll=document.getElementById('heroScroll');
 var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 
+var __maxS=0;function __recalc(){__maxS=document.documentElement.scrollHeight-window.innerHeight;}__recalc();window.addEventListener('resize',__recalc,{passive:true});window.addEventListener('load',__recalc);
 function onScroll(){
   var y=window.scrollY, vh=window.innerHeight;
   hdr.classList.toggle('scrolled', y>40);
-  var h=document.documentElement.scrollHeight-vh;
+  var h=__maxS;
   prog.style.width=(h>0?(y/h*100):0)+'%';
   if(y<vh && heroScroll){ heroScroll.style.transform='translateY('+(y*0.16)+'px)'; }
 }

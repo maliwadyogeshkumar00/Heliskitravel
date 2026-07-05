@@ -29,7 +29,7 @@ const body = `
 <section class="profile" aria-label="The Travel Manager">
   <div class="shell">
     <div class="grid">
-      <div class="frame reveal"><img src="/wp/2026/05/Vegard-Knudsen-Image-Square-e1778258643910-587x1024.webp" alt="Vegard Knudsen, Travel Manager at Heliski Travel" width="587" height="720" loading="lazy" decoding="async" /></div>
+      <div class="frame reveal"><img src="/_vercel/image?url=https%3A%2F%2Fheliskitravel.com%2Fwp-content%2Fuploads%2F2026%2F05%2FVegard-Knudsen-Image-Square-e1778258643910-587x1024.webp&amp;w=1200&amp;q=72" alt="Vegard Knudsen, Travel Manager at Heliski Travel" width="587" height="720" loading="lazy" decoding="async" /></div>
       <div>
         <p class="eyebrow reveal">The Travel Manager</p>
         <h2 class="reveal">Vegard Knudsen</h2>
@@ -79,7 +79,7 @@ const body = `
       <p class="eyebrow reveal">Signed, by hand</p>
       <p class="line reveal">If you're considering heliski Iceland, reach out. I'll tell you honestly whether it's the right trip for you — and if it is, I'll make sure it's done properly.</p>
       <div class="sig reveal">
-        <img src="/wp/2026/05/Vegard-Knudsen-Signature-1024x576.webp" alt="Vegard Knudsen signature" width="220" height="124" loading="lazy" decoding="async" />
+        <img src="/_vercel/image?url=https%3A%2F%2Fheliskitravel.com%2Fwp-content%2Fuploads%2F2026%2F05%2FVegard-Knudsen-Signature-1024x576.webp&amp;w=1200&amp;q=72" alt="Vegard Knudsen signature" width="220" height="124" loading="lazy" decoding="async" />
         <div class="nm">Vegard Knudsen — Travel Manager, Heliski Travel</div>
       </div>
       <div class="cta reveal"><a class="btn" href="/contact"><span>Plan your week</span> <span class="arw">→</span></a></div>
@@ -252,10 +252,11 @@ body.show-sticky .stickycta{transform:none;}
 
 <script is:inline>
 var hdr=document.getElementById('siteHeader'),prog=document.getElementById('progress'),heroEl=document.getElementById('hero'),hp=document.getElementById('heroPhoto');
+var __maxS=0;function __recalc(){__maxS=document.documentElement.scrollHeight-window.innerHeight;}__recalc();window.addEventListener('resize',__recalc,{passive:true});window.addEventListener('load',__recalc);
 function onScroll(){
   var y=window.scrollY,vh=window.innerHeight;
   hdr.classList.toggle('scrolled',y>40);
-  var h=document.documentElement.scrollHeight-vh;prog.style.width=(h>0?(y/h*100):0)+'%';
+  var h=__maxS;prog.style.width=(h>0?(y/h*100):0)+'%';
   if(y<vh&&hp){hp.style.transform='translateY('+(y*0.16)+'px) scale(1)';}
   var nearBottom=(y+vh)>(document.documentElement.scrollHeight-260);
   document.body.classList.toggle('show-sticky', y>vh*0.85 && !nearBottom);

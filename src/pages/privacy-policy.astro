@@ -68,7 +68,8 @@ const body = `
   <Fragment set:html={body} />
   <script is:inline>
     (function(){var hdr=document.getElementById('siteHeader'),prog=document.getElementById('progress'),burger=document.getElementById('burger');
-      function onScroll(){var y=window.scrollY,vh=window.innerHeight;if(hdr)hdr.classList.toggle('scrolled',y>40);if(prog){var h=document.documentElement.scrollHeight-vh;prog.style.width=(h>0?(y/h*100):0)+'%';}}
+      var __maxS=0;function __recalc(){__maxS=document.documentElement.scrollHeight-window.innerHeight;}__recalc();window.addEventListener('resize',__recalc,{passive:true});window.addEventListener('load',__recalc);
+function onScroll(){var y=window.scrollY,vh=window.innerHeight;if(hdr)hdr.classList.toggle('scrolled',y>40);if(prog){var h=__maxS;prog.style.width=(h>0?(y/h*100):0)+'%';}}
       onScroll();window.addEventListener('scroll',onScroll,{passive:true});
       if(burger){var setMenu=function(o){document.body.classList.toggle('nav-open',o);burger.setAttribute('aria-expanded',o?'true':'false');};
         burger.addEventListener('click',function(){setMenu(!document.body.classList.contains('nav-open'));});
