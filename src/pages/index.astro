@@ -14,7 +14,7 @@ const body = `
 <!-- HERO SLIDER -->
 <section class="hero" id="hero">
   <div class="hero__photo" id="heroPhoto"></div>
-  <video class="hero__video" autoplay muted loop playsinline preload="none" poster="/videos/heli-poster.webp" data-desktop="/videos/heli-teaser-hd.mp4" data-mobile="/videos/heli-mobile-hd.mp4" data-desktop-webm="/videos/heli-teaser-hd.webm" data-mobile-webm="/videos/heli-mobile-hd.webm" data-poster-mobile="/videos/heli-poster-mobile.webp"><track kind="captions" src="/videos/empty.vtt" srclang="en" label="No dialogue" /></video>
+  <video class="hero__video" autoplay muted loop playsinline preload="none" poster="/videos/heli-poster.webp" data-desktop="/videos/heli-teaser-hd.mp4" data-mobile="/videos/heli-mobile-hd.mp4" data-poster-mobile="/videos/heli-poster-mobile.webp"><track kind="captions" src="/videos/empty.vtt" srclang="en" label="No dialogue" /></video>
   {/* LQIP blur-up: inline data-URI placeholder paints instantly (0 network) and is the LCP element.
       It blurs up to the sharp poster (same frame), which then dissolves into the playing video. */}
   <picture class="hero__lqip" id="heroLqip" aria-hidden="true">
@@ -308,17 +308,10 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
 (function(){var v=document.querySelector('.hero__video');if(!v)return;
   var mob=window.matchMedia('(max-width:768px)').matches;
   if(mob&&v.dataset.posterMobile)v.poster=v.dataset.posterMobile;
-  var d=v.dataset,c=navigator.connection||{};
+  var c=navigator.connection||{};
   var light=mob||c.saveData===true||/2g/.test(c.effectiveType||'');
-  var vp9=!!v.canPlayType&&v.canPlayType('video/webm; codecs="vp9"')!=='';
-  var url=light?((vp9&&d.mobileWebm)?d.mobileWebm:d.mobile):((vp9&&d.desktopWebm)?d.desktopWebm:d.desktop);
-  var mp4=light?d.mobile:d.desktop,triedMp4=false;
-  function play(){var p=v.play();if(p&&p.catch)p.catch(function(){});}
-  v.addEventListener('error',function(){
-    if(triedMp4||(v.currentSrc||'').indexOf('.webm')<0)return;
-    triedMp4=true;v.src=mp4;v.load();v.addEventListener('loadeddata',play,{once:true});
-  },true);
-  function go(){v.src=url;v.load();v.addEventListener('loadeddata',play,{once:true});}
+  var url=light?v.dataset.mobile:v.dataset.desktop;
+  function go(){v.src=url;v.load();v.addEventListener('loadeddata',function(){var p=v.play();if(p&&p.catch)p.catch(function(){});},{once:true});}
   if(document.readyState==='complete')setTimeout(go,200);else window.addEventListener('load',function(){setTimeout(go,200);});
 })();
 var hdr=document.getElementById('siteHeader'),prog=document.getElementById('progress'),heroEl=document.getElementById('hero'),hp=document.getElementById('heroPhoto');
