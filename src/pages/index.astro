@@ -14,7 +14,7 @@ const body = `
 <!-- HERO SLIDER -->
 <section class="hero" id="hero">
   <div class="hero__photo" id="heroPhoto"></div>
-  <video class="hero__video" autoplay muted loop playsinline preload="none" poster="/videos/heli-poster.webp" data-desktop="/videos/heli-teaser-hd.mp4" data-mobile="/videos/heli-mobile-hd.mp4" data-poster-mobile="/videos/heli-poster-mobile.webp"><track kind="captions" src="/videos/empty.vtt" srclang="en" label="No dialogue" /></video>
+  <video class="hero__video" autoplay muted loop playsinline preload="none" poster="/videos/heli-poster.webp" data-desktop="/videos/heli-teaser-hd.mp4" data-mobile="/videos/heli-mobile-hd.mp4" data-desktop-webm="/videos/heli-teaser-hd.webm" data-mobile-webm="/videos/heli-mobile-hd.webm" data-poster-mobile="/videos/heli-poster-mobile.webp"><track kind="captions" src="/videos/empty.vtt" srclang="en" label="No dialogue" /></video>
   {/* LQIP blur-up: inline data-URI placeholder paints instantly (0 network) and is the LCP element.
       It blurs up to the sharp poster (same frame), which then dissolves into the playing video. */}
   <picture class="hero__lqip" id="heroLqip" aria-hidden="true">
@@ -308,7 +308,9 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
 (function(){var v=document.querySelector('.hero__video');if(!v)return;
   var mob=window.matchMedia('(max-width:768px)').matches;
   if(mob&&v.dataset.posterMobile)v.poster=v.dataset.posterMobile;
-  var fast=v.dataset.mobile,best=v.dataset.desktop;
+  var vp9=!!v.canPlayType&&v.canPlayType('video/webm; codecs="vp9"')!=='';
+  var fast=(vp9&&v.dataset.mobileWebm)?v.dataset.mobileWebm:v.dataset.mobile;
+  var best=(vp9&&v.dataset.desktopWebm)?v.dataset.desktopWebm:v.dataset.desktop;
   var c=navigator.connection||{},saveData=c.saveData===true,slow=/2g/.test(c.effectiveType||'');
   function climb(){
     if(mob||saveData||slow||!best||best===fast)return;
