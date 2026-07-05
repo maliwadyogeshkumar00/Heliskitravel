@@ -1,7 +1,7 @@
 ---
 // Shared layout: one source of truth for <head>, header and footer across every page.
 const { title, description = '', active = '', image, schema, heroImage } = Astro.props;
-const LOGO = '/wp/2026/05/Heliski-Updated-Logo.webp';
+const LOGO = '/_vercel/image?url=https%3A%2F%2Fheliskitravel.com%2Fwp-content%2Fuploads%2F2026%2F05%2FHeliski-Updated-Logo.webp&w=240&q=80';
 const pkgActive = active === 'packages';
 const SITE = 'https://heliskitravel.vercel.app';
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
@@ -131,7 +131,7 @@ const FAVICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' vi
 <div class="progress" id="progress" aria-hidden="true"></div>
 
 <header id="siteHeader"><div class="shell nav">
-  <a class="logo" href="/" aria-label="Heliski Travel home"><img src={LOGO} alt="Heliski Travel" width="220" height="108" /></a>
+  <a class="logo" href="/" aria-label="Heliski Travel home"><img src={LOGO} alt="Heliski Travel" width="220" height="108" fetchpriority="high" /></a>
   <button class="burger" id="burger" aria-label="Open menu" aria-controls="menu" aria-expanded="false"><span></span><span></span><span></span></button>
   <nav class="menu" id="menu" aria-label="Primary">
     <div class="menu__head"><a href="/" aria-label="Heliski Travel home"><img src={LOGO} alt="Heliski Travel" width="180" height="88" /></a></div>
