@@ -1,0 +1,137 @@
+---
+import Base from '../../layouts/Base.astro';
+const SITE = 'https://heliskitravel.vercel.app';
+const articleLd = {
+  "@type": "Article",
+  "headline": "Heliskiing the Troll Peninsula: Terrain, Zones & Descents",
+  "description": "A complete guide to the Tröllaskagi (Troll) Peninsula's heliski terrain — eleven mapped zones, sea-to-summit descents, daily vertical, record days and skiing with an IFMGA guide.",
+  "image": "https://heliskitravel.vercel.app/images/iceland-hero.webp",
+  "author": { "@type": "Organization", "name": "Heliski Travel", "url": SITE },
+  "publisher": { "@id": SITE + "/#org" },
+  "mainEntityOfPage": SITE + "/heliskiing-guide/troll-peninsula-terrain",
+  "isPartOf": { "@type": "CollectionPage", "name": "Heliskiing in Iceland: The Complete Guide", "url": SITE + "/heliskiing-guide" }
+};
+const faqLd = {
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Where is the Troll Peninsula and how do I get there?","acceptedAnswer":{"@type":"Answer","text":"Tröllaskagi (the Troll Peninsula) is a mountainous headland in North Iceland, reaching into the Arctic Ocean between the fjords of Siglufjörður and Ólafsfjörður. The heliski base is the town of Siglufjörður, roughly an hour by road from Akureyri, which has its own domestic airport. Most guests fly into Reykjavík (Keflavík) or directly to Akureyri, then transfer north to Sigló Hótel."}},
+    {"@type":"Question","name":"How many heliski zones are there on the Troll Peninsula?","acceptedAnswer":{"@type":"Answer","text":"There are eleven mapped heliski zones across the peninsula. With peaks of roughly 1,200 to 1,500 metres rising straight from the sea, and a short helicopter transfer between them, the guides can move the group across zones and aspects through the day to follow the best snow and light."}},
+    {"@type":"Question","name":"How much vertical do you ski in a typical day?","acceptedAnswer":{"@type":"Answer","text":"A typical day is 15,000 to 25,000 vertical feet across roughly 7 to 14 runs, with individual descents of 800 to more than 1,300 vertical metres from summit to coast. On an exceptional day the record stands at 29 runs and 64,000 vertical feet. Trips are sold by guaranteed vertical feet, and you can buy more when conditions allow."}},
+    {"@type":"Question","name":"What level of skier does the Troll Peninsula suit?","acceptedAnswer":{"@type":"Answer","text":"The terrain suits strong intermediate to expert skiers and snowboarders. If you are comfortable linking turns off-piste for a full day in variable snow, you have the ability you need. The eleven zones hold everything from rolling, open faces to committing steep lines, so an IFMGA guide can match the descent to your group each day."}}
+  ]
+};
+---
+<Base
+  heroImage="iceland-hero"
+  title="Heliskiing the Troll Peninsula: Terrain & Zones | Heliski Travel"
+  description="Inside the Tröllaskagi (Troll) Peninsula: eleven mapped heliski zones, sea-to-summit descents, daily vertical and record days, and what it's like to ski it with an IFMGA guide."
+  active="guide"
+  schema={[articleLd, faqLd]}>
+
+<section class="band band--ink gd-hero">
+  <div class="shell">
+    <p class="gd-k">The Guide · Chapter 02</p>
+    <h1 class="gd-h1">The Troll Peninsula &amp; Its Terrain</h1>
+    <p class="gd-lede">Iceland's Tröllaskagi (Troll) Peninsula is one of the few places on earth where you can drop from an Arctic summit and ski a clean, unbroken line all the way to the ocean. This chapter maps the terrain in detail — the eleven zones, the range of lines, how much you ski in a day and what makes it unlike anywhere else. It sits within the wider story of heliskiing in <a href="/iceland">Iceland</a>.</p>
+  </div>
+</section>
+
+<section class="band band--navy gd-body">
+  <div class="shell gd-wrap">
+    <nav class="gd-toc" aria-label="On this page">
+      <p class="gd-toc__t">On this page</p>
+      <a href="#s1">Where the Troll Peninsula is</a>
+      <a href="#s2">Why sea-to-summit descents are unique</a>
+      <a href="#s3">The eleven heliski zones</a>
+      <a href="#s4">The range of terrain</a>
+      <a href="#s5">How much vertical you ski in a day</a>
+      <a href="#s6">Record days and the numbers</a>
+      <a href="#s7">Snow, aspects and reading the day</a>
+      <a href="#s8">Skiing with an IFMGA guide</a>
+      <a href="#s9">Siglufjörður as your base</a>
+      <a href="#faq">Common questions</a>
+    </nav>
+
+    <article class="gd-art">
+      <h2 id="s1">Where the Troll Peninsula is</h2>
+      <p>Tröllaskagi — the Troll Peninsula — is a broad, mountainous headland that pushes north from the top of Iceland into the Arctic Ocean. It is bounded by two of the country's most beautiful fjords: Siglufjörður to the west and Ólafsfjörður to the east. Between them lies a compact but astonishingly dense range of peaks, glacial valleys and knife-edge ridgelines, all within a short helicopter hop of one another.</p>
+      <p>This is North Iceland, not the busy south-west corner most visitors know. The nearest city is Akureyri, the unofficial capital of the north, which sits at the head of a long fjord and has its own domestic airport. From Akureyri it is roughly an hour by road over the mountains to Siglufjörður, the fishing town that serves as the heliski base. Getting here is part of the appeal: you leave the familiar tourist circuit behind and arrive somewhere that still feels remote, self-contained and quietly dramatic.</p>
+      <p>What matters for skiing is the geography. The peaks here rise to around 1,200 to 1,500 metres, which sounds modest until you understand where the bottom of the mountain is. There is no high valley floor, no plateau, no gradual foothills. The mountains climb almost directly out of the sea, so the full height of each peak is available to ski. That single fact shapes everything that follows in this chapter. For a wider view of the country and how a trip fits together, our <a href="/iceland">Iceland guide</a> sets the scene, and the <a href="/travel-here">Travel Here</a> page covers the practical routes north.</p>
+
+      <h2 id="s2">Why sea-to-summit descents are unique</h2>
+      <p>Most of the world's great heliski regions sit inland, high above sea level. You are flown from a valley floor that might already be at 1,500 or 2,000 metres up to a summit, and you ski the difference — the top slice of the mountain. It is superb skiing, but you never reach the bottom of anything. On the Troll Peninsula the arithmetic is different, and better. Because the ranges rise straight from the Arctic Ocean, the bottom of the mountain is the coastline itself.</p>
+      <p>A true sea-to-summit descent means being set down on a corniced Arctic ridge, clicking in, and then skiing a single continuous line — through the summit snowfields, down the open faces, into a hanging valley, and out onto the shore where waves break against black volcanic sand. You finish a run with saltwater in front of you and the peak you just skied rising behind. Very few places anywhere offer this. It is the signature of Icelandic heliskiing and the reason so many experienced skiers make the trip specifically to do it.</p>
+      <p>There is a sensory dimension too. Skiing towards the ocean changes your whole frame of reference. The horizon is water rather than more mountains, the light bounces up off the sea, and in the late season you may be doing it under a sun that never quite sets. Add the fjords, the fishing villages and the occasional glimpse of whales offshore, and each descent feels less like a lap of a ski area and more like a small expedition. If this is the experience you are chasing, our <a href="/classic-heliskiing">classic heliskiing</a> weeks are built around exactly these lines.</p>
+
+      <h2 id="s3">The eleven heliski zones</h2>
+      <p>Across the peninsula, the operation works from eleven mapped heliski zones. Think of these not as single runs but as distinct massifs and valley systems, each holding many possible descents on different aspects and pitches. Eleven is a genuinely large playground, and it is one of the things that separates a strong operation from a marginal one. When you have that much terrain within helicopter range of a single base, the guides are never forced to ski a face that isn't right for the day.</p>
+      <p>The value of eleven zones is variety and choice. On a morning of firm, cold snow the guides might favour steeper, north-facing lines that have held their winter character. As the sun comes round and the surface softens, they can move the group to sunlit aspects where the corn is coming good. If wind has scoured one valley, another a few minutes' flight away may be perfectly loaded and sheltered. The helicopter — a nimble AS-350 B3 (Airbus H125) flown by experienced SENNAIR pilots — makes those transfers quick, so the group can chase the best conditions across the whole peninsula rather than accept whatever one zone offers.</p>
+      <p>It also means the terrain rarely feels crowded or used up over a week. With eleven zones and only a small number of groups flying, you can ski for days and keep finding fresh lines and untouched snow. That combination of scale and low traffic is a large part of why the descents stay pristine, and why a week here feels expansive rather than repetitive.</p>
+
+      <h2 id="s4">The range of terrain, from intermediate to expert</h2>
+      <p>A common misconception is that heliskiing is only for extreme skiers. The Troll Peninsula quietly demolishes that idea. Because there are eleven zones spanning a huge spread of gradients and aspects, the terrain genuinely runs from approachable to serious, and a good guide will read your group and pitch the day accordingly.</p>
+      <p>At the friendlier end are broad, rolling faces and open bowls — long, flattering descents where a strong intermediate can link turns confidently in soft snow with the ocean laid out below. These are not compromise runs; they are some of the most enjoyable skiing on the peninsula, and they carry the same sea-to-summit character as the steeper lines. In the middle sit steeper open faces, gullies and pockets of more technical terrain that reward advanced skiers who want to be tested. And for expert groups there are committing steep lines, tighter couloirs and features that demand precise, confident skiing.</p>
+      <p>The honest requirement is this: the region suits <strong>strong intermediate to expert</strong> skiers and snowboarders. The real test is not resort black-run ability but whether you are comfortable descending off-piste, in variable snow, for a full day. The helicopter does all the climbing, so heliskiing is often less tiring than a hard resort day — but the snow is real backcountry snow, and it rewards general fitness and off-piste confidence. If you are unsure where you sit, our chapter on <a href="/heliskiing-guide/what-is-heliskiing">what heliskiing actually is</a> is a good place to calibrate, and a <a href="/private-heliskiing">private week</a> lets a guide tailor the terrain entirely to your group.</p>
+
+      <h2 id="s5">How much vertical you ski in a day</h2>
+      <p>Iceland heliskiing is sold by guaranteed vertical feet rather than by flight time, and once you understand the numbers you understand why. A typical day delivers somewhere between <strong>15,000 and 25,000 vertical feet</strong> of skiing — a huge amount by any measure, and far more than you could ever ski in a lift-served resort. That works out to roughly <strong>7 to 14 runs</strong> across the day, depending on conditions, group speed and how the guides choose to link the terrain.</p>
+      <p>The individual descents are long. Because you are skiing the full height of mountains that rise from the sea, single runs commonly measure <strong>800 to more than 1,300 vertical metres</strong> from summit to coast. A run of 1,000-plus metres is a serious, sustained descent — the kind that takes real focus from top to bottom and leaves your legs pleasantly wrecked in the best way. String seven to fourteen of those together and you have a day that few other activities in skiing can match.</p>
+      <p>Selling by vertical feet is also the fairer model. You pay for a guaranteed quantity of skiing, and decisions made for safety or weather never reduce what you have already bought — any vertical you don't use stays yours. Modern GPS apps track it precisely, so there is no ambiguity about what you received. When the snow is good and the group is strong, you can simply buy more vertical and keep skiing. Our <a href="/packages">packages</a> are structured around these vertical tiers, and pricing spans a wide range — from around €3,490 for a shorter programme up to €82,990 at the fully private, high-vertical end.</p>
+
+      <h2 id="s6">Record days and the numbers</h2>
+      <p>To give the daily figures some context, it helps to know what a truly exceptional day looks like. The standing record on the peninsula is <strong>29 runs and 64,000 vertical feet in a single day</strong>. That is an extraordinary figure — roughly the height of skiing from sea level to well above the cruising altitude of a passenger jet, and then some, all in one day of flying and skiing.</p>
+      <p>A day like that is the rare alignment of everything: stable, superb snow across multiple aspects, long daylight hours, clear flying weather and a fit, fast group that wastes no time between runs. It is not the goal of a normal week, and chasing it would be missing the point — but it tells you what the terrain and the operation are capable of when the stars align. It also explains why the late-season <a href="/heliskiing-guide/best-time-to-heliski-iceland">midnight-sun window</a> is so prized: when the light barely fades, the flying day can stretch far longer than anywhere at lower latitudes.</p>
+      <p>For most guests, the everyday numbers are the ones that matter, and they are already remarkable. Fifteen to twenty-five thousand feet a day, day after day, adds up to a week of skiing that would take a lifetime of resort visits to accumulate. The record is simply the ceiling — a reminder that on the Troll Peninsula the limiting factor is rarely the mountain.</p>
+
+      <h2 id="s7">Snow, aspects and reading the day</h2>
+      <p>North Iceland's snow is shaped by its position: high latitude, maritime climate and the constant influence of the Arctic Ocean. Early in the season — March into April — the snowpack holds cold, dry powder and light backcountry snow, and the aurora often burns overhead at night. As spring advances into May and June, the classic Icelandic <em>corn</em> arrives: snow that freezes hard overnight and softens through the day into a smooth, forgiving, fast surface that many skiers rank among the most pleasurable there is.</p>
+      <p>Aspect is the key to timing all of this, and it is where the eleven zones earn their keep. A given face skis best at a particular time of day depending on which way it points and how much sun it has taken. The guides plan the day around this: cold, shaded lines first thing while they still hold their edge, then following the softening surface round the compass as the sun moves. This is why the day is rarely static — the group flows between zones and aspects, always aiming for the sweet spot where the snow is exactly right.</p>
+      <p>Reading the day well is a craft, and it is one of the clearest returns on skiing with a properly certified guide. It also means no two days of a week look the same. Wind loading, cloud, temperature and the freeze-thaw cycle all shift the picture, and the itinerary bends to meet them. For a deeper look at how the season changes month by month, the chapter on the <a href="/heliskiing-guide/best-time-to-heliski-iceland">best time to heliski Iceland</a> covers powder, corn, the aurora and the midnight sun in detail.</p>
+
+      <h2 id="s8">Skiing with an IFMGA guide</h2>
+      <p>Every day on the Troll Peninsula is led by an <strong>IFMGA-certified mountain guide</strong> — the highest and most internationally recognised guiding qualification there is. This is not a formality. The guide chooses which zones to fly to, which faces are safe and skiing well, where to drop and where to regroup, and how to sequence the descents so the group is always on the best available snow. In terrain this varied and this remote, that judgement is the whole game.</p>
+      <p>Safety runs through all of it. Every guest is equipped with a full set of <strong>BCA avalanche safety gear</strong> — transceiver, shovel, probe and airbag — and receives a thorough briefing before skiing. The guides assess the snowpack continuously and make decisions with a clear head; the fact that trips are sold by guaranteed vertical means there is never commercial pressure to ski a line that isn't right. On the equipment side, <strong>K2 freeride skis and snowboards</strong> are provided, tuned for exactly this kind of soft, variable snow, and guests bring their own boots and helmet for the best possible fit. Our dedicated chapter on <a href="/heliskiing-guide/heliskiing-safety-guides">safety, avalanches and guides</a> goes further into how the mountain risk is managed.</p>
+      <p>Practically, a guided day means you can switch off the navigation and logistics and simply ski. You are not route-finding, not worrying about the flight, not second-guessing the snow — that is all being handled by a professional whose entire career is built on it. For groups who want that relationship taken even further, a <a href="/private-heliskiing">private trip</a> gives you a guide and helicopter dedicated solely to you, while <a href="/heli-assisted-touring">heli-assisted touring</a> blends the flying with earned turns for those who want to move under their own power for part of the day.</p>
+
+      <h2 id="s9">Siglufjörður as your base</h2>
+      <p>Every day starts and ends in Siglufjörður, and the town is a genuine part of the experience rather than merely a place to sleep. Tucked at the head of its own steep-walled fjord on the northern edge of the peninsula, it was once the herring-fishing capital of Iceland — a boom town at the top of the world — and that history gives it real character. Today the restored harbour is the heart of the place, and it is where you are based for the week.</p>
+      <p>Home is the four-star <strong>Sigló Hótel</strong>, set right on the marina at the water's edge. After a day of sea-to-summit descents you come back to geothermal hot tubs on the harbour, waterfront dining and, on clear early-season nights, the Northern Lights reflected in the still water of the fjord. It is a rare combination — serious, remote Arctic skiing by day, and genuine comfort and warmth by night, with no long transfer between the two. You can read more about the hotel and the town on our <a href="/siglo-hotel">Sigló Hótel</a> page.</p>
+      <p>The base also makes the region accessible to more than just the skiers in a group. Siglufjörður has restaurants, museums and a slow, characterful charm, so partners and friends who aren't flying every day still have a proper trip of their own. That balance — hardcore terrain within reach, civilised base at its foot — is a big part of why so many skiers return to the Troll Peninsula year after year. When you are ready to plan, our <a href="/packages">packages</a> lay out the options and <a href="/contact">contact us</a> to talk through dates and ability; as the authorised agent for Viking Heliskiing, we reply within 12 hours.</p>
+
+      <div class="gd-faq" id="faq">
+        <details>
+          <summary>Where is the Troll Peninsula and how do I get there?</summary>
+          <p>Tröllaskagi (the Troll Peninsula) is a mountainous headland in North Iceland, reaching into the Arctic Ocean between the fjords of Siglufjörður and Ólafsfjörður. The heliski base is the town of Siglufjörður, roughly an hour by road from Akureyri, which has its own domestic airport. Most guests fly into Reykjavík (Keflavík) or directly to Akureyri, then transfer north to Sigló Hótel.</p>
+        </details>
+        <details>
+          <summary>How many heliski zones are there on the Troll Peninsula?</summary>
+          <p>There are eleven mapped heliski zones across the peninsula. With peaks of roughly 1,200 to 1,500 metres rising straight from the sea, and a short helicopter transfer between them, the guides can move the group across zones and aspects through the day to follow the best snow and light.</p>
+        </details>
+        <details>
+          <summary>How much vertical do you ski in a typical day?</summary>
+          <p>A typical day is 15,000 to 25,000 vertical feet across roughly 7 to 14 runs, with individual descents of 800 to more than 1,300 vertical metres from summit to coast. On an exceptional day the record stands at 29 runs and 64,000 vertical feet. Trips are sold by guaranteed vertical feet, and you can buy more when conditions allow.</p>
+        </details>
+        <details>
+          <summary>What level of skier does the Troll Peninsula suit?</summary>
+          <p>The terrain suits strong intermediate to expert skiers and snowboarders. If you are comfortable linking turns off-piste for a full day in variable snow, you have the ability you need. The eleven zones hold everything from rolling, open faces to committing steep lines, so an IFMGA guide can match the descent to your group each day.</p>
+        </details>
+      </div>
+
+      <div class="gd-next">
+        <p class="gd-next__t">Continue the guide</p>
+        <div class="gd-next__row">
+          <a href="/heliskiing-guide/what-is-heliskiing">What Is Heliskiing?</a>
+          <a href="/heliskiing-guide/best-time-to-heliski-iceland">The Best Time to Go</a>
+          <a href="/heliskiing-guide/heliskiing-safety-guides">Safety, Avalanches &amp; Guides</a>
+          <a href="/heliskiing-guide">Back to the guide hub</a>
+        </div>
+      </div>
+
+      <div class="gd-cta">
+        <a class="btn" href="/packages"><span>View packages</span> <span class="arw">&rarr;</span></a>
+        <a class="btn btn--ghost" href="/contact"><span>Request a quote</span></a>
+      </div>
+    </article>
+  </div>
+</section>
+</Base>

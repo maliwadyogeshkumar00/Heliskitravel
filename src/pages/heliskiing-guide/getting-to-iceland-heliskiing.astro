@@ -1,0 +1,206 @@
+---
+import Base from '../../layouts/Base.astro';
+const SITE = 'https://heliskitravel.vercel.app';
+
+const articleLd = {
+  "@type": "Article",
+  "headline": "Getting to Iceland: Travel & Logistics for Heliskiing",
+  "mainEntityOfPage": SITE + "/heliskiing-guide/getting-to-iceland-heliskiing",
+  "image": SITE + "/images/iceland-hero.webp",
+  "author": { "@type": "Organization", "name": "Heliski Travel" },
+  "publisher": { "@id": SITE + "/#org" },
+  "description": "How to reach the heliskiing base in North Iceland — flying via Keflavík or Akureyri, the road to Siglufjörður, the transfers we arrange, and building a full Iceland trip around your week."
+};
+
+const faqLd = {
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I get to the heliskiing base in North Iceland?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most guests fly into Keflavík International Airport near Reykjavík and continue north to Siglufjörður. A faster alternative is a short domestic flight from Reykjavík to Akureyri, the capital of North Iceland, which is about an hour by road from Siglufjörður. We arrange the final leg for you, so you are met and driven straight to the Sigló Hótel."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I fly into Keflavík or Akureyri?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Keflavík has the widest choice of international flights and lets you add Reykjavík, the Golden Circle, the Blue Lagoon and the south coast to your trip. Akureyri is the quickest way to reach the base, since it is roughly an hour by road from Siglufjörður. Many guests fly into Keflavík at the start of the trip and out of Akureyri at the end, or the reverse."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you arrange transfers to Siglufjörður?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Heliski Travel arranges the final leg from your arrival point to Siglufjörður and back, whether you land at Keflavík or Akureyri. Tell us your flights and we coordinate the pickup so you are met on arrival and driven directly to the four-star Sigló Hótel on the Troll Peninsula."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I add sightseeing to a heliskiing trip in Iceland?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Easily. From Reykjavík you can add the Golden Circle, the Blue Lagoon and the south coast's black-sand beaches, and in the darker early-season weeks you can join a Northern Lights tour. Pairing the north-coast heliskiing with the classic south makes for a complete Iceland trip, and we are happy to help you plan the days around your ski week."
+      }
+    }
+  ]
+};
+---
+<Base
+  heroImage="iceland-hero"
+  title="Getting to Iceland: Heliskiing Travel & Logistics | Heliski Travel"
+  description="How to reach the heliskiing base in North Iceland — flying via Keflavík or Akureyri, the road to Siglufjörður, transfers we arrange, and building a full Iceland trip."
+  active="guide"
+  schema={[articleLd, faqLd]}>
+
+<style>
+  .band{position:relative;}
+  .band--ink{background:var(--ink);}
+  .band--navy{background:var(--navy);}
+  .btn{display:inline-flex;align-items:center;gap:11px;padding:15px 26px;border-radius:999px;background:var(--blue);color:var(--ink);font-family:var(--sans);font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;transition:transform .4s var(--ease),background .4s var(--ease);}
+  .btn .arw{transition:transform .4s var(--ease);}
+  .btn:hover{transform:translateY(-2px);}
+  .btn:hover .arw{transform:translateX(5px);}
+  .btn--ghost{background:none;border:1px solid var(--cta-line);color:var(--cream);}
+  .btn--ghost:hover{background:rgba(168,207,224,.08);}
+</style>
+
+<section class="band band--ink gd-hero">
+  <div class="shell">
+    <p class="gd-k">The Guide · Chapter 08</p>
+    <h1 class="gd-h1">Getting There</h1>
+    <p class="gd-lede">Iceland is closer than most guests imagine, and the journey to the heliskiing base in the far north is refreshingly simple. This chapter walks you through flying in, choosing between <a href="/travel-here">Keflavík and Akureyri</a>, reaching <a href="/siglo-hotel">Siglufjörður</a>, the transfers we handle for you, and how to build a full Iceland adventure around your week of skiing.</p>
+  </div>
+</section>
+
+<section class="band band--navy gd-body">
+  <div class="shell gd-wrap">
+
+    <nav class="gd-toc" aria-label="On this page">
+      <p class="gd-toc__t">On this page</p>
+      <a href="#s1">1 · Flying to Iceland</a>
+      <a href="#s2">2 · Keflavík versus Akureyri</a>
+      <a href="#s3">3 · Reaching Siglufjörður</a>
+      <a href="#s4">4 · Transfers we arrange</a>
+      <a href="#s5">5 · When to arrive and depart</a>
+      <a href="#s6">6 · Heliskiing with Reykjavík and the south</a>
+      <a href="#s7">7 · Northern Lights & Golden Circle</a>
+      <a href="#s8">8 · Documents and practicalities</a>
+      <a href="#s9">9 · Money, tipping and connectivity</a>
+      <a href="#faq">Common questions</a>
+    </nav>
+
+    <article class="gd-art">
+
+      <h2 id="s1">Flying to Iceland</h2>
+      <p>For a country that feels genuinely remote — a lone island in the North Atlantic, closer to the Arctic Circle than to mainland Europe — Iceland is remarkably well connected. It sits almost exactly midway between North America and Europe, which is why it has long served as a natural stepping-stone across the ocean, and why so many airlines route through it. From the major cities of Britain and northern Europe, the flight is comfortably under four hours; from the east coast of North America it is a manageable overnight hop. Few destinations this wild are this easy to reach.</p>
+      <p>Almost every international visitor arrives at <strong>Keflavík International Airport</strong>, the country's principal gateway, which lies on the Reykjanes Peninsula about forty-five minutes' drive south-west of the capital, Reykjavík. Keflavík is modern, calm and easy to navigate, and it is where the great majority of our guests begin their journey to the mountains. Because it is served by a wide network of carriers from across Europe and North America, you will usually find a direct flight from your home city — and if not, a single connection.</p>
+      <p>There is, however, a second and rather elegant way in for those heading to the Troll Peninsula: a domestic flight from Reykjavík onward to <strong>Akureyri</strong>, the capital of North Iceland. We look at how to choose between the two in the next section, but the headline is simple — you are never far from the north, and we help you piece the journey together whichever route you take.</p>
+
+      <h2 id="s2">Keflavík versus Akureyri</h2>
+      <p>The single logistical decision that shapes your journey is where to land. Both work beautifully; they simply suit different trips.</p>
+      <h3>Keflavík — the classic route</h3>
+      <p>Flying into <strong>Keflavík</strong> gives you the widest possible choice of international flights, the most competitive fares, and the freedom to spend a night or two in Reykjavík before or after your ski week. It is the natural choice if you want to fold in the <a href="/iceland">south of Iceland</a> — the Golden Circle, the Blue Lagoon, the black-sand beaches of the south coast — around your time in the mountains. The trade-off is distance: Siglufjörður sits at the very top of the country, so from Keflavík there is a longer transfer north, which we arrange and which we cover in section three.</p>
+      <h3>Akureyri — the fast track to the snow</h3>
+      <p>For guests who want to reach the base as quickly and directly as possible, a short domestic flight from Reykjavík to <strong>Akureyri</strong> is hard to beat. Akureyri is the largest town in the north and its unofficial capital, and from there it is only about an hour by road to Siglufjörður. Landing here strips a long overland drive out of your day and delivers you to the mountains fresh and ready to ski. Note that the Reykjavík end of this hop typically departs from the domestic terminal in the city rather than from Keflavík, so you will move between the two — something we factor into your itinerary.</p>
+      <p>Many of our most seasoned guests choose the best of both: they fly into Keflavík to enjoy Reykjavík and the south at the start of the trip, then fly home out of Akureyri at the end (or the reverse), avoiding any backtracking. If you tell us what you would like to see, we will suggest the combination that flows most naturally. See <a href="/travel-here">Travel Here</a> for a fuller breakdown of both routes.</p>
+
+      <h2 id="s3">Reaching Siglufjörður</h2>
+      <p>Your final destination is <strong>Siglufjörður</strong>, a former herring town cradled between steep peaks and a deep blue fjord on the northern edge of the <strong>Tröllaskagi — the Troll Peninsula</strong>. It is one of the most northerly towns in Iceland, and its position at the foot of the mountains is precisely what makes the heliskiing here so extraordinary: the terrain begins, quite literally, above the rooftops. Your home for the week is the four-star <a href="/siglo-hotel">Sigló Hótel</a>, right on the marina.</p>
+      <p>From <strong>Akureyri</strong>, the drive is short and scenic — roughly an hour along the coast, threading through the tunnels that link the fishing villages of the peninsula. From <strong>Keflavík or Reykjavík</strong>, the overland journey north is longer but genuinely beautiful, crossing the open interior and the sweeping landscapes of the north before dropping down to the coast. Some guests relish the drive as part of the adventure; others prefer to shorten it by flying to Akureyri and transferring from there. Either way, the last stretch into Siglufjörður — the tunnels, the fjord opening ahead of you, the mountains rising on every side — is a memorable arrival in its own right.</p>
+      <p>Whichever way you come, you do not have to navigate any of it alone. The connections, the timings and the handovers are ours to manage — which brings us to transfers.</p>
+
+      <h2 id="s4">Transfers we arrange</h2>
+      <p>One of the quiet luxuries of booking through <strong>Heliski Travel</strong> is that the moving parts are handled for you. We arrange the final leg of your journey — the transfer from your arrival airport to Siglufjörður, and back again at the end of the week — so that from the moment you land in Iceland you are looked after.</p>
+      <ul>
+        <li><strong>You are met on arrival.</strong> Send us your flight details and we coordinate the pickup, whether you land at Keflavík or Akureyri, so there is no wondering how you get from the airport to the mountains.</li>
+        <li><strong>Direct to the door.</strong> The transfer takes you to the Sigló Hótel on the marina — no changes, no guesswork, no hire car to organise unless you specifically want one.</li>
+        <li><strong>The whole loop, both ways.</strong> We plan the return in the same way, timed to your departure, so the trip bookends neatly and you make your flight home with room to spare.</li>
+      </ul>
+      <p>Because we tailor the transfer to your route and your group, the simplest thing is to talk it through. When you <a href="/contact">get in touch</a>, share your flights or ask us to suggest them, and we will build the ground logistics around your ski week. As the authorised agent for Viking Heliskiing, we reply within twelve hours.</p>
+
+      <h2 id="s5">When to arrive and depart</h2>
+      <p>The Iceland heliskiing season runs from <strong>March through to mid-June</strong>, and your week is built around full days on the mountain — so the aim is to arrive rested and with a little margin, and to depart without rushing.</p>
+      <p>Wherever possible, we suggest arriving the day before your skiing begins. Iceland's weather is famously changeable, and building a night's buffer into the front of the trip means a delayed or re-routed flight never eats into your first day in the helicopter. It also lets you adjust to the light: in the early season the days are lengthening fast, and by late spring the north basks in near-endless daylight, with the midnight sun making evenings feel timeless. That long light is a gift for skiing, but it can quietly rearrange your body clock, so an easy first evening helps.</p>
+      <p>On the way out, leave yourself an unhurried final morning rather than pairing your last descent with a same-day international flight. If you are flying home from Akureyri, the short transfer makes a relaxed departure straightforward; if you are routing back through Keflavík, we time the transfer so you reach the airport comfortably. For a deeper look at how the season shifts from powder to spring corn, see our chapter on <a href="/heliskiing-guide/best-time-to-heliski-iceland">the best time to heliski Iceland</a>.</p>
+
+      <h2 id="s6">Combining heliskiing with Reykjavík and the south</h2>
+      <p>Here is the case for treating your trip as more than a ski week: Iceland rewards it. The north gives you the heliskiing — the fjords, the sea-to-summit descents, the Troll Peninsula — while the south, reached from Reykjavík, delivers the postcard Iceland of waterfalls, geysers and volcanic coastline. Pairing the two makes for a complete trip, and the geography lends itself to it perfectly.</p>
+      <p><strong>Reykjavík</strong> itself is a rewarding day or two — a compact, characterful capital with excellent food, design and a lively harbour, and the base from which most of the south's highlights are reached. From here you can add:</p>
+      <ul>
+        <li><strong>The Golden Circle</strong> — the classic loop taking in Þingvellir National Park, where the continental plates pull apart; the Geysir geothermal field; and the thunderous Gullfoss waterfall.</li>
+        <li><strong>The Blue Lagoon</strong> — the milky, mineral-rich geothermal spa on the Reykjanes Peninsula, conveniently close to Keflavík and a sublime way to unknot travel-weary legs, either on arrival or before you fly home.</li>
+        <li><strong>The south coast</strong> — the black-sand beaches, sea stacks and waterfalls that string along the shoreline east of the capital, some of the most photographed landscapes in the country.</li>
+      </ul>
+      <p>The most natural rhythm is to bookend your heliskiing with the south: a day or two around Reykjavík at one end, the ski week in the north, and perhaps a soak at the Blue Lagoon on your way to the airport. Our <a href="/packages">packages</a> centre on the skiing, but we are glad to help you shape the days on either side into a single, well-paced Icelandic journey.</p>
+
+      <h2 id="s7">Northern Lights and Golden Circle add-ons</h2>
+      <p>Two add-ons deserve a section of their own, because timing them well makes all the difference.</p>
+      <h3>The Northern Lights</h3>
+      <p>The aurora borealis is a creature of darkness, and that makes it a matter of timing. In the <strong>darker early-season weeks</strong> — the March end of the season, when the nights are still long enough — a Northern Lights tour becomes a genuine possibility, and on a clear night the display over the Icelandic landscape is unforgettable. As the season advances and the daylight stretches toward the midnight sun of late spring, the sky simply never darkens enough for the aurora to show. So if seeing the lights matters to you, plan the trip early and treat any sighting as the bonus it is — the aurora keeps its own schedule, and no tour can promise it. We will happily flag which weeks give you the best odds.</p>
+      <h3>The Golden Circle and beyond</h3>
+      <p>The Golden Circle is the easiest and most rewarding sightseeing to add, precisely because it loops out from Reykjavík and back in a single day — Þingvellir, Geysir and Gullfoss in one unhurried outing. It pairs naturally with a night or two in the capital at the start or end of your trip, and needs no special timing, making it the ideal complement to the more weather-dependent skiing in the north. Between the Golden Circle by day and the mountains by helicopter, you cover a remarkable range of Iceland in one trip.</p>
+
+      <h2 id="s8">Documents and practicalities</h2>
+      <p>The paperwork for a trip to Iceland is refreshingly light, but a little preparation smooths the way.</p>
+      <ul>
+        <li><strong>Passports and entry.</strong> Iceland is part of the Schengen Area. Many visitors, including those from the UK, the EU and North America, travel for short stays without a visa, but entry requirements depend on your nationality — check the current rules for your passport well ahead of travel, and make sure the passport itself has plenty of validity remaining.</li>
+        <li><strong>Insurance is essential.</strong> Heliskiing is an adventure sport in remote mountain terrain, and you must be covered for it specifically — including off-piste and heli-accessed skiing, mountain rescue and repatriation. A standard travel or ski policy is rarely enough on its own. We can point you toward suitable cover; do not leave home without it.</li>
+        <li><strong>Driving licence.</strong> You will not need to drive, since we arrange your transfers — but if you plan to self-drive around the south, bring your licence and be realistic about spring road and weather conditions.</li>
+        <li><strong>Health and altitude.</strong> There are no altitude concerns here; Iceland's peaks are modest in elevation. Come with a good level of general fitness for the skiing itself, which our <a href="/heliskiing-guide">guide</a> covers in detail elsewhere.</li>
+      </ul>
+      <p>If you are unsure about any requirement for your particular passport or party, ask us — we would far rather answer early than have a surprise at the airport.</p>
+
+      <h2 id="s9">Money, tipping and connectivity</h2>
+      <p>A few everyday practicalities round out your preparation.</p>
+      <h3>Money and cards</h3>
+      <p>The currency is the <strong>Icelandic króna</strong>, but Iceland is one of the most card-friendly countries in the world. Contactless and chip cards are accepted virtually everywhere — hotels, restaurants, shops and fuel stations — and you can comfortably travel without carrying much cash at all. Let your bank know you are travelling so a card is not blocked, and check any foreign-transaction fees before you go.</p>
+      <h3>Tipping</h3>
+      <p>Tipping is not an ingrained part of Icelandic culture, and service is generally included, so you should never feel obliged. That said, exceptional service — whether from your guides after a memorable week or from the team at the hotel — is warmly received if you wish to show your appreciation, and entirely at your discretion.</p>
+      <h3>Staying connected</h3>
+      <p>Iceland has excellent mobile and internet coverage across its inhabited areas, and the Sigló Hótel is comfortably connected, so keeping in touch from base is straightforward. Coverage naturally thins in the remotest mountain terrain — which is rather the point of being there — but your guides carry the communications they need for the day's skiing. Check roaming with your provider before you travel, and you will find staying in touch simple.</p>
+      <p>With the logistics understood, the rest is anticipation. When you are ready to turn a plan into a booking, <a href="/contact">tell us your dates</a> and we will handle the journey from your arrival gate to the first lift of the rotor. We reply within twelve hours.</p>
+
+      <section id="faq" class="gd-faq" aria-label="Frequently asked questions" style="margin-top:64px;">
+        <h2 style="margin-bottom:12px;">Common questions</h2>
+        <details open>
+          <summary>How do I get to the heliskiing base in North Iceland?</summary>
+          <p>Most guests fly into Keflavík International Airport near Reykjavík and continue north to Siglufjörður. A faster alternative is a short domestic flight from Reykjavík to Akureyri, the capital of North Iceland, which is about an hour by road from Siglufjörður. We arrange the final leg for you, so you are met and driven straight to the Sigló Hótel.</p>
+        </details>
+        <details>
+          <summary>Should I fly into Keflavík or Akureyri?</summary>
+          <p>Keflavík has the widest choice of international flights and lets you add Reykjavík, the Golden Circle, the Blue Lagoon and the south coast to your trip. Akureyri is the quickest way to reach the base, since it is roughly an hour by road from Siglufjörður. Many guests fly into Keflavík at the start and out of Akureyri at the end, or the reverse.</p>
+        </details>
+        <details>
+          <summary>Do you arrange transfers to Siglufjörður?</summary>
+          <p>Yes. We arrange the final leg from your arrival point to Siglufjörður and back, whether you land at Keflavík or Akureyri. Tell us your flights and we coordinate the pickup so you are met on arrival and driven directly to the four-star Sigló Hótel on the Troll Peninsula.</p>
+        </details>
+        <details>
+          <summary>Can I add sightseeing to a heliskiing trip in Iceland?</summary>
+          <p>Easily. From Reykjavík you can add the Golden Circle, the Blue Lagoon and the south coast's black-sand beaches, and in the darker early-season weeks you can join a Northern Lights tour. Pairing the north-coast heliskiing with the classic south makes for a complete Iceland trip, and we are happy to help you plan the days around your ski week.</p>
+        </details>
+      </section>
+
+      <nav class="gd-next" aria-label="Continue the guide">
+        <p class="gd-next__t">Continue the guide</p>
+        <div class="gd-next__row">
+          <a href="/heliskiing-guide/siglo-hotel-siglufjordur">Where You Stay &rarr;</a>
+          <a href="/heliskiing-guide/best-time-to-heliski-iceland">The Best Time to Go &rarr;</a>
+          <a href="/heliskiing-guide/heliski-gear-packing">Gear &amp; Packing &rarr;</a>
+          <a href="/heliskiing-guide">Back to the guide hub</a>
+        </div>
+      </nav>
+
+      <div class="gd-cta">
+        <a class="btn" href="/packages"><span>View packages</span> <span class="arw">&rarr;</span></a>
+        <a class="btn btn--ghost" href="/contact"><span>Plan your journey</span></a>
+      </div>
+
+    </article>
+  </div>
+</section>
+</Base>

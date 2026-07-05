@@ -1,0 +1,211 @@
+---
+import Base from '../../layouts/Base.astro';
+const SITE = 'https://heliskitravel.vercel.app';
+
+const articleLd = {
+  "@type": "Article",
+  "headline": "Heliski Gear & the Complete Packing Checklist",
+  "mainEntityOfPage": SITE + "/heliskiing-guide/heliski-gear-packing",
+  "image": SITE + "/images/iceland-hero.webp",
+  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": SITE + "/#org" },
+  "publisher": { "@id": SITE + "/#org" },
+  "about": ["Heliski gear", "Packing checklist", "Avalanche safety equipment", "Ski and snowboard equipment", "Troll Peninsula", "Iceland heliskiing"],
+  "articleSection": "Heliskiing Guide"
+};
+
+const faqLd = {
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"What gear do I need to bring heliskiing in Iceland, and what is provided?","acceptedAnswer":{"@type":"Answer","text":"We provide the technical mountain kit — K2 freeride skis or a snowboard matched to your ability and the day's snow, and a complete BCA avalanche set of transceiver, shovel, probe and airbag; outerwear can be provided too. You bring the fit-critical personal items: your own ski or snowboard boots and helmet, warm mid- and base-layers, quality waterproof gloves plus a spare, a neck gaiter, both sunglasses and ski goggles, high-SPF sun cream and lip balm, casual clothing and swimwear for the hotel, any personal medication, a small mountain backpack and your camera or phone."}},
+    {"@type":"Question","name":"Why do I have to bring my own ski or snowboard boots?","acceptedAnswer":{"@type":"Answer","text":"Boots are the one piece of equipment that must fit you exactly. On long heliski days a boot that is even slightly wrong causes cold feet, pressure points and lost control, and no rental fleet can be fitted to your feet on the morning of a flight. Your own broken-in boots and helmet give you the best fit, warmth and comfort — so while skis, snowboards and avalanche gear are all provided, boots and a helmet are the two items we ask you to bring."}},
+    {"@type":"Question","name":"Do I need both sunglasses and goggles for heliskiing in Iceland?","acceptedAnswer":{"@type":"Answer","text":"Yes — pack both. Arctic spring sun reflecting off snow is intense, so you want sunglasses for bright, clear conditions and around the helicopter, and ski goggles for skiing, wind and flat, overcast light. A goggle lens that works in flat light matters as much as a bright-light lens, and you should carry high-SPF sun cream and lip balm because that reflected glare burns exposed skin quickly."}},
+    {"@type":"Question","name":"Can I bring my own skis or snowboard instead of using the provided gear?","acceptedAnswer":{"@type":"Answer","text":"You can, but most guests do not. The provided K2 freeride fleet — models such as the Mindbender, Pinnacle, Alchemist and Passport — is chosen for Arctic powder and fitted to your ability and the snow of the day, so you travel light and always ride the right ski for the conditions. Bringing your own kit means airline ski-bag fees and the risk of a board that is wrong for deep spring snow. The items always worth bringing are your boots and helmet."}}
+  ]
+};
+---
+<Base
+  heroImage="iceland-hero"
+  title="Heliski Gear & the Complete Packing Checklist | Heliski Travel"
+  description="Exactly what to pack for heliskiing on Iceland's Troll Peninsula: what we provide, why boots are yours, your avalanche kit and a complete checklist."
+  active="guide"
+  schema={[articleLd, faqLd]}>
+
+<section class="band band--ink gd-hero">
+  <div class="shell">
+    <p class="gd-k">The Guide · Chapter 07</p>
+    <h1 class="gd-h1">Gear &amp; Packing</h1>
+    <p class="gd-lede">Heliskiing on the <a href="/iceland">Troll Peninsula</a> asks less of your luggage than most ski holidays and more of a handful of well-chosen items. We provide the technical hardware — <a href="/packages">K2 freeride skis or a snowboard</a> and a full avalanche kit; you bring the things that must fit you and only you. This chapter sets out precisely what to pack, what is waiting for you at base, and how to look after all of it in the Arctic cold — followed by a complete, no-nonsense checklist you can pack straight from.</p>
+  </div>
+</section>
+
+<section class="band band--navy gd-body">
+  <div class="shell">
+    <div class="gd-wrap">
+
+      <nav class="gd-toc" aria-label="On this page">
+        <p class="gd-toc__t">On this page</p>
+        <a href="#s1">1 · What is provided and what you bring</a>
+        <a href="#s2">2 · The K2 ski and snowboard fleet</a>
+        <a href="#s3">3 · Why your boots must be your own</a>
+        <a href="#s4">4 · Your avalanche safety kit, explained</a>
+        <a href="#s5">5 · Clothing and layering for the Arctic</a>
+        <a href="#s6">6 · Goggles, sunglasses and sun protection</a>
+        <a href="#s7">7 · The complete packing checklist</a>
+        <a href="#s8">8 · Renting versus bringing your own</a>
+        <a href="#s9">9 · Looking after gear in the cold</a>
+      </nav>
+
+      <article class="gd-art">
+
+        <h2 id="s1">What is provided and what you bring</h2>
+        <p>The single most common question we field before a trip is a practical one: what do I actually need to bring? The reassuring answer is that heliskiing with us requires far less packing than a self-organised backcountry expedition, because the equipment that is heavy, technical and expensive to fly with is already here on the <a href="/iceland">Troll Peninsula</a>, matched to the mountain and to you.</p>
+        <p>We provide the <strong>K2 freeride skis or snowboard</strong> — a fleet chosen specifically for Arctic powder and fitted to your skill level and to the snow of the day — together with a complete <strong>BCA avalanche kit</strong>: transceiver, shovel, probe and airbag. Technical outerwear, the waterproof shell and insulated layers that meet the weather, can be provided as well, so if you would rather not invest in a mountain jacket and trousers of your own, you needn't. This is the hardware end of the sport, and it is handled.</p>
+        <p>What you bring is the shorter, more personal list. In every case these are items that either must be a precise fit to you, or are simply more comfortable and reliable when they are your own and already broken in. In order of importance:</p>
+        <ul>
+          <li><strong>Your own ski or snowboard boots and helmet</strong> — the two items we ask everyone to bring, for the best fit across long days.</li>
+          <li><strong>Warm mid- and base-layers</strong> in merino or a technical synthetic, enough for several consecutive days.</li>
+          <li><strong>Quality waterproof gloves, plus a spare pair</strong>, so a soaked or dropped glove never ends your day.</li>
+          <li><strong>A neck gaiter or buff</strong>, and <strong>both sunglasses and ski goggles</strong> for bright and flat light alike.</li>
+          <li><strong>High-SPF sun cream and lip balm</strong> — the Arctic spring sun reflecting off snow is genuinely strong.</li>
+          <li><strong>Casual warm clothing and swimwear</strong> for the hotel and its geothermal hot tubs, plus any <strong>personal medication</strong>.</li>
+          <li><strong>A small backpack for the mountain</strong>, and your <strong>camera or phone</strong> to capture the descents.</li>
+        </ul>
+        <p>That is the whole of it. The sections below take each of these in turn, explain the reasoning, and end with a checklist you can pack directly from. If you would prefer to talk any of it through against your own kit bag, our <a href="/contact">team</a> is happy to advise before you fly.</p>
+
+        <h2 id="s2">The K2 ski and snowboard fleet</h2>
+        <p>The skis and snowboards waiting for you are not a generic rental wall of last season's leftovers. They are a curated <strong>K2 freeride fleet</strong> assembled for exactly one job: carrying you through deep, variable Arctic snow, day after day, with confidence. Each guest is matched to a board that suits their ability and, crucially, the conditions of that particular morning — a powder day and a spring-corn day call for different skis, and having the fleet on site means you ride the right one rather than a compromise.</p>
+        <p>The line-up spans several K2 models chosen to cover the full range of guests and snow:</p>
+        <h3>K2 Mindbender</h3>
+        <p>A modern all-mountain freeride ski with real backbone underfoot — a natural choice for strong skiers who want a board that charges through chop and holds a line on the steeper faces of the Tröllaskagi.</p>
+        <h3>K2 Pinnacle</h3>
+        <p>A versatile freeride platform that floats willingly in fresh snow while staying manageable and forgiving, which makes it a dependable match for confident intermediates stepping into big-mountain terrain for the first time.</p>
+        <h3>K2 Alchemist</h3>
+        <p>K2's high-performance, precision-oriented ski for expert riders who want power and response, and who intend to make the most of every foot of vertical on a fast, committed day.</p>
+        <h3>K2 Passport</h3>
+        <p>An approachable, easy-riding ski that flatters a smoother, more playful style — well suited to guests prioritising float, fun and a relaxed feel over outright aggression.</p>
+        <p>Snowboarders are equally well served from the same freeride philosophy, with boards suited to powder float and all-day comfort. Because everything is fitted on the ground, you avoid the two classic pitfalls of travelling with your own kit: airline ski-bag fees, and arriving with a board that turns out to be wrong for the snow you meet. For more on how each day and its conditions shape the skiing itself, see our chapters on <a href="/heliskiing-guide/who-can-heliski">who can heliski</a> and the <a href="/iceland">Troll Peninsula terrain</a>.</p>
+
+        <h2 id="s3">Why your boots must be your own</h2>
+        <p>If the fleet is the one thing you can happily leave at home, boots are the one thing you should not. Of all the equipment in the sport, ski and snowboard boots are the single component that has to fit <em>you</em> — your feet, your instep, your particular way of standing in a turn — and that fit cannot be conjured from a rental shelf on the morning of a flight.</p>
+        <p>Heliski days are long. You may be on your feet in your boots from mid-morning until the light softens, cycling through run after run with the helicopter doing the climbing. Across those hours a boot that is even slightly wrong stops being a minor irritation and becomes the thing that defines your day: a shade too loose and you lose the precise control that steep, deep terrain demands; a shade too tight and circulation suffers until your toes go cold and numb, which in the Arctic is both miserable and, over a full day, genuinely worth avoiding. A boot broken in to your own foot solves all of this before you even step into a binding.</p>
+        <p>The same logic applies to your <strong>helmet</strong>. A helmet that fits properly sits stable and comfortable under a goggle strap through repeated laps; a borrowed one that shifts or pinches becomes a distraction you notice on every descent. Both are light, both pack easily into a ski bag, and both repay the effort of bringing them many times over. This is why — even though skis, snowboards and the full avalanche kit are all provided — <strong>your own boots and helmet are the two items we ask every guest to bring</strong>.</p>
+
+        <h2 id="s4">Your avalanche safety kit, explained</h2>
+        <p>Every guest skis with a complete set of <strong>BCA avalanche safety equipment</strong>, provided as standard and fitted before you fly. You do not need to own, buy or bring any of it — but you should understand what each piece does, because in the backcountry the kit is only as good as the people who know how to use it, and your guides will brief you on all of it. The set is built around four items that work together.</p>
+        <h3>Transceiver (beacon)</h3>
+        <p>A transceiver worn on the body transmits a signal continuously while you ski. In the event of a burial, companions switch their own units to receive and follow the signal to the buried person. Everyone in the group wears one, every day — it is the cornerstone of backcountry rescue.</p>
+        <h3>Probe</h3>
+        <p>A collapsible pole that assembles in seconds and is pushed into the snow to pinpoint a buried person's exact location and depth once the transceiver has narrowed the search. It turns an approximate signal into a precise dig site.</p>
+        <h3>Shovel</h3>
+        <p>A lightweight, sturdy metal shovel for excavating quickly and efficiently. Speed matters enormously in a rescue, and a proper avalanche shovel moves far more snow, far faster, than improvised digging.</p>
+        <h3>Airbag</h3>
+        <p>A backpack-mounted airbag that, when deployed, inflates to help keep the wearer nearer the surface of moving snow, reducing burial depth. It is a preventive layer that works alongside — never instead of — the beacon, probe and shovel.</p>
+        <p>Before anyone skis, guides run a full safety briefing and beacon check, and the mountain plan is shaped every day around the snowpack and the conditions. The equipment is one part of a larger system of professional judgement; to understand how that system works — the guiding, the decision-making and the role of the helicopter — read our dedicated chapter on <a href="/heliskiing-guide/heliskiing-safety-guides">safety, avalanches and guides</a>.</p>
+
+        <h2 id="s5">Clothing and layering for the Arctic</h2>
+        <p>Dressing for a heliski day in North Iceland is an exercise in layering rather than bulk. Conditions shift through a day — a still, sunlit face, a windy ridge, the downdraught by the helicopter — and the way you stay comfortable across all of them is with adaptable layers you can add or shed, not one heavy garment.</p>
+        <h3>Base layers</h3>
+        <p>Start with a technical base layer against the skin — merino wool or a good synthetic — that wicks moisture away and keeps you warm even when you have worked up heat on a descent. Cotton has no place here; it holds damp and chills you. Bring enough <strong>warm base-layers</strong> for several consecutive days.</p>
+        <h3>Mid layers</h3>
+        <p>Over the base goes an insulating <strong>mid-layer</strong> — a fleece or light down or synthetic jacket — that traps warmth and can be added or removed as the day and your effort dictate. A packable insulated layer is invaluable for the cooler moments waiting between runs.</p>
+        <h3>Outerwear</h3>
+        <p>Your outer shell needs to be genuinely waterproof and windproof to handle Arctic weather. <strong>Outerwear can be provided</strong> if you would rather not travel with your own mountain jacket and trousers — a real convenience, and one less thing to buy for a single trip.</p>
+        <h3>Hands, neck and extremities</h3>
+        <p>Bring <strong>quality waterproof gloves, and a spare pair</strong> — a wet or lost glove is the fastest route to a cold, cut-short day, and a dry backup solves it instantly. Add a <strong>neck gaiter or buff</strong> to seal the gap at your collar and protect your face from wind and glare, and warm socks that fit inside your boots without bunching.</p>
+        <p>Finally, pack for the hours off the mountain too: <strong>casual warm clothing</strong> for evenings in Siglufjörður, and <strong>swimwear</strong> for the geothermal hot tubs at the <a href="/siglo-hotel">Sigló Hótel</a>, where soaking under an Arctic sky is one of the quiet pleasures of the week.</p>
+
+        <h2 id="s6">Goggles, sunglasses and sun protection</h2>
+        <p>The Arctic spring sun is deceptively powerful, and its danger is doubled by the snow beneath you: a bright day on a white mountain reflects an enormous amount of light and ultraviolet straight back up at your face. Protecting your eyes and skin is not a nicety here — it is part of skiing well and comfortably, and it is an area where a small amount of packing forethought makes a large difference.</p>
+        <p>Bring <strong>both sunglasses and ski goggles</strong>, because they do different jobs. Quality sunglasses are ideal for the brightest, clearest conditions, for the walk to the helicopter and for time around base. <strong>Ski goggles</strong> are what you wear to ski — they seal against wind and spindrift and, critically, they handle the two lighting extremes you will meet:</p>
+        <ul>
+          <li><strong>Bright light:</strong> on a clear, high-glare day, a darker lens cuts the intensity and lets you read the snow without squinting.</li>
+          <li><strong>Flat light:</strong> when cloud rolls in and the surface loses all definition, a lighter, high-contrast lens restores the shape of the terrain in front of you. Reading flat light well is a genuine safety and confidence advantage.</li>
+        </ul>
+        <p>A goggle system that covers both — whether interchangeable lenses or a versatile all-conditions tint — is well worth having. Finish your sun kit with <strong>high-SPF sun cream</strong> for every patch of exposed skin and a good <strong>lip balm with sun protection</strong>; the reflected glare burns lips and the underside of the nose surprisingly fast. Reapply through the day, especially after wind and sweat. Late in the season, when guests ski beneath the <a href="/heliskiing-guide/getting-to-iceland-heliskiing">midnight sun</a>, this protection matters for even longer hours of daylight.</p>
+
+        <h2 id="s7">The complete packing checklist</h2>
+        <p>Here is everything in one place. Items marked <strong>Provided</strong> are waiting for you on the Troll Peninsula and need not be packed; everything under <strong>You bring</strong> should go in your bag. Use it as a final pre-flight check.</p>
+        <h3>Provided by us</h3>
+        <ul>
+          <li>K2 freeride skis or snowboard — fitted to your ability and the day's snow (Mindbender, Pinnacle, Alchemist, Passport and more)</li>
+          <li>Full BCA avalanche kit — transceiver, shovel, probe and airbag</li>
+          <li>Technical outerwear — waterproof shell and insulation can be provided on request</li>
+          <li>IFMGA-certified guiding, the helicopter, and your full safety briefing</li>
+        </ul>
+        <h3>You bring</h3>
+        <ul>
+          <li><strong>Ski or snowboard boots</strong> — your own, for the best fit across long days</li>
+          <li><strong>Helmet</strong> — your own, comfortable under a goggle strap</li>
+          <li><strong>Warm base-layers</strong> — merino or synthetic, several days' worth</li>
+          <li><strong>Warm mid-layers</strong> — fleece or light down / synthetic insulation</li>
+          <li><strong>Waterproof gloves — plus a spare pair</strong></li>
+          <li><strong>Neck gaiter or buff</strong></li>
+          <li><strong>Ski goggles</strong> — ideally for both bright and flat light</li>
+          <li><strong>Sunglasses</strong> — for clear, bright conditions and around base</li>
+          <li><strong>High-SPF sun cream</strong> and <strong>lip balm</strong> with sun protection</li>
+          <li><strong>Warm socks</strong> that fit inside your boots without bunching</li>
+          <li><strong>Casual warm clothing</strong> for evenings in Siglufjörður</li>
+          <li><strong>Swimwear</strong> for the hotel's geothermal hot tubs</li>
+          <li><strong>Personal medication</strong> and any personal toiletries</li>
+          <li><strong>A small backpack</strong> for the mountain</li>
+          <li><strong>Camera or phone</strong> for the descents</li>
+          <li>Valid travel documents and comprehensive travel insurance</li>
+        </ul>
+        <p>If anything on this list is unclear against your own kit, or you are weighing whether to bring or leave a particular item, send us a note through the <a href="/contact">contact page</a> — we would far rather answer a small question now than have you arrive without a glove.</p>
+
+        <h2 id="s8">Renting versus bringing your own</h2>
+        <p>Should you travel with your own skis or snowboard, or ride the provided fleet? For the great majority of guests, the answer is to leave the boards at home — and the reasoning is worth spelling out.</p>
+        <p>The <strong>case for the provided K2 fleet</strong> is strong. It is fitted to your ability and, uniquely, to the snow you meet that morning, so you are never on the wrong ski for the conditions. You avoid airline ski-bag fees and the anxiety of oversized luggage, transfers and possible damage in transit. And you are riding boards specifically chosen for Arctic powder, maintained on site — not whatever happened to fit in your bag. Most experienced heliskiers, having tried it, prefer this: it is simpler, lighter and often results in better skiing.</p>
+        <p>The <strong>case for bringing your own</strong> comes down to attachment. If you have a treasured, perfectly dialled setup and you genuinely ski better on it than on anything else, you are welcome to bring it. Just weigh that against the fees, the logistics, and the real possibility that a ski tuned for your home resort is not the ideal tool for deep spring snow on the Tröllaskagi.</p>
+        <p>The one place the calculus never changes is <strong>boots and helmet</strong>: those always come with you, whatever you decide about skis. And on outerwear the choice is happily removed — since a shell and insulation <strong>can be provided</strong>, there is no need to buy or pack a mountain jacket for a single trip unless you want to. For how gear fits into the overall value of a package, see our chapter on <a href="/heliskiing-guide/getting-to-iceland-heliskiing">getting to Iceland</a> and the full <a href="/packages">package details</a>.</p>
+
+        <h2 id="s9">Looking after gear in the cold</h2>
+        <p>Good kit rewards a little care, and the Arctic cold asks for habits that guests from milder mountains sometimes forget. None of it is onerous, but attending to a few things will keep you warmer, drier and more comfortable across the week.</p>
+        <ul>
+          <li><strong>Dry everything overnight.</strong> Boot liners, gloves and base-layers all hold moisture from the day. Loosen boots and open liners to the air, and lay damp gloves somewhere warm — the <a href="/siglo-hotel">Sigló Hótel</a> gives you the comfort to do this properly. Dry gear in the morning is warm gear.</li>
+          <li><strong>Keep spare gloves accessible.</strong> The reason to carry a second pair is that they are useless at the bottom of a bag. Keep the spare in your pack so a soaked glove is a thirty-second swap, not a day-ender.</li>
+          <li><strong>Protect goggles and lenses.</strong> Never wipe a wet inner lens with a rough cloth — it scratches the anti-fog coating. Let goggles air-dry, carry them in a soft pouch, and keep a spare or interchangeable lens for the light.</li>
+          <li><strong>Mind your electronics in the cold.</strong> Camera and phone batteries drain fast in Arctic temperatures. Keep spares and your phone in an inner pocket close to body warmth, and they will last far longer for the shots you actually want.</li>
+          <li><strong>Look after your skin daily.</strong> Sun cream and lip balm are not a one-and-done in the morning; reapply through the day, particularly after wind and effort, to stay ahead of the reflected glare.</li>
+        </ul>
+        <p>The provided skis, snowboards and avalanche gear are checked and maintained for you between days, so the care that falls to you is only ever your own personal items. Look after those, arrive with the right things in your bag, and the mountain is free to be the only thing you think about.</p>
+
+        <div class="gd-faq">
+          <details>
+            <summary>What gear do I need to bring heliskiing in Iceland, and what is provided?</summary>
+            <p>We provide the technical mountain kit — K2 freeride skis or a snowboard matched to your ability and the day's snow, and a complete BCA avalanche set of transceiver, shovel, probe and airbag; outerwear can be provided too. You bring the fit-critical personal items: your own ski or snowboard boots and helmet, warm mid- and base-layers, quality waterproof gloves plus a spare, a neck gaiter, both sunglasses and ski goggles, high-SPF sun cream and lip balm, casual clothing and swimwear for the hotel, any personal medication, a small mountain backpack and your camera or phone.</p>
+          </details>
+          <details>
+            <summary>Why do I have to bring my own ski or snowboard boots?</summary>
+            <p>Boots are the one piece of equipment that must fit you exactly. On long heliski days a boot that is even slightly wrong causes cold feet, pressure points and lost control, and no rental fleet can be fitted to your feet on the morning of a flight. Your own broken-in boots and helmet give you the best fit, warmth and comfort — so while skis, snowboards and avalanche gear are all provided, boots and a helmet are the two items we ask you to bring.</p>
+          </details>
+          <details>
+            <summary>Do I need both sunglasses and goggles for heliskiing in Iceland?</summary>
+            <p>Yes — pack both. Arctic spring sun reflecting off snow is intense, so you want sunglasses for bright, clear conditions and around the helicopter, and ski goggles for skiing, wind and flat, overcast light. A goggle lens that works in flat light matters as much as a bright-light lens, and you should carry high-SPF sun cream and lip balm because that reflected glare burns exposed skin quickly.</p>
+          </details>
+          <details>
+            <summary>Can I bring my own skis or snowboard instead of using the provided gear?</summary>
+            <p>You can, but most guests do not. The provided K2 freeride fleet — models such as the Mindbender, Pinnacle, Alchemist and Passport — is chosen for Arctic powder and fitted to your ability and the snow of the day, so you travel light and always ride the right ski for the conditions. Bringing your own kit means airline ski-bag fees and the risk of a board that is wrong for deep spring snow. The items always worth bringing are your boots and helmet.</p>
+          </details>
+        </div>
+
+        <div class="gd-next">
+          <p class="gd-next__t">Continue the guide</p>
+          <div class="gd-next__row">
+            <a href="/heliskiing-guide/who-can-heliski">Who can heliski</a>
+            <a href="/heliskiing-guide/heliskiing-safety-guides">Safety, avalanches &amp; guides</a>
+            <a href="/heliskiing-guide/getting-to-iceland-heliskiing">Getting to Iceland</a>
+            <a href="/heliskiing-guide">Back to the guide</a>
+          </div>
+        </div>
+
+        <div class="gd-cta">
+          <a class="btn" href="/packages"><span>View packages</span> <span class="arw">&rarr;</span></a>
+          <a class="btn btn--ghost" href="/contact"><span>Ask a packing question</span></a>
+        </div>
+
+      </article>
+    </div>
+  </div>
+</section>
+</Base>
