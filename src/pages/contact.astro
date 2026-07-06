@@ -118,7 +118,7 @@ const body = `
   --line:rgba(138,180,204,0.16); --line-2:rgba(138,180,204,0.28);
   --field-line:rgba(195,220,238,0.20); --cta-line:rgba(168,207,224,0.45);
   --radius:2px; --ease:cubic-bezier(0.16,1,0.3,1); --maxw:1240px;
-  --sans:"proxima-nova","Mulish",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --sans:"Mulish",-apple-system,"Segoe UI",Roboto,sans-serif;
   --serif:"Cormorant Garamond",Georgia,serif;
   --photo:url("/images/contact-hero.webp");
 }
@@ -378,7 +378,7 @@ if(form){form.addEventListener('submit',function(e){
   if(!lines.length){ lines.push('(no details selected yet)'); }
   var subj='Heliskiing enquiry — '+(picks['Package']||'Iceland week');
   var body='New enquiry via heliskitravel\n\n'+lines.join('\n')+'\n\nReplying within 12 hours.';
-  window.location.href='mailto:hello@heliskitravel.com?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
+  window.location.href='mailto:info@heliskitravel.com?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
 });}
 
 var io=new IntersectionObserver(function(entries){
