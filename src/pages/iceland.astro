@@ -63,7 +63,7 @@ const body = `
       <div class="split">
         <div class="pane pane--dark reveal">
           <p class="eyebrow">Why choose us</p>
-          <h3>Why Iceland<span class="s">earns the season.</span></h3>
+          <h2>Why Iceland<span class="s">earns the season.</span></h2>
           <p>Six reasons every guest writes home about — the terrain, the people, the safety standards, and the way the operation measures every week in vertical feet, never flight time.</p>
         </div>
         <div class="pane pane--light reveal">
@@ -344,11 +344,11 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
 .pane{position:relative;border-radius:6px;padding:clamp(38px,3.8vw,58px);display:flex;flex-direction:column;justify-content:center;min-height:360px;}
 .pane--dark{background:var(--panel);border:1px solid var(--line);}
 .pane--light{background:var(--cream);color:var(--ink);}
-.pane h3{font-family:var(--sans);font-weight:600;letter-spacing:-.01em;font-size:clamp(30px,3.4vw,46px);line-height:1.02;margin:18px 0 22px;color:var(--cream);}
-.pane h3 .s{display:block;font-family:var(--serif);font-style:italic;font-weight:400;color:var(--blue-soft);letter-spacing:0;}
+.pane h3,.pane h2{font-family:var(--sans);font-weight:600;letter-spacing:-.01em;font-size:clamp(30px,3.4vw,46px);line-height:1.02;margin:18px 0 22px;color:var(--cream);}
+.pane h3 .s,.pane h2 .s{display:block;font-family:var(--serif);font-style:italic;font-weight:400;color:var(--blue-soft);letter-spacing:0;}
 .pane p{margin:0;font-size:16px;line-height:1.78;color:rgba(244,246,248,.7);max-width:48ch;}
 .pane--light .eyebrow{color:#4d6678;}.pane--light .eyebrow::before{background:#4d6678;}
-.pane--light h3{color:var(--ink);}.pane--light h3 .s{color:#3f8bb0;}
+.pane--light h3,.pane--light h2{color:var(--ink);}.pane--light h3 .s,.pane--light h2 .s{color:#3f8bb0;}
 .pane--light p{color:rgba(10,22,40,.66);}
 
 /* ROW LIST (number/label left, content right, thin dividers) */

@@ -57,38 +57,38 @@ const body = `
       <hr class="rule reveal" />
       <div class="inputs">
         <div class="control reveal"><span class="field-label">Your Name</span>
-          <div class="field"><input type="text" placeholder="Full name" autocomplete="name" /></div></div>
+          <div class="field"><input type="text" placeholder="Full name" autocomplete="name" aria-label="Your name" /></div></div>
         <div class="control reveal"><span class="field-label">Email</span>
-          <div class="field"><input type="email" placeholder="your@email.com" autocomplete="email" /></div></div>
+          <div class="field"><input type="email" placeholder="your@email.com" autocomplete="email" aria-label="Email" /></div></div>
         <div class="control reveal"><span class="field-label">Phone (optional)</span>
-          <div class="field"><input type="tel" placeholder="Include country code" autocomplete="tel" /></div></div>
+          <div class="field"><input type="tel" placeholder="Include country code" autocomplete="tel" aria-label="Phone (optional)" /></div></div>
         <div class="control reveal"><span class="field-label">Country</span>
-          <div class="field"><input type="text" placeholder="Where you'll travel from" autocomplete="country-name" /></div></div>
+          <div class="field"><input type="text" placeholder="Where you'll travel from" autocomplete="country-name" aria-label="Country" /></div></div>
         <div class="control reveal"><span class="field-label">Days on the Mountain</span>
-          <div class="field"><select>
+          <div class="field"><select aria-label="Days on the mountain">
             <option value="" disabled selected>Select days</option>
             <option>3 days</option><option>4 days</option><option>5 days</option>
             <option>Longer — multi-week</option><option>Not sure yet</option>
           </select></div></div>
         <div class="control reveal"><span class="field-label">Experience Level</span>
-          <div class="field"><select>
+          <div class="field"><select aria-label="Experience level">
             <option value="" disabled selected>Select level</option>
             <option>Strong intermediate — confident off-piste</option><option>Advanced — all conditions, all-mountain</option><option>Expert — steeps, couloirs, technical lines</option>
             <option>Professional — IFMGA / patrol / instructor</option><option>Mixed group</option><option>Not sure yet</option>
           </select></div></div>
         <div class="control reveal"><span class="field-label">Preferred Season</span>
-          <div class="field"><select>
+          <div class="field"><select aria-label="Preferred season">
             <option value="" disabled selected>Select season</option>
             <option>February — April 2027</option><option>Flexible — advise me</option>
           </select></div></div>
         <div class="control reveal"><span class="field-label">Sigló Hotel Rooming</span>
-          <div class="field"><select>
+          <div class="field"><select aria-label="Sigló Hotel rooming">
             <option value="" disabled selected>Select room type</option>
             <option>Mountain View</option><option>Harbour View</option><option>Harbour Suite</option>
             <option>Exclusive buyout (12+ guests)</option><option>No preference</option>
           </select></div></div>
         <div class="control full reveal"><span class="field-label">Hints about your group we should know?</span>
-          <div class="field"><textarea placeholder="Goals, ability mix, dates flex, anything we should know."></textarea></div></div>
+          <div class="field"><textarea placeholder="Goals, ability mix, dates flex, anything we should know." aria-label="Hints about your group"></textarea></div></div>
       </div>
       <div class="summary reveal" aria-live="polite">
         <span class="lab">Your request</span>
