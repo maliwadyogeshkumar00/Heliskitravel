@@ -35,8 +35,8 @@
   },
   "rewrites": [
     {
-      "source": "/wp/:path*",
-      "destination": "https://heliskitravel.com/wp-content/uploads/:path*"
+      "source": "/wp/2026/:path*",
+      "destination": "https://heliskitravel.com/wp-content/uploads/2026/:path*"
     }
   ],
   "headers": [
