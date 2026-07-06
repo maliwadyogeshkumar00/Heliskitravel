@@ -7,15 +7,17 @@ const body = `
     <h1>Imprint</h1>
     <p class="updated">Legal notice · Impressum</p>
     <div class="legal-body">
-      <p class="note">The details in <span class="fill">[square brackets]</span> below must be completed with Heliski Travel's official company information before publishing. Swiss law requires accurate provider identification.</p>
 
-      <h2>Company</h2>
+      <h2>Provider</h2>
       <p>
-        <strong>Heliski Travel</strong> — <span class="fill">[Registered company name / legal form, e.g. GmbH / AG]</span><br/>
-        <span class="fill">[Street and number]</span><br/>
-        <span class="fill">[Postcode and city]</span><br/>
-        Switzerland
+        <strong>The Alps Experience Travel, Knudsen</strong><br/>
+        Entreprise individuelle (sole proprietorship)<br/>
+        Nyon, Canton of Vaud, Switzerland
       </p>
+      <p>heliskitravel.com is operated by The Alps Experience Travel, Knudsen. &ldquo;Heliski Travel&rdquo; is a trading name of this business.</p>
+
+      <h2>Owner &amp; responsible for content</h2>
+      <p>Vegard Knudsen</p>
 
       <h2>Contact</h2>
       <p>
@@ -25,24 +27,21 @@ const body = `
 
       <h2>Commercial register</h2>
       <p>
-        Registered in the Commercial Register of the Canton of <span class="fill">[Canton]</span><br/>
-        Company identification number (UID): <span class="fill">[CHE-XXX.XXX.XXX]</span>
+        Registered in the Commercial Register of the Canton of Vaud, Switzerland.<br/>
+        Business identification number (UID): <strong>CHE-485.511.570</strong>
       </p>
 
-      <h2>VAT</h2>
-      <p>VAT number: <span class="fill">[CHE-XXX.XXX.XXX MWST]</span></p>
+      <h2>Value Added Tax</h2>
+      <p>The business is not currently registered for Swiss VAT, as its turnover is below the statutory registration threshold. No VAT is therefore charged on our services.</p>
 
-      <h2>Represented by</h2>
-      <p><span class="fill">[Name of managing director / authorised representative]</span></p>
-
-      <h2>Responsible for content</h2>
-      <p><span class="fill">[Name]</span>, at the address above.</p>
+      <h2>Our role as agent</h2>
+      <p>The Alps Experience Travel, Knudsen acts as an official sales agent for <strong>Viking Heliskiing (Iceland)</strong>. The heliskiing itself &mdash; guiding, helicopter access and related mountain services &mdash; is provided and operated by Viking Heliskiing under their own terms and conditions. We arrange and broker your booking; we are not the operator of the heliski service.</p>
 
       <h2>Disclaimer</h2>
-      <p>We prepare the content of this website with care but give no guarantee as to its accuracy, completeness or timeliness. Heliskiing and related services are provided by our partner operator Viking Heliskiing; details on their offering are subject to their own terms. Where this site links to external websites, we are not responsible for their content.</p>
+      <p>We prepare the content of this website with care but give no guarantee as to its accuracy, completeness or timeliness. Heliskiing and related services are provided by our partner operator Viking Heliskiing and are subject to their own terms. Heliskiing is an alpine activity that depends on weather and snow conditions; flying days cannot be guaranteed. Where this site links to external websites, we are not responsible for their content.</p>
 
       <h2>Copyright</h2>
-      <p>All content, text, images and design on this website are protected by copyright. Photography and film are used with permission of the respective owners. Any use beyond what copyright law permits requires our prior written consent.</p>
+      <p>All content, text, images and design on this website are protected by copyright. Photography and film are used with the permission of the respective owners. Any use beyond what copyright law permits requires our prior written consent.</p>
 
       <p>See also our <a href="/privacy-policy">Privacy Policy</a>, <a href="/terms">Terms &amp; Conditions</a> and <a href="/cookie-policy">Cookie Policy</a>.</p>
     </div>
@@ -50,7 +49,7 @@ const body = `
 </section>
 `;
 ---
-<Base title="Imprint | Heliski Travel" description="Legal notice and company information for Heliski Travel, an authorised agent for Viking Heliskiing in Iceland." active="">
+<Base title="Imprint | Heliski Travel" description="Legal notice and provider information for heliskitravel.com, operated by The Alps Experience Travel, Knudsen — authorised sales agent for Viking Heliskiing, Iceland." active="">
   <Fragment set:html={body} />
   <script is:inline>
     (function(){var hdr=document.getElementById('siteHeader'),prog=document.getElementById('progress'),burger=document.getElementById('burger');
