@@ -40,13 +40,13 @@ const orgLd = {
   "url": SITE,
   "logo": { "@type":"ImageObject", "url": SITE + "/logo-google.png", "width":600, "height":600 },
   "image": ogImage,
-  "email":"hello@heliskitravel.com",
+  "email":"info@heliskitravel.com",
   "telephone":"+41797030917",
   "priceRange":"€€€€",
   "description":"Authorised booking agent for Viking Heliskiing in Siglufjörður, North Iceland — 3, 4 and 5-day heliskiing weeks with IFMGA-certified guides, based at the 4-star Sigló Hótel.",
   "areaServed":{ "@type":"Place","name":"Troll Peninsula, North Iceland","geo":{ "@type":"GeoCoordinates","latitude":66.1516,"longitude":-18.9075 } },
   "knowsAbout":["Heliskiing","Off-piste skiing","Ski touring","Troll Peninsula","Siglufjörður","Viking Heliskiing","Iceland ski holidays","Sigló Hótel"],
-  "contactPoint":[{ "@type":"ContactPoint","contactType":"reservations","email":"hello@heliskitravel.com","telephone":"+41797030917","availableLanguage":["en"] }]
+  "contactPoint":[{ "@type":"ContactPoint","contactType":"reservations","email":"info@heliskitravel.com","telephone":"+41797030917","availableLanguage":["en"] }]
 };
 const websiteLd = { "@type":"WebSite", "@id": SITE + "/#website", "url": SITE, "name":"Heliski Travel", "publisher": { "@id": SITE + "/#org" } };
 const webpageLd = { "@type":"WebPage", "@id": canonical + "#webpage", "url": canonical, "name": title, "isPartOf": { "@id": SITE + "/#website" }, "about": { "@id": SITE + "/#org" }, ...(description ? { "description": description } : {}) };
@@ -140,7 +140,7 @@ const FAVICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' vi
     <a href="/contact" class={active === 'contact' ? 'active' : undefined}>Contact</a>
     <div class="menu__foot">
       <a class="mf__cta" href="/contact">Plan your trip <span>&rarr;</span></a>
-      <a class="mf__mail" href="mailto:hello@heliskitravel.com">hello@heliskitravel.com</a>
+      <a class="mf__mail" href="mailto:info@heliskitravel.com">info@heliskitravel.com</a>
       <div class="mf__tag">Authorised Agent · Viking Heliskiing Iceland</div>
       <div class="mf__base"><span>© 2026 Heliski Travel</span><span>Reply within 12 hours</span></div>
     </div>
@@ -152,7 +152,7 @@ const FAVICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' vi
 <footer class="sf"><div class="shell">
   <div class="sf__top"><a class="logo" href="/" aria-label="Heliski Travel home"><img src={LOGO} alt="Heliski Travel" width="200" height="98" loading="lazy" /></a>
     <nav class="sf__nav" aria-label="Footer"><a href="/packages">Packages</a><a href="/travel-here">Travel Here</a><a href="/siglo-hotel">Sigló Hotel</a><a href="/iceland">Iceland</a><a href="/heliskiing-guide">Heliskiing Guide</a><a href="/gallery">Gallery</a><a href="/about">About Us</a><a href="/contact">Contact</a></nav></div>
-  <div class="sf__mid"><a class="big" href="mailto:hello@heliskitravel.com">hello@heliskitravel.com</a><div class="sf__trust">Authorised Agent · Viking Heliskiing Iceland · Certified Guides · <b>Reply within 12 hours</b></div></div>
+  <div class="sf__mid"><a class="big" href="mailto:info@heliskitravel.com">info@heliskitravel.com</a><div class="sf__trust">Authorised Agent · Viking Heliskiing Iceland · Certified Guides · <b>Reply within 12 hours</b></div></div>
   <p class="sf__entity">heliskitravel.com is operated by The Alps Experience Travel, Knudsen · Nyon, Switzerland · UID CHE-485.511.570 · Official sales agent for Viking Heliskiing, Iceland.</p>
   <div class="sf__base"><span class="cr">© 2026 Heliski Travel. All Rights Reserved.</span><nav class="sf__legal" aria-label="Legal"><a href="/privacy-policy">Privacy Policy</a><a href="/terms">Terms &amp; Conditions</a><a href="/cookie-policy">Cookie Policy</a><a href="/imprint">Imprint</a></nav><a href="#siteHeader">Back to top ↑</a></div>
 </div></footer>
