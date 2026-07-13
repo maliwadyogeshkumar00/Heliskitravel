@@ -328,20 +328,25 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
   function go(){v.src=url;v.load();v.addEventListener('loadeddata',function(){var p=v.play();if(p&&p.catch)p.catch(function(){});},{once:true});}
   if(document.readyState==='complete')setTimeout(go,200);else window.addEventListener('load',function(){setTimeout(go,200);});
 })();
-/* Hero video sound — default ON at 25%, with a volume slider (drag up to 100%). Browsers block unmuted autoplay, so it turns on at the first user gesture; the speaker button and slider both control it, and the choice + level are remembered. */
+/* Hero video sound — subtle by design. On the first user gesture the sound eases IN: it starts at ~10% and rises ~5% every 2 seconds, settling gently at 25% (never a jarring blast). The slider climbs to match, and the visitor can drag it to 100% (or mute) at any time. Their chosen level is remembered. Note: browsers do not expose the device's system volume to a web page, so it cannot be matched. */
 (function(){
   var v=document.querySelector('.hero__video'), btn=document.getElementById('soundToggle'), vol=document.getElementById('heroVol');
   if(!v||!btn) return;
-  var DEF=0.25;
+  var RAMP_START=0.10, RAMP_TARGET=0.25, RAMP_STEP=0.05, RAMP_MS=2000, rampTimer=null;
   var savedVol=(function(){try{var x=parseFloat(localStorage.getItem('heroVol'));return isNaN(x)?null:Math.min(1,Math.max(0,x));}catch(e){return null;}})();
-  if(savedVol!=null && vol){ vol.value=Math.round(savedVol*100); }
-  function curVol(){ return vol?(vol.value/100):DEF; }
+  if(vol){ vol.value=Math.round((savedVol!=null?savedVol:RAMP_TARGET)*100); }
+  v.volume = savedVol!=null?savedVol:RAMP_TARGET;
+  function setVol(x){ x=Math.min(1,Math.max(0,x)); v.volume=x; if(vol)vol.value=Math.round(x*100); }
+  function stopRamp(){ if(rampTimer){clearInterval(rampTimer); rampTimer=null;} }
+  function startRamp(){ stopRamp(); setVol(RAMP_START);
+    rampTimer=setInterval(function(){ if(v.muted){stopRamp();return;} var nx=v.volume+RAMP_STEP;
+      if(nx>=RAMP_TARGET){ setVol(RAMP_TARGET); stopRamp(); } else setVol(nx); }, RAMP_MS); }
   function ui(on){ btn.classList.toggle('on',on); btn.setAttribute('aria-pressed',on?'true':'false'); btn.setAttribute('aria-label',on?'Mute sound':'Turn sound on'); }
   function mutedPref(){ try{return localStorage.getItem('heroMuted')==='1';}catch(e){return false;} }
   function savePref(m){ try{localStorage.setItem('heroMuted',m?'1':'0');}catch(e){} }
   function saveVol(x){ try{localStorage.setItem('heroVol',String(x));}catch(e){} }
-  function enable(){ v.muted=false; var x=curVol(); if(x<=0){ x=DEF; if(vol)vol.value=Math.round(DEF*100); } v.volume=x; var p=v.play&&v.play(); if(p&&p.then)p.then(function(){ui(!v.muted);}).catch(function(){}); ui(!v.muted); }
-  v.volume=curVol()||DEF;
+  function enable(){ v.muted=false; var p=v.play&&v.play(); if(p&&p.then)p.then(function(){ui(!v.muted);}).catch(function(){});
+    if(savedVol!=null){ setVol(savedVol); } else { startRamp(); } ui(!v.muted); }
   ui(!mutedPref());
   var armed=false;
   function arm(){ if(armed)return; armed=true;
@@ -351,11 +356,9 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
   }
   if(!mutedPref()) arm();
   btn.addEventListener('click',function(e){ e.stopPropagation();
-    if(v.muted){ enable(); savePref(false); }
-    else { v.muted=true; ui(false); savePref(true); }
-  });
+    if(v.muted){ enable(); savePref(false); } else { stopRamp(); v.muted=true; ui(false); savePref(true); } });
   if(vol){
-    var onVol=function(e){ if(e&&e.stopPropagation)e.stopPropagation(); var x=vol.value/100; v.volume=x; saveVol(x);
+    var onVol=function(e){ if(e&&e.stopPropagation)e.stopPropagation(); stopRamp(); var x=vol.value/100; v.volume=x; saveVol(x); savedVol=x;
       if(x>0){ if(v.muted){ v.muted=false; var p=v.play&&v.play(); if(p&&p.catch)p.catch(function(){}); } ui(true); savePref(false); }
       else { v.muted=true; ui(false); savePref(true); } };
     vol.addEventListener('input',onVol);
