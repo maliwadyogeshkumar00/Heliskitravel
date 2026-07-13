@@ -6,7 +6,7 @@ const pkgActive = active === 'packages';
 const SITE = 'https://heliskitravel.vercel.app';
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
 const canonical = SITE + (path === '/' ? '' : path);
-const ogImage = SITE + (image || '/images/packages-hero.jpg');
+const ogImage = SITE + (image || (heroImage ? `/images/${heroImage}.webp` : '/images/packages-hero.jpg'));
 
 // ---- Breadcrumbs (auto from path; package detail pages nest under Packages) ----
 const LABELS = {
@@ -86,6 +86,7 @@ const FAVICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' vi
   <meta name="theme-color" content="#0A1628" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Heliski Travel" />
+  <meta property="og:locale" content="en_GB" />
   <meta property="og:title" content={title} />
   {description && <meta property="og:description" content={description} />}
   <meta property="og:url" content={canonical} />
