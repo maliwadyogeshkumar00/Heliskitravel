@@ -1,0 +1,173 @@
+---
+import Base from '../../layouts/Base.astro';
+const articleLd = {
+  "@type": "Article",
+  "headline": "Heliskiing in the USA: Beyond Alaska",
+  "description": "Heliskiing in the USA beyond Alaska: the Lower 48 explained — Utah's Wasatch, Colorado and Telluride, Nevada's Ruby Mountains, land-use rules, the season, cost and who it suits, plus an honest alternative.",
+  "image": "https://heliskitravel.vercel.app/images/iceland-hero.webp",
+  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.vercel.app/#org" },
+  "publisher": { "@id": "https://heliskitravel.vercel.app/#org" },
+  "datePublished": "2026-07-13",
+  "dateModified": "2026-07-13",
+  "mainEntityOfPage": "https://heliskitravel.vercel.app/field-notes/heliskiing-in-usa"
+};
+const faqLd = {
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can you go heliskiing in the USA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, you can go heliskiing in the USA, but the options in the Lower 48 are far more limited than in Canada or Alaska. Because so much of the American mountain west is public land where helicopter access is heavily restricted, permitted heliski operations are concentrated in a handful of areas. The best known are Utah's Wasatch Mountains near Snowbird and Little Cottonwood Canyon, home to one of the longest-running heli operations in the United States, the terrain around Telluride in Colorado, and the remote Ruby Mountains of Nevada, where a lodge-based operation flies deep into a rarely visited range."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can you heliski in the Lower 48?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The main heliski areas in the Lower 48 are Utah, Colorado and Nevada. In Utah, heliskiing runs out of the Wasatch Mountains near Snowbird and Little Cottonwood Canyon, one of the oldest heli operations in the country. In Colorado, the Telluride area in the San Juan Mountains offers helicopter access to high alpine terrain. In Nevada, the Ruby Mountains host a famous remote lodge-based operation deep in an otherwise little-skied range. Most of these are Rocky Mountain destinations known for dry continental powder, with a season that runs roughly from January to March."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is heliskiing legal in the US?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Heliskiing is legal in the US, but it is tightly regulated. Much of the American mountain west is federal public land managed by agencies that restrict or prohibit helicopter access, and operators must hold the right permits and tenure to fly and land in a given area. That regulation is exactly why the Lower 48 has so few heliski operations compared with Canada, where operators control vast private tenures. The result is a small number of established, permitted operators rather than the sprawling helicopter access you find across British Columbia."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does heliskiing in the USA cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Costs vary widely depending on the model. Day-based heliskiing added on to a resort trip, common in Utah and Colorado, is typically bought as a single day or a set number of runs, which keeps the entry price lower than a full week. Remote lodge-based operations, such as the one in Nevada's Ruby Mountains, are sold as multi-day packages that include accommodation, meals, guiding and flying, and cost considerably more. Because helicopter time, guiding and permitted access are all expensive, always confirm exactly what a price includes before booking."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does heliskiing in the USA compare to Iceland?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Heliskiing in the Lower 48 is often a day-based add-on to a resort ski trip, prized for dry continental powder in a short January-to-March window, with lodge-based operations the exception. Iceland, where Viking Heliskiing operates on the Troll Peninsula, is a full dedicated wilderness week: sea-to-summit descents from summits of roughly 1,200 to 1,500 metres down to the Arctic Ocean, IFMGA/UIAGM-certified guides, eleven mapped zones, a season from March to mid-June and hotel-based travel from the fishing town of Siglufjörður. They suit different trips — a taste of heli in the Rockies versus a committed heliski holiday."
+      }
+    }
+  ]
+};
+---
+<Base heroImage="iceland-hero" title="Heliskiing in the USA: Beyond Alaska | Heliski Travel" description="Heliskiing in the USA beyond Alaska: the Lower 48 explained — Utah's Wasatch, Colorado and Telluride, Nevada's Ruby Mountains, land-use rules, the season, cost and who it suits, plus an honest alternative." active="" schema={[articleLd, faqLd]}>
+<section class="band band--ink gd-hero"><div class="shell">
+  <p class="gd-k">Field Notes</p>
+  <h1 class="gd-h1">Heliskiing in the USA</h1>
+  <p class="gd-lede">Beyond Alaska, heliskiing in the continental United States is a smaller, more regulated world — a handful of permitted operations in Utah, Colorado and Nevada delivering dry Rocky Mountain powder. This guide covers where you can fly, how the land-use rules shape it, the season, cost and who it suits, and offers an honest look at our <a href="/iceland">Iceland</a> <a href="/packages">packages</a> as an alternative.</p>
+</div></section>
+<section class="band band--navy gd-body"><div class="shell gd-wrap">
+  <nav class="gd-toc" aria-label="On this page">
+    <p class="gd-toc__t">On this page</p>
+    <a href="#s1">The state of heliskiing in the Lower 48</a>
+    <a href="#s2">Where you can heliski</a>
+    <a href="#s3">The Rockies' champagne powder</a>
+    <a href="#s4">The season and the weather</a>
+    <a href="#s5">Day-based versus lodge-based</a>
+    <a href="#s6">Terrain and who it suits</a>
+    <a href="#s7">How it compares to Canada</a>
+    <a href="#s8">The cost realities</a>
+    <a href="#s9">USA vs Iceland, honestly</a>
+    <a href="#s10">How to plan and the bottom line</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <article class="gd-art">
+    <h2 id="s1">The state of heliskiing in the Lower 48</h2>
+    <p>Say "American heliskiing" and most skiers picture Alaska — the spine walls of the Chugach, the huge maritime vertical of Valdez and Haines. That reputation is deserved, and we cover it in full in our guide to <a href="/field-notes/heliskiing-in-alaska">heliskiing in Alaska</a>. But there is another, quieter story in the <strong>continental United States</strong>, the so-called Lower 48, and it is worth understanding on its own terms.</p>
+    <p>The headline fact is that heliskiing in the Lower 48 is <strong>far more limited and heavily regulated</strong> than it is in either Alaska or Canada. The reason is land. Vast swathes of the American mountain west are federal public land, managed by agencies whose rules restrict or outright prohibit helicopter access across much of the best terrain. In Canada, operators control enormous private tenures and can fly almost at will; in the United States, an operator needs the right permits to fly and land in a specific area, and those permits are neither easy to obtain nor widely granted.</p>
+    <p>The consequence is a small, established set of permitted operations rather than a sprawling industry. The areas that do exist are excellent, and the scarcity keeps them uncrowded, but it shapes what a Lower 48 trip looks like: fewer choices, more day-based flying, and a tilt toward pairing helicopter runs with a resort holiday. If you are new to the discipline, our broader <a href="/heliskiing-guide">heliskiing guide</a> sets the context.</p>
+
+    <h2 id="s2">Where you can heliski</h2>
+    <p>Heliskiing in the Lower 48 concentrates in three states, each with a distinct character. These are the areas serious skiers researching <strong>heliskiing USA</strong> return to again and again.</p>
+    <ul>
+      <li><strong>Utah — the Wasatch.</strong> Perhaps the classic Lower 48 destination, <strong>Utah heliskiing</strong> runs out of the Wasatch Mountains near Snowbird and Little Cottonwood Canyon. This is home to one of the longest-running heli operations in the United States, flying skiers into high alpine terrain a short hop from the resorts. The Wasatch's famously dry snow and easy logistics — you can be skiing lift terrain one day and heli terrain the next — make it a natural add-on to a Salt Lake City ski trip.</li>
+      <li><strong>Colorado — the San Juans and Telluride.</strong> In Colorado, the area around Telluride in the rugged San Juan Mountains offers helicopter access to high, remote alpine bowls and couloirs. <strong>Heliski Colorado</strong> trades on altitude and scenery — this is some of the highest heli terrain in the country — and, like Utah, it works well as a day-based experience alongside a resort holiday.</li>
+      <li><strong>Nevada — the Ruby Mountains.</strong> The outlier, and for many the most special. <strong>Heliskiing in the Nevada Ruby Mountains</strong> centres on a famous remote, lodge-based operation deep in an otherwise little-visited range rising out of the high desert. This is not a resort add-on; it is a destination in its own right, flown from a backcountry lodge, and it draws skiers precisely because it is so far off the usual map.</li>
+    </ul>
+    <p>Between them these three cover the spread of the Lower 48: convenient day trips from major ski hubs at one end, a committed wilderness lodge experience at the other.</p>
+
+    <h2 id="s3">The Rockies' champagne powder</h2>
+    <p>The single greatest draw of Lower 48 heliskiing is the snow. The interior ranges of the American Rockies sit far from any ocean, and the storms that reach them arrive cold and dry. The result is the light, low-density <strong>continental "champagne" powder</strong> that Utah and Colorado are rightly famous for — snow so light it billows around your knees and rarely sets up heavy or wet.</p>
+    <p>This is a very different medium from Alaska's dense maritime snowpack. Where Alaska's heavy snow clings to near-vertical spine walls, the Rockies' dry powder is about <strong>effortless flotation</strong> on more moderate, open terrain. It rewards a relaxed, surfing style rather than the aggressive commitment of a spine face, which is a large part of why heliskiing here suits a wider band of skiers. The trade-off is that continental snowpacks can be shallower and more faceted than maritime ones, which is one reason expert guiding and avalanche management matter as much here as anywhere.</p>
+
+    <h2 id="s4">The season and the weather</h2>
+    <p>The Lower 48 heliski season is <strong>shorter and earlier</strong> than Iceland's, running roughly from <strong>January to March</strong>. Midwinter is when the interior Rockies hold their coldest, deepest, driest snow, and it is the window in which the champagne powder is at its best. By April the sun sits high enough that low-elevation snow starts to warm and transform, and the classic dry-powder conditions give way to spring skiing.</p>
+    <p>As with all heliskiing, the weather governs everything. Storms bring the powder but ground the machine, and flat light or high winds will halt flying regardless of how good the snow is underneath. The upside of the day-based model common in Utah and Colorado is flexibility: because you are often not committed to a fixed week, you can choose to fly on a clear, settled day and ski the resort when the helicopter is grounded.</p>
+    <p>Lodge-based operations like the Ruby Mountains work differently, selling multi-day packages where you accept — as you would in Alaska — that some days may be lost to weather. In either case, midwinter cold and short daylight are the defining conditions, so pack accordingly and keep your expectations honest.</p>
+
+    <h2 id="s5">Day-based versus lodge-based</h2>
+    <p>Understanding the two models is the key to planning a realistic Lower 48 trip, because they are almost different experiences.</p>
+    <ul>
+      <li><strong>Day-based heliskiing.</strong> This is the dominant model in Utah's Wasatch and around Telluride in Colorado. You base yourself at or near a resort, ski the lifts as normal, and buy heli runs — a single day, or a set number of runs — when conditions and your budget allow. It is the accessible entry point to the sport: lower commitment, lower cost per outing, and a resort to fall back on when the helicopter cannot fly. For many skiers it is the perfect way to sample heliskiing without booking a whole week.</li>
+      <li><strong>Lodge-based heliskiing.</strong> The Ruby Mountains operation in Nevada is the Lower 48's standout example. Here you travel to a remote backcountry lodge and fly from it for several days, with accommodation, meals, guiding and helicopter time bundled into a package. There is no resort fallback and no popping back to town — you are committed to the mountains for the duration. It is a fuller, more immersive experience, closer in spirit to a dedicated heliski holiday than a resort add-on.</li>
+    </ul>
+    <p>Neither is better; they suit different goals. If you want a memorable day or two of powder flying to cap a resort trip, day-based is ideal. If you want to disappear into a wild range and do nothing but heliski, the lodge model is what you are after.</p>
+
+    <h2 id="s6">Terrain and who it suits</h2>
+    <p>Compared with Alaska, the terrain of the Lower 48 is generally <strong>more forgiving and more accessible</strong>. There are steep couloirs and serious lines to be found, particularly in the San Juans and the Rubies, but the staple is open alpine bowls, gladed trees and rolling powder fields rather than no-fall spine walls.</p>
+    <p>That makes Lower 48 heliskiing well suited to the <strong>strong intermediate to advanced skier</strong> who is comfortable off-piste in powder but is not chasing extreme steeps. You should be able to ski ungroomed snow confidently for a full day, but you do not need the expert-only credentials Alaska demands. It is one of the gentler on-ramps to helicopter skiing.</p>
+    <ul>
+      <li><strong>Best for:</strong> confident powder skiers who want the helicopter experience without extreme exposure, and skiers already on a Utah or Colorado resort trip looking to add a day of backcountry flying.</li>
+      <li><strong>Less ideal for:</strong> genuine beginners, who should build off-piste mileage first, and spine-wall specialists, for whom Alaska is the real target.</li>
+    </ul>
+    <p>If you are unsure whether your ability matches the terrain, ask before you book — an honest answer beats an expensive mismatch.</p>
+
+    <h2 id="s7">How it compares to Canada</h2>
+    <p>It is natural to compare the Lower 48 with its northern neighbour, and the contrast is instructive. Canada — and British Columbia in particular — is the <strong>heartland of the heliski industry</strong>, with operators controlling immense private tenures, purpose-built backcountry lodges and week-long packages selling guaranteed vertical. We cover it fully in our guide to <a href="/field-notes/heliskiing-in-british-columbia">heliskiing in British Columbia</a>.</p>
+    <p>The United States sits just across the border but offers a fraction of that access. The reason, again, is <strong>land tenure</strong>: where Canadian operators fly across vast permitted areas, US operators are constrained by public-land regulation to far smaller footprints. The snow can be every bit as good — the interior ranges either side of the border share the same dry, cold air — but the scale, the number of operators and the sheer amount of terrain available are simply larger in Canada.</p>
+    <p>For a traveller, the takeaway is straightforward: if your priority is maximum flying and a classic week-long heli package in North America, British Columbia is the natural choice. The Lower 48 shines for its convenience and its unique lodge operations rather than for scale.</p>
+
+    <h2 id="s8">The cost realities</h2>
+    <p>Because the two models are so different, so are the costs. Rather than quote specific operator figures — which change year to year — it is more useful to understand the shape of the pricing.</p>
+    <p><strong>Day-based heliskiing</strong> in Utah and Colorado is typically sold by the day or by a set number of runs, which keeps the entry price relatively low compared with a full week away. You are paying for helicopter time and guiding on the day, not for accommodation and a package, so it is possible to sample the sport for a meaningful but contained sum. <strong>Lodge-based operations</strong> such as the Ruby Mountains are sold as multi-day packages that bundle lodging, meals, guiding and flying, and cost considerably more because you are buying a complete, remote experience.</p>
+    <p>Whichever route you take, helicopter time, expert guiding and hard-won permitted access all cost money. Always confirm exactly what is included — flying, guiding, transfers, food, accommodation, rescue insurance — before you commit, and budget generously for weather-dependent flying rather than assuming it.</p>
+
+    <h2 id="s9">USA vs Iceland, honestly</h2>
+    <p>We are the authorised booking agent for <strong>Viking Heliskiing in Iceland</strong>, so here is our honest position. The Lower 48 and Iceland are not really rivals — they answer different questions. If you are already skiing in Utah or Colorado and want to add a thrilling day of powder flying, a day-based heli operation there is a superb, convenient choice, and Iceland is not competing for that.</p>
+    <p>Where Iceland comes into its own is when you want a <strong>full, dedicated heliski holiday</strong> rather than an add-on. Viking Heliskiing operates on the <strong>Troll Peninsula (Tröllaskagi)</strong> in North Iceland, based in the fishing town of <strong>Siglufjörður</strong>, with guests staying at the 4-star Sigló Hótel. The terrain is a series of open, rolling <strong>sea-to-summit descents</strong> running from summits of roughly 1,200 to 1,500 metres right down to the edge of the Arctic Ocean — a genuinely rare experience you finish with the sea in front of you.</p>
+    <p>Here is the honest comparison:</p>
+    <ul>
+      <li><strong>Trip shape</strong> — the Lower 48 is often a day or two of flying bolted onto a resort trip; Iceland is a committed wilderness week across eleven mapped zones with <strong>IFMGA/UIAGM-certified guides</strong>.</li>
+      <li><strong>The snow and setting</strong> — the Rockies deliver dry champagne powder in inland ranges; Iceland delivers sea-to-summit runs to the Arctic Ocean, a landscape you will find nowhere in the American west.</li>
+      <li><strong>Season</strong> — the Lower 48 season is short, roughly January to March; Iceland runs from March to mid-June, with long Arctic days late in that window giving far more flying time.</li>
+      <li><strong>Terrain match</strong> — both suit strong intermediate to advanced skiers rather than spine specialists, making either an accessible route into the sport.</li>
+    </ul>
+    <p>Booking Iceland through us as the authorised agent <strong>costs exactly the same as booking direct</strong>. You can see the full range on our <a href="/packages">packages</a> page or read more about the destination on our <a href="/iceland">Iceland</a> page.</p>
+
+    <h2 id="s10">How to plan and the bottom line</h2>
+    <p>If the Lower 48 is calling, a little planning goes a long way. The most important decision is which model you want, because it shapes everything else.</p>
+    <ul>
+      <li><strong>Decide day-based or lodge-based first.</strong> A day of heli off a Utah or Colorado resort trip is a very different booking from a multi-day Ruby Mountains package — pick the experience, then the operator.</li>
+      <li><strong>Target midwinter.</strong> January to March holds the coldest, driest powder; build your trip around that window.</li>
+      <li><strong>Build in weather flexibility.</strong> For day-based flying, keep your schedule loose so you can fly on the clear day. For lodge trips, accept that some days may be lost.</li>
+      <li><strong>Log off-piste mileage beforehand.</strong> Arrive able to ski powder confidently all day so you make the most of expensive helicopter time.</li>
+      <li><strong>Confirm what is included and permitted.</strong> Ask each operator about their permit area, group sizes, guiding and exactly what the price covers.</li>
+    </ul>
+    <p>The bottom line is this: heliskiing in the Lower 48 is a small but genuine world, defined by dry Rocky Mountain powder, a short midwinter season and land-use rules that keep it uncrowded. For a taste of heli alongside a resort trip, or for the singular experience of the Ruby Mountains lodge, it is well worth doing.</p>
+    <p>But if what you really want is a complete, dedicated heliski holiday — long, flowing descents, huge wilderness scenery and nothing to do but fly and ski — Iceland is a superb answer. <strong>Viking Heliskiing</strong> on the Troll Peninsula offers sea-to-summit runs to the Arctic Ocean, certified guides and comfortable hotel-based travel, and we can book it for you at the same price as booking direct. If you would like a straight answer on which trip fits you, <a href="/contact">get in touch</a> and we will talk it through.</p>
+
+    <h2 id="faq">Frequently asked questions</h2>
+    <div class="gd-faq">
+      <details><summary>Can you go heliskiing in the USA?</summary><p>Yes, you can go heliskiing in the USA, but the options in the Lower 48 are far more limited than in Canada or Alaska. Because so much of the American mountain west is public land where helicopter access is heavily restricted, permitted heliski operations are concentrated in a handful of areas. The best known are Utah's Wasatch Mountains near Snowbird and Little Cottonwood Canyon, home to one of the longest-running heli operations in the United States, the terrain around Telluride in Colorado, and the remote Ruby Mountains of Nevada, where a lodge-based operation flies deep into a rarely visited range.</p></details>
+      <details><summary>Where can you heliski in the Lower 48?</summary><p>The main heliski areas in the Lower 48 are Utah, Colorado and Nevada. In Utah, heliskiing runs out of the Wasatch Mountains near Snowbird and Little Cottonwood Canyon, one of the oldest heli operations in the country. In Colorado, the Telluride area in the San Juan Mountains offers helicopter access to high alpine terrain. In Nevada, the Ruby Mountains host a famous remote lodge-based operation deep in an otherwise little-skied range. Most of these are Rocky Mountain destinations known for dry continental powder, with a season that runs roughly from January to March.</p></details>
+      <details><summary>Is heliskiing legal in the US?</summary><p>Heliskiing is legal in the US, but it is tightly regulated. Much of the American mountain west is federal public land managed by agencies that restrict or prohibit helicopter access, and operators must hold the right permits and tenure to fly and land in a given area. That regulation is exactly why the Lower 48 has so few heliski operations compared with Canada, where operators control vast private tenures. The result is a small number of established, permitted operators rather than the sprawling helicopter access you find across British Columbia.</p></details>
+      <details><summary>How much does heliskiing in the USA cost?</summary><p>Costs vary widely depending on the model. Day-based heliskiing added on to a resort trip, common in Utah and Colorado, is typically bought as a single day or a set number of runs, which keeps the entry price lower than a full week. Remote lodge-based operations, such as the one in Nevada's Ruby Mountains, are sold as multi-day packages that include accommodation, meals, guiding and flying, and cost considerably more. Because helicopter time, guiding and permitted access are all expensive, always confirm exactly what a price includes before booking.</p></details>
+      <details><summary>How does heliskiing in the USA compare to Iceland?</summary><p>Heliskiing in the Lower 48 is often a day-based add-on to a resort ski trip, prized for dry continental powder in a short January-to-March window, with lodge-based operations the exception. Iceland, where Viking Heliskiing operates on the Troll Peninsula, is a full dedicated wilderness week: sea-to-summit descents from summits of roughly 1,200 to 1,500 metres down to the Arctic Ocean, IFMGA/UIAGM-certified guides, eleven mapped zones, a season from March to mid-June and hotel-based travel from the fishing town of Siglufjörður. They suit different trips — a taste of heli in the Rockies versus a committed heliski holiday.</p></details>
+    </div>
+    <div class="gd-next"><p class="gd-next__t">Keep reading</p><div class="gd-next__row">
+      <a href="/field-notes/heliskiing-in-alaska">Heliskiing in Alaska</a>
+      <a href="/field-notes/heliskiing-in-british-columbia">Heliskiing in British Columbia</a>
+      <a href="/iceland">Heliskiing in Iceland</a>
+      <a href="/field-notes">All field notes</a>
+    </div></div>
+    <div class="gd-cta"><a class="btn" href="/packages"><span>View packages</span> <span class="arw">&rarr;</span></a><a class="btn btn--ghost" href="/contact"><span>Request a quote</span></a></div>
+  </article>
+</div></section>
+</Base>
