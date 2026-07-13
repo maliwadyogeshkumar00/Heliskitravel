@@ -352,8 +352,8 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
   var armed=false;
   function arm(){ if(armed)return; armed=true;
     var go=function(){ if(mutedPref()){clean();return;} enable(); clean(); };
-    function clean(){ ['pointerdown','keydown','touchstart','mouseover'].forEach(function(e){window.removeEventListener(e,go);}); }
-    ['pointerdown','keydown','touchstart','mouseover'].forEach(function(e){window.addEventListener(e,go,{once:true,passive:true});});
+    function clean(){ ['pointerdown','keydown','touchstart'].forEach(function(e){window.removeEventListener(e,go);}); }
+    ['pointerdown','keydown','touchstart'].forEach(function(e){window.addEventListener(e,go,{once:true,passive:true});});
   }
   if(!mutedPref()) arm();
   btn.addEventListener('click',function(e){ e.stopPropagation();
