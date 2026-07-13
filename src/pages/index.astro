@@ -7,16 +7,15 @@ const videoLd = {
   "thumbnailUrl": "https://heliskitravel.vercel.app/videos/heli-poster.jpg",
   "uploadDate": "2026-07-01",
   "duration": "PT26S",
-  "contentUrl": "https://heliskitravel.vercel.app/videos/heli-teaser-hd.mp4"
+  "contentUrl": "https://heliskitravel.vercel.app/videos/heli-teaser-hd-a.mp4"
 };
 const body = `
 
 <!-- HERO SLIDER -->
 <section class="hero" id="hero">
-  <audio id="heroAudio" src="/audio/hero-ambient.mp3" loop preload="auto"></audio>
   <button id="soundToggle" class="soundtoggle" type="button" aria-label="Turn sound on" aria-pressed="false"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M4 9v6h4l5 5V4L8 9H4z" fill="currentColor"/><path class="st__w1" d="M16 8.5a4.5 4.5 0 010 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="st__w2" d="M18.7 6a8 8 0 010 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line class="st__slash" x1="3.5" y1="3.5" x2="20.5" y2="20.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="st__txt">Sound off</span></button>
   <div class="hero__photo" id="heroPhoto"></div>
-  <video class="hero__video" autoplay muted loop playsinline preload="none" poster="/videos/heli-poster.webp" data-desktop="/videos/heli-teaser-hd.mp4" data-mobile="/videos/heli-mobile-hd.mp4" data-poster-mobile="/videos/heli-poster-mobile.webp"><track kind="captions" src="/videos/empty.vtt" srclang="en" label="No dialogue" /></video>
+  <video class="hero__video" autoplay muted loop playsinline preload="none" poster="/videos/heli-poster.webp" data-desktop="/videos/heli-teaser-hd-a.mp4" data-mobile="/videos/heli-mobile-hd-a.mp4" data-poster-mobile="/videos/heli-poster-mobile.webp"><track kind="captions" src="/videos/empty.vtt" srclang="en" label="No dialogue" /></video>
   {/* LQIP blur-up: inline data-URI placeholder paints instantly (0 network) and is the LCP element.
       It blurs up to the sharp poster (same frame), which then dissolves into the playing video. */}
   <picture class="hero__lqip" id="heroLqip" aria-hidden="true">
@@ -325,26 +324,26 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
   function go(){v.src=url;v.load();v.addEventListener('loadeddata',function(){var p=v.play();if(p&&p.catch)p.catch(function(){});},{once:true});}
   if(document.readyState==='complete')setTimeout(go,200);else window.addEventListener('load',function(){setTimeout(go,200);});
 })();
-/* Hero ambient audio: try autoplay at 50%; browsers block unmuted autoplay, so start on first user gesture. Mute button remembers the choice. */
+/* Hero video sound: the video autoplays MUTED (browser rule). On the first user gesture — or the sound button — it unmutes to 50% volume. The choice is remembered. */
 (function(){
-  var a=document.getElementById('heroAudio'), btn=document.getElementById('soundToggle');
-  if(!a||!btn) return;
-  a.volume=0.5;
+  var v=document.querySelector('.hero__video'), btn=document.getElementById('soundToggle');
+  if(!v||!btn) return;
   var txt=btn.querySelector('.st__txt');
-  var muted=(function(){try{return localStorage.getItem('heroMuted')==='1';}catch(e){return false;}})();
   function ui(on){ btn.classList.toggle('on',on); btn.setAttribute('aria-pressed',on?'true':'false'); btn.setAttribute('aria-label',on?'Turn sound off':'Turn sound on'); if(txt)txt.textContent=on?'Sound on':'Sound off'; }
+  function mutedPref(){ try{return localStorage.getItem('heroMuted')==='1';}catch(e){return false;} }
   function save(m){ try{localStorage.setItem('heroMuted',m?'1':'0');}catch(e){} }
+  function enable(){ v.muted=false; v.volume=0.5; var p=v.play&&v.play(); if(p&&p.then){p.then(function(){ui(!v.muted);}).catch(function(){});} ui(!v.muted); }
+  ui(false);
   var armed=false;
   function arm(){ if(armed)return; armed=true;
-    var go=function(){ a.play().then(function(){ui(true);}).catch(function(){}); off(); };
-    function off(){ ['pointerdown','keydown','touchstart','scroll'].forEach(function(ev){window.removeEventListener(ev,go);}); }
-    ['pointerdown','keydown','touchstart','scroll'].forEach(function(ev){window.addEventListener(ev,go,{once:true,passive:true});});
+    var go=function(){ if(mutedPref()){clean();return;} enable(); clean(); };
+    function clean(){ ['pointerdown','keydown','touchstart','scroll'].forEach(function(e){window.removeEventListener(e,go);}); }
+    ['pointerdown','keydown','touchstart','scroll'].forEach(function(e){window.addEventListener(e,go,{once:true,passive:true}));});
   }
-  ui(false);
-  if(!muted){ var p=a.play(); if(p&&p.then){ p.then(function(){ui(true);}).catch(function(){arm();}); } else { arm(); } }
+  if(!mutedPref()) arm();
   btn.addEventListener('click',function(e){ e.stopPropagation();
-    if(a.paused){ a.play().then(function(){ui(true);}).catch(function(){}); save(false); }
-    else { a.pause(); ui(false); save(true); }
+    if(v.muted){ enable(); save(false); }
+    else { v.muted=true; ui(false); save(true); }
   });
 })();
 var hdr=document.getElementById('siteHeader'),prog=document.getElementById('progress'),heroEl=document.getElementById('hero'),hp=document.getElementById('heroPhoto');
