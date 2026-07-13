@@ -1,0 +1,39 @@
+---
+import Base from '../layouts/Base.astro';
+const SITE = 'https://heliskitravel.vercel.app';
+const articles = [
+  { slug:'best-heliskiing-destinations-world', h:'The Best Heliskiing Destinations in the World', p:'Where the sport is at its best — Alaska, British Columbia, Iceland, Japan and beyond, ranked and compared for your next trip.' },
+  { slug:'is-heliskiing-worth-it', h:'Is Heliskiing Worth It?', p:'An honest verdict on cost, risk and reward — and exactly who it is, and is not, worth it for.' },
+  { slug:'heliskiing-vs-cat-skiing-vs-touring', h:'Heliskiing vs Cat Skiing vs Ski Touring', p:'Three ways into the backcountry compared: cost, terrain, weather resilience and who each one suits.' },
+  { slug:'heliskiing-for-beginners', h:'Heliskiing for Beginners', p:'New to heliskiing? The ability you truly need, how a first day unfolds, and how to prepare with confidence.' },
+  { slug:'how-to-choose-heliski-operator', h:'How to Choose a Heliski Operator', p:"The buyer's checklist — guides, safety, pilots, pricing and the red flags that should stop you booking." }
+];
+const collectionLd = {
+  "@type": "CollectionPage",
+  "@id": SITE + "/field-notes#collection",
+  "name": "Field Notes — The Heliskiing Resource",
+  "description": "In-depth, honest articles on heliskiing worldwide: destinations, cost, safety, planning and technique, from Heliski Travel, authorised agent for Viking Heliskiing, Iceland.",
+  "url": SITE + "/field-notes",
+  "hasPart": articles.map(a => ({ "@type":"Article", "name": a.h, "url": SITE + "/field-notes/" + a.slug }))
+};
+---
+<Base heroImage="iceland-hero" title="Field Notes: The Heliskiing Resource | Heliski Travel" description="In-depth, honest articles on heliskiing worldwide — best destinations, cost, safety, planning and technique. By Heliski Travel, authorised Viking Heliskiing agent." active="" schema={collectionLd}>
+<section class="band band--ink gd-hero"><div class="shell">
+  <p class="gd-k">Field Notes</p>
+  <h1 class="gd-h1">The Heliskiing Resource</h1>
+  <p class="gd-lede">Straight-talking, in-depth writing on heliskiing — the best destinations in the world, what it costs, how to choose an operator, and how to prepare for your first trip. Written by Heliski Travel, the authorised booking agent for Viking Heliskiing in <a href="/iceland">Iceland</a>. For the Iceland-specific deep dive, see the full <a href="/heliskiing-guide">heliskiing guide</a>.</p>
+</div></section>
+<section class="band band--navy gd-body"><div class="shell">
+  <div class="gd-hubgrid">
+    {articles.map((a, i) => (
+      <a class="gd-card" href={`/field-notes/${a.slug}`}>
+        <span class="gd-card__n">{String(i+1).padStart(2,'0')}</span>
+        <h2 class="gd-card__h">{a.h}</h2>
+        <p class="gd-card__p">{a.p}</p>
+        <span class="gd-card__go">Read <span class="arw">&rarr;</span></span>
+      </a>
+    ))}
+  </div>
+  <div class="gd-cta" style="margin-top:52px;"><a class="btn" href="/packages"><span>View packages</span> <span class="arw">&rarr;</span></a><a class="btn btn--ghost" href="/contact"><span>Request a quote</span></a></div>
+</div></section>
+</Base>
