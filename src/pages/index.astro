@@ -13,6 +13,8 @@ const body = `
 
 <!-- HERO SLIDER -->
 <section class="hero" id="hero">
+  <audio id="heroAudio" src="/audio/hero-ambient.mp3" loop preload="auto"></audio>
+  <button id="soundToggle" class="soundtoggle" type="button" aria-label="Turn sound on" aria-pressed="false"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M4 9v6h4l5 5V4L8 9H4z" fill="currentColor"/><path class="st__w1" d="M16 8.5a4.5 4.5 0 010 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="st__w2" d="M18.7 6a8 8 0 010 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line class="st__slash" x1="3.5" y1="3.5" x2="20.5" y2="20.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="st__txt">Sound off</span></button>
   <div class="hero__photo" id="heroPhoto"></div>
   <video class="hero__video" autoplay muted loop playsinline preload="none" poster="/videos/heli-poster.webp" data-desktop="/videos/heli-teaser-hd.mp4" data-mobile="/videos/heli-mobile-hd.mp4" data-poster-mobile="/videos/heli-poster-mobile.webp"><track kind="captions" src="/videos/empty.vtt" srclang="en" label="No dialogue" /></video>
   {/* LQIP blur-up: inline data-URI placeholder paints instantly (0 network) and is the LCP element.
@@ -152,6 +154,15 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
 .hero__lqip img{width:100%;height:100%;object-fit:cover;object-position:center 40%;filter:blur(20px);transform:scale(1.12);opacity:1;transition:opacity 1s var(--ease);will-change:opacity;}
 .hero.poster-ready .hero__lqip img{opacity:0;}
 @media(prefers-reduced-motion:reduce){.hero__lqip img{transition:none;}}
+.soundtoggle{position:fixed;left:22px;bottom:22px;z-index:60;display:inline-flex;align-items:center;gap:8px;padding:10px 15px;border-radius:999px;border:1px solid var(--cta-line);background:rgba(10,22,40,.34);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:var(--cream);font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:background .3s var(--ease),border-color .3s var(--ease);}
+.soundtoggle:hover{background:rgba(10,22,40,.6);border-color:var(--blue-soft);}
+.soundtoggle svg{flex:0 0 auto;}
+.soundtoggle .st__w1,.soundtoggle .st__w2{opacity:0;transition:opacity .3s;}
+.soundtoggle .st__slash{opacity:1;transition:opacity .3s;}
+.soundtoggle.on .st__slash{opacity:0;}
+.soundtoggle.on .st__w1{opacity:1;}
+.soundtoggle.on .st__w2{opacity:.55;}
+@media(max-width:767px){.soundtoggle{left:16px;bottom:16px;padding:9px 13px;font-size:9.5px;}}
 .hero .grade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(10,22,40,.5) 0%,rgba(10,22,40,0) 20%,rgba(10,22,40,0) 60%,rgba(10,22,40,.5) 86%,var(--ink) 100%);}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;}
 .harrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:54px;height:54px;border:1px solid var(--cta-line);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--cream);background:rgba(10,22,40,.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);font-size:24px;line-height:1;cursor:pointer;padding:0 0 3px;opacity:0;transition:opacity 1s var(--ease) 1s,background .4s var(--ease),border-color .4s var(--ease);}
@@ -313,6 +324,28 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
   var url=light?v.dataset.mobile:v.dataset.desktop;
   function go(){v.src=url;v.load();v.addEventListener('loadeddata',function(){var p=v.play();if(p&&p.catch)p.catch(function(){});},{once:true});}
   if(document.readyState==='complete')setTimeout(go,200);else window.addEventListener('load',function(){setTimeout(go,200);});
+})();
+/* Hero ambient audio: try autoplay at 50%; browsers block unmuted autoplay, so start on first user gesture. Mute button remembers the choice. */
+(function(){
+  var a=document.getElementById('heroAudio'), btn=document.getElementById('soundToggle');
+  if(!a||!btn) return;
+  a.volume=0.5;
+  var txt=btn.querySelector('.st__txt');
+  var muted=(function(){try{return localStorage.getItem('heroMuted')==='1';}catch(e){return false;}})();
+  function ui(on){ btn.classList.toggle('on',on); btn.setAttribute('aria-pressed',on?'true':'false'); btn.setAttribute('aria-label',on?'Turn sound off':'Turn sound on'); if(txt)txt.textContent=on?'Sound on':'Sound off'; }
+  function save(m){ try{localStorage.setItem('heroMuted',m?'1':'0');}catch(e){} }
+  var armed=false;
+  function arm(){ if(armed)return; armed=true;
+    var go=function(){ a.play().then(function(){ui(true);}).catch(function(){}); off(); };
+    function off(){ ['pointerdown','keydown','touchstart','scroll'].forEach(function(ev){window.removeEventListener(ev,go);}); }
+    ['pointerdown','keydown','touchstart','scroll'].forEach(function(ev){window.addEventListener(ev,go,{once:true,passive:true});});
+  }
+  ui(false);
+  if(!muted){ var p=a.play(); if(p&&p.then){ p.then(function(){ui(true);}).catch(function(){arm();}); } else { arm(); } }
+  btn.addEventListener('click',function(e){ e.stopPropagation();
+    if(a.paused){ a.play().then(function(){ui(true);}).catch(function(){}); save(false); }
+    else { a.pause(); ui(false); save(true); }
+  });
 })();
 var hdr=document.getElementById('siteHeader'),prog=document.getElementById('progress'),heroEl=document.getElementById('hero'),hp=document.getElementById('heroPhoto');
 /* cache layout metrics so the scroll handler never reads scrollHeight (avoids forced reflow) */
