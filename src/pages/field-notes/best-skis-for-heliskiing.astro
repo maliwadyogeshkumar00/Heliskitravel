@@ -1,0 +1,145 @@
+---
+import Base from '../../layouts/Base.astro';
+const articleLd = {
+  "@type": "Article",
+  "headline": "Best Skis for Heliskiing: A Choosing Guide",
+  "description": "The best skis for heliskiing, explained: waist width, rocker, length and shape for powder, plus renting versus bringing your own for a heli trip in Iceland.",
+  "image": "https://heliskitravel.vercel.app/images/iceland-hero.webp",
+  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.vercel.app/#org" },
+  "publisher": { "@id": "https://heliskitravel.vercel.app/#org" },
+  "datePublished": "2026-07-13", "dateModified": "2026-07-13",
+  "mainEntityOfPage": "https://heliskitravel.vercel.app/field-notes/best-skis-for-heliskiing"
+};
+const faqLd = { "@type": "FAQPage", "mainEntity": [
+  {
+    "@type": "Question",
+    "name": "What skis are best for heliskiing?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The best skis for heliskiing are wide, softly rockered powder or freeride skis designed to float on soft snow. As a rule of thumb, look for a waist around 100mm or more underfoot, generous tip rocker to lift the shovel over the snow, and a length at or slightly above your usual on-piste ski. Exact numbers matter less than the overall character: a ski that planes early, turns smoothly and forgives small mistakes. On a guided trip you rarely need to fret over this, because operators usually provide suitable conditions-matched skis and can advise on the right pair for the day."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "How wide should powder skis be?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "For dedicated powder and heliski use, a waist width of roughly 100 to 120mm underfoot is the sweet spot for most skiers. That range gives enough surface area to plane on top of soft snow and float effortlessly, while still being manageable when you cross a firmer patch or a wind-affected slope. Narrower all-mountain skis around 85 to 100mm can cope in shallower or heavier spring snow, and very wide skis above 120mm suit the deepest, lightest powder but feel cumbersome on anything firm. For a heli trip in variable spring conditions, something in the 100 to 115mm band is a versatile, confidence-inspiring choice."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Can you rent skis for heliskiing?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Most heli operators keep a fleet of wider powder skis available to rent, matched to the snow conditions on the day, and renting is often the easiest option. It saves you the hassle and cost of flying with bulky skis, and it means you ski on gear that suits the current snow rather than whatever you happen to own. Availability, sizes and models vary by operator, so confirm exactly what is on offer when you book. On an Iceland trip you can usually arrive with just your boots and pick up appropriate skis at the base."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Do I need special skis for heliskiing or will my normal skis work?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Your everyday piste skis will technically work, but they are not ideal for deep snow. Narrow, cambered carving skis are built to grip a hard surface, so in powder they sink, dive and make turning tiring. A wider, rockered ski floats on top of the snow and does much of the work for you. If you own capable all-mountain skis around 90mm or wider you can often get by, especially in settled spring snow, but for the best experience use a proper powder or freeride ski. The simplest route is to rent conditions-matched skis from the operator."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Should I bring my own skis or rent for a heli trip?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Both work, and it comes down to preference. Bringing your own skis means skiing on gear you know intimately, which matters if you already own a beloved powder ski. Renting means no airline ski charges or lugging bags through airports, plus you get skis matched to the day's conditions and can even switch pairs if the snow changes. Many experienced heliskiers rent for exactly these reasons. Whatever you decide, always bring your own well-fitted ski boots, as boot fit is far more personal and harder to sort on arrival than skis."
+    }
+  }
+] };
+---
+<Base heroImage="iceland-hero" title="Best Skis for Heliskiing: A Choosing Guide | Heliski Travel" description="The best skis for heliskiing, explained: waist width, rocker, length and shape for powder, plus renting versus bringing your own for a heli trip in Iceland." active="" schema={[articleLd, faqLd]}>
+<section class="band band--ink gd-hero"><div class="shell">
+  <p class="gd-k">Field Notes</p>
+  <h1 class="gd-h1">Best Skis for Heliskiing</h1>
+  <p class="gd-lede">Choosing skis for a heli trip is simpler than the marketing makes it sound. This guide explains what actually matters in deep snow, from waist width and rocker to length and shape, and why renting is often the smart move, so you turn up ready for our <a href="/packages">packages</a> and the endless open faces of <a href="/iceland">Iceland</a>.</p>
+</div></section>
+<section class="band band--navy gd-body"><div class="shell gd-wrap">
+  <nav class="gd-toc" aria-label="On this page"><p class="gd-toc__t">On this page</p>
+    <a href="#s1">Why piste skis fall short in powder</a>
+    <a href="#s2">Waist width, explained</a>
+    <a href="#s3">Rocker and camber</a>
+    <a href="#s4">Length considerations</a>
+    <a href="#s5">Shape and taper</a>
+    <a href="#s6">One quiver or a dedicated powder ski</a>
+    <a href="#s7">Bindings, brakes and safety</a>
+    <a href="#s8">Iceland's spring snow</a>
+    <a href="#s9">Rent or bring your own</a>
+    <a href="#s10">Boots, and letting the operator help</a>
+    <a href="#faq">FAQ</a></nav>
+  <article class="gd-art">
+    <h2 id="s1">Why your everyday piste skis fall short in powder</h2>
+    <p>The skis most of us own are built for one job: gripping a firm, groomed surface. A typical piste or all-mountain ski is relatively narrow, heavily cambered, and shaped to carve clean arcs when you tip it on edge and let it bite. On hardpack that design is brilliant. In deep, soft snow it works against you. There is no firm surface for the edge to grab, so a narrow, cambered ski simply <strong>sinks</strong> instead of planing on top. The tips dive, the tails follow, and every turn becomes a fight against the snow rather than a glide over it.</p>
+    <p>Powder rewards the opposite qualities. Instead of a knife that cuts into a hard surface, you want something closer to a <strong>surfboard or a water ski</strong>: broad, buoyant and shaped to rise up and float. The wider the platform and the more the tips lift clear of the snow, the more easily the ski planes on the surface where you want to be. This is why a dedicated powder ski transforms the experience for most people. It does a large share of the flotation work for you, leaving you free to relax, find a rhythm and enjoy the descent. If you want to understand the technique that pairs with the right gear, our <a href="/field-notes/how-to-ski-powder">how to ski powder</a> guide walks through the movements in detail. The key point here is simple: the skis that serve you well at your home resort are usually the wrong tool for a heli day, and understanding why makes every other choice below fall into place.</p>
+
+    <h2 id="s2">Waist width, explained: narrow versus wide underfoot</h2>
+    <p>The single most talked-about number on a powder ski is its <strong>waist width</strong>, the measurement of the ski at its narrowest point underfoot, given in millimetres. It is the biggest driver of how a ski behaves in soft snow, so it is worth understanding properly rather than just chasing the fattest ski you can find.</p>
+    <p>A narrow ski, say 70 to 85mm underfoot, has a small surface area. That makes it quick edge-to-edge and superb on firm pistes, but in powder it has little to plane on, so it sinks. A wide ski spreads your weight over more snow, generates more lift, and floats far more readily. The trade-off is that very wide skis feel slower to tip on edge and less precise the moment you hit anything firm. So the goal is not maximum width, it is the right width for the snow you will actually ski.</p>
+    <ul>
+      <li><strong>85 to 100mm underfoot</strong> is versatile all-mountain territory. It copes in shallower or heavier spring snow and firmer conditions, and can serve as a do-everything ski.</li>
+      <li><strong>100 to 115mm underfoot</strong> is the sweet spot for most heliskiing. There is enough surface area to float effortlessly in soft snow, yet the ski stays manageable when you cross wind-affected or firmer patches.</li>
+      <li><strong>115mm and above</strong> is specialist deep-powder territory. These skis are glorious in bottomless, light snow but feel cumbersome and vague on anything firm.</li>
+    </ul>
+    <p>As a general rule, for powder you want to be at roughly <strong>100mm or more underfoot</strong>, and for the mixed spring conditions typical of a heli trip, something in the 100 to 115mm band is a confident, forgiving choice that handles the widest range of snow you are likely to meet.</p>
+
+    <h2 id="s3">Rocker and camber: the shape of flotation</h2>
+    <p>Width is only half the story. How the ski is bent along its length matters just as much, and this is where the terms <strong>camber</strong> and <strong>rocker</strong> come in. Traditional camber is the gentle upward arch in the middle of a flat ski, which loads the edge for grip on hard snow. Rocker, sometimes called reverse camber, is an early upward rise in the tip, the tail, or both, so those sections lift off the snow when the ski sits flat.</p>
+    <p>For powder, <strong>tip rocker is your friend</strong>. Because the shovel already curves upward, it rises over soft snow rather than knifing into it, so the ski planes early and resists diving. That single feature does an enormous amount to make flotation feel effortless, and it is why almost every dedicated powder ski has generous tip rocker. Tail rocker adds a loose, playful, easy-to-release feel that helps you smear and pivot turns in deep snow, at the cost of a little grip and stability. Many excellent heliski skis use a <strong>rocker-camber-rocker profile</strong>: rockered tip and tail for flotation and manoeuvrability, with some camber retained underfoot so the ski still holds an edge when you cross firmer ground. That blend gives you the best of both worlds, floating when it is soft and gripping when it is not, which is exactly what a variable spring snowpack demands.</p>
+
+    <h2 id="s4">Length: a little longer helps in deep snow</h2>
+    <p>Length is the third lever, and it interacts with width and rocker. A longer ski has more surface area, so like extra width it improves flotation and gives a more stable, planted feel at speed, which is welcome on big open heli faces. A shorter ski is easier to pivot and manoeuvre but sinks more readily and can feel nervous when you pick up pace.</p>
+    <p>The usual guidance is that a powder or heliski ski can run <strong>at or slightly longer than your normal on-piste length</strong>, often somewhere around chin to forehead height when stood on end, adjusted for your weight, ability and how the ski is shaped. One important nuance: modern rockered skis ski shorter than their stated length, because the rockered tip and tail are lifted off the snow and do not contribute their full length to the running surface. That means you can often size up a rockered powder ski compared with an old, fully cambered model of the same number without it feeling unwieldy. If you are between sizes and the snow will be deep and soft, leaning towards the longer option usually pays off in flotation and stability. When in doubt, this is exactly the kind of thing an operator's fitter can dial in for you on arrival.</p>
+
+    <h2 id="s5">Ski shape and taper: how the outline works with the snow</h2>
+    <p>Beyond width, profile and length, the overall <strong>outline or shape</strong> of the ski shapes how it feels in powder. On-piste carving skis have a deep sidecut, a pronounced hourglass outline that produces tight, grippy arcs on hard snow. Powder skis tend to have a <strong>shallower sidecut and a fuller, wider shovel</strong>, which spreads flotation towards the front of the ski and lets you draw the longer, smoother, more open turns that suit deep snow.</p>
+    <p>Many freeride and powder skis also use <strong>tip and tail taper</strong>, where the widest points of the ski are pulled back from the very ends towards the middle. Tapering reduces the tendency for the tips to catch and hook in soft or variable snow, making the ski feel loose, predictable and easy to steer. The practical upshot for a heliskier is that a well-shaped powder ski with a generous shovel and some taper feels forgiving and intuitive: it planes early, releases smoothly out of turns, and does not punish you for being a fraction off-balance. You do not need to memorise sidecut radii or taper measurements. What matters is recognising that these features exist to make deep-snow skiing easier, and that a purpose-built powder ski will have them dialled in for you.</p>
+
+    <h2 id="s6">One quiver versus a dedicated powder ski</h2>
+    <p>A fair question for anyone buying skis is whether to own a single do-everything ski or a dedicated powder ski just for deep days. Both answers are valid, and it depends on how you ski the rest of the year.</p>
+    <p>A <strong>one-quiver all-mountain ski</strong> in the 95 to 105mm range is a genuinely good compromise. It handles resort days, mixed conditions and shallower powder, and it will get you down a heli run perfectly happily, especially in the firmer, settled spring snow common in Iceland. If you only take the occasional powder trip, one capable all-mountain ski may be all you ever need. A <strong>dedicated powder ski</strong>, wider and more heavily rockered, comes into its own when the snow is deep and soft: it floats with almost no effort and delivers that magical, surfy sensation that piste-oriented skis cannot match. The catch is that it is a specialist tool that feels vague and slow on firm snow, so it earns its keep only if you ski enough deep days to justify it. For most people planning a single heli trip, this is precisely the moment renting shines, because you can ski a proper dedicated powder ski for the week without owning one. We cover the wider kit list in our <a href="/field-notes/what-to-pack-for-heliskiing">what to pack for heliskiing</a> guide.</p>
+
+    <h2 id="s7">Bindings, brakes and safety</h2>
+    <p>Skis are only half of a setup. The <strong>bindings</strong> matter for both performance and safety, and there are a couple of powder-specific points worth knowing. First, make sure your bindings are appropriate for your weight, ability and the terrain, and that the release settings, the DIN, are set correctly by a qualified technician. Bindings that release too easily cause pre-releases in deep snow; bindings set too high fail to release when they should. This is not a place to guess.</p>
+    <p>Second, <strong>brake width</strong> must suit the ski. A binding's brakes need to be wide enough to clear the waist of a fat powder ski, or they will drag and interfere. If you are mounting a wider ski, confirm the brakes match. Beyond the hardware, remember that skis are just one part of your heliskiing safety kit. A transceiver, shovel and probe are essential, and on a guided trip your operator provides avalanche safety equipment and the expertise to use it. The IFMGA/UIAGM guides at Viking Heliskiing manage terrain and snow decisions so you can focus on skiing. Good, correctly adjusted gear supports that system, but it never replaces sound judgement and professional guiding.</p>
+
+    <h2 id="s8">How Iceland's spring snow shapes the ideal ski</h2>
+    <p>The right ski is always relative to the snow, and Iceland's season has a character worth planning for. Viking Heliskiing operates on the Troll Peninsula, or Tröllaskagi, in North Iceland from <strong>March to mid-June</strong>, with sea-to-summit descents of roughly 1,200 to 1,500 metres running all the way down to the Arctic Ocean. Because it is a spring season, the snow is often <strong>settled, transformed spring snow</strong> rather than the driest midwinter champagne powder. You may find soft, forgiving corn and creamy spring snow, cold powder up high after a fresh fall, and firmer, sun-affected snow on some aspects later in the day.</p>
+    <p>That variety points to a versatile ski rather than an extreme one. A very wide, deep-powder specialist can feel unnecessary and unwieldy when much of the snow is settled and supportive, whereas a ski in the <strong>100 to 115mm range with rocker-camber-rocker</strong> floats beautifully in the soft stuff and still holds an edge when you cross a firmer, sun-baked slope. In other words, the ideal Iceland heliski ski is a capable, adaptable powder or freeride ski, not the fattest plank on the wall. This is another reason renting locally works so well: the operator knows the current snow intimately and can hand you a ski matched to that day rather than a guess made months earlier. You can read more about the terrain and season on our <a href="/iceland">Iceland</a> page.</p>
+
+    <h2 id="s9">The case for renting versus bringing your own</h2>
+    <p>For many heliskiers, the smartest choice is simply to <strong>rent skis from the operator</strong>. Wider powder skis are often available to rent, and there are real advantages to using them. Always confirm availability, sizes and models with your operator when you book, but where it is offered, renting solves several problems at once.</p>
+    <ul>
+      <li><strong>No travel hassle.</strong> Flying with skis means bulky bags, potential oversize charges and the risk of damage or delays in transit. Renting lets you travel light and arrive unencumbered.</li>
+      <li><strong>Conditions-matched skis.</strong> The operator selects skis suited to the current snow, so you ride the right tool for the week rather than whatever you happen to own back home.</li>
+      <li><strong>No specialist purchase.</strong> You get to ski a proper dedicated powder ski for your trip without buying one you might rarely use again.</li>
+      <li><strong>Flexibility.</strong> If the snow changes through the week, you can often swap to a different pair better suited to the new conditions.</li>
+    </ul>
+    <p>Bringing your own skis still makes sense if you already own a powder ski you love and know intimately, since familiar gear breeds confidence. But if you do not own a suitable ski, or you would rather not lug it across airports, renting on arrival is usually the easier and often better path. Whichever you choose, do bring your own boots.</p>
+
+    <h2 id="s10">Boots, and letting the operator sort your skis</h2>
+    <p>One piece of kit is far more personal than any ski: your <strong>boots</strong>. Ski boot fit is intimate, individual and slow to adjust, and an ill-fitting boot ruins a trip no matter how good the ski underneath it is. Skis can be swapped in minutes, but a boot that pinches, packs out or leaves your foot swimming cannot be fixed easily on arrival. So the golden rule is straightforward: <strong>always bring your own well-fitted ski boots</strong>, broken in and comfortable, even if you rent everything else. If your boots are old or you have never had them properly fitted, sorting that before you travel is the single highest-value bit of gear preparation you can do.</p>
+    <p>Beyond the boots, try not to overthink the skis. The reassuring reality is that a well-run heli operation exists to make this easy for you. Operators like Viking, based at Siglufjörður with the comfortable 4-star Sigló Hótel and operating across eleven zones, routinely provide suitable, conditions-matched powder skis and can advise on the right waist width and length for your weight and ability. You do not need to arrive as an expert in sidecut and rocker profiles; you need a rough sense of what matters, a pair of boots that fit, and a willingness to let the people who ski that snow every day guide your choice. Get the fundamentals right, lean on the operator's knowledge, and the gear side of your trip takes care of itself. When you are ready to plan, explore our <a href="/packages">packages</a> or get in touch to <a href="/contact">request a quote</a>.</p>
+
+    <h2 id="faq">Frequently asked questions</h2>
+    <div class="gd-faq">
+      <details><summary>What skis are best for heliskiing?</summary><p>The best skis for heliskiing are wide, softly rockered powder or freeride skis designed to float on soft snow. As a rule of thumb, look for a waist around 100mm or more underfoot, generous tip rocker to lift the shovel over the snow, and a length at or slightly above your usual on-piste ski. Exact numbers matter less than the overall character: a ski that planes early, turns smoothly and forgives small mistakes. On a guided trip you rarely need to fret over this, because operators usually provide suitable conditions-matched skis and can advise on the right pair for the day.</p></details>
+      <details><summary>How wide should powder skis be?</summary><p>For dedicated powder and heliski use, a waist width of roughly 100 to 120mm underfoot is the sweet spot for most skiers. That range gives enough surface area to plane on top of soft snow and float effortlessly, while still being manageable when you cross a firmer patch or a wind-affected slope. Narrower all-mountain skis around 85 to 100mm can cope in shallower or heavier spring snow, and very wide skis above 120mm suit the deepest, lightest powder but feel cumbersome on anything firm. For a heli trip in variable spring conditions, something in the 100 to 115mm band is a versatile, confidence-inspiring choice.</p></details>
+      <details><summary>Can you rent skis for heliskiing?</summary><p>Yes. Most heli operators keep a fleet of wider powder skis available to rent, matched to the snow conditions on the day, and renting is often the easiest option. It saves you the hassle and cost of flying with bulky skis, and it means you ski on gear that suits the current snow rather than whatever you happen to own. Availability, sizes and models vary by operator, so confirm exactly what is on offer when you book. On an Iceland trip you can usually arrive with just your boots and pick up appropriate skis at the base.</p></details>
+      <details><summary>Do I need special skis for heliskiing or will my normal skis work?</summary><p>Your everyday piste skis will technically work, but they are not ideal for deep snow. Narrow, cambered carving skis are built to grip a hard surface, so in powder they sink, dive and make turning tiring. A wider, rockered ski floats on top of the snow and does much of the work for you. If you own capable all-mountain skis around 90mm or wider you can often get by, especially in settled spring snow, but for the best experience use a proper powder or freeride ski. The simplest route is to rent conditions-matched skis from the operator.</p></details>
+      <details><summary>Should I bring my own skis or rent for a heli trip?</summary><p>Both work, and it comes down to preference. Bringing your own skis means skiing on gear you know intimately, which matters if you already own a beloved powder ski. Renting means no airline ski charges or lugging bags through airports, plus you get skis matched to the day's conditions and can even switch pairs if the snow changes. Many experienced heliskiers rent for exactly these reasons. Whatever you decide, always bring your own well-fitted ski boots, as boot fit is far more personal and harder to sort on arrival than skis.</p></details>
+    </div>
+    <div class="gd-next"><p class="gd-next__t">Keep reading</p><div class="gd-next__row">
+      <a href="/field-notes/what-to-pack-for-heliskiing">What to pack for heliskiing</a>
+      <a href="/field-notes/how-to-ski-powder">How to ski powder</a>
+      <a href="/iceland">Heliskiing in Iceland</a>
+      <a href="/field-notes">All field notes</a>
+    </div></div>
+    <div class="gd-cta"><a class="btn" href="/packages"><span>View packages</span> <span class="arw">&rarr;</span></a><a class="btn btn--ghost" href="/contact"><span>Request a quote</span></a></div>
+  </article>
+</div></section>
+</Base>
