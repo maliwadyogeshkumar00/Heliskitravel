@@ -7,7 +7,7 @@ const videoLd = {
   "thumbnailUrl": "https://heliskitravel.vercel.app/videos/heli-poster.jpg",
   "uploadDate": "2026-07-01",
   "duration": "PT26S",
-  "contentUrl": "https://heliskitravel.vercel.app/videos/heli-teaser-hd-a.mp4"
+  "contentUrl": "https://heliskitravel.vercel.app/videos/heli-teaser-hd-a2.mp4"
 };
 const body = `
 
@@ -15,7 +15,7 @@ const body = `
 <section class="hero" id="hero">
   <div class="soundctl" id="soundCtl"><button id="soundToggle" class="stbtn on" type="button" aria-label="Mute sound" aria-pressed="true"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M4 9v6h4l5 5V4L8 9H4z" fill="currentColor"/><path class="st__w1" d="M16 8.5a4.5 4.5 0 010 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="st__w2" d="M18.7 6a8 8 0 010 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line class="st__slash" x1="3.5" y1="3.5" x2="20.5" y2="20.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><input id="heroVol" class="stvol" type="range" min="0" max="100" value="25" step="1" aria-label="Volume" /></div>
   <div class="hero__photo" id="heroPhoto"></div>
-  <video class="hero__video" autoplay muted loop playsinline preload="none" poster="/videos/heli-poster.webp" data-desktop="/videos/heli-teaser-hd-a.mp4" data-mobile="/videos/heli-mobile-hd-a.mp4" data-poster-mobile="/videos/heli-poster-mobile.webp"><track kind="captions" src="/videos/empty.vtt" srclang="en" label="No dialogue" /></video>
+  <video class="hero__video" autoplay muted loop playsinline preload="none" poster="/videos/heli-poster.webp" data-desktop="/videos/heli-teaser-hd-a2.mp4" data-mobile="/videos/heli-mobile-hd-a2.mp4" data-poster-mobile="/videos/heli-poster-mobile.webp"><track kind="captions" src="/videos/empty.vtt" srclang="en" label="No dialogue" /></video>
   {/* LQIP blur-up: inline data-URI placeholder paints instantly (0 network) and is the LCP element.
       It blurs up to the sharp poster (same frame), which then dissolves into the playing video. */}
   <picture class="hero__lqip" id="heroLqip" aria-hidden="true">
@@ -345,14 +345,15 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
   function mutedPref(){ try{return localStorage.getItem('heroMuted')==='1';}catch(e){return false;} }
   function savePref(m){ try{localStorage.setItem('heroMuted',m?'1':'0');}catch(e){} }
   function saveVol(x){ try{localStorage.setItem('heroVol',String(x));}catch(e){} }
-  function enable(){ v.muted=false; var p=v.play&&v.play(); if(p&&p.then)p.then(function(){ui(!v.muted);}).catch(function(){});
-    if(savedVol!=null){ setVol(savedVol); } else { startRamp(); } ui(!v.muted); }
+  function enable(){ v.muted=false; var p=v.play&&v.play();
+    if(p&&p.then){ p.then(function(){ if(savedVol!=null){setVol(savedVol);} else {startRamp();} ui(true); }).catch(function(){ stopRamp(); v.muted=true; var p2=v.play&&v.play(); if(p2&&p2.catch)p2.catch(function(){}); ui(false); }); }
+    else { if(savedVol!=null){setVol(savedVol);} else {startRamp();} ui(!v.muted); } }
   ui(!mutedPref());
   var armed=false;
   function arm(){ if(armed)return; armed=true;
     var go=function(){ if(mutedPref()){clean();return;} enable(); clean(); };
-    function clean(){ ['pointerdown','keydown','touchstart','scroll'].forEach(function(e){window.removeEventListener(e,go);}); }
-    ['pointerdown','keydown','touchstart','scroll'].forEach(function(e){window.addEventListener(e,go,{once:true,passive:true});});
+    function clean(){ ['pointerdown','keydown','touchstart'].forEach(function(e){window.removeEventListener(e,go);}); }
+    ['pointerdown','keydown','touchstart'].forEach(function(e){window.addEventListener(e,go,{once:true,passive:true});});
   }
   if(!mutedPref()) arm();
   btn.addEventListener('click',function(e){ e.stopPropagation();
