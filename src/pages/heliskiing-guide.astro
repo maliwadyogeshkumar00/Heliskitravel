@@ -83,43 +83,61 @@ const collectionLd = {
   active="guide"
   schema={collectionLd}>
 
-<section class="band band--ink gd-hero">
-  <div class="shell">
-    <p class="gd-k">The Complete Guide · Ten Chapters + Field Notes</p>
-    <h1 class="gd-h1">Heliskiing in Iceland</h1>
-    <p class="gd-lede">The most complete guide to heliskiing on Iceland's Tröllaskagi (Troll) Peninsula — ten in-depth chapters covering the terrain, the season, cost, safety, gear and travel, followed by fifty <a href="#field-notes">Field Notes</a> articles on heliskiing the world over. Written by <a href="/about">Heliski Travel</a>, the authorised booking agent for <a href="/packages">Viking Heliskiing</a>. Start anywhere.</p>
-  </div>
-</section>
-
-<section class="band band--navy" style="padding:56px 0 100px;">
-  <div class="shell">
-    <div class="gd-hubgrid">
-      {chapters.map(c => (
-        <a class="gd-card" href={`/heliskiing-guide/${c.slug}`}>
-          <span class="gd-card__n">Chapter {c.n}</span>
-          <h2 class="gd-card__h">{c.h}</h2>
-          <p class="gd-card__p">{c.p}</p>
-          <span class="gd-card__go">Read chapter &rarr;</span>
-        </a>
-      ))}
-    </div>
-    <div class="gd-cta" style="justify-content:center;border-top:0;margin-top:56px;">
-      <a class="btn" href="/packages"><span>View packages</span> <span class="arw">&rarr;</span></a>
-      <a class="btn btn--ghost" href="/contact"><span>Request a quote</span></a>
+<!-- ================= HERO ================= -->
+<section class="gg-hero" id="gg-hero">
+  <div class="gg-hero__photo"></div>
+  <div class="gg-hero__grade"></div>
+  <div class="shell gg-hero__inner">
+    <p class="eyebrow">The Complete Guide</p>
+    <h1 class="gg-title">Heliskiing<span class="s">in Iceland</span></h1>
+    <p class="gg-lede">Ten in-depth chapters plus fifty field notes on Iceland's Tröllaskagi (Troll) Peninsula — sea-to-summit descents from 1,200-metre summits down to the Arctic Ocean. Written by <a href="/about">Heliski&nbsp;Travel</a>, the authorised booking agent for <a href="/packages">Viking&nbsp;Heliskiing</a>.</p>
+    <div class="gg-cta">
+      <a class="btn" href="#chapters"><span>Explore the guide</span> <span class="arw">&darr;</span></a>
+      <a class="btn btn--ghost" href="/packages"><span>View packages</span></a>
     </div>
   </div>
 </section>
 
-<section id="field-notes" class="band band--ink" style="padding:72px 0 100px;scroll-margin-top:90px;">
+<!-- ================= CHAPTERS ================= -->
+<section class="band band--navy gg-band" id="chapters">
   <div class="shell">
-    <p class="gd-k">Field Notes · Fifty Articles</p>
-    <h2 class="gd-h1" style="font-size:clamp(1.9rem,4.4vw,2.9rem);margin-bottom:16px;">Field Notes</h2>
-    <p class="gd-lede" style="margin-bottom:44px;">The wider heliskiing library. Fifty straight-talking, in-depth articles on the best destinations in the world, what it costs, how to choose an operator, how to prepare and how to ski it well — each written to help you understand the sport and what a week in Iceland really offers.</p>
+    <div class="gg-split">
+      <aside class="gg-aside">
+        <p class="eyebrow">The Chapters</p>
+        <h2 class="gg-asideh">Ten chapters,<span class="s">start anywhere.</span></h2>
+        <p class="gg-asidep">Everything from the terrain and the season to cost, safety, gear and travel — the complete grounding before you book a week on the Troll Peninsula.</p>
+        <a class="btn btn--ghost" href="/contact"><span>Request a quote</span></a>
+      </aside>
+
+      <div class="gg-rows">
+        {chapters.map(c => (
+          <a class="gg-r" href={`/heliskiing-guide/${c.slug}`}>
+            <span class="gg-r__num">{c.n}</span>
+            <span class="gg-r__body">
+              <span class="gg-r__h">{c.h}</span>
+              <span class="gg-r__p">{c.p}</span>
+            </span>
+            <span class="gg-r__go">&rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FIELD NOTES ================= -->
+<section class="band band--ink gg-band" id="field-notes" style="scroll-margin-top:90px;">
+  <div class="shell">
+    <div class="gg-fnhead">
+      <p class="eyebrow">Beyond the Guide · Fifty Articles</p>
+      <h2 class="gg-fnh">The Field Notes</h2>
+      <p class="gg-fnlede">The wider heliskiing library — fifty straight-talking articles on the best destinations in the world, what it costs, how to choose an operator, how to prepare and how to ski it well.</p>
+    </div>
     <div class="gd-hubgrid">
       {articles.map((a, i) => (
         <a class="gd-card" href={`/field-notes/${a.slug}`}>
           <span class="gd-card__n">{String(i+1).padStart(2,'0')}</span>
-          <h2 class="gd-card__h">{a.h}</h2>
+          <h3 class="gd-card__h">{a.h}</h3>
           <p class="gd-card__p">{a.p}</p>
           <span class="gd-card__go">Read <span class="arw">&rarr;</span></span>
         </a>
@@ -131,4 +149,64 @@ const collectionLd = {
     </div>
   </div>
 </section>
+
+<style>
+  /* kicker — matches the site's eyebrow */
+  .eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:11.5px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--blue-soft);margin:0;}
+  .eyebrow::before{content:"";width:30px;height:1px;background:var(--blue);opacity:.85;}
+
+  /* ---- HERO (full-bleed image, like the Iceland page) ---- */
+  .gg-hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;padding:0 0 clamp(56px,8vw,104px);overflow:hidden;background:var(--navy);}
+  .gg-hero__photo{position:absolute;inset:-3%;z-index:0;background:url('/images/iceland-hero.webp') center 40%/cover no-repeat;transform:scale(1.05);}
+  .gg-hero__grade{position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:linear-gradient(180deg,rgba(10,22,40,.42) 0%,rgba(10,22,40,0) 24%,rgba(10,22,40,.5) 70%,rgba(10,22,40,.93) 100%),
+               linear-gradient(90deg,rgba(10,22,40,.5) 0%,rgba(10,22,40,0) 58%);}
+  .gg-hero__inner{position:relative;z-index:3;}
+  .gg-title{margin:22px 0 0;font-family:var(--serif);font-weight:500;font-size:clamp(3.1rem,8vw,6.6rem);line-height:.92;letter-spacing:-.015em;color:var(--cream);}
+  .gg-title .s{display:block;font-style:italic;font-weight:400;color:var(--blue-soft);}
+  .gg-lede{margin:28px 0 0;max-width:62ch;color:rgba(244,246,248,.86);font-size:clamp(15px,1.45vw,18px);line-height:1.72;}
+  .gg-lede a{color:var(--blue-soft);text-decoration:none;border-bottom:1px solid var(--cta-line);transition:border-color .4s var(--ease);}
+  .gg-lede a:hover{border-color:var(--blue);}
+  .gg-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px;}
+
+  /* ---- band paddings ---- */
+  .gg-band{padding:clamp(70px,9vw,128px) 0;}
+
+  /* ---- CHAPTERS: sticky aside + couture numbered rows ---- */
+  .gg-split{display:grid;grid-template-columns:320px minmax(0,1fr);gap:clamp(34px,5vw,88px);align-items:start;}
+  .gg-aside{position:sticky;top:118px;}
+  .gg-asideh{font-family:var(--serif);font-weight:500;font-size:clamp(1.9rem,3vw,2.7rem);line-height:1.02;color:var(--cream);margin:16px 0 18px;}
+  .gg-asideh .s{display:block;font-style:italic;font-weight:400;color:var(--blue-soft);}
+  .gg-asidep{color:rgba(195,220,238,.66);font-size:15px;line-height:1.7;margin:0 0 28px;max-width:34ch;}
+
+  .gg-rows{border-top:1px solid var(--line);}
+  .gg-r{display:grid;grid-template-columns:clamp(56px,6vw,84px) minmax(0,1fr) 28px;align-items:center;gap:clamp(16px,2.4vw,36px);
+        padding:clamp(22px,2.8vw,34px) 6px;border-bottom:1px solid var(--line);text-decoration:none;
+        transition:padding-left .55s var(--ease),background .55s var(--ease);}
+  .gg-r__num{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(30px,4.2vw,48px);line-height:1;color:var(--blue);}
+  .gg-r__body{min-width:0;}
+  .gg-r__h{display:block;font-family:var(--sans);font-weight:600;font-size:clamp(19px,2.2vw,26px);line-height:1.16;letter-spacing:-.005em;color:var(--cream);transition:color .4s var(--ease);}
+  .gg-r__p{display:block;margin-top:7px;color:rgba(244,246,248,.6);font-size:15px;line-height:1.55;max-width:64ch;}
+  .gg-r__go{color:var(--blue);font-size:20px;opacity:0;transform:translateX(-8px);transition:opacity .45s var(--ease),transform .45s var(--ease);}
+  .gg-r:hover{padding-left:16px;background:linear-gradient(90deg,rgba(168,207,224,.06),transparent 70%);}
+  .gg-r:hover .gg-r__h{color:var(--blue-soft);}
+  .gg-r:hover .gg-r__go{opacity:1;transform:none;}
+
+  /* ---- FIELD NOTES head ---- */
+  .gg-fnhead{max-width:64ch;margin:0 0 clamp(38px,5vw,60px);}
+  .gg-fnh{font-family:var(--serif);font-weight:500;font-size:clamp(2.1rem,4.6vw,3.4rem);line-height:1.02;color:var(--cream);margin:16px 0 0;}
+  .gg-fnlede{margin:20px 0 0;color:rgba(195,220,238,.66);font-size:clamp(15px,1.4vw,17px);line-height:1.66;}
+
+  @media (max-width:900px){
+    .gg-hero{min-height:78vh;}
+    .gg-split{grid-template-columns:1fr;gap:26px;}
+    .gg-aside{position:static;}
+    .gg-asidep{max-width:none;}
+  }
+  @media (max-width:560px){
+    .gg-r{grid-template-columns:clamp(44px,12vw,56px) 1fr;}
+    .gg-r__go{display:none;}
+  }
+  @media (prefers-reduced-motion:reduce){ *{transition:none!important;} .gg-hero__photo{transform:none;} }
+</style>
 </Base>
