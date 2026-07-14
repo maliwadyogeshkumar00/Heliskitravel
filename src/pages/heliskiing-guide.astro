@@ -13,26 +13,81 @@ const chapters = [
   { n:'09', slug:'siglo-hotel-siglufjordur', h:'Where You Stay', p:'Sigló Hótel, the town of Siglufjörður, dining and life at base — for skiers and non-skiers.' },
   { n:'10', slug:'iceland-vs-worlds-best', h:'Iceland vs the World', p:'How Iceland compares to Canada, Alaska and Japan — and why so many now choose it.' }
 ];
+const articles = [
+  { slug:'best-heliskiing-destinations-world', h:'The Best Heliskiing Destinations in the World', p:'Where the sport is at its best — Alaska, British Columbia, Iceland, Japan and beyond, ranked and compared for your next trip.' },
+  { slug:'is-heliskiing-worth-it', h:'Is Heliskiing Worth It?', p:'An honest verdict on cost, risk and reward — and exactly who it is, and is not, worth it for.' },
+  { slug:'heliskiing-vs-cat-skiing-vs-touring', h:'Heliskiing vs Cat Skiing vs Ski Touring', p:'Three ways into the backcountry compared: cost, terrain, weather resilience and who each one suits.' },
+  { slug:'heliskiing-for-beginners', h:'Heliskiing for Beginners', p:'New to heliskiing? The ability you truly need, how a first day unfolds, and how to prepare with confidence.' },
+  { slug:'how-to-choose-heliski-operator', h:'How to Choose a Heliski Operator', p:"The buyer's checklist — guides, safety, pilots, pricing and the red flags that should stop you booking." },
+  { slug:'heliskiing-in-alaska', h:'Heliskiing in Alaska', p:'The steepest big-mountain terrain on earth — the Chugach, the spines, the season, and who it is really for.' },
+  { slug:'heliskiing-in-british-columbia', h:'Heliskiing in British Columbia', p:'The birthplace of the sport — deep, reliable powder, lodge culture and unlimited-vertical weeks.' },
+  { slug:'heliskiing-in-japan', h:'Heliskiing in Japan', p:'The truth about Japow — where to find it, what heli access is really like, and how it compares.' },
+  { slug:'heliskiing-in-norway', h:'Heliskiing in Norway', p:"Arctic sea-to-summit lines in the Lyngen Alps and Lofoten — Iceland's wild Scandinavian sibling." },
+  { slug:'best-time-to-go-heliskiing', h:'When Is the Best Time to Go Heliskiing?', p:'A month-by-month, region-by-region guide to timing your trip — including summer options.' },
+  { slug:'heliskiing-in-new-zealand', h:'Heliskiing in New Zealand', p:'The standout summer option — Southern Alps terrain, the July to September season, and how to plan it.' },
+  { slug:'heliskiing-in-the-alps', h:'Heliskiing in the Alps', p:'Where heli-skiing is actually allowed in Europe, what a day looks like, and how to combine it with resort skiing.' },
+  { slug:'heliskiing-in-georgia-caucasus', h:'Heliskiing in Georgia (the Caucasus)', p:'Big Caucasus terrain at a lower price — the trade-offs, the helicopters, and how to choose well.' },
+  { slug:'canada-vs-alaska-heliskiing', h:'Canada vs Alaska Heliskiing', p:'A straight, even-handed verdict on the two flagship North American destinations — and which suits you.' },
+  { slug:'how-much-does-heliskiing-cost', h:'How Much Does Heliskiing Cost?', p:'A 2026 price guide — what drives the cost, what is included, and how to get the most for your money.' },
+  { slug:'is-heliskiing-safe', h:'Is Heliskiing Safe?', p:'An honest guide to the real risks — avalanche and helicopter — and exactly how good operators manage them.' },
+  { slug:'what-to-pack-for-heliskiing', h:'What to Pack for Heliskiing', p:'The complete checklist — layers, skis, safety kit and the spring-Iceland essentials people always forget.' },
+  { slug:'heliskiing-fitness-guide', h:'How Fit Do You Need to Be for Heliskiing?', p:'What the sport really demands of your body — and a sensible way to train for it before you go.' },
+  { slug:'private-vs-shared-helicopter-heliskiing', h:'Private vs Shared Helicopter Heliskiing', p:'Shared, semi-private or private — what each format means for cost, group size and your day on the mountain.' },
+  { slug:'heliskiing-vs-resort-skiing', h:'Heliskiing vs Resort Skiing', p:'Is it worth the upgrade? An even-handed look at snow, terrain, cost and who should make the jump.' },
+  { slug:'what-is-sea-to-summit-skiing', h:'What Is Sea-to-Summit Skiing?', p:"Iceland's signature descent — a single run from a mountain summit all the way down to the Arctic Ocean." },
+  { slug:'how-to-ski-powder', h:'How to Ski Powder', p:'The technique that transforms deep snow from a fight into a joy — and how to arrive ready for it.' },
+  { slug:'heliskiing-for-intermediate-skiers', h:'Heliskiing for Intermediate Skiers', p:'You do not have to be an expert. What a confident intermediate really needs, and why Iceland suits you.' },
+  { slug:'northern-lights-and-midnight-sun-heliskiing', h:'Northern Lights & Midnight Sun Heliskiing', p:"Iceland's two celestial seasons — aurora in the early weeks, endless Arctic daylight later on." },
+  { slug:'heliboarding-snowboard-heliskiing', h:'Heliboarding: Heliskiing on a Snowboard', p:'Yes, snowboarders are welcome. How heliboarding works, the traverse tricks, and why Iceland suits a board.' },
+  { slug:'heliskiing-in-greenland', h:'Heliskiing in Greenland', p:"The sport's ultimate frontier — glaciers, couloirs and lines that end at the icebergs. Remote, raw, unforgettable." },
+  { slug:'heliskiing-in-kashmir-india', h:'Heliskiing in Kashmir', p:'Himalayan heliskiing above Gulmarg — high-altitude terrain, raw adventure and scenery on an enormous scale.' },
+  { slug:'heliskiing-in-usa', h:'Heliskiing in the USA', p:'Beyond Alaska — Utah, Colorado and the Ruby Mountains, where to find champagne powder in the Lower 48.' },
+  { slug:'heliskiing-in-the-andes-chile-argentina', h:'Heliskiing in the Andes', p:'Chile and Argentina — big high-altitude terrain and a Southern-Hemisphere season for skiing in your summer.' },
+  { slug:'planning-your-first-heliski-trip', h:'Planning Your First Heliski Trip', p:'The complete step-by-step roadmap — from deciding it is right for you to booking and arriving prepared.' },
+  { slug:'heliskiing-vs-heli-assisted-touring', h:'Heliskiing vs Heli-Assisted Touring', p:'Let the helicopter do the climbing, or earn some turns? The two styles compared, and who each suits.' },
+  { slug:'what-is-guaranteed-vertical-feet', h:'What Is Guaranteed Vertical Feet?', p:'How heli packages are measured and priced — and why the guaranteed-vertical model is fair to you.' },
+  { slug:'best-skis-for-heliskiing', h:'Best Skis for Heliskiing', p:'Width, rocker, length and the rent-or-bring question — how to get the right skis under your feet.' },
+  { slug:'avalanche-safety-for-heliskiing', h:'Avalanche Safety for Heliskiing', p:'The transceiver, shovel and probe explained — how the safety system works and why a course matters.' },
+  { slug:'heliskiing-insurance-guide', h:'Heliskiing Insurance', p:'Why standard cover often falls short, and exactly what to look for — from heli-evacuation to cancellation.' },
+  { slug:'what-to-expect-first-heliski-day', h:'Your First Heliski Day', p:'An hour-by-hour walkthrough — from the morning weather call to the first drop and the evening at the lodge.' },
+  { slug:'weather-and-down-days-heliskiing', h:'Weather and Down-Days in Heliskiing', p:'Why the helicopter sometimes stays grounded, what you do on a down-day, and how good operators manage it.' },
+  { slug:'heliskiing-for-groups-and-families', h:'Heliskiing for Groups and Families', p:'Planning a trip for friends or family — private helicopters, mixed abilities and the shared adventure.' },
+  { slug:'solo-heliskiing', h:'Heliskiing Solo', p:'Going on your own? How shared groups work, why it is sociable, and why solo can be the best way to do it.' },
+  { slug:'heliskiing-terminology-glossary', h:'Heliskiing Terminology: A Glossary', p:'Every term explained — from spines and couloirs to guaranteed vertical and companion rescue.' },
+  { slug:'getting-to-north-iceland-heliskiing', h:'Getting to North Iceland', p:'The practical travel plan — flying via Keflavík and Akureyri, driving, and how to reach Siglufjörður.' },
+  { slug:'siglufjordur-travel-guide', h:'Siglufjörður: The Heliski Base Town', p:'The herring-era boomtown you will call home — its history, its setting, and what to do off the mountain.' },
+  { slug:'iceland-in-spring-what-to-expect', h:'Iceland in Spring: What to Expect', p:'Weather, daylight and snow across the March-to-June season — and how to choose which part to book.' },
+  { slug:'why-book-heliskiing-through-an-agent', h:'Why Book Through an Agent', p:'It costs exactly the same as booking direct — so what do you actually gain? An honest answer.' },
+  { slug:'heliskiing-iceland-vs-norway', h:'Iceland vs Norway for Heliskiing', p:'Two Arctic sea-to-summit destinations compared — organised and rolling, or wild and steep?' },
+  { slug:'the-heliski-lodge-experience', h:'The Heliski Lodge Experience', p:'Life off the mountain — the harbourside Sigló Hótel, geothermal hot tubs and the social heart of the week.' },
+  { slug:'how-much-vertical-per-day-heliskiing', h:'How Much Vertical Do You Ski in a Day?', p:'Roughly 15,000 to 25,000 feet across 7 to 14 runs — what that really means, and why it varies.' },
+  { slug:'heliski-photography-tips', h:'Heliski Photography Tips', p:'How to capture the trip — safely — from bright-snow exposure to the aurora and the midnight-sun light.' },
+  { slug:'heliskiing-iceland-vs-canada', h:'Iceland vs Canada for Heliskiing', p:"The powder benchmark against the sea-to-summit original — an even-handed verdict on which suits you." },
+  { slug:'why-iceland-is-a-bucket-list-heliski-destination', h:'Why Iceland Is a Bucket-List Destination', p:'Ski, ocean, light and place — the combination that no other heliski destination on earth quite matches.' }
+];
 const collectionLd = {
   "@type": "CollectionPage",
   "name": "Heliskiing in Iceland: The Complete Guide",
-  "description": "A ten-chapter guide to heliskiing in Iceland — what it is, the Troll Peninsula terrain, the best time to go, cost, safety, who can go, gear, travel, where you stay, and how Iceland compares to the world's best.",
+  "description": "A ten-chapter guide to heliskiing in Iceland plus fifty in-depth Field Notes articles on destinations, cost, safety, planning and technique worldwide.",
   "url": SITE + "/heliskiing-guide",
-  "hasPart": chapters.map(c => ({ "@type":"WebPage", "name": c.h, "url": SITE + "/heliskiing-guide/" + c.slug }))
+  "hasPart": [
+    ...chapters.map(c => ({ "@type":"WebPage", "name": c.h, "url": SITE + "/heliskiing-guide/" + c.slug })),
+    ...articles.map(a => ({ "@type":"Article", "name": a.h, "url": SITE + "/field-notes/" + a.slug }))
+  ]
 };
 ---
 <Base
   heroImage="iceland-hero"
   title="Iceland Heliskiing: The Complete Guide (2026) | Heliski Travel"
-  description="The complete guide to heliskiing in Iceland — ten expert chapters on the Troll Peninsula, best time to go, cost, safety, gear, travel and where to stay."
+  description="The complete guide to heliskiing in Iceland — ten expert chapters plus fifty Field Notes articles on destinations, cost, safety, gear, travel and technique."
   active="guide"
   schema={collectionLd}>
 
 <section class="band band--ink gd-hero">
   <div class="shell">
-    <p class="gd-k">The Complete Guide · Ten Chapters</p>
+    <p class="gd-k">The Complete Guide · Ten Chapters + Field Notes</p>
     <h1 class="gd-h1">Heliskiing in Iceland</h1>
-    <p class="gd-lede">The most complete guide to heliskiing on Iceland's Tröllaskagi (Troll) Peninsula — ten in-depth chapters covering everything from the terrain and the season to cost, safety, gear and travel. Written by <a href="/about">Heliski Travel</a>, the authorised booking agent for <a href="/packages">Viking Heliskiing</a>. Start anywhere.</p>
+    <p class="gd-lede">The most complete guide to heliskiing on Iceland's Tröllaskagi (Troll) Peninsula — ten in-depth chapters covering the terrain, the season, cost, safety, gear and travel, followed by fifty <a href="#field-notes">Field Notes</a> articles on heliskiing the world over. Written by <a href="/about">Heliski Travel</a>, the authorised booking agent for <a href="/packages">Viking Heliskiing</a>. Start anywhere.</p>
   </div>
 </section>
 
@@ -45,6 +100,28 @@ const collectionLd = {
           <h2 class="gd-card__h">{c.h}</h2>
           <p class="gd-card__p">{c.p}</p>
           <span class="gd-card__go">Read chapter &rarr;</span>
+        </a>
+      ))}
+    </div>
+    <div class="gd-cta" style="justify-content:center;border-top:0;margin-top:56px;">
+      <a class="btn" href="/packages"><span>View packages</span> <span class="arw">&rarr;</span></a>
+      <a class="btn btn--ghost" href="/contact"><span>Request a quote</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="field-notes" class="band band--ink" style="padding:72px 0 100px;scroll-margin-top:90px;">
+  <div class="shell">
+    <p class="gd-k">Field Notes · Fifty Articles</p>
+    <h2 class="gd-h1" style="font-size:clamp(1.9rem,4.4vw,2.9rem);margin-bottom:16px;">Field Notes</h2>
+    <p class="gd-lede" style="margin-bottom:44px;">The wider heliskiing library. Fifty straight-talking, in-depth articles on the best destinations in the world, what it costs, how to choose an operator, how to prepare and how to ski it well — each written to help you understand the sport and what a week in Iceland really offers.</p>
+    <div class="gd-hubgrid">
+      {articles.map((a, i) => (
+        <a class="gd-card" href={`/field-notes/${a.slug}`}>
+          <span class="gd-card__n">{String(i+1).padStart(2,'0')}</span>
+          <h2 class="gd-card__h">{a.h}</h2>
+          <p class="gd-card__p">{a.p}</p>
+          <span class="gd-card__go">Read <span class="arw">&rarr;</span></span>
         </a>
       ))}
     </div>
