@@ -218,7 +218,17 @@ footer.sf .sf__base .cr{color:rgba(232,240,248,.74)!important;}
 html{scroll-behavior:smooth;}
 body{margin:0;background:var(--ink);color:var(--cream);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
 /* ===== Shared guide (pillar + cluster) styling ===== */
-.gd-hero{padding:124px 0 46px;}
+.gd-hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;padding:120px 0 clamp(54px,7vh,96px);overflow:hidden;background:var(--navy);}
+.gd-hero::before{content:"";position:absolute;inset:-3%;z-index:0;background:url('/images/iceland-hero.webp') center 38%/cover no-repeat;transform:scale(1.05);animation:gdzoom 9s var(--ease) forwards;}
+@keyframes gdzoom{to{transform:scale(1);}}
+.gd-hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(10,22,40,.5) 0%,rgba(10,22,40,.14) 28%,rgba(10,22,40,0) 46%,rgba(10,22,40,.55) 76%,var(--ink) 100%),
+             linear-gradient(90deg,rgba(10,22,40,.5) 0%,rgba(10,22,40,0) 56%);}
+.gd-hero .shell{position:relative;z-index:2;}
+.gd-hero__cue{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:3;width:24px;height:38px;border:1.5px solid rgba(195,220,238,.5);border-radius:13px;display:flex;justify-content:center;}
+.gd-hero__cue span{width:3px;height:8px;border-radius:2px;background:var(--blue);margin-top:7px;animation:gdcue 1.9s var(--ease) infinite;}
+@keyframes gdcue{0%{transform:translateY(0);opacity:1;}70%{transform:translateY(14px);opacity:0;}100%{opacity:0;}}
+@media(prefers-reduced-motion:reduce){.gd-hero::before{animation:none;transform:none;}}
 .gd-k{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);margin:0 0 16px;}
 .gd-h1{font-family:var(--serif);font-weight:500;font-size:clamp(40px,7vw,76px);line-height:1;letter-spacing:-.015em;color:var(--cream);margin:0 0 24px;}
 .gd-lede{max-width:62ch;color:rgba(244,246,248,0.76);font-size:clamp(17px,2vw,20px);line-height:1.7;}
@@ -586,6 +596,8 @@ body.pkgm-open{overflow:hidden;}
 (function(){
   var toc=document.querySelector('.gd-toc'), art=document.querySelector('.gd-art');
   if(!toc||!art) return;
+  var hero=document.querySelector('.gd-hero');
+  if(hero && !hero.querySelector('.gd-hero__cue')){ var cue=document.createElement('div'); cue.className='gd-hero__cue'; cue.style.cursor='pointer'; cue.setAttribute('aria-hidden','true'); cue.innerHTML='<span></span>'; cue.addEventListener('click',function(){ window.scrollTo({top:Math.round(window.innerHeight*0.92),behavior:'smooth'}); }); hero.appendChild(cue); }
   var words=((art.innerText||'').trim().match(/\S+/g)||[]).length, mins=Math.max(1,Math.round(words/220));
   var meta=document.createElement('p'); meta.className='gd-toc__meta'; meta.textContent='≈ '+mins+' min read';
   var track=document.createElement('div'); track.className='gd-toc__track';
