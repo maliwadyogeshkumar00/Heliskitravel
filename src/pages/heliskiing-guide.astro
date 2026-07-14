@@ -13,57 +13,58 @@ const chapters = [
   { n:'09', slug:'siglo-hotel-siglufjordur', h:'Where You Stay', p:'Sigló Hótel, the town of Siglufjörður, dining and life at base — for skiers and non-skiers.' },
   { n:'10', slug:'iceland-vs-worlds-best', h:'Iceland vs the World', p:'How Iceland compares to Canada, Alaska and Japan — and why so many now choose it.' }
 ];
+const catOrder = ['Destinations','Compare & Decide','Cost & Booking','Plan & Prepare','On the Mountain','Iceland & the Experience'];
 const articles = [
-  { slug:'best-heliskiing-destinations-world', h:'The Best Heliskiing Destinations in the World', p:'Where the sport is at its best — Alaska, British Columbia, Iceland, Japan and beyond, ranked and compared for your next trip.' },
-  { slug:'is-heliskiing-worth-it', h:'Is Heliskiing Worth It?', p:'An honest verdict on cost, risk and reward — and exactly who it is, and is not, worth it for.' },
-  { slug:'heliskiing-vs-cat-skiing-vs-touring', h:'Heliskiing vs Cat Skiing vs Ski Touring', p:'Three ways into the backcountry compared: cost, terrain, weather resilience and who each one suits.' },
-  { slug:'heliskiing-for-beginners', h:'Heliskiing for Beginners', p:'New to heliskiing? The ability you truly need, how a first day unfolds, and how to prepare with confidence.' },
-  { slug:'how-to-choose-heliski-operator', h:'How to Choose a Heliski Operator', p:"The buyer's checklist — guides, safety, pilots, pricing and the red flags that should stop you booking." },
-  { slug:'heliskiing-in-alaska', h:'Heliskiing in Alaska', p:'The steepest big-mountain terrain on earth — the Chugach, the spines, the season, and who it is really for.' },
-  { slug:'heliskiing-in-british-columbia', h:'Heliskiing in British Columbia', p:'The birthplace of the sport — deep, reliable powder, lodge culture and unlimited-vertical weeks.' },
-  { slug:'heliskiing-in-japan', h:'Heliskiing in Japan', p:'The truth about Japow — where to find it, what heli access is really like, and how it compares.' },
-  { slug:'heliskiing-in-norway', h:'Heliskiing in Norway', p:"Arctic sea-to-summit lines in the Lyngen Alps and Lofoten — Iceland's wild Scandinavian sibling." },
-  { slug:'best-time-to-go-heliskiing', h:'When Is the Best Time to Go Heliskiing?', p:'A month-by-month, region-by-region guide to timing your trip — including summer options.' },
-  { slug:'heliskiing-in-new-zealand', h:'Heliskiing in New Zealand', p:'The standout summer option — Southern Alps terrain, the July to September season, and how to plan it.' },
-  { slug:'heliskiing-in-the-alps', h:'Heliskiing in the Alps', p:'Where heli-skiing is actually allowed in Europe, what a day looks like, and how to combine it with resort skiing.' },
-  { slug:'heliskiing-in-georgia-caucasus', h:'Heliskiing in Georgia (the Caucasus)', p:'Big Caucasus terrain at a lower price — the trade-offs, the helicopters, and how to choose well.' },
-  { slug:'canada-vs-alaska-heliskiing', h:'Canada vs Alaska Heliskiing', p:'A straight, even-handed verdict on the two flagship North American destinations — and which suits you.' },
-  { slug:'how-much-does-heliskiing-cost', h:'How Much Does Heliskiing Cost?', p:'A 2026 price guide — what drives the cost, what is included, and how to get the most for your money.' },
-  { slug:'is-heliskiing-safe', h:'Is Heliskiing Safe?', p:'An honest guide to the real risks — avalanche and helicopter — and exactly how good operators manage them.' },
-  { slug:'what-to-pack-for-heliskiing', h:'What to Pack for Heliskiing', p:'The complete checklist — layers, skis, safety kit and the spring-Iceland essentials people always forget.' },
-  { slug:'heliskiing-fitness-guide', h:'How Fit Do You Need to Be for Heliskiing?', p:'What the sport really demands of your body — and a sensible way to train for it before you go.' },
-  { slug:'private-vs-shared-helicopter-heliskiing', h:'Private vs Shared Helicopter Heliskiing', p:'Shared, semi-private or private — what each format means for cost, group size and your day on the mountain.' },
-  { slug:'heliskiing-vs-resort-skiing', h:'Heliskiing vs Resort Skiing', p:'Is it worth the upgrade? An even-handed look at snow, terrain, cost and who should make the jump.' },
-  { slug:'what-is-sea-to-summit-skiing', h:'What Is Sea-to-Summit Skiing?', p:"Iceland's signature descent — a single run from a mountain summit all the way down to the Arctic Ocean." },
-  { slug:'how-to-ski-powder', h:'How to Ski Powder', p:'The technique that transforms deep snow from a fight into a joy — and how to arrive ready for it.' },
-  { slug:'heliskiing-for-intermediate-skiers', h:'Heliskiing for Intermediate Skiers', p:'You do not have to be an expert. What a confident intermediate really needs, and why Iceland suits you.' },
-  { slug:'northern-lights-and-midnight-sun-heliskiing', h:'Northern Lights & Midnight Sun Heliskiing', p:"Iceland's two celestial seasons — aurora in the early weeks, endless Arctic daylight later on." },
-  { slug:'heliboarding-snowboard-heliskiing', h:'Heliboarding: Heliskiing on a Snowboard', p:'Yes, snowboarders are welcome. How heliboarding works, the traverse tricks, and why Iceland suits a board.' },
-  { slug:'heliskiing-in-greenland', h:'Heliskiing in Greenland', p:"The sport's ultimate frontier — glaciers, couloirs and lines that end at the icebergs. Remote, raw, unforgettable." },
-  { slug:'heliskiing-in-kashmir-india', h:'Heliskiing in Kashmir', p:'Himalayan heliskiing above Gulmarg — high-altitude terrain, raw adventure and scenery on an enormous scale.' },
-  { slug:'heliskiing-in-usa', h:'Heliskiing in the USA', p:'Beyond Alaska — Utah, Colorado and the Ruby Mountains, where to find champagne powder in the Lower 48.' },
-  { slug:'heliskiing-in-the-andes-chile-argentina', h:'Heliskiing in the Andes', p:'Chile and Argentina — big high-altitude terrain and a Southern-Hemisphere season for skiing in your summer.' },
-  { slug:'planning-your-first-heliski-trip', h:'Planning Your First Heliski Trip', p:'The complete step-by-step roadmap — from deciding it is right for you to booking and arriving prepared.' },
-  { slug:'heliskiing-vs-heli-assisted-touring', h:'Heliskiing vs Heli-Assisted Touring', p:'Let the helicopter do the climbing, or earn some turns? The two styles compared, and who each suits.' },
-  { slug:'what-is-guaranteed-vertical-feet', h:'What Is Guaranteed Vertical Feet?', p:'How heli packages are measured and priced — and why the guaranteed-vertical model is fair to you.' },
-  { slug:'best-skis-for-heliskiing', h:'Best Skis for Heliskiing', p:'Width, rocker, length and the rent-or-bring question — how to get the right skis under your feet.' },
-  { slug:'avalanche-safety-for-heliskiing', h:'Avalanche Safety for Heliskiing', p:'The transceiver, shovel and probe explained — how the safety system works and why a course matters.' },
-  { slug:'heliskiing-insurance-guide', h:'Heliskiing Insurance', p:'Why standard cover often falls short, and exactly what to look for — from heli-evacuation to cancellation.' },
-  { slug:'what-to-expect-first-heliski-day', h:'Your First Heliski Day', p:'An hour-by-hour walkthrough — from the morning weather call to the first drop and the evening at the lodge.' },
-  { slug:'weather-and-down-days-heliskiing', h:'Weather and Down-Days in Heliskiing', p:'Why the helicopter sometimes stays grounded, what you do on a down-day, and how good operators manage it.' },
-  { slug:'heliskiing-for-groups-and-families', h:'Heliskiing for Groups and Families', p:'Planning a trip for friends or family — private helicopters, mixed abilities and the shared adventure.' },
-  { slug:'solo-heliskiing', h:'Heliskiing Solo', p:'Going on your own? How shared groups work, why it is sociable, and why solo can be the best way to do it.' },
-  { slug:'heliskiing-terminology-glossary', h:'Heliskiing Terminology: A Glossary', p:'Every term explained — from spines and couloirs to guaranteed vertical and companion rescue.' },
-  { slug:'getting-to-north-iceland-heliskiing', h:'Getting to North Iceland', p:'The practical travel plan — flying via Keflavík and Akureyri, driving, and how to reach Siglufjörður.' },
-  { slug:'siglufjordur-travel-guide', h:'Siglufjörður: The Heliski Base Town', p:'The herring-era boomtown you will call home — its history, its setting, and what to do off the mountain.' },
-  { slug:'iceland-in-spring-what-to-expect', h:'Iceland in Spring: What to Expect', p:'Weather, daylight and snow across the March-to-June season — and how to choose which part to book.' },
-  { slug:'why-book-heliskiing-through-an-agent', h:'Why Book Through an Agent', p:'It costs exactly the same as booking direct — so what do you actually gain? An honest answer.' },
-  { slug:'heliskiing-iceland-vs-norway', h:'Iceland vs Norway for Heliskiing', p:'Two Arctic sea-to-summit destinations compared — organised and rolling, or wild and steep?' },
-  { slug:'the-heliski-lodge-experience', h:'The Heliski Lodge Experience', p:'Life off the mountain — the harbourside Sigló Hótel, geothermal hot tubs and the social heart of the week.' },
-  { slug:'how-much-vertical-per-day-heliskiing', h:'How Much Vertical Do You Ski in a Day?', p:'Roughly 15,000 to 25,000 feet across 7 to 14 runs — what that really means, and why it varies.' },
-  { slug:'heliski-photography-tips', h:'Heliski Photography Tips', p:'How to capture the trip — safely — from bright-snow exposure to the aurora and the midnight-sun light.' },
-  { slug:'heliskiing-iceland-vs-canada', h:'Iceland vs Canada for Heliskiing', p:"The powder benchmark against the sea-to-summit original — an even-handed verdict on which suits you." },
-  { slug:'why-iceland-is-a-bucket-list-heliski-destination', h:'Why Iceland Is a Bucket-List Destination', p:'Ski, ocean, light and place — the combination that no other heliski destination on earth quite matches.' }
+  { slug:'best-heliskiing-destinations-world', h:'The Best Heliskiing Destinations in the World', d:'Alaska, BC, Iceland, Japan and beyond, ranked.', cat:'Destinations' },
+  { slug:'is-heliskiing-worth-it', h:'Is Heliskiing Worth It?', d:'An honest verdict on cost, risk and reward.', cat:'Compare & Decide' },
+  { slug:'heliskiing-vs-cat-skiing-vs-touring', h:'Heliskiing vs Cat Skiing vs Ski Touring', d:'Three ways into the backcountry, compared.', cat:'Compare & Decide' },
+  { slug:'heliskiing-for-beginners', h:'Heliskiing for Beginners', d:'The ability you need and how day one unfolds.', cat:'Plan & Prepare' },
+  { slug:'how-to-choose-heliski-operator', h:'How to Choose a Heliski Operator', d:'The buyer’s checklist and the red flags.', cat:'Compare & Decide' },
+  { slug:'heliskiing-in-alaska', h:'Heliskiing in Alaska', d:'The steepest big-mountain terrain on earth.', cat:'Destinations' },
+  { slug:'heliskiing-in-british-columbia', h:'Heliskiing in British Columbia', d:'The birthplace — deep, reliable powder.', cat:'Destinations' },
+  { slug:'heliskiing-in-japan', h:'Heliskiing in Japan', d:'The truth about Japow and heli access.', cat:'Destinations' },
+  { slug:'heliskiing-in-norway', h:'Heliskiing in Norway', d:'Arctic sea-to-summit in Lyngen and Lofoten.', cat:'Destinations' },
+  { slug:'best-time-to-go-heliskiing', h:'When Is the Best Time to Go Heliskiing?', d:'A month-by-month, region-by-region guide.', cat:'Plan & Prepare' },
+  { slug:'heliskiing-in-new-zealand', h:'Heliskiing in New Zealand', d:'The standout Northern-summer option.', cat:'Destinations' },
+  { slug:'heliskiing-in-the-alps', h:'Heliskiing in the Alps', d:'Where heli-skiing is actually allowed in Europe.', cat:'Destinations' },
+  { slug:'heliskiing-in-georgia-caucasus', h:'Heliskiing in Georgia (the Caucasus)', d:'Big terrain at a lower price.', cat:'Destinations' },
+  { slug:'canada-vs-alaska-heliskiing', h:'Canada vs Alaska Heliskiing', d:'An even-handed verdict on the two flagships.', cat:'Compare & Decide' },
+  { slug:'how-much-does-heliskiing-cost', h:'How Much Does Heliskiing Cost?', d:'What drives the price and what’s included.', cat:'Cost & Booking' },
+  { slug:'is-heliskiing-safe', h:'Is Heliskiing Safe?', d:'The real risks and how operators manage them.', cat:'On the Mountain' },
+  { slug:'what-to-pack-for-heliskiing', h:'What to Pack for Heliskiing', d:'The complete checklist, nothing forgotten.', cat:'Plan & Prepare' },
+  { slug:'heliskiing-fitness-guide', h:'How Fit Do You Need to Be for Heliskiing?', d:'What the sport demands and how to train.', cat:'Plan & Prepare' },
+  { slug:'private-vs-shared-helicopter-heliskiing', h:'Private vs Shared Helicopter Heliskiing', d:'What each format means for your day.', cat:'Cost & Booking' },
+  { slug:'heliskiing-vs-resort-skiing', h:'Heliskiing vs Resort Skiing', d:'Is it worth the upgrade?', cat:'Compare & Decide' },
+  { slug:'what-is-sea-to-summit-skiing', h:'What Is Sea-to-Summit Skiing?', d:'Summit to the Arctic Ocean in one run.', cat:'Iceland & the Experience' },
+  { slug:'how-to-ski-powder', h:'How to Ski Powder', d:'The technique that makes deep snow a joy.', cat:'On the Mountain' },
+  { slug:'heliskiing-for-intermediate-skiers', h:'Heliskiing for Intermediate Skiers', d:'You do not have to be an expert.', cat:'Plan & Prepare' },
+  { slug:'northern-lights-and-midnight-sun-heliskiing', h:'Northern Lights & Midnight Sun Heliskiing', d:'Iceland’s two celestial seasons.', cat:'Iceland & the Experience' },
+  { slug:'heliboarding-snowboard-heliskiing', h:'Heliboarding: Heliskiing on a Snowboard', d:'Yes, snowboarders are welcome.', cat:'On the Mountain' },
+  { slug:'heliskiing-in-greenland', h:'Heliskiing in Greenland', d:'The sport’s ultimate remote frontier.', cat:'Destinations' },
+  { slug:'heliskiing-in-kashmir-india', h:'Heliskiing in Kashmir', d:'Himalayan heliskiing above Gulmarg.', cat:'Destinations' },
+  { slug:'heliskiing-in-usa', h:'Heliskiing in the USA', d:'Beyond Alaska — Utah, Colorado, the Rubies.', cat:'Destinations' },
+  { slug:'heliskiing-in-the-andes-chile-argentina', h:'Heliskiing in the Andes', d:'Chile and Argentina in your summer.', cat:'Destinations' },
+  { slug:'planning-your-first-heliski-trip', h:'Planning Your First Heliski Trip', d:'The complete step-by-step roadmap.', cat:'Plan & Prepare' },
+  { slug:'heliskiing-vs-heli-assisted-touring', h:'Heliskiing vs Heli-Assisted Touring', d:'Let the heli climb, or earn some turns?', cat:'Compare & Decide' },
+  { slug:'what-is-guaranteed-vertical-feet', h:'What Is Guaranteed Vertical Feet?', d:'How packages are measured and priced.', cat:'Cost & Booking' },
+  { slug:'best-skis-for-heliskiing', h:'Best Skis for Heliskiing', d:'Width, rocker, and rent-or-bring.', cat:'Plan & Prepare' },
+  { slug:'avalanche-safety-for-heliskiing', h:'Avalanche Safety for Heliskiing', d:'Transceiver, shovel, probe — explained.', cat:'On the Mountain' },
+  { slug:'heliskiing-insurance-guide', h:'Heliskiing Insurance', d:'Why standard cover often falls short.', cat:'Cost & Booking' },
+  { slug:'what-to-expect-first-heliski-day', h:'Your First Heliski Day', d:'An hour-by-hour walkthrough.', cat:'On the Mountain' },
+  { slug:'weather-and-down-days-heliskiing', h:'Weather and Down-Days in Heliskiing', d:'What happens when you cannot fly.', cat:'Plan & Prepare' },
+  { slug:'heliskiing-for-groups-and-families', h:'Heliskiing for Groups and Families', d:'Private helicopters and mixed abilities.', cat:'Iceland & the Experience' },
+  { slug:'solo-heliskiing', h:'Heliskiing Solo', d:'How shared groups work, and why it’s great.', cat:'Iceland & the Experience' },
+  { slug:'heliskiing-terminology-glossary', h:'Heliskiing Terminology: A Glossary', d:'Every term, from spines to companion rescue.', cat:'On the Mountain' },
+  { slug:'getting-to-north-iceland-heliskiing', h:'Getting to North Iceland', d:'Via Keflavík and Akureyri to Siglufjörður.', cat:'Plan & Prepare' },
+  { slug:'siglufjordur-travel-guide', h:'Siglufjörður: The Heliski Base Town', d:'The herring-era town you’ll call home.', cat:'Iceland & the Experience' },
+  { slug:'iceland-in-spring-what-to-expect', h:'Iceland in Spring: What to Expect', d:'Weather, daylight and snow, March to June.', cat:'Iceland & the Experience' },
+  { slug:'why-book-heliskiing-through-an-agent', h:'Why Book Through an Agent', d:'Same price as direct — so what do you gain?', cat:'Compare & Decide' },
+  { slug:'heliskiing-iceland-vs-norway', h:'Iceland vs Norway for Heliskiing', d:'Two Arctic sea-to-summit siblings, compared.', cat:'Compare & Decide' },
+  { slug:'the-heliski-lodge-experience', h:'The Heliski Lodge Experience', d:'Life off the mountain at Sigló Hótel.', cat:'Iceland & the Experience' },
+  { slug:'how-much-vertical-per-day-heliskiing', h:'How Much Vertical Do You Ski in a Day?', d:'15,000–25,000 feet across 7–14 runs.', cat:'On the Mountain' },
+  { slug:'heliski-photography-tips', h:'Heliski Photography Tips', d:'Capture the trip — safely.', cat:'Iceland & the Experience' },
+  { slug:'heliskiing-iceland-vs-canada', h:'Iceland vs Canada for Heliskiing', d:'The powder benchmark vs the sea-to-summit.', cat:'Compare & Decide' },
+  { slug:'why-iceland-is-a-bucket-list-heliski-destination', h:'Why Iceland Is a Bucket-List Destination', d:'Ski, ocean, light and place.', cat:'Iceland & the Experience' }
 ];
 const collectionLd = {
   "@type": "CollectionPage",
@@ -130,27 +131,36 @@ const collectionLd = {
   </div>
 </section>
 
-<!-- ================= FIELD NOTES (premium) ================= -->
+<!-- ================= FIELD NOTES (grouped index) ================= -->
 <section class="band band--ink gg-band gg-fn" id="field-notes" style="scroll-margin-top:90px;">
-  <span class="gg-fn__wm" aria-hidden="true">50</span>
   <div class="shell">
     <div class="gg-fnhead">
       <p class="eyebrow">Beyond the Guide · Fifty Articles</p>
       <h2 class="gg-fnh">The Field&nbsp;Notes</h2>
-      <p class="gg-fnlede">The wider heliskiing library — fifty straight-talking articles on the best destinations in the world, what it costs, how to choose an operator, how to prepare and how to ski it well.</p>
+      <p class="gg-fnlede">The wider heliskiing library, sorted by theme — the best destinations in the world, what it costs, how to plan and how to ski it well. Jump straight to what you need.</p>
     </div>
-    <div class="gg-fngrid">
-      {articles.map((a, i) => (
-        <a class="gg-fncard" href={`/field-notes/${a.slug}`}>
-          <span class="gg-fncard__wm" aria-hidden="true">{String(i+1).padStart(2,'0')}</span>
-          <span class="gg-fncard__k">Field Note {String(i+1).padStart(2,'0')}</span>
-          <h3 class="gg-fncard__h">{a.h}</h3>
-          <p class="gg-fncard__p">{a.p}</p>
-          <span class="gg-fncard__go">Read <span class="arw">&rarr;</span></span>
-        </a>
-      ))}
-    </div>
-    <div class="gd-cta" style="justify-content:center;border-top:0;margin-top:60px;">
+
+    {catOrder.map(cat => {
+      const items = articles.filter(a => a.cat === cat);
+      return (
+        <div class="gg-grp">
+          <div class="gg-grp__head">
+            <h3 class="gg-grp__name">{cat}</h3>
+            <span class="gg-grp__count">{items.length} articles</span>
+          </div>
+          <div class="gg-grp__grid">
+            {items.map(a => (
+              <a class="gg-grp__item" href={`/field-notes/${a.slug}`}>
+                <span class="gg-grp__t">{a.h}</span>
+                <span class="gg-grp__d">{a.d}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      );
+    })}
+
+    <div class="gd-cta" style="justify-content:center;border-top:0;margin-top:64px;">
       <a class="btn" href="/packages"><span>View packages</span> <span class="arw">&rarr;</span></a>
       <a class="btn btn--ghost" href="/contact"><span>Request a quote</span></a>
     </div>
@@ -207,27 +217,22 @@ const collectionLd = {
   .gg-r:hover .gg-r__h{color:var(--blue-soft);}
   .gg-r:hover .gg-r__go{opacity:1;transform:none;}
 
-  /* ---- FIELD NOTES (premium) ---- */
-  .gg-fn{position:relative;overflow:hidden;}
-  .gg-fn__wm{position:absolute;top:-.18em;right:-1%;z-index:0;font-family:var(--serif);font-weight:600;font-size:clamp(14rem,32vw,34rem);line-height:.7;color:transparent;-webkit-text-stroke:1px rgba(138,180,204,.09);pointer-events:none;user-select:none;}
-  .gg-fn .shell{position:relative;z-index:2;}
-  .gg-fnhead{max-width:60ch;margin:0 0 clamp(40px,5vw,64px);}
+  /* ---- FIELD NOTES (grouped index) ---- */
+  .gg-fnhead{max-width:62ch;margin:0 0 clamp(44px,5vw,66px);}
   .gg-fnh{font-family:var(--serif);font-weight:500;font-size:clamp(2.3rem,5.2vw,4rem);line-height:1;color:var(--cream);margin:16px 0 0;letter-spacing:-.01em;}
   .gg-fnlede{margin:20px 0 0;color:rgba(195,220,238,.68);font-size:clamp(15px,1.4vw,17px);line-height:1.68;}
-  .gg-fngrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(308px,1fr));gap:18px;}
-  .gg-fncard{position:relative;display:flex;flex-direction:column;padding:clamp(26px,2.4vw,34px) clamp(22px,2vw,28px);border:1px solid var(--line);border-radius:2px;background:linear-gradient(158deg,rgba(23,45,66,.5) 0%,rgba(10,22,40,.12) 62%);overflow:hidden;text-decoration:none;isolation:isolate;transition:transform .55s var(--ease),border-color .55s var(--ease),box-shadow .55s var(--ease),background .55s var(--ease);}
-  .gg-fncard__wm{position:absolute;top:6px;right:16px;z-index:-1;font-family:var(--serif);font-style:italic;font-size:66px;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(168,207,224,.14);transition:-webkit-text-stroke-color .55s var(--ease);}
-  .gg-fncard__k{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);font-weight:700;position:relative;padding-bottom:16px;}
-  .gg-fncard__k::after{content:"";position:absolute;left:0;bottom:8px;width:22px;height:1px;background:var(--blue);transition:width .55s var(--ease);}
-  .gg-fncard__h{font-family:var(--serif);font-weight:500;font-size:clamp(20px,1.7vw,23px);line-height:1.16;color:var(--cream);margin:2px 0 11px;transition:color .45s var(--ease);}
-  .gg-fncard__p{color:rgba(244,246,248,.58);font-size:13.8px;line-height:1.56;margin:0 0 20px;flex:1;}
-  .gg-fncard__go{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--blue-soft);display:inline-flex;align-items:center;gap:8px;}
-  .gg-fncard__go .arw{transition:transform .45s var(--ease);}
-  .gg-fncard:hover{transform:translateY(-6px);border-color:var(--line-2);background:linear-gradient(158deg,rgba(23,45,66,.75) 0%,rgba(10,22,40,.22) 62%);box-shadow:0 28px 60px -28px rgba(0,0,0,.75);}
-  .gg-fncard:hover .gg-fncard__wm{-webkit-text-stroke-color:rgba(168,207,224,.4);}
-  .gg-fncard:hover .gg-fncard__k::after{width:46px;}
-  .gg-fncard:hover .gg-fncard__h{color:var(--blue-soft);}
-  .gg-fncard:hover .gg-fncard__go .arw{transform:translateX(5px);}
+
+  .gg-grp{margin-bottom:clamp(40px,4.4vw,60px);}
+  .gg-grp:last-of-type{margin-bottom:0;}
+  .gg-grp__head{display:flex;align-items:baseline;gap:18px;padding-bottom:16px;margin-bottom:6px;border-bottom:1px solid var(--line-2);}
+  .gg-grp__name{font-family:var(--serif);font-weight:500;font-size:clamp(1.55rem,2.6vw,2.05rem);line-height:1;color:var(--cream);letter-spacing:-.005em;margin:0;}
+  .gg-grp__count{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);font-weight:700;white-space:nowrap;}
+  .gg-grp__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:0 clamp(30px,4vw,56px);}
+  .gg-grp__item{display:block;padding:15px 4px;border-bottom:1px solid var(--line);text-decoration:none;transition:padding-left .45s var(--ease);}
+  .gg-grp__t{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(18px,1.5vw,20.5px);line-height:1.16;color:var(--cream);transition:color .4s var(--ease);}
+  .gg-grp__d{display:block;font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.46;}
+  .gg-grp__item:hover{padding-left:10px;}
+  .gg-grp__item:hover .gg-grp__t{color:var(--blue-soft);}
 
   @media (max-width:900px){
     .gg-hero{min-height:80vh;}
@@ -238,8 +243,7 @@ const collectionLd = {
   @media (max-width:560px){
     .gg-r{grid-template-columns:clamp(44px,12vw,56px) 1fr;}
     .gg-r__go{display:none;}
-    .gg-fngrid{grid-template-columns:1fr;}
   }
-  @media (prefers-reduced-motion:reduce){ *{transition:none!important;} .gg-hero__photo{transform:none;} }
+  @media (prefers-reduced-motion:reduce){ *{transition:none!important;animation:none!important;} .gg-hero__photo{transform:none;} }
 </style>
 </Base>
