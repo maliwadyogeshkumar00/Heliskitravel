@@ -33,6 +33,13 @@
       }
     ]
   },
+  "redirects": [
+    {
+      "source": "/field-notes",
+      "destination": "/heliskiing-guide#field-notes",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/wp/2026/:path*",
