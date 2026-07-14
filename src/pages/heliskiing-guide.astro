@@ -83,11 +83,16 @@ const collectionLd = {
   active="guide"
   schema={collectionLd}>
 
-<!-- ================= HERO ================= -->
+<!-- ================= HERO (image only, no text — like the other pages) ================= -->
 <section class="gg-hero" id="gg-hero">
   <div class="gg-hero__photo"></div>
   <div class="gg-hero__grade"></div>
-  <div class="shell gg-hero__inner">
+  <a class="gg-scroll" href="#gg-intro" aria-label="Scroll to the guide"><span></span></a>
+</section>
+
+<!-- ================= INTRO (title lives here) ================= -->
+<section class="band band--ink gg-intro" id="gg-intro">
+  <div class="shell gg-introwrap">
     <p class="eyebrow">The Complete Guide</p>
     <h1 class="gg-title">Heliskiing<span class="s">in Iceland</span></h1>
     <p class="gg-lede">Ten in-depth chapters plus fifty field notes on Iceland's Tröllaskagi (Troll) Peninsula — sea-to-summit descents from 1,200-metre summits down to the Arctic Ocean. Written by <a href="/about">Heliski&nbsp;Travel</a>, the authorised booking agent for <a href="/packages">Viking&nbsp;Heliskiing</a>.</p>
@@ -125,25 +130,27 @@ const collectionLd = {
   </div>
 </section>
 
-<!-- ================= FIELD NOTES ================= -->
-<section class="band band--ink gg-band" id="field-notes" style="scroll-margin-top:90px;">
+<!-- ================= FIELD NOTES (premium) ================= -->
+<section class="band band--ink gg-band gg-fn" id="field-notes" style="scroll-margin-top:90px;">
+  <span class="gg-fn__wm" aria-hidden="true">50</span>
   <div class="shell">
     <div class="gg-fnhead">
       <p class="eyebrow">Beyond the Guide · Fifty Articles</p>
-      <h2 class="gg-fnh">The Field Notes</h2>
+      <h2 class="gg-fnh">The Field&nbsp;Notes</h2>
       <p class="gg-fnlede">The wider heliskiing library — fifty straight-talking articles on the best destinations in the world, what it costs, how to choose an operator, how to prepare and how to ski it well.</p>
     </div>
-    <div class="gd-hubgrid">
+    <div class="gg-fngrid">
       {articles.map((a, i) => (
-        <a class="gd-card" href={`/field-notes/${a.slug}`}>
-          <span class="gd-card__n">{String(i+1).padStart(2,'0')}</span>
-          <h3 class="gd-card__h">{a.h}</h3>
-          <p class="gd-card__p">{a.p}</p>
-          <span class="gd-card__go">Read <span class="arw">&rarr;</span></span>
+        <a class="gg-fncard" href={`/field-notes/${a.slug}`}>
+          <span class="gg-fncard__wm" aria-hidden="true">{String(i+1).padStart(2,'0')}</span>
+          <span class="gg-fncard__k">Field Note {String(i+1).padStart(2,'0')}</span>
+          <h3 class="gg-fncard__h">{a.h}</h3>
+          <p class="gg-fncard__p">{a.p}</p>
+          <span class="gg-fncard__go">Read <span class="arw">&rarr;</span></span>
         </a>
       ))}
     </div>
-    <div class="gd-cta" style="justify-content:center;border-top:0;margin-top:56px;">
+    <div class="gd-cta" style="justify-content:center;border-top:0;margin-top:60px;">
       <a class="btn" href="/packages"><span>View packages</span> <span class="arw">&rarr;</span></a>
       <a class="btn btn--ghost" href="/contact"><span>Request a quote</span></a>
     </div>
@@ -155,19 +162,27 @@ const collectionLd = {
   .eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:11.5px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--blue-soft);margin:0;}
   .eyebrow::before{content:"";width:30px;height:1px;background:var(--blue);opacity:.85;}
 
-  /* ---- HERO (full-bleed image, like the Iceland page) ---- */
-  .gg-hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;padding:0 0 clamp(56px,8vw,104px);overflow:hidden;background:var(--navy);}
-  .gg-hero__photo{position:absolute;inset:-3%;z-index:0;background:url('/images/iceland-hero.webp') center 40%/cover no-repeat;transform:scale(1.05);}
+  /* ---- HERO (image only, no text — matches the other pages) ---- */
+  .gg-hero{position:relative;min-height:100vh;overflow:hidden;background:var(--navy);}
+  .gg-hero__photo{position:absolute;inset:-3%;z-index:0;background:url('/images/iceland-hero.webp') center 38%/cover no-repeat;transform:scale(1.06);animation:ggzoom 9s var(--ease) forwards;}
+  @keyframes ggzoom{to{transform:scale(1);}}
   .gg-hero__grade{position:absolute;inset:0;z-index:1;pointer-events:none;
-    background:linear-gradient(180deg,rgba(10,22,40,.42) 0%,rgba(10,22,40,0) 24%,rgba(10,22,40,.5) 70%,rgba(10,22,40,.93) 100%),
-               linear-gradient(90deg,rgba(10,22,40,.5) 0%,rgba(10,22,40,0) 58%);}
-  .gg-hero__inner{position:relative;z-index:3;}
-  .gg-title{margin:22px 0 0;font-family:var(--serif);font-weight:500;font-size:clamp(3.1rem,8vw,6.6rem);line-height:.92;letter-spacing:-.015em;color:var(--cream);}
+    background:linear-gradient(180deg,rgba(10,22,40,.32) 0%,rgba(10,22,40,0) 20%,rgba(10,22,40,0) 60%,rgba(10,22,40,.5) 82%,var(--ink) 100%),
+               linear-gradient(90deg,rgba(10,22,40,.26) 0%,rgba(10,22,40,0) 52%);}
+  .gg-scroll{position:absolute;left:50%;bottom:34px;transform:translateX(-50%);z-index:4;width:24px;height:38px;border:1.5px solid rgba(195,220,238,.5);border-radius:13px;display:flex;justify-content:center;}
+  .gg-scroll span{width:3px;height:8px;border-radius:2px;background:var(--blue);margin-top:7px;animation:ggscroll 1.9s var(--ease) infinite;}
+  @keyframes ggscroll{0%{transform:translateY(0);opacity:1;}70%{transform:translateY(14px);opacity:0;}100%{opacity:0;}}
+
+  /* ---- INTRO (title lives here, centred) ---- */
+  .gg-intro{padding:clamp(62px,8vw,108px) 0 clamp(54px,7vw,92px);}
+  .gg-introwrap{text-align:center;max-width:900px;margin:0 auto;display:flex;flex-direction:column;align-items:center;}
+  .gg-intro .eyebrow{justify-content:center;}
+  .gg-title{margin:22px 0 0;font-family:var(--serif);font-weight:500;font-size:clamp(3rem,7.5vw,6rem);line-height:.94;letter-spacing:-.015em;color:var(--cream);}
   .gg-title .s{display:block;font-style:italic;font-weight:400;color:var(--blue-soft);}
-  .gg-lede{margin:28px 0 0;max-width:62ch;color:rgba(244,246,248,.86);font-size:clamp(15px,1.45vw,18px);line-height:1.72;}
+  .gg-lede{margin:26px auto 0;max-width:60ch;color:rgba(244,246,248,.82);font-size:clamp(15px,1.45vw,18px);line-height:1.72;}
   .gg-lede a{color:var(--blue-soft);text-decoration:none;border-bottom:1px solid var(--cta-line);transition:border-color .4s var(--ease);}
   .gg-lede a:hover{border-color:var(--blue);}
-  .gg-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px;}
+  .gg-cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:34px;}
 
   /* ---- band paddings ---- */
   .gg-band{padding:clamp(70px,9vw,128px) 0;}
@@ -192,13 +207,30 @@ const collectionLd = {
   .gg-r:hover .gg-r__h{color:var(--blue-soft);}
   .gg-r:hover .gg-r__go{opacity:1;transform:none;}
 
-  /* ---- FIELD NOTES head ---- */
-  .gg-fnhead{max-width:64ch;margin:0 0 clamp(38px,5vw,60px);}
-  .gg-fnh{font-family:var(--serif);font-weight:500;font-size:clamp(2.1rem,4.6vw,3.4rem);line-height:1.02;color:var(--cream);margin:16px 0 0;}
-  .gg-fnlede{margin:20px 0 0;color:rgba(195,220,238,.66);font-size:clamp(15px,1.4vw,17px);line-height:1.66;}
+  /* ---- FIELD NOTES (premium) ---- */
+  .gg-fn{position:relative;overflow:hidden;}
+  .gg-fn__wm{position:absolute;top:-.18em;right:-1%;z-index:0;font-family:var(--serif);font-weight:600;font-size:clamp(14rem,32vw,34rem);line-height:.7;color:transparent;-webkit-text-stroke:1px rgba(138,180,204,.09);pointer-events:none;user-select:none;}
+  .gg-fn .shell{position:relative;z-index:2;}
+  .gg-fnhead{max-width:60ch;margin:0 0 clamp(40px,5vw,64px);}
+  .gg-fnh{font-family:var(--serif);font-weight:500;font-size:clamp(2.3rem,5.2vw,4rem);line-height:1;color:var(--cream);margin:16px 0 0;letter-spacing:-.01em;}
+  .gg-fnlede{margin:20px 0 0;color:rgba(195,220,238,.68);font-size:clamp(15px,1.4vw,17px);line-height:1.68;}
+  .gg-fngrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(308px,1fr));gap:18px;}
+  .gg-fncard{position:relative;display:flex;flex-direction:column;padding:clamp(26px,2.4vw,34px) clamp(22px,2vw,28px);border:1px solid var(--line);border-radius:2px;background:linear-gradient(158deg,rgba(23,45,66,.5) 0%,rgba(10,22,40,.12) 62%);overflow:hidden;text-decoration:none;isolation:isolate;transition:transform .55s var(--ease),border-color .55s var(--ease),box-shadow .55s var(--ease),background .55s var(--ease);}
+  .gg-fncard__wm{position:absolute;top:6px;right:16px;z-index:-1;font-family:var(--serif);font-style:italic;font-size:66px;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(168,207,224,.14);transition:-webkit-text-stroke-color .55s var(--ease);}
+  .gg-fncard__k{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);font-weight:700;position:relative;padding-bottom:16px;}
+  .gg-fncard__k::after{content:"";position:absolute;left:0;bottom:8px;width:22px;height:1px;background:var(--blue);transition:width .55s var(--ease);}
+  .gg-fncard__h{font-family:var(--serif);font-weight:500;font-size:clamp(20px,1.7vw,23px);line-height:1.16;color:var(--cream);margin:2px 0 11px;transition:color .45s var(--ease);}
+  .gg-fncard__p{color:rgba(244,246,248,.58);font-size:13.8px;line-height:1.56;margin:0 0 20px;flex:1;}
+  .gg-fncard__go{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--blue-soft);display:inline-flex;align-items:center;gap:8px;}
+  .gg-fncard__go .arw{transition:transform .45s var(--ease);}
+  .gg-fncard:hover{transform:translateY(-6px);border-color:var(--line-2);background:linear-gradient(158deg,rgba(23,45,66,.75) 0%,rgba(10,22,40,.22) 62%);box-shadow:0 28px 60px -28px rgba(0,0,0,.75);}
+  .gg-fncard:hover .gg-fncard__wm{-webkit-text-stroke-color:rgba(168,207,224,.4);}
+  .gg-fncard:hover .gg-fncard__k::after{width:46px;}
+  .gg-fncard:hover .gg-fncard__h{color:var(--blue-soft);}
+  .gg-fncard:hover .gg-fncard__go .arw{transform:translateX(5px);}
 
   @media (max-width:900px){
-    .gg-hero{min-height:78vh;}
+    .gg-hero{min-height:80vh;}
     .gg-split{grid-template-columns:1fr;gap:26px;}
     .gg-aside{position:static;}
     .gg-asidep{max-width:none;}
@@ -206,6 +238,7 @@ const collectionLd = {
   @media (max-width:560px){
     .gg-r{grid-template-columns:clamp(44px,12vw,56px) 1fr;}
     .gg-r__go{display:none;}
+    .gg-fngrid{grid-template-columns:1fr;}
   }
   @media (prefers-reduced-motion:reduce){ *{transition:none!important;} .gg-hero__photo{transform:none;} }
 </style>
