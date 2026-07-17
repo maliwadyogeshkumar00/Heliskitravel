@@ -3,10 +3,12 @@ import Base from '../../layouts/Base.astro';
 const SITE = 'https://heliskitravel.com';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Heliskiing Guide",
   "headline": "Heliskiing the Troll Peninsula: Terrain, Zones & Descents",
   "description": "A complete guide to the Tröllaskagi (Troll) Peninsula's heliski terrain — eleven mapped zones, sea-to-summit descents, daily vertical, record days and skiing with an IFMGA guide.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "url": SITE },
+  "author": { "@id": SITE + "/#vegard" },
   "publisher": { "@id": SITE + "/#org" },
   "mainEntityOfPage": SITE + "/heliskiing-guide/troll-peninsula-terrain",
   "isPartOf": { "@type": "CollectionPage", "name": "Heliskiing in Iceland: The Complete Guide", "url": SITE + "/heliskiing-guide" }
@@ -21,8 +23,7 @@ const faqLd = {
   ]
 };
 ---
-<Base
-  heroImage="iceland-hero"
+<Base ogType="article"   heroImage="iceland-hero"
   title="Heliskiing the Troll Peninsula: Terrain | Heliski Travel"
   description="Inside the Tröllaskagi (Troll) Peninsula: eleven mapped heliski zones, sea-to-summit descents, daily vertical and record days with an IFMGA guide."
   active="guide"

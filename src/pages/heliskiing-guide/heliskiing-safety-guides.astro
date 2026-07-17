@@ -3,10 +3,12 @@ import Base from '../../layouts/Base.astro';
 const SITE = 'https://heliskitravel.com';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Heliskiing Guide",
   "headline": "Heliskiing Safety, Avalanches & Your Guides",
   "description": "How heliskiing is kept as safe as a mountain activity can be — IFMGA guides, daily avalanche assessment, your BCA safety kit, the AS-350 B3 helicopter, and the travel and rescue insurance you need.",
   "image": SITE + "/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "url": SITE },
+  "author": { "@id": SITE + "/#vegard" },
   "publisher": { "@id": SITE + "/#org" },
   "mainEntityOfPage": { "@type": "WebPage", "@id": SITE + "/heliskiing-guide/heliskiing-safety-guides" },
   "isPartOf": { "@type": "CollectionPage", "name": "Heliskiing in Iceland: The Complete Guide", "url": SITE + "/heliskiing-guide" }
@@ -49,8 +51,7 @@ const faqLd = {
   ]
 };
 ---
-<Base
-  heroImage="iceland-hero"
+<Base ogType="article"   heroImage="iceland-hero"
   title="Heliskiing Safety, Avalanches & IFMGA Guides | Heliski Travel"
   description="How heliskiing is kept safe: IFMGA guides, daily avalanche assessment, your BCA safety kit and the insurance you need for Iceland."
   active="guide"

@@ -4,6 +4,8 @@ import Base from "../../layouts/Base.astro";
 const articleLd = {
   "@context": "https://schema.org",
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Heliskiing Guide",
   headline: "Who Can Go Heliskiing? Ability, Fitness & First-Timers",
   mainEntityOfPage: "https://www.heliskitravel.com/heliskiing-guide/who-can-heliski",
   image: "https://www.heliskitravel.com/images/iceland-hero.webp",
@@ -63,8 +65,7 @@ const faqLd = {
 };
 ---
 
-<Base
-  heroImage="iceland-hero"
+<Base ogType="article"   heroImage="iceland-hero"
   title="Who Can Go Heliskiing? Ability & Fitness | Heliski Travel"
   description="Who can go heliskiing? The ability, fitness and preparation you need, with honest advice for first-timers, snowboarders, families and solo skiers in Iceland."
   active="guide"

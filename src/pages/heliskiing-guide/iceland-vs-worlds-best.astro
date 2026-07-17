@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Heliskiing Guide",
   "headline": "Iceland vs the World's Best Heliskiing",
   "description": "A fair, expert comparison of Iceland against British Columbia, Alaska, Japan and the Alps — and why the Troll Peninsula is so often the finest first heliski trip.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-07-05",
   "dateModified": "2026-07-05",
@@ -49,7 +51,7 @@ const faqLd = {
   ]
 };
 ---
-<Base heroImage="iceland-hero" title="Iceland vs Canada, Alaska & Japan Heliskiing | Heliski Travel" description="How Iceland compares to British Columbia, Alaska, Japan and the Alps — sea-to-summit descents, a long season, and the finest first heliski trip." active="guide" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-07-05" modifiedTime="2026-07-05" heroImage="iceland-hero" title="Iceland vs Canada, Alaska & Japan Heliskiing | Heliski Travel" description="How Iceland compares to British Columbia, Alaska, Japan and the Alps — sea-to-summit descents, a long season, and the finest first heliski trip." active="guide" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">The Guide · Chapter 10</p>
   <h1 class="gd-h1">Iceland vs the World</h1>

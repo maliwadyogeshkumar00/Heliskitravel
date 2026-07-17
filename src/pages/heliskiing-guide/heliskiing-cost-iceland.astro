@@ -6,7 +6,7 @@ const articleLd = {
   "headline": "How Much Does Heliskiing in Iceland Cost?",
   "mainEntityOfPage": SITE + "/heliskiing-guide/heliskiing-cost-iceland",
   "image": SITE + "/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "url": SITE },
+  "author": { "@id": SITE + "/#vegard" },
   "publisher": { "@id": SITE + "/#org" },
   "about": ["Heliskiing cost", "Iceland heliskiing", "Guaranteed vertical feet", "Viking Heliskiing"],
   "articleSection": "The Guide · Chapter 04",
@@ -50,8 +50,7 @@ const faqLd = {
   ]
 };
 ---
-<Base
-  heroImage="iceland-hero"
+<Base ogType="article"   heroImage="iceland-hero"
   title="How Much Does Heliskiing in Iceland Cost? | Heliski Travel"
   description="What heliskiing in Iceland costs, why it is priced by guaranteed vertical feet, what is included, what costs extra, and whether it is worth the money."
   active="guide"

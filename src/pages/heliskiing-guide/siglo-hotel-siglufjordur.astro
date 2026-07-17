@@ -4,6 +4,8 @@ import Base from "../../layouts/Base.astro";
 const articleLd = {
   "@context": "https://schema.org",
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Heliskiing Guide",
   headline: "Where You Stay: Sigló Hótel & Siglufjörður",
   image: "https://heliskitravel.com/images/iceland-hero.webp",
   mainEntityOfPage: {
@@ -60,8 +62,7 @@ const faqLd = {
 };
 ---
 
-<Base
-  heroImage="iceland-hero"
+<Base ogType="article"   heroImage="iceland-hero"
   title="Where You Stay: Sigló Hótel & Siglufjörður | Heliski Travel"
   description="Inside the four-star Sigló Hótel on the Siglufjörður herring harbour: waterfront dining, geothermal hot tubs and North Iceland's finest heliski base."
   active="guide"

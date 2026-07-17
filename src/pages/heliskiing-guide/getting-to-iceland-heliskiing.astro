@@ -4,10 +4,12 @@ const SITE = 'https://heliskitravel.com';
 
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Heliskiing Guide",
   "headline": "Getting to Iceland: Travel & Logistics for Heliskiing",
   "mainEntityOfPage": SITE + "/heliskiing-guide/getting-to-iceland-heliskiing",
   "image": SITE + "/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel" },
+  "author": { "@id": SITE + "/#vegard" },
   "publisher": { "@id": SITE + "/#org" },
   "description": "How to reach the heliskiing base in North Iceland — flying via Keflavík or Akureyri, the road to Siglufjörður, the transfers we arrange, and building a full Iceland trip around your week."
 };
@@ -50,8 +52,7 @@ const faqLd = {
   ]
 };
 ---
-<Base
-  heroImage="iceland-hero"
+<Base ogType="article"   heroImage="iceland-hero"
   title="Getting to Iceland for Heliskiing | Heliski Travel"
   description="How to reach the heliski base in North Iceland — flying via Keflavík or Akureyri, the road to Siglufjörður, and the transfers we arrange."
   active="guide"

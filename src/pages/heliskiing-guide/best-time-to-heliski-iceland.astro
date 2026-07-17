@@ -3,10 +3,12 @@ import Base from '../../layouts/Base.astro';
 const SITE = 'https://heliskitravel.com';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Heliskiing Guide",
   "headline": "The Best Time to Heliski in Iceland",
   "mainEntityOfPage": SITE + "/heliskiing-guide/best-time-to-heliski-iceland",
   "image": SITE + "/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel" },
+  "author": { "@id": SITE + "/#vegard" },
   "publisher": { "@type": "Organization", "name": "Heliski Travel" },
   "description": "A month-by-month guide to the best time to heliski in Iceland — the March-to-June season, powder versus corn snow, the midnight sun, the Northern Lights, and when to book."
 };
@@ -48,8 +50,7 @@ const faqLd = {
   ]
 };
 ---
-<Base
-  heroImage="iceland-hero"
+<Base ogType="article"   heroImage="iceland-hero"
   title="Best Time to Heliski in Iceland | Heliski Travel"
   description="When to heliski in Iceland, month by month: the March–June season, powder versus corn, the midnight sun, the Northern Lights, and when to book your week."
   active="guide"

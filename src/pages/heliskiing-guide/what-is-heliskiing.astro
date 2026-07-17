@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Heliskiing Guide",
   "headline": "What Is Heliskiing? A Complete Introduction",
   "description": "A calm, authoritative introduction to heliskiing: how a day unfolds, its history, the vertical-feet model, and what makes Iceland’s Troll Peninsula distinctive.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-07-05",
   "dateModified": "2026-07-05",
@@ -49,7 +51,7 @@ const faqLd = {
   ]
 };
 ---
-<Base heroImage="iceland-hero" title="What Is Heliskiing? A Complete Guide | Heliski Travel" description="A premium introduction to heliskiing: how a day works, its history, the vertical-feet pricing model, and why Iceland’s Troll Peninsula is so distinctive." active="guide" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-07-05" modifiedTime="2026-07-05" heroImage="iceland-hero" title="What Is Heliskiing? A Complete Guide | Heliski Travel" description="A premium introduction to heliskiing: how a day works, its history, the vertical-feet pricing model, and why Iceland’s Troll Peninsula is so distinctive." active="guide" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">The Guide · Chapter 01</p>
   <h1 class="gd-h1">What Is Heliskiing?</h1>
