@@ -150,7 +150,7 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
 .hero.ready .hero__video{opacity:1;}
 /* LQIP blur-up placeholder — instant inline paint (LCP), dissolves once the sharp poster has decoded */
 .hero__lqip{position:absolute;inset:0;z-index:0;pointer-events:none;}
-.hero__lqip img{width:100%;height:100%;object-fit:cover;object-position:center 40%;filter:blur(20px);transform:scale(1.12);opacity:1;transition:opacity 1s var(--ease);will-change:opacity;}
+.hero__lqip img{width:100%;height:100%;object-fit:cover;object-position:center 40%;filter:blur(10px);transform:scale(1.05);opacity:1;transition:opacity .8s var(--ease);will-change:opacity;}
 .hero.poster-ready .hero__lqip img{opacity:0;}
 @media(prefers-reduced-motion:reduce){.hero__lqip img{transition:none;}}
 .soundctl{position:fixed;left:22px;bottom:22px;z-index:60;display:inline-flex;align-items:center;gap:11px;padding:9px 15px 9px 13px;border-radius:999px;border:1px solid var(--cta-line);background:rgba(10,22,40,.4);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);color:var(--cream);transition:background .3s var(--ease),border-color .3s var(--ease);}
@@ -315,7 +315,7 @@ body.nav-open .burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45d
 <script is:inline>
 /* hero video: poster is the LCP; defer the video download until after load so it never competes with first paint */
 /* LQIP blur-up: dissolve the inline placeholder once the sharp poster has decoded (stage 2 of 3) */
-(function(){var hero=document.getElementById('hero');if(!hero)return;var m=window.matchMedia('(max-width:767px)').matches;var poster=m?'/videos/heli-poster-mobile.webp':'/videos/heli-poster.webp';var done=false;function reveal(){if(done)return;done=true;hero.classList.add('poster-ready');}var im=new Image();im.onload=reveal;im.onerror=reveal;im.src=poster;if(im.complete)reveal();setTimeout(reveal,2500);})();
+(function(){var hero=document.getElementById('hero');if(!hero)return;var m=window.matchMedia('(max-width:767px)').matches;var poster=m?'/videos/heli-poster-mobile.webp':'/videos/heli-poster.webp';var done=false;function reveal(){if(done)return;done=true;hero.classList.add('poster-ready');}var im=new Image();im.onload=reveal;im.onerror=reveal;im.src=poster;if(im.complete)reveal();requestAnimationFrame(function(){requestAnimationFrame(reveal);});setTimeout(reveal,600);})();
 /* Progressive quality ramp (ABR-lite): poster is instant, then a light tier starts fast, then it
    hot-swaps up to the best local tier once fully buffered — seamless because it's a muted loop.
    Gated on connection: data-saver and 2G stay on the light tier. */
