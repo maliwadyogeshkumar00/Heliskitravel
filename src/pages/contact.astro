@@ -19,7 +19,8 @@ const body = `
       <h2 class="reveal">Plan your heliski week.</h2>
       <p class="reveal">Choose your preferences below — we'll use this to shape our reply.</p>
     </div>
-    <form>
+    <form id="enquiryForm" novalidate>
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
       <div class="grid-2">
         <div class="group reveal">
           <span class="field-label"><span class="ix">01</span> Package</span>
@@ -57,55 +58,93 @@ const body = `
       <hr class="rule reveal" />
       <div class="inputs">
         <div class="control reveal"><span class="field-label">Your Name</span>
-          <div class="field"><input type="text" placeholder="Full name" autocomplete="name" aria-label="Your name" /></div></div>
+          <div class="field"><input type="text" name="Name" placeholder="Full name" autocomplete="name" aria-label="Your name" required /></div><span class="err">Please add your name.</span></div>
         <div class="control reveal"><span class="field-label">Email</span>
-          <div class="field"><input type="email" placeholder="your@email.com" autocomplete="email" aria-label="Email" /></div></div>
+          <div class="field"><input type="email" name="Email" placeholder="your@email.com" autocomplete="email" aria-label="Email" required /></div><span class="err">Please add a valid email so we can reply.</span></div>
         <div class="control reveal"><span class="field-label">Phone (optional)</span>
-          <div class="field"><input type="tel" placeholder="Include country code" autocomplete="tel" aria-label="Phone (optional)" /></div></div>
+          <div class="field"><input type="tel" name="Phone" placeholder="Include country code" autocomplete="tel" aria-label="Phone (optional)" /></div></div>
         <div class="control reveal"><span class="field-label">Country</span>
-          <div class="field"><input type="text" placeholder="Where you'll travel from" autocomplete="country-name" aria-label="Country" /></div></div>
+          <div class="field"><input type="text" name="Country" placeholder="Where you'll travel from" autocomplete="country-name" aria-label="Country" /></div></div>
         <div class="control reveal"><span class="field-label">Days on the Mountain</span>
-          <div class="field"><select aria-label="Days on the mountain">
+          <div class="field"><select name="Days on the Mountain" aria-label="Days on the mountain">
             <option value="" disabled selected>Select days</option>
             <option>3 days</option><option>4 days</option><option>5 days</option>
             <option>Longer — multi-week</option><option>Not sure yet</option>
           </select></div></div>
         <div class="control reveal"><span class="field-label">Experience Level</span>
-          <div class="field"><select aria-label="Experience level">
+          <div class="field"><select name="Experience Level" aria-label="Experience level">
             <option value="" disabled selected>Select level</option>
             <option>Strong intermediate — confident off-piste</option><option>Advanced — all conditions, all-mountain</option><option>Expert — steeps, couloirs, technical lines</option>
             <option>Professional — IFMGA / patrol / instructor</option><option>Mixed group</option><option>Not sure yet</option>
           </select></div></div>
         <div class="control reveal"><span class="field-label">Preferred Season</span>
-          <div class="field"><select aria-label="Preferred season">
+          <div class="field"><select name="Preferred Season" aria-label="Preferred season">
             <option value="" disabled selected>Select season</option>
             <option>February — April 2027</option><option>Flexible — advise me</option>
           </select></div></div>
         <div class="control reveal"><span class="field-label">Sigló Hotel Rooming</span>
-          <div class="field"><select aria-label="Sigló Hotel rooming">
+          <div class="field"><select name="Sigló Hotel Rooming" aria-label="Sigló Hotel rooming">
             <option value="" disabled selected>Select room type</option>
             <option>Mountain View</option><option>Harbour View</option><option>Harbour Suite</option>
             <option>Exclusive buyout (12+ guests)</option><option>No preference</option>
           </select></div></div>
         <div class="control full reveal"><span class="field-label">Hints about your group we should know?</span>
-          <div class="field"><textarea placeholder="Goals, ability mix, dates flex, anything we should know." aria-label="Hints about your group"></textarea></div></div>
+          <div class="field"><textarea name="Notes" placeholder="Goals, ability mix, dates flex, anything we should know." aria-label="Hints about your group"></textarea></div></div>
       </div>
       <div class="summary reveal" aria-live="polite">
         <span class="lab">Your request</span>
         <div class="vals" id="summaryVals"><span class="empty">Make a few selections above…</span></div>
       </div>
       <div class="actions reveal">
-        <button type="submit" class="btn"><span>Request Consultation</span> <span class="arw">→</span></button>
-        <p class="microcopy">Your selections carry into the form automatically.</p>
+        <button type="submit" class="btn" id="submitBtn"><span id="submitLabel">Request Consultation</span> <span class="arw">→</span></button>
+        <p class="microcopy">Your selections carry into the form automatically. We reply within 12 hours.</p>
+        <p class="form-note bad" id="formNote"></p>
       </div>
     </form>
+    <div class="done" id="donePanel" aria-live="polite">
+      <div class="tick"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg></div>
+      <h3>Request received.</h3>
+      <p>Thank you — your enquiry is with our team. We've sent a confirmation to your inbox, and a real person will reply within 12 hours with a tailored proposal for your Iceland heliski week.</p>
+      <p style="font-size:13.5px;color:rgba(195,220,238,.5);">Didn't get the confirmation email? Check your spam folder, or message us directly below.</p>
+      <div class="row">
+        <a class="lnk wa" href="https://wa.me/41797030917?text=Hi%20Heliski%20Travel%2C%20I%20just%20sent%20an%20enquiry%20through%20your%20site." target="_blank" rel="noopener">WhatsApp us →</a>
+        <a class="lnk" href="/heliskiing-guide">Read the guide →</a>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 `;
+const SITE = 'https://heliskitravel.vercel.app';
+const contactLd = {
+  "@type": "ContactPage",
+  "@id": SITE + "/contact#contactpage",
+  "url": SITE + "/contact",
+  "name": "Contact Heliski Travel",
+  "description": "Request a tailored Iceland heliskiing proposal. Reply within 12 hours from the authorised booking agent for Viking Heliskiing.",
+  "isPartOf": { "@id": SITE + "/#website" },
+  "about": { "@id": SITE + "/#org" },
+  "significantLink": [SITE + "/heliskiing-guide", SITE + "/packages"],
+  "mainEntity": {
+    "@type": "Organization",
+    "@id": SITE + "/#org",
+    "name": "Heliski Travel",
+    "email": "info@heliskitravel.com",
+    "telephone": "+41797030917",
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "contactType": "reservations",
+      "email": "info@heliskitravel.com",
+      "telephone": "+41797030917",
+      "availableLanguage": ["en"],
+      "areaServed": "Worldwide",
+      "hoursAvailable": { "@type": "OpeningHoursSpecification", "description": "Enquiries answered within 12 hours" }
+    }]
+  }
+};
 ---
-<Base heroImage="contact-hero" title="Contact Heliski Travel: Plan Your Iceland Heliskiing Week" description="Send us your Iceland heliskiing preferences — package, month, group size, vibe — and we reply within 12 hours with a tailored proposal." active="contact">
+<Base heroImage="contact-hero" title="Contact Heliski Travel: Plan Your Iceland Heliskiing Week" description="Send us your Iceland heliskiing preferences — package, month, group size, vibe — and we reply within 12 hours with a tailored proposal." active="contact" schema={contactLd}>
   <Fragment set:html={body} />
 </Base>
 
@@ -257,6 +296,30 @@ textarea{resize:vertical;min-height:84px;line-height:1.6;}
 .btn:hover .arw{transform:translateX(6px);}
 .microcopy{margin:0;font-size:13px;font-style:italic;color:rgba(195,220,238,0.40);}
 
+/* ---- validation + submit states ---- */
+.field.invalid{--field-line:rgba(226,132,132,0.75);}
+.field.invalid::after{background:#E28484;transform:scaleX(1);}
+.control .err{display:none;margin-top:8px;font-size:12px;color:#E9A6A6;letter-spacing:.02em;}
+.control.show-err .err{display:block;}
+.btn[disabled]{opacity:.6;cursor:progress;pointer-events:none;}
+.form-note{margin:16px 0 0;font-size:13px;line-height:1.5;display:none;}
+.form-note.show{display:block;}
+.form-note.bad{color:#E9A6A6;}
+.form-note a{color:var(--blue-soft);text-decoration:underline;text-underline-offset:3px;}
+/* success panel */
+.done{display:none;text-align:center;max-width:620px;margin:0 auto;padding:24px 0;}
+.done.show{display:block;animation:doneIn .7s var(--ease) both;}
+@keyframes doneIn{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+.done .tick{width:74px;height:74px;margin:0 auto 26px;border-radius:50%;border:1px solid var(--cta-line);display:flex;align-items:center;justify-content:center;background:rgba(168,207,224,.08);}
+.done .tick svg{width:32px;height:32px;stroke:var(--blue);stroke-width:1.6;fill:none;}
+.done h3{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(30px,4vw,46px);line-height:1.05;margin:0 0 18px;color:var(--cream);}
+.done p{margin:0 auto 12px;max-width:500px;color:rgba(244,246,248,.66);font-size:15.5px;line-height:1.6;}
+.done .row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:30px;}
+.done .lnk{display:inline-flex;align-items:center;gap:12px;border:1px solid var(--cta-line);border-radius:var(--radius);padding:15px 30px;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--cream);transition:border-color .5s var(--ease),background .5s var(--ease);}
+.done .lnk:hover{border-color:rgba(168,207,224,.8);background:rgba(168,207,224,.1);}
+.done .lnk.wa{border-color:rgba(37,211,102,.5);}
+.done .lnk.wa:hover{background:rgba(37,211,102,.12);border-color:rgba(37,211,102,.85);}
+
 
 /* ---------- FOOTER (lean) ---------- */
 .sf{position:relative;background:var(--ink);overflow:hidden;}
@@ -365,21 +428,82 @@ document.querySelectorAll('.chips[data-single]').forEach(function(group){
 });
 renderSummary();
 
-/* form submit -> compose enquiry email (no backend needed) */
-var form=document.querySelector('form');
-if(form){form.addEventListener('submit',function(e){
-  e.preventDefault();
-  var lines=[];
-  order.forEach(function(k){ if(picks[k]) lines.push(k+': '+picks[k]); });
-  document.querySelectorAll('.control').forEach(function(c){
-    var lab=c.querySelector('.field-label'); var fld=c.querySelector('input,select,textarea');
-    if(lab&&fld&&fld.value&&fld.value.trim()){ lines.push(lab.innerText.trim().replace(/\s+/g,' ')+': '+fld.value.trim()); }
+/* form submit -> real backend (FormSubmit AJAX) + instant auto-reply to the lead */
+var ENQUIRY_EMAIL='info@heliskitravel.com';
+var form=document.getElementById('enquiryForm');
+var submitBtn=document.getElementById('submitBtn');
+var submitLabel=document.getElementById('submitLabel');
+var formNote=document.getElementById('formNote');
+var donePanel=document.getElementById('donePanel');
+
+function emailValid(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
+function markInvalid(ctrl,bad){ if(!ctrl)return; ctrl.classList.toggle('show-err',bad); var f=ctrl.querySelector('.field'); if(f) f.classList.toggle('invalid',bad); }
+
+var AUTORESPONSE=[
+"Hi there,",
+"",
+"Thank you for reaching out to Heliski Travel — we've received your enquiry for an Iceland heliskiing week and it's now with our team.",
+"",
+"What happens next:",
+"- A real person (not an autoresponder) will reply within 12 hours, usually much sooner.",
+"- We'll shape a proposal around the preferences you shared: package, dates, group and ability.",
+"- You'll get honest, first-hand advice from people who ski the Troll Peninsula.",
+"",
+"If your plans are time-sensitive, message us straight away on WhatsApp: https://wa.me/41797030917",
+"",
+"We are the authorised booking agent for Viking Heliskiing, based at the 4-star Sigló Hótel in Siglufjörður, North Iceland — untracked Arctic powder, IFMGA-certified guides, descents up to 1,500 m.",
+"",
+"Speak soon,",
+"The Heliski Travel Team",
+"info@heliskitravel.com · heliskitravel.com"
+].join("\n");
+
+if(form){
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    formNote.classList.remove('show');
+    var nameInput=form.querySelector('input[name="Name"]');
+    var emailInput=form.querySelector('input[name="Email"]');
+    var nameVal=(nameInput.value||'').trim();
+    var emailVal=(emailInput.value||'').trim();
+    var bad=false;
+    if(!nameVal){ markInvalid(nameInput.closest('.control'),true); bad=true; } else markInvalid(nameInput.closest('.control'),false);
+    if(!emailValid(emailVal)){ markInvalid(emailInput.closest('.control'),true); bad=true; } else markInvalid(emailInput.closest('.control'),false);
+    if(bad){ (nameVal?emailInput:nameInput).closest('.control').scrollIntoView({block:'center',behavior:'smooth'}); return; }
+
+    var hp=form.querySelector('input[name="_honey"]'); if(hp && hp.value){ return; } /* bot trap */
+
+    var fd=new FormData(form);
+    order.forEach(function(k){ if(picks[k]) fd.set(k, picks[k]); });
+    fd.set('_subject','New heliski enquiry — '+(picks['Package']||'Iceland week')+' — '+nameVal);
+    fd.set('_template','table');
+    fd.set('_captcha','false');
+    fd.set('_autoresponse', AUTORESPONSE);
+
+    submitBtn.setAttribute('disabled','');
+    submitLabel.textContent='Sending…';
+
+    fetch('https://formsubmit.co/ajax/'+ENQUIRY_EMAIL, { method:'POST', headers:{ 'Accept':'application/json' }, body: fd })
+      .then(function(r){ return r.json().catch(function(){ return {}; }); })
+      .then(function(){
+        form.style.display='none';
+        donePanel.classList.add('show');
+        donePanel.scrollIntoView({block:'center',behavior:'smooth'});
+        try{ window.dispatchEvent(new CustomEvent('lead-submitted')); }catch(_){}
+      })
+      .catch(function(){
+        submitBtn.removeAttribute('disabled');
+        submitLabel.textContent='Request Consultation';
+        formNote.innerHTML='Something went wrong sending your request. Please email us directly at <a href="mailto:info@heliskitravel.com">info@heliskitravel.com</a> or message us on WhatsApp.';
+        formNote.classList.add('show');
+      });
   });
-  if(!lines.length){ lines.push('(no details selected yet)'); }
-  var subj='Heliskiing enquiry — '+(picks['Package']||'Iceland week');
-  var body='New enquiry via heliskitravel\n\n'+lines.join('\n')+'\n\nReplying within 12 hours.';
-  window.location.href='mailto:info@heliskitravel.com?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
-});}
+  /* clear error state as the user types */
+  ['Name','Email'].forEach(function(n){
+    var el=form.querySelector('input[name="'+n+'"]');
+    if(el) el.addEventListener('input', function(){ markInvalid(el.closest('.control'),false); });
+  });
+}
 
 var io=new IntersectionObserver(function(entries){
   entries.forEach(function(en){ if(en.isIntersecting){
