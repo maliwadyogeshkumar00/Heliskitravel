@@ -3,7 +3,7 @@
 const { title, description = '', active = '', image, schema, heroImage } = Astro.props;
 const LOGO = '/brand/logo.webp';
 const pkgActive = active === 'packages';
-const SITE = 'https://heliskitravel.vercel.app';
+const SITE = 'https://heliskitravel.com';
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
 const canonical = SITE + (path === '/' ? '' : path);
 const ogImage = SITE + (image || (heroImage ? `/images/${heroImage}.webp` : '/images/packages-hero.jpg'));
