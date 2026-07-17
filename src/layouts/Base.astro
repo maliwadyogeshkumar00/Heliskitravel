@@ -5,7 +5,9 @@ const LOGO = '/brand/logo.webp';
 const pkgActive = active === 'packages';
 const SITE = 'https://heliskitravel.com';
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
-const canonical = SITE + (path === '/' ? '' : path);
+// Astro directory format serves every URL WITH a trailing slash; make canonical/og:url match
+// the served URL exactly (no redirecting-canonical), e.g. https://site/ and https://site/foo/.
+const canonical = SITE + (path === '/' ? '/' : path + '/');
 const ogImage = SITE + (image || (heroImage ? `/images/${heroImage}.webp` : '/images/packages-hero.jpg'));
 const ogImageType = /\.png$/i.test(ogImage) ? 'image/png' : /\.jpe?g$/i.test(ogImage) ? 'image/jpeg' : 'image/webp';
 
@@ -25,14 +27,14 @@ const cleanTitle = (title || '').replace(/\s*[|–—-]\s*Heliski Travel.*$/i,''
 const crumbNodes = [];
 if (segs.length === 1) {
   const s = segs[0];
-  if (PARENT[s]) crumbNodes.push({ name: LABELS[PARENT[s]] || PARENT[s], url: SITE + '/' + PARENT[s] });
+  if (PARENT[s]) crumbNodes.push({ name: LABELS[PARENT[s]] || PARENT[s], url: SITE + '/' + PARENT[s] + '/' });
   crumbNodes.push({ name: LABELS[s] || cleanTitle || s, url: canonical });
 } else if (segs.length > 1) {
   let acc = '';
   segs.forEach((s, i) => {
     acc += (i ? '/' : '') + s;
     const isLast = i === segs.length - 1;
-    crumbNodes.push({ name: LABELS[s] || (isLast ? (cleanTitle || s) : s), url: SITE + '/' + acc });
+    crumbNodes.push({ name: LABELS[s] || (isLast ? (cleanTitle || s) : s), url: SITE + '/' + acc + '/' });
   });
 }
 const breadcrumbItems = [{ name:'Home', url:SITE + '/' }].concat(crumbNodes);
