@@ -4,7 +4,7 @@ import { defineConfig } from 'astro/config';
 // NOTE: when the production domain goes live, change `site` to https://heliskitravel.com
 // — canonical tags (Base.astro), robots.txt and public/sitemap.xml all reference it.
 export default defineConfig({
-  site: 'https://heliskitravel.vercel.app',
+  site: 'https://heliskitravel.com',
   // Inline all CSS into each page's <head> — removes the render-blocking stylesheet request (mobile FCP/LCP win).
   build: { format: 'directory', inlineStylesheets: 'always' },
   redirects: {
