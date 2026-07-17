@@ -1,6 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
-const personLd = { "@type":"Person","@id":"https://heliskitravel.com/#vegard","name":"Vegard Knudsen","jobTitle":"Founder & Heliski Travel Specialist","worksFor":{"@id":"https://heliskitravel.com/#org"},"image":"https://heliskitravel.com/brand/vegard-portrait.webp","url":"https://heliskitravel.com/about","nationality":"Norwegian","knowsAbout":["Heliskiing","Iceland heliskiing","Troll Peninsula","Viking Heliskiing","Off-piste skiing"] };
+// The Person entity (#vegard) is now defined site-wide in Base.astro. On the About page we
+// add a ProfilePage that points its mainEntity at that entity — the correct type for an
+// author/founder profile and avoids duplicating the Person node.
+const profileLd = { "@type":"ProfilePage","@id":"https://heliskitravel.com/about#profile","mainEntity":{ "@id":"https://heliskitravel.com/#vegard" } };
 const body = `
 
 <!-- HERO -->
@@ -91,7 +94,7 @@ const body = `
 <!-- FOOTER -->
 `;
 ---
-<Base schema={personLd} heroImage="about-hero" title="About Heliski Travel: Norwegian-Run, Iceland-Based Agent" description="Heliski Travel is the trusted agent for Viking Heliskiing Iceland — founded by Norwegian ex-racer Vegard Knudsen to match skiers with the right Arctic powder week." active="about">
+<Base schema={profileLd} heroImage="about-hero" title="About Heliski Travel: Norwegian-Run, Iceland-Based Agent" description="Heliski Travel is the trusted agent for Viking Heliskiing Iceland — founded by Norwegian ex-racer Vegard Knudsen to match skiers with the right Arctic powder week." active="about">
   <Fragment set:html={body} />
 </Base>
 
