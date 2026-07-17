@@ -88,11 +88,17 @@ const FAVICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' vi
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="theme-color" content="#0A1628" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="geo.region" content="IS-6" />
   <meta name="geo.placename" content="Siglufjörður, Troll Peninsula, North Iceland" />
   <meta name="geo.position" content="66.1516;-18.9075" />
   <meta name="ICBM" content="66.1516, -18.9075" />
   <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable site summary" />
+  <link rel="alternate" type="application/rss+xml" title="Heliski Travel — Field Notes" href="/rss.xml" />
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
+  <link rel="dns-prefetch" href="https://www.google-analytics.com" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Heliski Travel" />
   <meta property="og:locale" content="en_GB" />
@@ -102,10 +108,12 @@ const FAVICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' vi
   <meta property="og:image" content={ogImage} />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="800" />
+  <meta property="og:image:alt" content={title} />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   {description && <meta name="twitter:description" content={description} />}
   <meta name="twitter:image" content={ogImage} />
+  <meta name="twitter:image:alt" content={title} />
   <!-- Self-hosted fonts (in-house — no render-blocking external CSS). Preload only the above-the-fold weights. -->
   <link rel="preload" href="/fonts/mulish-400.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/cormorant-500-italic.woff2" as="font" type="font/woff2" crossorigin />
