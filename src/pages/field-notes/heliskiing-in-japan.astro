@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes",
   "headline": "Heliskiing in Japan: The Complete Guide",
   "description": "An honest guide to heliskiing in Japan: the legendary Japow, Hokkaido and the Japanese Alps, why heli access is limited, season timing and who it suits.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-05-25",
   "dateModified": "2026-05-25",
@@ -19,7 +21,7 @@ const faqLd = { "@type": "FAQPage", "mainEntity": [
   { "@type": "Question", "name": "Should I heliski in Japan or Iceland?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on what you want. Japan offers the lightest tree powder on the planet and rich culture, but heli access is limited and weather-dependent, so it works best as a powder trip with the occasional flight. Iceland's Troll Peninsula, home to Viking Heliskiing, is a bigger dedicated heli operation with sea-to-summit descents of around 1,200 to 1,500 metres to the Arctic Ocean, IFMGA guides and a spring season from March to mid-June. Choose Japan for bottomless trees, choose Iceland if you want a full, reliable, dedicated heliski week." } }
 ] };
 ---
-<Base heroImage="iceland-hero" title="Heliskiing in Japan: The Complete Guide | Heliski Travel" description="An honest guide to heliskiing in Japan: the legendary Japow, Hokkaido and the Japanese Alps, why heli access is limited, season timing and who it suits." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-05-25" modifiedTime="2026-05-25" heroImage="iceland-hero" title="Heliskiing in Japan: The Complete Guide | Heliski Travel" description="An honest guide to heliskiing in Japan: the legendary Japow, Hokkaido and the Japanese Alps, why heli access is limited, season timing and who it suits." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">Heliskiing in Japan</h1>

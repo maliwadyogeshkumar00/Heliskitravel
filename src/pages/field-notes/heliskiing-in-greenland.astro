@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes",
   "headline": "Heliskiing in Greenland: The Complete Guide",
   "description": "A definitive guide to heliskiing in Greenland, from vast Arctic glaciers and couloirs dropping toward icebergs to the expeditionary style, short April to May season and how to plan it.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-07-12",
   "dateModified": "2026-07-12",
@@ -57,7 +59,7 @@ const faqLd = {
   ]
 };
 ---
-<Base heroImage="iceland-hero" title="Heliskiing in Greenland: The Complete Guide | Heliski Travel" description="A definitive guide to heliskiing in Greenland, from vast Arctic glaciers and couloirs dropping toward icebergs to the expeditionary style, short April to May season and how to plan it." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-07-12" modifiedTime="2026-07-12" heroImage="iceland-hero" title="Heliskiing in Greenland: The Complete Guide | Heliski Travel" description="A definitive guide to heliskiing in Greenland, from vast Arctic glaciers and couloirs dropping toward icebergs to the expeditionary style, short April to May season and how to plan it." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">Heliskiing in Greenland</h1>

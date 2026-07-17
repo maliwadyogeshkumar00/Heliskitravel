@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes",
   "headline": "Heliskiing in the Alps: Where It's Allowed and What to Expect",
   "description": "A definitive guide to heliskiing in the Alps: where it's allowed across Italy, Switzerland and Austria, why France is restricted, and what a day actually involves.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-07-07", "dateModified": "2026-07-07",
   "mainEntityOfPage": "https://heliskitravel.com/field-notes/heliskiing-in-the-alps"
@@ -53,7 +55,7 @@ const faqLd = { "@type": "FAQPage", "mainEntity": [
   }
 ] };
 ---
-<Base heroImage="iceland-hero" title="Heliskiing in the Alps: Where It's Allowed | Heliski Travel" description="A definitive guide to heliskiing in the Alps: where it's allowed across Italy, Switzerland and Austria, why France is restricted, and what a day actually involves." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-07-07" modifiedTime="2026-07-07" heroImage="iceland-hero" title="Heliskiing in the Alps: Where It's Allowed | Heliski Travel" description="A definitive guide to heliskiing in the Alps: where it's allowed across Italy, Switzerland and Austria, why France is restricted, and what a day actually involves." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">Heliskiing in the Alps</h1>

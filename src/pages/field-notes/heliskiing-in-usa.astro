@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes",
   "headline": "Heliskiing in the USA: Beyond Alaska",
   "description": "Heliskiing in the USA beyond Alaska: the Lower 48 explained — Utah's Wasatch, Colorado and Telluride, Nevada's Ruby Mountains, land-use rules, the season, cost and who it suits, plus an honest alternative.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-04-24",
   "dateModified": "2026-04-24",
@@ -57,7 +59,7 @@ const faqLd = {
   ]
 };
 ---
-<Base heroImage="iceland-hero" title="Heliskiing in the USA: Beyond Alaska | Heliski Travel" description="Heliskiing in the USA beyond Alaska: the Lower 48 explained — Utah's Wasatch, Colorado and Telluride, Nevada's Ruby Mountains, land-use rules, the season, cost and who it suits, plus an honest alternative." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-04-24" modifiedTime="2026-04-24" heroImage="iceland-hero" title="Heliskiing in the USA: Beyond Alaska | Heliski Travel" description="Heliskiing in the USA beyond Alaska: the Lower 48 explained — Utah's Wasatch, Colorado and Telluride, Nevada's Ruby Mountains, land-use rules, the season, cost and who it suits, plus an honest alternative." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">Heliskiing in the USA</h1>
