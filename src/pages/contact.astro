@@ -274,6 +274,14 @@ input[type="text"],input[type="email"],input[type="tel"],select,textarea{width:1
 input::placeholder,textarea::placeholder{color:rgba(195,220,238,0.42);}
 input:hover,select:hover,textarea:hover{background:rgba(255,255,255,0.07);border-color:rgba(168,207,224,0.4);}
 input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue);background:rgba(168,207,224,0.09);box-shadow:0 0 0 3px rgba(168,207,224,0.14);}
+/* keep browser-autofilled fields on the soft dark theme (Chrome/Safari force a light bg otherwise) */
+input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:active,textarea:-webkit-autofill,select:-webkit-autofill{
+  -webkit-text-fill-color:var(--cream);caret-color:var(--cream);border:1px solid var(--line);
+  -webkit-box-shadow:0 0 0 1000px #162131 inset;box-shadow:0 0 0 1000px #162131 inset;
+  transition:background-color 99999s ease 0s,color 99999s ease 0s;}
+input:-webkit-autofill:focus,textarea:-webkit-autofill:focus,select:-webkit-autofill:focus{
+  border-color:var(--blue);
+  -webkit-box-shadow:0 0 0 1000px #172a3d inset,0 0 0 3px rgba(168,207,224,0.16);box-shadow:0 0 0 1000px #172a3d inset,0 0 0 3px rgba(168,207,224,0.16);}
 select{appearance:none;-webkit-appearance:none;color:var(--blue-soft);cursor:pointer;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23A8CFE0' stroke-width='1.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat:no-repeat;background-position:right 15px center;padding-right:34px;}
