@@ -270,13 +270,13 @@ form{max-width:1000px;margin:0 auto;}
 .field{position:relative;}
 .field::after{display:none;}
 .control:focus-within .field-label{color:var(--blue);}
-input[type="text"],input[type="email"],input[type="tel"],select,textarea{width:100%;font-family:inherit;font-size:16px;color:var(--ink-text);background:#ffffff;border:1px solid #ffffff;border-radius:var(--radius);padding:14px 15px;box-shadow:0 2px 10px -6px rgba(0,0,0,0.5);transition:border-color .35s var(--ease),box-shadow .35s var(--ease);}
-input::placeholder,textarea::placeholder{color:#9aa3ad;}
-input:hover,select:hover,textarea:hover{box-shadow:0 6px 16px -8px rgba(0,0,0,0.55);}
-input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(168,207,224,0.35);}
-select{appearance:none;-webkit-appearance:none;color:#42505f;cursor:pointer;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2372839A' stroke-width='1.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:right 14px center;padding-right:34px;}
+input[type="text"],input[type="email"],input[type="tel"],select,textarea{width:100%;font-family:inherit;font-size:16px;color:var(--cream);background:rgba(255,255,255,0.05);border:1px solid var(--line);border-radius:var(--radius);padding:14px 15px;transition:border-color .35s var(--ease),background .35s var(--ease),box-shadow .35s var(--ease);}
+input::placeholder,textarea::placeholder{color:rgba(195,220,238,0.42);}
+input:hover,select:hover,textarea:hover{background:rgba(255,255,255,0.07);border-color:rgba(168,207,224,0.4);}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue);background:rgba(168,207,224,0.09);box-shadow:0 0 0 3px rgba(168,207,224,0.14);}
+select{appearance:none;-webkit-appearance:none;color:var(--blue-soft);cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23A8CFE0' stroke-width='1.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 15px center;padding-right:34px;}
 select option{color:var(--ink-text);}
 textarea{resize:vertical;min-height:92px;line-height:1.6;}
 .summary{margin:54px 0 0;padding:22px 26px;border:1px solid var(--line);border-radius:var(--radius);display:flex;align-items:center;gap:18px;flex-wrap:wrap;background:rgba(168,207,224,0.03);}
