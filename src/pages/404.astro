@@ -1,34 +1,89 @@
 ---
 import Base from '../layouts/Base.astro';
 ---
-<Base title="Page Not Found | Heliski Travel" description="This page could not be found. Return home to explore Iceland heliskiing with Heliski Travel.">
-<section class="band band--ink nf">
-  <div class="shell nf__in">
-    <p class="nf__k">Error 404</p>
-    <h1 class="nf__h">This run doesn't exist.</h1>
-    <p class="nf__sub">The page you're looking for has drifted off-piste. Let's get you back to safe terrain.</p>
-    <div class="nf__cta">
-      <a class="btn" href="/"><span>Back to home</span> <span class="arw">&rarr;</span></a>
-      <a class="btn btn--ghost" href="/packages"><span>View packages</span></a>
+<Base title="Off-Piste (404) | Heliski Travel" description="This page has drifted off-piste. Return to Heliski Travel to explore luxury Iceland heliskiing, private packages and the Sigló Hotel.">
+<section class="offp band--ink" aria-labelledby="offp-h">
+  <canvas class="offp__snow" id="offpSnow" aria-hidden="true"></canvas>
+  <div class="offp__glow" aria-hidden="true"></div>
+
+  <div class="offp__ghost" aria-hidden="true">404</div>
+
+  <div class="shell offp__in">
+    <p class="offp__k">Error 404 &middot; Off-Piste</p>
+    <h1 id="offp-h" class="offp__h">You&rsquo;ve skied<br><em>off the map.</em></h1>
+    <p class="offp__sub">This run doesn&rsquo;t exist &mdash; fresh tracks, but the wrong mountain. Let&rsquo;s guide you back to safe terrain and the good snow.</p>
+    <div class="offp__cta">
+      <a class="btn" href="/"><span>Back to base</span> <span class="arw">&rarr;</span></a>
+      <a class="btn btn--ghost" href="/packages"><span>View heliski packages</span></a>
     </div>
-    <nav class="nf__links" aria-label="Popular pages">
+    <nav class="offp__links" aria-label="Popular pages">
       <a href="/iceland">Iceland Guide</a>
       <a href="/siglo-hotel">Sigl&oacute; Hotel</a>
       <a href="/gallery">Gallery</a>
+      <a href="/field-notes">Field Notes</a>
       <a href="/contact">Contact</a>
     </nav>
   </div>
+
+  <svg class="offp__ridge" viewBox="0 0 1440 260" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <path class="offp__mtn offp__mtn--far" d="M0,190 L220,120 L360,165 L560,90 L760,150 L980,80 L1180,150 L1320,110 L1440,160 L1440,260 L0,260 Z"/>
+    <path class="offp__mtn offp__mtn--near" d="M0,230 L180,175 L340,215 L520,150 L700,205 L900,140 L1120,205 L1300,165 L1440,210 L1440,260 L0,260 Z"/>
+    <path class="offp__track" d="M700,150 C760,180 700,205 760,220 C820,235 900,205 980,235" pathLength="1"/>
+    <circle class="offp__skier" r="4.5" cx="0" cy="0"/>
+  </svg>
 </section>
+
 <style is:global>
-.nf{min-height:78vh;display:flex;align-items:center;}
-.nf__in{max-width:720px;text-align:center;margin:0 auto;padding:80px 0;}
-.nf__k{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);margin:0 0 18px;}
-.nf__h{font-family:var(--serif);font-weight:500;font-size:clamp(38px,6vw,64px);line-height:1.02;letter-spacing:-.01em;color:var(--cream);margin:0 0 20px;}
-.nf__sub{color:rgba(244,246,248,0.66);font-size:17px;line-height:1.7;margin:0 auto 40px;max-width:48ch;}
-.nf__cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:52px;}
-.nf__links{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:30px;}
-.nf__links a{color:var(--blue-soft);font-size:13px;letter-spacing:.05em;text-decoration:none;transition:color .3s var(--ease);}
-.nf__links a:hover{color:var(--cream);}
+.offp{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;
+  background:radial-gradient(120% 90% at 50% -10%, #12233b 0%, var(--ink) 55%, #060f1c 100%);}
+.offp__snow{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.9;}
+.offp__glow{position:absolute;left:50%;top:8%;width:70vw;height:70vw;max-width:760px;max-height:760px;transform:translateX(-50%);
+  background:radial-gradient(circle, rgba(168,207,224,.16) 0%, rgba(168,207,224,0) 62%);pointer-events:none;}
+.offp__ghost{position:absolute;top:50%;left:50%;transform:translate(-50%,-58%);font-family:var(--serif);
+  font-weight:600;font-size:min(46vw,540px);line-height:.8;letter-spacing:-.04em;pointer-events:none;
+  color:transparent;-webkit-text-stroke:1px rgba(168,207,224,.10);user-select:none;filter:blur(.3px);}
+.offp__in{position:relative;z-index:2;max-width:760px;text-align:center;padding:96px 0 150px;}
+.offp__k{font-family:var(--sans);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--blue);margin:0 0 20px;}
+.offp__h{font-family:var(--serif);font-weight:500;font-size:clamp(44px,8vw,88px);line-height:.98;letter-spacing:-.015em;color:var(--cream);margin:0 0 22px;}
+.offp__h em{font-style:italic;color:var(--blue-soft);}
+.offp__sub{font-family:var(--sans);color:rgba(244,246,248,.66);font-size:clamp(15px,1.4vw,18px);line-height:1.75;margin:0 auto 40px;max-width:46ch;}
+.offp__cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:46px;}
+.offp__cta .arw{display:inline-block;transition:transform .4s var(--ease);}
+.offp__cta .btn:hover .arw{transform:translateX(5px);}
 .btn--ghost{background:none;border:1px solid var(--cta-line);}
+.offp__links{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:28px;}
+.offp__links a{font-family:var(--sans);color:var(--blue-soft);font-size:13px;letter-spacing:.05em;text-decoration:none;transition:color .3s var(--ease),opacity .3s;opacity:.8;}
+.offp__links a:hover{color:var(--cream);opacity:1;}
+.offp__ridge{position:absolute;left:0;right:0;bottom:0;width:100%;height:min(34vh,260px);z-index:1;pointer-events:none;}
+.offp__mtn--far{fill:#0d1c30;}
+.offp__mtn--near{fill:#0a1524;}
+.offp__track{fill:none;stroke:var(--blue);stroke-width:2.4;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;
+  filter:drop-shadow(0 0 5px rgba(168,207,224,.5));animation:carve 4.6s var(--ease) .5s forwards;}
+.offp__skier{fill:var(--cream);opacity:0;filter:drop-shadow(0 0 6px rgba(255,255,255,.7));
+  offset-path:path('M700,150 C760,180 700,205 760,220 C820,235 900,205 980,235');
+  animation:ski 4.6s var(--ease) .5s forwards;}
+@keyframes carve{to{stroke-dashoffset:0;}}
+@keyframes ski{0%{opacity:0;offset-distance:0%;}6%{opacity:1;}92%{opacity:1;}100%{opacity:0;offset-distance:100%;}}
+@media (max-width:600px){.offp__in{padding:80px 0 120px;}}
+@media (prefers-reduced-motion:reduce){
+  .offp__track{animation:none;stroke-dashoffset:0;}
+  .offp__skier{display:none;}
+}
 </style>
+<script>
+(function(){
+  var m = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (m && m.matches) return;
+  var c = document.getElementById('offpSnow'); if(!c) return;
+  var x = c.getContext('2d'), w, h, flakes, raf;
+  function size(){ w=c.width=c.offsetWidth; h=c.height=c.offsetHeight; make(); }
+  function make(){ var n=Math.min(120, Math.round(w/12)); flakes=[]; for(var i=0;i<n;i++){ flakes.push({
+    x:Math.random()*w, y:Math.random()*h, r:Math.random()*1.9+0.5, s:Math.random()*0.7+0.25, d:Math.random()*Math.PI*2, o:Math.random()*0.5+0.35 }); } }
+  function tick(){ x.clearRect(0,0,w,h); for(var i=0;i<flakes.length;i++){ var f=flakes[i];
+    f.y+=f.s; f.x+=Math.sin(f.d)*0.35; f.d+=0.01; if(f.y>h+4){f.y=-4;f.x=Math.random()*w;}
+    x.beginPath(); x.arc(f.x,f.y,f.r,0,Math.PI*2); x.fillStyle='rgba(232,242,250,'+f.o+')'; x.fill(); }
+    raf=requestAnimationFrame(tick); }
+  window.addEventListener('resize', size); size(); tick();
+})();
+</script>
 </Base>
