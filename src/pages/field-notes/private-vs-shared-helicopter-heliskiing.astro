@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes",
   "headline": "Private vs Shared Helicopter Heliskiing: Which Is Right for You?",
   "description": "Private vs shared helicopter heliskiing compared: cost, group size, flexibility and who each suits, plus a clear framework to choose the right format for you.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-07-04",
   "dateModified": "2026-07-04",
@@ -57,7 +59,7 @@ const faqLd = {
   ]
 };
 ---
-<Base heroImage="iceland-hero" title="Private vs Shared Helicopter Heliskiing | Heliski Travel" description="Private vs shared helicopter heliskiing compared: cost, group size, flexibility and who each suits, plus a clear framework to choose the right format for you." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-07-04" modifiedTime="2026-07-04" heroImage="iceland-hero" title="Private vs Shared Helicopter Heliskiing | Heliski Travel" description="Private vs shared helicopter heliskiing compared: cost, group size, flexibility and who each suits, plus a clear framework to choose the right format for you." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">Private vs Shared Helicopter Heliskiing</h1>

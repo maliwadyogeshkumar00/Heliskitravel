@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes",
   "headline": "Is Heliskiing Safe? An Honest Guide to the Risks",
   "description": "Is heliskiing safe? An honest, non-sensational guide to avalanche and helicopter risk, how good operators manage it, and what you can do to stay safer.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-04-16", "dateModified": "2026-04-16",
   "mainEntityOfPage": "https://heliskitravel.com/field-notes/is-heliskiing-safe"
@@ -18,7 +20,7 @@ const faqLd = { "@type": "FAQPage", "mainEntity": [
   { "@type":"Question","name":"Is heliskiing in Iceland safe?","acceptedAnswer":{ "@type":"Answer","text":"Iceland is a well-managed choice for heliskiing. Viking Heliskiing operates on the Troll Peninsula with IFMGA/UIAGM-certified guides, provides transceiver, shovel and probe to every guest as standard, and runs a maritime spring season from March to mid-June with a strong culture of conservative decision-making. No operator can eliminate risk, but Iceland’s professional guiding, provided safety equipment and respect for weather minimums place it firmly among the responsibly run destinations. If you have concerns, ask us directly before you book." } }
 ] };
 ---
-<Base heroImage="iceland-hero" title="Is Heliskiing Safe? An Honest Guide to the Risks | Heliski Travel" description="Is heliskiing safe? An honest, non-sensational guide to avalanche and helicopter risk, how good operators manage it, and what you can do to stay safer." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-04-16" modifiedTime="2026-04-16" heroImage="iceland-hero" title="Is Heliskiing Safe? An Honest Guide to the Risks | Heliski Travel" description="Is heliskiing safe? An honest, non-sensational guide to avalanche and helicopter risk, how good operators manage it, and what you can do to stay safer." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">Is Heliskiing Safe?</h1>

@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes",
   "headline": "Siglufjörður: A Guide to the Heliski Base Town | Heliski Travel",
   "description": "A travel guide to Siglufjörður, the historic herring town in North Iceland that serves as the base for Viking Heliskiing on the Troll Peninsula.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-04-21", "dateModified": "2026-04-21",
   "mainEntityOfPage": "https://heliskitravel.com/field-notes/siglufjordur-travel-guide"
@@ -56,7 +58,7 @@ const faqLd = {
   ]
 };
 ---
-<Base heroImage="iceland-hero" title="Siglufjörður: A Guide to the Heliski Base Town | Heliski Travel" description="A travel guide to Siglufjörður, the historic herring town in North Iceland that serves as the base for Viking Heliskiing on the Troll Peninsula." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-04-21" modifiedTime="2026-04-21" heroImage="iceland-hero" title="Siglufjörður: A Guide to the Heliski Base Town | Heliski Travel" description="A travel guide to Siglufjörður, the historic herring town in North Iceland that serves as the base for Viking Heliskiing on the Troll Peninsula." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">Siglufjörður: The Heliski Base Town</h1>

@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes",
   "headline": "Is Heliskiing Worth It? An Honest Verdict",
   "description": "Is heliskiing worth the money? An honest verdict on the cost, the risk and who a heli trip is genuinely worth it for.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-06-05",
   "dateModified": "2026-06-05",
@@ -57,7 +59,7 @@ const faqLd = {
   ]
 };
 ---
-<Base heroImage="iceland-hero" title="Is Heliskiing Worth It? An Honest Verdict | Heliski Travel" description="Is heliskiing worth the money? An honest verdict on the cost, the risk and who a heli trip is genuinely worth it for." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-06-05" modifiedTime="2026-06-05" heroImage="iceland-hero" title="Is Heliskiing Worth It? An Honest Verdict | Heliski Travel" description="Is heliskiing worth the money? An honest verdict on the cost, the risk and who a heli trip is genuinely worth it for." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">Is Heliskiing Worth It?</h1>

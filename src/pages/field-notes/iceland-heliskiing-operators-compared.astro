@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes",
   "headline": "Iceland Heliskiing Operators Compared (2027)",
   "description": "An honest comparison of the main Iceland heliskiing operators on the Troll Peninsula — how they differ on terrain, format, price and style, and how to choose.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-05-30",
   "dateModified": "2026-05-30",
@@ -49,7 +51,7 @@ const faqLd = {
   ]
 };
 ---
-<Base heroImage="iceland-hero" title="Iceland Heliskiing Operators Compared | Heliski Travel" description="An honest comparison of the main Iceland heliskiing operators on the Troll Peninsula — terrain, format, price and style, and how to choose the right one." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-05-30" modifiedTime="2026-05-30" heroImage="iceland-hero" title="Iceland Heliskiing Operators Compared | Heliski Travel" description="An honest comparison of the main Iceland heliskiing operators on the Troll Peninsula — terrain, format, price and style, and how to choose the right one." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">Iceland Heliskiing Operators, Compared</h1>
