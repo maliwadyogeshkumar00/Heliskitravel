@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes",
   "headline": "How to Ski Powder: A Practical Guide",
   "description": "Learn how to ski powder well: a practical technique guide covering stance, flotation, rhythm and the mental shift to master deep snow and off-piste.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-06-01", "dateModified": "2026-06-01",
   "mainEntityOfPage": "https://heliskitravel.com/field-notes/how-to-ski-powder"
@@ -53,7 +55,7 @@ const faqLd = { "@type": "FAQPage", "mainEntity": [
   }
 ] };
 ---
-<Base heroImage="iceland-hero" title="How to Ski Powder: A Practical Guide | Heliski Travel" description="Learn how to ski powder well: a practical technique guide covering stance, flotation, rhythm and the mental shift to master deep snow and off-piste." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-06-01" modifiedTime="2026-06-01" heroImage="iceland-hero" title="How to Ski Powder: A Practical Guide | Heliski Travel" description="Learn how to ski powder well: a practical technique guide covering stance, flotation, rhythm and the mental shift to master deep snow and off-piste." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">How to Ski Powder</h1>

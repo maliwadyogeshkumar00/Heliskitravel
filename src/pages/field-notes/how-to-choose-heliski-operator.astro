@@ -1,6 +1,8 @@
 ---
 import Base from '../../layouts/Base.astro';
-const articleLd = { "@type":"Article","headline":"How to Choose a Heliski Operator","description":"How to choose a heliski operator without getting it wrong: a buyer's checklist covering guides, safety, pilots, pricing and red flags.","image":"https://heliskitravel.com/images/iceland-hero.webp","author":{"@type":"Organization","name":"Heliski Travel","@id":"https://heliskitravel.com/#org"},"publisher":{"@id":"https://heliskitravel.com/#org"},"datePublished":"2026-06-10","dateModified":"2026-06-10","mainEntityOfPage":"https://heliskitravel.com/field-notes/how-to-choose-heliski-operator" };
+const articleLd = { "@type":"Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes","headline":"How to Choose a Heliski Operator","description":"How to choose a heliski operator without getting it wrong: a buyer's checklist covering guides, safety, pilots, pricing and red flags.","image":"https://heliskitravel.com/images/iceland-hero.webp","author": { "@id": "https://heliskitravel.com/#vegard" },"publisher":{"@id":"https://heliskitravel.com/#org"},"datePublished":"2026-06-10","dateModified":"2026-06-10","mainEntityOfPage":"https://heliskitravel.com/field-notes/how-to-choose-heliski-operator" };
 const faqLd = { "@type":"FAQPage","mainEntity":[
   { "@type":"Question","name":"What is the single most important thing when choosing a heliski operator?","acceptedAnswer":{ "@type":"Answer","text":"Guide certification. An operator whose guides hold the IFMGA/UIAGM qualification has invested in the highest standard of mountain competence, and that decision cascades into everything else - avalanche assessment, terrain choice and how a bad day is handled. If the guiding is world-class, the rest of the operation usually follows." } },
   { "@type":"Question","name":"Is guaranteed vertical feet better than flight time?","acceptedAnswer":{ "@type":"Answer","text":"For the guest, yes. A guaranteed vertical feet model means you pay for skiing delivered, not helicopter hours burned. If weather grounds the fleet, the operator carries that risk rather than you. Flight-time pricing can leave you paying for repositioning and delays, so always confirm which model an operator uses before booking." } },
@@ -9,7 +11,7 @@ const faqLd = { "@type":"FAQPage","mainEntity":[
   { "@type":"Question","name":"What are the biggest red flags in a heliski operator?","acceptedAnswer":{ "@type":"Answer","text":"Vague answers on guide certification, no clear avalanche or safety protocol, opaque pricing, no written cancellation or weather policy, and reluctance to confirm what is actually included. If an operator cannot answer these plainly, treat that as your answer and look elsewhere." } }
 ] };
 ---
-<Base heroImage="iceland-hero" title="How to Choose a Heliski Operator | Heliski Travel" description="How to choose a heliski operator without getting it wrong: a buyer's checklist covering guides, safety, pilots, pricing and red flags." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-06-10" modifiedTime="2026-06-10" heroImage="iceland-hero" title="How to Choose a Heliski Operator | Heliski Travel" description="How to choose a heliski operator without getting it wrong: a buyer's checklist covering guides, safety, pilots, pricing and red flags." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">How to Choose a Heliski Operator</h1>

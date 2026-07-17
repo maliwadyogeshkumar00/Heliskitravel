@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes",
   "headline": "How to Book a Heliski Trip: A Step-by-Step Guide",
   "description": "A clear, step-by-step guide to booking a heliskiing trip — from choosing dates and format to deposits, insurance and what to confirm before you pay.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-07-05",
   "dateModified": "2026-07-05",
@@ -49,7 +51,7 @@ const faqLd = {
   ]
 };
 ---
-<Base heroImage="iceland-hero" title="How to Book a Heliski Trip: Step by Step | Heliski Travel" description="A clear, step-by-step guide to booking a heliskiing trip — dates, format, deposits, insurance and what to confirm before you pay." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-07-05" modifiedTime="2026-07-05" heroImage="iceland-hero" title="How to Book a Heliski Trip: Step by Step | Heliski Travel" description="A clear, step-by-step guide to booking a heliskiing trip — dates, format, deposits, insurance and what to confirm before you pay." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">How to Book a Heliski Trip</h1>

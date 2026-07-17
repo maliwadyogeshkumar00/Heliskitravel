@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes",
   "headline": "Heliskiing Terminology: A Glossary",
   "description": "A plain-English glossary of heliskiing terms, from powder and couloirs to transceivers and guaranteed vertical feet, for newcomers decoding the jargon.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-05-18", "dateModified": "2026-05-18",
   "mainEntityOfPage": "https://heliskitravel.com/field-notes/heliskiing-terminology-glossary"
@@ -56,7 +58,7 @@ const faqLd = {
   ]
 };
 ---
-<Base heroImage="iceland-hero" title="Heliskiing Terminology: A Glossary | Heliski Travel" description="A plain-English glossary of heliskiing terms, from powder and couloirs to transceivers and guaranteed vertical feet, for newcomers decoding the jargon." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-05-18" modifiedTime="2026-05-18" heroImage="iceland-hero" title="Heliskiing Terminology: A Glossary | Heliski Travel" description="A plain-English glossary of heliskiing terms, from powder and couloirs to transceivers and guaranteed vertical feet, for newcomers decoding the jargon." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">Heliskiing Terminology: A Glossary</h1>

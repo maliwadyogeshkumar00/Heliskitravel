@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes",
   "headline": "How Much Vertical Do You Ski in a Day Heliskiing? (and How Many Runs)",
   "description": "How much vertical do you ski in a day heliskiing? A typical Iceland day delivers roughly 15,000 to 25,000 vertical feet across 7 to 14 runs. Here is what that really means.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-05-03",
   "dateModified": "2026-05-03",
@@ -57,7 +59,7 @@ const faqLd = {
   ]
 };
 ---
-<Base heroImage="iceland-hero" title="How Much Vertical Do You Ski in a Day Heliskiing? | Heliski Travel" description="How much vertical do you ski in a day heliskiing? A typical Iceland day delivers roughly 15,000 to 25,000 vertical feet across 7 to 14 runs. Here is what that really means." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-05-03" modifiedTime="2026-05-03" heroImage="iceland-hero" title="How Much Vertical Do You Ski in a Day Heliskiing? | Heliski Travel" description="How much vertical do you ski in a day heliskiing? A typical Iceland day delivers roughly 15,000 to 25,000 vertical feet across 7 to 14 runs. Here is what that really means." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">How Much Vertical Do You Ski in a Day?</h1>

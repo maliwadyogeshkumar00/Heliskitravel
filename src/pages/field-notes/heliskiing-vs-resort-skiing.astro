@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes",
   "headline": "Heliskiing vs Resort Skiing: Is It Worth the Upgrade?",
   "description": "Heliskiing vs resort skiing compared honestly: snow, terrain, crowds, cost, fitness and safety, and who should make the jump.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-05-20",
   "dateModified": "2026-05-20",
@@ -57,7 +59,7 @@ const faqLd = {
   ]
 };
 ---
-<Base heroImage="iceland-hero" title="Heliskiing vs Resort Skiing: Worth the Upgrade? | Heliski Travel" description="Heliskiing vs resort skiing compared honestly: snow, terrain, crowds, cost, fitness and safety, and who should make the jump." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-05-20" modifiedTime="2026-05-20" heroImage="iceland-hero" title="Heliskiing vs Resort Skiing: Worth the Upgrade? | Heliski Travel" description="Heliskiing vs resort skiing compared honestly: snow, terrain, crowds, cost, fitness and safety, and who should make the jump." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">Heliskiing vs Resort Skiing</h1>

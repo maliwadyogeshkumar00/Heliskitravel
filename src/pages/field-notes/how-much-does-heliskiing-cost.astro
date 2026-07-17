@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes",
   "headline": "How Much Does Heliskiing Cost? A 2026 Price Guide",
   "description": "How much does heliskiing cost? A clear 2026 price guide to heliski cost per day, week packages and what drives the price, from around €3,490 upwards.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-05-29",
   "dateModified": "2026-05-29",
@@ -57,7 +59,7 @@ const faqLd = {
   ]
 };
 ---
-<Base heroImage="iceland-hero" title="How Much Does Heliskiing Cost? Price Guide | Heliski Travel" description="How much does heliskiing cost? A clear 2026 price guide to heliski cost per day, week packages and what drives the price, from around €3,490 upwards." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-05-29" modifiedTime="2026-05-29" heroImage="iceland-hero" title="How Much Does Heliskiing Cost? Price Guide | Heliski Travel" description="How much does heliskiing cost? A clear 2026 price guide to heliski cost per day, week packages and what drives the price, from around €3,490 upwards." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">How Much Does Heliskiing Cost?</h1>
