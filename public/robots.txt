@@ -23,4 +23,4 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-Sitemap: https://heliskitravel.vercel.app/sitemap.xml
+Sitemap: https://heliskitravel.com/sitemap.xml
