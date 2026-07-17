@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes",
   "headline": "Iceland vs Canada for Heliskiing: Which to Choose?",
   "description": "Iceland vs Canada heliskiing compared honestly: Canada owns powder, scale and lodge culture; Iceland owns sea-to-summit, spring season and a shorter European trip.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-06-27", "dateModified": "2026-06-27",
   "mainEntityOfPage": "https://heliskitravel.com/field-notes/heliskiing-iceland-vs-canada"
@@ -56,7 +58,7 @@ const faqLd = {
   ]
 };
 ---
-<Base heroImage="iceland-hero" title="Iceland vs Canada for Heliskiing: Which to Choose? | Heliski Travel" description="Iceland vs Canada heliskiing compared honestly: Canada owns powder, scale and lodge culture; Iceland owns sea-to-summit, spring season and a shorter European trip." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-06-27" modifiedTime="2026-06-27" heroImage="iceland-hero" title="Iceland vs Canada for Heliskiing: Which to Choose? | Heliski Travel" description="Iceland vs Canada heliskiing compared honestly: Canada owns powder, scale and lodge culture; Iceland owns sea-to-summit, spring season and a shorter European trip." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">Iceland vs Canada for Heliskiing</h1>

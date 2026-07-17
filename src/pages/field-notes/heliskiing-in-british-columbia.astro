@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes",
   "headline": "Heliskiing in British Columbia: The Complete Guide",
   "description": "The definitive guide to heliskiing in British Columbia, Canada, covering the interior ranges, snow, season, cost and how BC compares to Iceland.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-06-15",
   "dateModified": "2026-06-15",
@@ -57,7 +59,7 @@ const faqLd = {
   ]
 };
 ---
-<Base heroImage="iceland-hero" title="Heliskiing in British Columbia: The Complete Guide | Heliski Travel" description="The definitive guide to heliskiing in British Columbia, Canada, covering the interior ranges, snow, season, cost and how BC compares to Iceland." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-06-15" modifiedTime="2026-06-15" heroImage="iceland-hero" title="Heliskiing in British Columbia: The Complete Guide | Heliski Travel" description="The definitive guide to heliskiing in British Columbia, Canada, covering the interior ranges, snow, season, cost and how BC compares to Iceland." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">Heliskiing in British Columbia</h1>

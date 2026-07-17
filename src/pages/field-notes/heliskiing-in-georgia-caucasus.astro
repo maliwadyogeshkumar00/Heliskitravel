@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes",
   "headline": "Heliskiing in Georgia: The Caucasus Guide",
   "description": "An honest guide to heliskiing in Georgia and the Greater Caucasus, from Gudauri to Svaneti: the affordability, the terrain, the season and the trade-offs.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-05-08",
   "dateModified": "2026-05-08",
@@ -57,7 +59,7 @@ const faqLd = {
   ]
 };
 ---
-<Base heroImage="iceland-hero" title="Heliskiing in Georgia: The Caucasus Guide | Heliski Travel" description="An honest guide to heliskiing in Georgia and the Greater Caucasus, from Gudauri to Svaneti: the affordability, the terrain, the season and the trade-offs." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-05-08" modifiedTime="2026-05-08" heroImage="iceland-hero" title="Heliskiing in Georgia: The Caucasus Guide | Heliski Travel" description="An honest guide to heliskiing in Georgia and the Greater Caucasus, from Gudauri to Svaneti: the affordability, the terrain, the season and the trade-offs." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">Heliskiing in Georgia</h1>

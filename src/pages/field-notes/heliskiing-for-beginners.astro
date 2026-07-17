@@ -1,6 +1,8 @@
 ---
 import Base from '../../layouts/Base.astro';
-const articleLd = { "@type":"Article","headline":"Heliskiing for Beginners: Your First Trip Explained","description":"New to heliskiing? What ability you truly need, how a first day works, and how guides tailor the terrain so nervous first-timers ski well.","image":"https://heliskitravel.com/images/iceland-hero.webp","author":{"@type":"Organization","name":"Heliski Travel","@id":"https://heliskitravel.com/#org"},"publisher":{"@id":"https://heliskitravel.com/#org"},"datePublished":"2026-05-23","dateModified":"2026-05-23","mainEntityOfPage":"https://heliskitravel.com/field-notes/heliskiing-for-beginners" };
+const articleLd = { "@type":"Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes","headline":"Heliskiing for Beginners: Your First Trip Explained","description":"New to heliskiing? What ability you truly need, how a first day works, and how guides tailor the terrain so nervous first-timers ski well.","image":"https://heliskitravel.com/images/iceland-hero.webp","author": { "@id": "https://heliskitravel.com/#vegard" },"publisher":{"@id":"https://heliskitravel.com/#org"},"datePublished":"2026-05-23","dateModified":"2026-05-23","mainEntityOfPage":"https://heliskitravel.com/field-notes/heliskiing-for-beginners" };
 const faqLd = { "@type":"FAQPage","mainEntity":[
   { "@type":"Question","name":"Can an absolute beginner skier go heliskiing?","acceptedAnswer":{ "@type":"Answer","text":"No. Heliskiing is not for people who are new to skiing or snowboarding. You need to be a strong intermediate to expert who is comfortable on any groomed run and ready for variable off-piste snow. Here, \"beginner\" means new to heliskiing itself, not new to skiing. If you can confidently link turns down a red or black piste, you are likely ready to learn." } },
   { "@type":"Question","name":"How fit do I need to be for my first heli trip?","acceptedAnswer":{ "@type":"Answer","text":"Fitter than you would be for a normal resort week. Powder and variable snow demand more from your legs, and a typical day covers 15,000 to 25,000 vertical feet over 7 to 14 runs. Build leg strength and cardio in the weeks before you travel with squats, lunges, cycling and hill walking. You do not need to be an athlete, but good baseline fitness makes your first day far more enjoyable." } },
@@ -9,7 +11,7 @@ const faqLd = { "@type":"FAQPage","mainEntity":[
   { "@type":"Question","name":"Do I need special travel insurance for heliskiing?","acceptedAnswer":{ "@type":"Answer","text":"Yes. Standard travel and ski policies rarely cover off-piste skiing or helicopter evacuation, so you need a policy that explicitly covers both. Global Rescue is one well-known option. Arrange it before you travel and carry your policy details with you. This is strongly advised for every guest, first-timer or not, given the remote mountain terrain." } }
 ] };
 ---
-<Base heroImage="iceland-hero" title="Heliskiing for Beginners: Your First Trip Explained | Heliski Travel" description="New to heliskiing? What ability you truly need, how a first day works, and how guides tailor the terrain so nervous first-timers ski well." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-05-23" modifiedTime="2026-05-23" heroImage="iceland-hero" title="Heliskiing for Beginners: Your First Trip Explained | Heliski Travel" description="New to heliskiing? What ability you truly need, how a first day works, and how guides tailor the terrain so nervous first-timers ski well." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">Heliskiing for Beginners</h1>

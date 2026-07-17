@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes",
   "headline": "Can an Intermediate Skier Go Heliskiing?",
   "description": "Yes &mdash; a confident intermediate can absolutely heliski. Here is the honest ability check, why guides make it work, and why Iceland suits intermediates.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-05-27", "dateModified": "2026-05-27",
   "mainEntityOfPage": "https://heliskitravel.com/field-notes/heliskiing-for-intermediate-skiers"
@@ -18,7 +20,7 @@ const faqLd = { "@type": "FAQPage", "mainEntity": [
   { "@type":"Question","name":"What would mean I am not ready to heliski yet?","acceptedAnswer":{ "@type":"Answer","text":"You are probably not ready yet if you still rely on a snowplough to control speed, if you are only confident on groomed blue runs, or if ungroomed and off-piste snow makes you nervous enough to freeze up. None of that is permanent. A season of off-piste mileage, a few lessons and some fitness work will move most keen skiers into confident-intermediate territory. If you are close but unsure, tell us honestly and we will give you a straight answer about whether now is the right time." } }
 ] };
 ---
-<Base heroImage="iceland-hero" title="Can an Intermediate Skier Go Heliskiing? | Heliski Travel" description="Yes &mdash; a confident intermediate can absolutely heliski. Here is the honest ability check, why guides make it work, and why Iceland suits intermediates." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-05-27" modifiedTime="2026-05-27" heroImage="iceland-hero" title="Can an Intermediate Skier Go Heliskiing? | Heliski Travel" description="Yes &mdash; a confident intermediate can absolutely heliski. Here is the honest ability check, why guides make it work, and why Iceland suits intermediates." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">Heliskiing for Intermediate Skiers</h1>
