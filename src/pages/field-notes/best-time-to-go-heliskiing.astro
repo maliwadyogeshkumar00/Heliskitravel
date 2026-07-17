@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes",
   "headline": "When Is the Best Time to Go Heliskiing?",
   "description": "A season-by-season, region-by-region guide to the best time to go heliskiing, from midwinter powder to Iceland's spring and summer options.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-06-29",
   "dateModified": "2026-06-29",
@@ -57,7 +59,7 @@ const faqLd = {
   ]
 };
 ---
-<Base heroImage="iceland-hero" title="When Is the Best Time to Go Heliskiing? | Heliski Travel" description="A season-by-season, region-by-region guide to the best time to go heliskiing, from midwinter powder to Iceland's spring and summer options." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-06-29" modifiedTime="2026-06-29" heroImage="iceland-hero" title="When Is the Best Time to Go Heliskiing? | Heliski Travel" description="A season-by-season, region-by-region guide to the best time to go heliskiing, from midwinter powder to Iceland's spring and summer options." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">When Is the Best Time to Go Heliskiing?</h1>

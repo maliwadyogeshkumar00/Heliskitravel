@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes",
   "headline": "Best Skis for Heliskiing: A Choosing Guide",
   "description": "The best skis for heliskiing, explained: waist width, rocker, length and shape for powder, plus renting versus bringing your own for a heli trip in Iceland.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-05-17", "dateModified": "2026-05-17",
   "mainEntityOfPage": "https://heliskitravel.com/field-notes/best-skis-for-heliskiing"
@@ -53,7 +55,7 @@ const faqLd = { "@type": "FAQPage", "mainEntity": [
   }
 ] };
 ---
-<Base heroImage="iceland-hero" title="Best Skis for Heliskiing: A Choosing Guide | Heliski Travel" description="The best skis for heliskiing, explained: waist width, rocker, length and shape for powder, plus renting versus bringing your own for a heli trip in Iceland." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-05-17" modifiedTime="2026-05-17" heroImage="iceland-hero" title="Best Skis for Heliskiing: A Choosing Guide | Heliski Travel" description="The best skis for heliskiing, explained: waist width, rocker, length and shape for powder, plus renting versus bringing your own for a heli trip in Iceland." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">Best Skis for Heliskiing</h1>

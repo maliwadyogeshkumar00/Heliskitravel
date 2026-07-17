@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes",
   "headline": "Heliski Photography Tips: Capturing Your Trip",
   "description": "How to capture great photos and video of your heliski trip in Iceland, safely. Gear, settings, filming powder, cold-weather care and the golden Arctic light.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-05-06", "dateModified": "2026-05-06",
   "mainEntityOfPage": "https://heliskitravel.com/field-notes/heliski-photography-tips"
@@ -56,7 +58,7 @@ const faqLd = {
   ]
 };
 ---
-<Base heroImage="iceland-hero" title="Heliski Photography Tips: Capturing Your Trip | Heliski Travel" description="How to capture great photos and video of your heliski trip in Iceland, safely. Gear, settings, filming powder, cold-weather care and the golden Arctic light." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-05-06" modifiedTime="2026-05-06" heroImage="iceland-hero" title="Heliski Photography Tips: Capturing Your Trip | Heliski Travel" description="How to capture great photos and video of your heliski trip in Iceland, safely. Gear, settings, filming powder, cold-weather care and the golden Arctic light." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">Heliski Photography Tips</h1>

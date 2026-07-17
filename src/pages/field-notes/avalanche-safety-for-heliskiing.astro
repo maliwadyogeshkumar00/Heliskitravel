@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes",
   "headline": "Avalanche Safety for Heliskiing Explained",
   "description": "How avalanche safety works in heliskiing: the transceiver, shovel and probe explained, airbag packs, companion rescue basics, and why a proper avalanche course matters.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-06-20", "dateModified": "2026-06-20",
   "mainEntityOfPage": "https://heliskitravel.com/field-notes/avalanche-safety-for-heliskiing"
@@ -18,7 +20,7 @@ const faqLd = { "@type": "FAQPage", "mainEntity": [
   { "@type":"Question","name":"What is companion rescue in heliskiing?","acceptedAnswer":{ "@type":"Answer","text":"Companion rescue is the group rescuing one of its own members immediately after an avalanche, rather than waiting for outside help that may be far away in remote terrain. Because survival chances fall sharply with time buried, speed is everything, and the people best placed to act fast are the companions already on the scene. The basic principles are that everyone switches to search mode, the group locates the buried person with transceivers, pinpoints them with a probe and digs with shovels as a coordinated team. On a heli trip your guide leads this, but companion rescue is a genuine skill requiring hands-on training, which is exactly why a proper avalanche course is so strongly recommended." } }
 ] };
 ---
-<Base heroImage="iceland-hero" title="Avalanche Safety for Heliskiing Explained | Heliski Travel" description="How avalanche safety works in heliskiing: the transceiver, shovel and probe explained, airbag packs, companion rescue basics, and why a proper avalanche course matters." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-06-20" modifiedTime="2026-06-20" heroImage="iceland-hero" title="Avalanche Safety for Heliskiing Explained | Heliski Travel" description="How avalanche safety works in heliskiing: the transceiver, shovel and probe explained, airbag packs, companion rescue basics, and why a proper avalanche course matters." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">Avalanche Safety for Heliskiing</h1>

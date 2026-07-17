@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes",
   "headline": "Canada vs Alaska Heliskiing: Which Should You Choose?",
   "description": "Canada vs Alaska heliskiing compared honestly: snow, terrain, difficulty, weather odds, cost and season — a clear decision framework to pick the right trip.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-07-11", "dateModified": "2026-07-11",
   "mainEntityOfPage": "https://heliskitravel.com/field-notes/canada-vs-alaska-heliskiing"
@@ -56,7 +58,7 @@ const faqLd = {
   ]
 };
 ---
-<Base heroImage="iceland-hero" title="Canada vs Alaska Heliskiing: Which to Choose? | Heliski Travel" description="Canada vs Alaska heliskiing compared honestly: snow, terrain, difficulty, weather odds, cost and season — a clear decision framework to pick the right trip." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-07-11" modifiedTime="2026-07-11" heroImage="iceland-hero" title="Canada vs Alaska Heliskiing: Which to Choose? | Heliski Travel" description="Canada vs Alaska heliskiing compared honestly: snow, terrain, difficulty, weather odds, cost and season — a clear decision framework to pick the right trip." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">Canada vs Alaska Heliskiing</h1>

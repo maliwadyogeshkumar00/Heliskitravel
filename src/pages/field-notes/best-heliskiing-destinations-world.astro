@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes",
   "headline": "The Best Heliskiing Destinations in the World",
   "description": "A guide to the best heliskiing destinations for 2026, comparing Canada, Alaska, Iceland, Japan, the Alps, Norway and more.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-04-14",
   "dateModified": "2026-04-14",
@@ -57,7 +59,7 @@ const faqLd = {
   ]
 };
 ---
-<Base heroImage="iceland-hero" title="Best Heliskiing Destinations in the World (2026) | Heliski Travel" description="A guide to the best heliskiing destinations for 2026, comparing Canada, Alaska, Iceland, Japan, the Alps, Norway and more." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-04-14" modifiedTime="2026-04-14" heroImage="iceland-hero" title="Best Heliskiing Destinations in the World (2026) | Heliski Travel" description="A guide to the best heliskiing destinations for 2026, comparing Canada, Alaska, Iceland, Japan, the Alps, Norway and more." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">The Best Heliskiing Destinations in the World</h1>

@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes",
   "headline": "How Fit Do You Need to Be for Heliskiing?",
   "description": "How fit you really need to be for heliskiing, why fitness matters in deep snow, and a sensible 8 to 12 week training plan to get in shape.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-04-28", "dateModified": "2026-04-28",
   "mainEntityOfPage": "https://heliskitravel.com/field-notes/heliskiing-fitness-guide"
@@ -18,7 +20,7 @@ const faqLd = { "@type": "FAQPage", "mainEntity": [
   { "@type":"Question","name":"Will good fitness make heliskiing safer, not just more fun?","acceptedAnswer":{ "@type":"Answer","text":"Yes, and this is the point people underestimate. Most skiing mistakes and injuries happen when you are tired, because fatigue slows reactions and erodes technique. Being fit means your legs still work on the last run of the day and across several big days back to back, so you ski in control when it matters most. Fitness also helps you recover overnight, which keeps you sharp for the days that follow." } }
 ] };
 ---
-<Base heroImage="iceland-hero" title="How Fit Do You Need to Be for Heliskiing? | Heliski Travel" description="How fit you really need to be for heliskiing, why fitness matters in deep snow, and a sensible 8 to 12 week training plan to get in shape." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-04-28" modifiedTime="2026-04-28" heroImage="iceland-hero" title="How Fit Do You Need to Be for Heliskiing? | Heliski Travel" description="How fit you really need to be for heliskiing, why fitness matters in deep snow, and a sensible 8 to 12 week training plan to get in shape." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">How Fit Do You Need to Be for Heliskiing?</h1>

@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes",
   "headline": "Heliboarding: Can You Go Heliskiing on a Snowboard?",
   "description": "Yes, snowboarders are welcome on heliski trips. How heliboarding works, terrain, traverses, splitboards, gear and why Iceland suits riders.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-06-17", "dateModified": "2026-06-17",
   "mainEntityOfPage": "https://heliskitravel.com/field-notes/heliboarding-snowboard-heliskiing"
@@ -53,7 +55,7 @@ const faqLd = { "@type": "FAQPage", "mainEntity": [
   }
 ] };
 ---
-<Base heroImage="iceland-hero" title="Heliboarding: Heliskiing on a Snowboard | Heliski Travel" description="Yes, snowboarders are welcome on heliski trips. How heliboarding works, terrain, traverses, splitboards, gear and why Iceland suits riders." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-06-17" modifiedTime="2026-06-17" heroImage="iceland-hero" title="Heliboarding: Heliskiing on a Snowboard | Heliski Travel" description="Yes, snowboarders are welcome on heliski trips. How heliboarding works, terrain, traverses, splitboards, gear and why Iceland suits riders." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">Heliboarding: Snowboarding a Heliski Trip</h1>
