@@ -1,0 +1,15 @@
+# Cloudflare Pages redirects — migrated from vercel.json
+# Old WordPress .html paths -> clean URLs (301, preserves SEO equity on the domain move)
+/home.html                    /                         301
+/about.html                   /about                    301
+/iceland.html                 /iceland                  301
+/packages.html                /packages                 301
+/classic-heliskiing.html      /classic-heliskiing       301
+/heli-assisted-touring.html   /heli-assisted-touring    301
+/private-heliskiing.html      /private-heliskiing       301
+/siglo-hotel.html             /siglo-hotel              301
+/travel-here.html             /travel-here              301
+
+# Field Notes hub merged into the guide
+/field-notes                  /heliskiing-guide         301
+/field-notes/                 /heliskiing-guide         301

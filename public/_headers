@@ -1,0 +1,28 @@
+# Cloudflare Pages headers — migrated from vercel.json
+# NOTE: connect-src now includes https://formsubmit.co so the contact form's
+# AJAX submit is allowed (it was blocked under the old connect-src 'self').
+
+/*
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; style-src-elem 'self' 'unsafe-inline'; font-src 'self' data:; frame-src https://maps.google.com https://www.google.com; connect-src 'self' https://formsubmit.co; form-action 'self' https://formsubmit.co; upgrade-insecure-requests
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Cross-Origin-Opener-Policy: same-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Cache-Control: public, max-age=0, s-maxage=86400, stale-while-revalidate=604800
+
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/videos/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/wp/*
+  Cache-Control: public, max-age=31536000, immutable
