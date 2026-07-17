@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes",
   "headline": "What to Pack for Heliskiing: The Complete Checklist",
   "description": "The definitive heliskiing packing list: layering, outerwear, gloves, goggles, skis, safety gear and sun protection for a spring trip in Iceland.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-06-13", "dateModified": "2026-06-13",
   "mainEntityOfPage": "https://heliskitravel.com/field-notes/what-to-pack-for-heliskiing"
@@ -53,7 +55,7 @@ const faqLd = { "@type": "FAQPage", "mainEntity": [
   }
 ] };
 ---
-<Base heroImage="iceland-hero" title="What to Pack for Heliskiing: Complete Checklist | Heliski Travel" description="The definitive heliskiing packing list: layering, outerwear, gloves, goggles, skis, safety gear and sun protection for a spring trip in Iceland." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-06-13" modifiedTime="2026-06-13" heroImage="iceland-hero" title="What to Pack for Heliskiing: Complete Checklist | Heliski Travel" description="The definitive heliskiing packing list: layering, outerwear, gloves, goggles, skis, safety gear and sun protection for a spring trip in Iceland." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">What to Pack for Heliskiing</h1>

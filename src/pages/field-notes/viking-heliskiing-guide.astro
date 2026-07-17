@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes",
   "headline": "Viking Heliskiing: Packages, Season & How to Book (2027)",
   "description": "A complete guide to Viking Heliskiing on Iceland's Troll Peninsula — packages, prices, season, terrain and how to book through the authorised agent at no extra cost.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-06-30",
   "dateModified": "2026-06-30",
@@ -57,7 +59,7 @@ const faqLd = {
   ]
 };
 ---
-<Base heroImage="iceland-hero" title="Viking Heliskiing: Packages, Season & How to Book | Heliski Travel" description="A complete 2027 guide to Viking Heliskiing in North Iceland — packages, prices, season, terrain and how to book through the authorised agent at no extra cost." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-06-30" modifiedTime="2026-06-30" heroImage="iceland-hero" title="Viking Heliskiing: Packages, Season & How to Book | Heliski Travel" description="A complete 2027 guide to Viking Heliskiing in North Iceland — packages, prices, season, terrain and how to book through the authorised agent at no extra cost." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">Viking Heliskiing: The Complete Guide</h1>

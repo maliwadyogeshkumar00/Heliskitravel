@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes",
   "headline": "What Is Guaranteed Vertical Feet in Heliskiing?",
   "description": "What is guaranteed vertical feet in heliskiing? How the vertical-feet pricing model works, what it measures, a worked Iceland example, and why it is fair to you.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-05-22",
   "dateModified": "2026-05-22",
@@ -57,7 +59,7 @@ const faqLd = {
   ]
 };
 ---
-<Base heroImage="iceland-hero" title="What Is Guaranteed Vertical Feet in Heliskiing? | Heliski Travel" description="What is guaranteed vertical feet in heliskiing? How the vertical-feet pricing model works, what it measures, a worked Iceland example, and why it is fair to you." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-05-22" modifiedTime="2026-05-22" heroImage="iceland-hero" title="What Is Guaranteed Vertical Feet in Heliskiing? | Heliski Travel" description="What is guaranteed vertical feet in heliskiing? How the vertical-feet pricing model works, what it measures, a worked Iceland example, and why it is fair to you." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">What Is Guaranteed Vertical Feet?</h1>

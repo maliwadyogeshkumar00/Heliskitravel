@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes",
   "headline": "What Is Sea-to-Summit Skiing?",
   "description": "Sea-to-summit skiing is a single continuous descent from a mountain summit down to the ocean's edge. Here's what it means and where it happens.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-07-14", "dateModified": "2026-07-14",
   "mainEntityOfPage": "https://heliskitravel.com/field-notes/what-is-sea-to-summit-skiing"
@@ -56,7 +58,7 @@ const faqLd = {
   ]
 };
 ---
-<Base heroImage="iceland-hero" title="What Is Sea-to-Summit Skiing? | Heliski Travel" description="Sea-to-summit skiing is a single continuous descent from a mountain summit down to the ocean's edge. Here's what it means and where it happens." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-07-14" modifiedTime="2026-07-14" heroImage="iceland-hero" title="What Is Sea-to-Summit Skiing? | Heliski Travel" description="Sea-to-summit skiing is a single continuous descent from a mountain summit down to the ocean's edge. Here's what it means and where it happens." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">What Is Sea-to-Summit Skiing?</h1>

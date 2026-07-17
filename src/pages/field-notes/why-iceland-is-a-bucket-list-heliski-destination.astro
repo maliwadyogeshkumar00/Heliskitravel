@@ -2,10 +2,12 @@
 import Base from '../../layouts/Base.astro';
 const articleLd = {
   "@type": "Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes",
   "headline": "Why Iceland Is a Bucket-List Heliski Destination",
   "description": "Iceland is the rare heliski trip that combines sea-to-summit descents, Arctic light and a real coastal town. Here's why it belongs on your bucket list.",
   "image": "https://heliskitravel.com/images/iceland-hero.webp",
-  "author": { "@type": "Organization", "name": "Heliski Travel", "@id": "https://heliskitravel.com/#org" },
+  "author": { "@id": "https://heliskitravel.com/#vegard" },
   "publisher": { "@id": "https://heliskitravel.com/#org" },
   "datePublished": "2026-07-09", "dateModified": "2026-07-09",
   "mainEntityOfPage": "https://heliskitravel.com/field-notes/why-iceland-is-a-bucket-list-heliski-destination"
@@ -56,7 +58,7 @@ const faqLd = {
   ]
 };
 ---
-<Base heroImage="iceland-hero" title="Why Iceland Is a Bucket-List Heliski Trip | Heliski Travel" description="Iceland is the rare heliski trip that combines sea-to-summit descents, Arctic light and a real coastal town. Here's why it belongs on your bucket list." active="" schema={[articleLd, faqLd]}>
+<Base ogType="article" publishedTime="2026-07-09" modifiedTime="2026-07-09" heroImage="iceland-hero" title="Why Iceland Is a Bucket-List Heliski Trip | Heliski Travel" description="Iceland is the rare heliski trip that combines sea-to-summit descents, Arctic light and a real coastal town. Here's why it belongs on your bucket list." active="" schema={[articleLd, faqLd]}>
 <section class="band band--ink gd-hero"><div class="shell">
   <p class="gd-k">Field Notes</p>
   <h1 class="gd-h1">Why Iceland Is a Bucket-List Heliski Destination</h1>
