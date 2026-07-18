@@ -14,6 +14,18 @@ const productSchema = {
     {"@type":"Offer","name":"5-Day Touring Week","price":"5590","priceCurrency":"EUR","availability":"https://schema.org/InStock","url": S + "/heli-assisted-touring"}
   ]
 };
+const faqLd = {
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"How much does heli-assisted ski touring in Iceland cost?","acceptedAnswer":{"@type":"Answer","text":"A heli-assisted touring week runs from €3,490 for 3 days, €4,690 for 4 days and €5,590 for 5 days, twin per guest, with full board at the 4-star Sigló Hótel. It is the most affordable way to ski the Troll Peninsula, and booking through Heliski Travel costs the same as booking direct."}},
+    {"@type":"Question","name":"What is heli-assisted ski touring?","acceptedAnswer":{"@type":"Answer","text":"It combines the best of both worlds: the helicopter does the heavy lifting with two heli runs a day, then you earn your turns with a skinned ascent into quiet valleys few people ever reach. It is a superb introduction to ski touring, guided throughout by IFMGA-certified guides."}},
+    {"@type":"Question","name":"How is heli-assisted touring different from classic heliskiing?","acceptedAnswer":{"@type":"Answer","text":"Classic heliskiing is pure helicopter access with no climbing. Heli-assisted touring mixes helicopter lifts with human-powered skinning — fewer flights, a lower price, and more of a backcountry feel. Expect around four big descents a day: two heli runs and two skinned ascents."}},
+    {"@type":"Question","name":"Do I need ski touring experience?","acceptedAnswer":{"@type":"Answer","text":"No. Heli-assisted touring is designed as the perfect way into touring — your IFMGA guide teaches the skills as you go. A reasonable level of fitness and confident off-piste skiing will help you enjoy it most."}},
+    {"@type":"Question","name":"What is included in the touring package?","acceptedAnswer":{"@type":"Answer","text":"Nights at the 4-star ocean-front Sigló Hótel, full board, ski or splitboard touring equipment, a BCA avalanche safety kit, IFMGA guiding, and unlimited hot tubs and sauna. International flights and travel insurance are not included."}},
+    {"@type":"Question","name":"How many runs and ascents will I do?","acceptedAnswer":{"@type":"Answer","text":"A typical day is two helicopter runs and one skinned ascent — roughly four big descents — repeated each day of the week, for 12, 16 or 20 ascents across a 3, 4 or 5-day trip."}},
+    {"@type":"Question","name":"Does booking through Heliski Travel cost extra?","acceptedAnswer":{"@type":"Answer","text":"No. Heliski Travel is the authorised booking agent for Viking Heliskiing, so booking through us costs exactly the same as booking direct — no markup and no booking fee — plus impartial advice on whether touring or classic heliskiing suits you."}}
+  ]
+};
 const body = `
 
 <!-- HERO -->
@@ -137,10 +149,29 @@ const body = `
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="band band--navy" aria-labelledby="faq-h">
+  <div class="shell">
+    <div class="head reveal">
+      <p class="eyebrow">Questions</p>
+      <h2 class="sectit" id="faq-h">Heli-assisted touring,<span class="s">answered.</span></h2>
+    </div>
+    <div class="faqx reveal" style="max-width:860px;border-top:1px solid var(--line);">
+      <div style="border-bottom:1px solid var(--line);padding:26px 0;"><h3 style="margin:0 0 10px;font-family:var(--sans);font-weight:600;font-size:19px;color:var(--cream);letter-spacing:-.01em;">How much does heli-assisted ski touring in Iceland cost?</h3><p style="margin:0;color:rgba(244,246,248,.72);font-size:15.5px;line-height:1.8;">From <b style="color:var(--blue-soft);font-weight:600;">€3,490</b> for 3 days, €4,690 for 4 days and €5,590 for 5 days, twin per guest, full board at the 4-star Sigló Hótel — the most affordable way to ski the Troll Peninsula. Booking through us costs the same as booking direct.</p></div>
+      <div style="border-bottom:1px solid var(--line);padding:26px 0;"><h3 style="margin:0 0 10px;font-family:var(--sans);font-weight:600;font-size:19px;color:var(--cream);letter-spacing:-.01em;">What is heli-assisted ski touring?</h3><p style="margin:0;color:rgba(244,246,248,.72);font-size:15.5px;line-height:1.8;">The best of both worlds: the helicopter does the heavy lifting with two heli runs a day, then you earn your turns with a skinned ascent into quiet valleys. It is a superb introduction to touring, guided throughout by IFMGA guides.</p></div>
+      <div style="border-bottom:1px solid var(--line);padding:26px 0;"><h3 style="margin:0 0 10px;font-family:var(--sans);font-weight:600;font-size:19px;color:var(--cream);letter-spacing:-.01em;">How is it different from classic heliskiing?</h3><p style="margin:0;color:rgba(244,246,248,.72);font-size:15.5px;line-height:1.8;"><a href="/classic-heliskiing" style="color:var(--blue-soft);text-decoration:underline;text-underline-offset:3px;">Classic heliskiing</a> is pure helicopter access with no climbing. Heli-assisted touring mixes heli lifts with skinning — fewer flights, a lower price, more backcountry feel. Expect about four big descents a day.</p></div>
+      <div style="border-bottom:1px solid var(--line);padding:26px 0;"><h3 style="margin:0 0 10px;font-family:var(--sans);font-weight:600;font-size:19px;color:var(--cream);letter-spacing:-.01em;">Do I need touring experience?</h3><p style="margin:0;color:rgba(244,246,248,.72);font-size:15.5px;line-height:1.8;">No — it is designed as the perfect way into touring, with your IFMGA guide teaching the skills as you go. A reasonable level of fitness and confident off-piste skiing help you enjoy it most.</p></div>
+      <div style="border-bottom:1px solid var(--line);padding:26px 0;"><h3 style="margin:0 0 10px;font-family:var(--sans);font-weight:600;font-size:19px;color:var(--cream);letter-spacing:-.01em;">What is included?</h3><p style="margin:0;color:rgba(244,246,248,.72);font-size:15.5px;line-height:1.8;">Nights at the 4-star Sigló Hótel, full board, ski or splitboard touring equipment, a BCA avalanche safety kit, IFMGA guiding, and unlimited hot tubs and sauna. Flights and travel insurance are not included.</p></div>
+      <div style="border-bottom:1px solid var(--line);padding:26px 0;"><h3 style="margin:0 0 10px;font-family:var(--sans);font-weight:600;font-size:19px;color:var(--cream);letter-spacing:-.01em;">How many runs and ascents will I do?</h3><p style="margin:0;color:rgba(244,246,248,.72);font-size:15.5px;line-height:1.8;">A typical day is two helicopter runs and one skinned ascent — about four big descents — repeated each day, for 12, 16 or 20 ascents across a 3, 4 or 5-day trip.</p></div>
+      <div style="border-bottom:1px solid var(--line);padding:26px 0;"><h3 style="margin:0 0 10px;font-family:var(--sans);font-weight:600;font-size:19px;color:var(--cream);letter-spacing:-.01em;">Does booking through Heliski Travel cost extra?</h3><p style="margin:0;color:rgba(244,246,248,.72);font-size:15.5px;line-height:1.8;">No — we are the authorised agent, so it costs exactly the same as booking direct, plus honest advice on whether touring or classic suits you. <a href="/contact" style="color:var(--blue-soft);text-decoration:underline;text-underline-offset:3px;">Ask us anything</a>.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 `;
 ---
-<Base heroImage="heli-assisted-hero" title="Heli-Assisted Ski Touring in Iceland | Heliski Travel" description="Heli-assisted ski touring in Iceland: two helicopter runs + skinned ascents daily. Earn-your-turns powder with IFMGA guides. From €3,490." active="packages" schema={productSchema}>
+<Base heroImage="heli-assisted-hero" title="Heli-Assisted Ski Touring in Iceland | Heliski Travel" description="Heli-assisted ski touring in Iceland: two helicopter runs + skinned ascents daily. Earn-your-turns powder with IFMGA guides. From €3,490." active="packages" schema={[productSchema, faqLd]}>
   <Fragment set:html={body} />
 </Base>
 

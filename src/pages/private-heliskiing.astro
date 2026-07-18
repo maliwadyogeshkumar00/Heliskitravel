@@ -14,6 +14,18 @@ const productSchema = {
     {"@type":"Offer","name":"5-Day Private Charter","price":"82990","priceCurrency":"EUR","availability":"https://schema.org/InStock","url": S + "/private-heliskiing"}
   ]
 };
+const faqLd = {
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"How much does private heliskiing in Iceland cost?","acceptedAnswer":{"@type":"Answer","text":"A private, exclusive-helicopter charter with Viking Heliskiing costs €48,990 for 3 days, €64,990 for 4 days and €82,990 for 5 days — per group, with full board at the 4-star Sigló Hótel. Booking through Heliski Travel costs exactly the same as booking direct."}},
+    {"@type":"Question","name":"What makes private heliskiing different from a shared week?","acceptedAnswer":{"@type":"Answer","text":"You get your own dedicated helicopter and your own IFMGA guide, with your group alone — your terrain, your schedule and your pace. There is no sharing and no rotation between groups, so you fly and ski entirely on your own timing."}},
+    {"@type":"Question","name":"How many people can join a private charter?","acceptedAnswer":{"@type":"Answer","text":"Up to four skiers or snowboarders plus one IFMGA guide fly in the private helicopter. The price is per group, so it is most cost-effective for a full group of four."}},
+    {"@type":"Question","name":"What is included in the private heliskiing package?","acceptedAnswer":{"@type":"Answer","text":"The exclusive helicopter and IFMGA guide, nights at the 4-star ocean-front Sigló Hótel, full board (breakfast, lunch and dinner), full ski or snowboard equipment, a BCA avalanche safety kit, transfers, and unlimited hot tubs and sauna. International flights and travel insurance are not included."}},
+    {"@type":"Question","name":"When is the private heliskiing season?","acceptedAnswer":{"@type":"Answer","text":"The Troll Peninsula season runs from 10 March to 6 June — from the Northern Lights in early season to the midnight sun in late spring."}},
+    {"@type":"Question","name":"Is private heliskiing worth it over the shared Classic week?","acceptedAnswer":{"@type":"Answer","text":"If privacy, flexibility and skiing entirely on your own schedule matter most, a private charter delivers that — you are never tied to another group's timing or rotation. If value is the priority, the shared Classic week gives you the same terrain and guiding at a far lower price."}},
+    {"@type":"Question","name":"Does booking through Heliski Travel cost extra?","acceptedAnswer":{"@type":"Answer","text":"No. Heliski Travel is the authorised booking agent for Viking Heliskiing, so booking through us costs exactly the same as booking direct — no markup and no booking fee — plus impartial advice on the right format for your group."}}
+  ]
+};
 const body = `
 
 <!-- HERO -->
@@ -139,10 +151,29 @@ const body = `
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="band band--navy" aria-labelledby="faq-h">
+  <div class="shell">
+    <div class="head reveal">
+      <p class="eyebrow">Questions</p>
+      <h2 class="sectit" id="faq-h">Private heliskiing,<span class="s">answered.</span></h2>
+    </div>
+    <div class="faqx reveal" style="max-width:860px;border-top:1px solid var(--line);">
+      <div style="border-bottom:1px solid var(--line);padding:26px 0;"><h3 style="margin:0 0 10px;font-family:var(--sans);font-weight:600;font-size:19px;color:var(--cream);letter-spacing:-.01em;">How much does private heliskiing in Iceland cost?</h3><p style="margin:0;color:rgba(244,246,248,.72);font-size:15.5px;line-height:1.8;">A private, exclusive-helicopter charter runs <b style="color:var(--blue-soft);font-weight:600;">€48,990</b> for 3 days, €64,990 for 4 days and €82,990 for 5 days — per group, full board at the 4-star Sigló Hótel. Booking through us costs the same as booking direct.</p></div>
+      <div style="border-bottom:1px solid var(--line);padding:26px 0;"><h3 style="margin:0 0 10px;font-family:var(--sans);font-weight:600;font-size:19px;color:var(--cream);letter-spacing:-.01em;">What makes it private?</h3><p style="margin:0;color:rgba(244,246,248,.72);font-size:15.5px;line-height:1.8;">Your own dedicated helicopter and IFMGA guide, with your group alone — your terrain, your schedule, your pace. No sharing and no rotation between groups.</p></div>
+      <div style="border-bottom:1px solid var(--line);padding:26px 0;"><h3 style="margin:0 0 10px;font-family:var(--sans);font-weight:600;font-size:19px;color:var(--cream);letter-spacing:-.01em;">How many people can join?</h3><p style="margin:0;color:rgba(244,246,248,.72);font-size:15.5px;line-height:1.8;">Up to four skiers or snowboarders plus one IFMGA guide fly in the private helicopter. The price is per group, so it is most cost-effective for a full four.</p></div>
+      <div style="border-bottom:1px solid var(--line);padding:26px 0;"><h3 style="margin:0 0 10px;font-family:var(--sans);font-weight:600;font-size:19px;color:var(--cream);letter-spacing:-.01em;">What is included?</h3><p style="margin:0;color:rgba(244,246,248,.72);font-size:15.5px;line-height:1.8;">The exclusive helicopter and guide, nights at the 4-star Sigló Hótel, full board, equipment, a BCA avalanche safety kit, transfers, and unlimited hot tubs and sauna. Flights and travel insurance are not included.</p></div>
+      <div style="border-bottom:1px solid var(--line);padding:26px 0;"><h3 style="margin:0 0 10px;font-family:var(--sans);font-weight:600;font-size:19px;color:var(--cream);letter-spacing:-.01em;">When is the season?</h3><p style="margin:0;color:rgba(244,246,248,.72);font-size:15.5px;line-height:1.8;"><b style="color:var(--blue-soft);font-weight:600;">10 March to 6 June</b> — from the Northern Lights in early season to the midnight sun in late spring.</p></div>
+      <div style="border-bottom:1px solid var(--line);padding:26px 0;"><h3 style="margin:0 0 10px;font-family:var(--sans);font-weight:600;font-size:19px;color:var(--cream);letter-spacing:-.01em;">Is private worth it over the shared Classic week?</h3><p style="margin:0;color:rgba(244,246,248,.72);font-size:15.5px;line-height:1.8;">If privacy, flexibility and skiing on your own schedule matter most, yes — you are never tied to another group's timing. If value is the priority, the shared <a href="/classic-heliskiing" style="color:var(--blue-soft);text-decoration:underline;text-underline-offset:3px;">Classic week</a> gives the same terrain at a far lower price.</p></div>
+      <div style="border-bottom:1px solid var(--line);padding:26px 0;"><h3 style="margin:0 0 10px;font-family:var(--sans);font-weight:600;font-size:19px;color:var(--cream);letter-spacing:-.01em;">Does booking through Heliski Travel cost extra?</h3><p style="margin:0;color:rgba(244,246,248,.72);font-size:15.5px;line-height:1.8;">No — we are the authorised agent, so it costs exactly the same as booking direct, plus impartial advice on the right format. <a href="/contact" style="color:var(--blue-soft);text-decoration:underline;text-underline-offset:3px;">Ask us anything</a>.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 `;
 ---
-<Base heroImage="private-hero" title="Private Heliskiing in Iceland | Heliski Travel" description="Private heliskiing in Iceland: your own helicopter, schedule and Troll Peninsula playground. Up to 4 skiers + guide, Sigló Hotel, IFMGA. From €48,990." active="packages" schema={productSchema}>
+<Base heroImage="private-hero" title="Private Heliskiing in Iceland | Heliski Travel" description="Private heliskiing in Iceland: your own helicopter, schedule and Troll Peninsula playground. Up to 4 skiers + guide, Sigló Hotel, IFMGA. From €48,990." active="packages" schema={[productSchema, faqLd]}>
   <Fragment set:html={body} />
 </Base>
 

@@ -14,6 +14,18 @@ const productSchema = {
     {"@type":"Offer","name":"5-Day Heliski Week","price":"10490","priceCurrency":"EUR","availability":"https://schema.org/InStock","url": S + "/classic-heliskiing"}
   ]
 };
+const faqLd = {
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"How much does a classic heliskiing week in Iceland cost?","acceptedAnswer":{"@type":"Answer","text":"A classic heliskiing week with Viking Heliskiing runs from €6,790 for a 3-day week (45,000 ft of vertical), €8,890 for 4 days (60,000 ft), to €10,490 for 5 days (75,000 ft), twin per guest with full board at the 4-star Sigló Hótel. Booking through Heliski Travel costs exactly the same as booking direct."}},
+    {"@type":"Question","name":"What is included in the classic heliskiing package?","acceptedAnswer":{"@type":"Answer","text":"Every week includes nights at the 4-star ocean-front Sigló Hótel, full board (breakfast, a mountain lunch and three-course dinners), your guaranteed vertical, full ski or snowboard equipment (K2 freeride skis and bindings), a BCA avalanche safety kit (transceiver, shovel, probe and airbag), IFMGA-certified guiding on every run, the ski shuttle to the clubhouse, and unlimited use of the outdoor hot tubs and sauna. Flights, travel insurance and non-heliski activities are not included."}},
+    {"@type":"Question","name":"How much vertical will I ski in a day?","acceptedAnswer":{"@type":"Answer","text":"Days are measured in vertical feet, not runs. A typical day is around 15,000 ft — roughly 7 to 8 long descents — though great conditions can bring far more (the record is 19 runs in a single day). Across the week you ski 45,000 to 75,000 ft depending on the package you choose."}},
+    {"@type":"Question","name":"When is the heliskiing season in Iceland?","acceptedAnswer":{"@type":"Answer","text":"The Troll Peninsula season runs from 10 March to 6 June — ten weeks of stable Arctic light, from the Northern Lights in early season to the midnight sun in late spring."}},
+    {"@type":"Question","name":"What ability and fitness level do I need for classic heliskiing?","acceptedAnswer":{"@type":"Answer","text":"Classic heliskiing suits confident off-piste skiers and snowboarders — a strong intermediate who is comfortable on ungroomed terrain and above will thrive. Your IFMGA guide matches the terrain to your group every day, and optional morning yoga and stretches help you recover between helicopter days."}},
+    {"@type":"Question","name":"How large are the groups?","acceptedAnswer":{"@type":"Answer","text":"You ski in a group of four guests plus one IFMGA guide. Across the operation there are up to three rotating helicopter groups and a maximum of twelve guests, so the mountain never feels crowded."}},
+    {"@type":"Question","name":"Does booking through Heliski Travel cost extra?","acceptedAnswer":{"@type":"Answer","text":"No. Heliski Travel is the authorised booking agent for Viking Heliskiing, and booking through us costs exactly the same as booking direct — no markup and no booking fee — plus impartial advice on which week and format fit your group."}}
+  ]
+};
 const body = `
 
 <!-- HERO -->
@@ -139,10 +151,29 @@ const body = `
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="band band--navy" aria-labelledby="faq-h">
+  <div class="shell">
+    <div class="head reveal">
+      <p class="eyebrow">Questions</p>
+      <h2 class="sectit" id="faq-h">Classic heliskiing,<span class="s">answered.</span></h2>
+    </div>
+    <div class="faqx reveal" style="max-width:860px;border-top:1px solid var(--line);">
+      <div class="faqx__i" style="border-bottom:1px solid var(--line);padding:26px 0;"><h3 style="margin:0 0 10px;font-family:var(--sans);font-weight:600;font-size:19px;color:var(--cream);letter-spacing:-.01em;">How much does a classic heliskiing week in Iceland cost?</h3><p style="margin:0;color:rgba(244,246,248,.72);font-size:15.5px;line-height:1.8;">A classic week with Viking Heliskiing runs from <b style="color:var(--blue-soft);font-weight:600;">€6,790</b> for 3 days (45,000&nbsp;ft), €8,890 for 4 days (60,000&nbsp;ft), to €10,490 for 5 days (75,000&nbsp;ft) — twin per guest, full board at the 4-star Sigló Hótel. Booking through us costs exactly the same as booking direct.</p></div>
+      <div class="faqx__i" style="border-bottom:1px solid var(--line);padding:26px 0;"><h3 style="margin:0 0 10px;font-family:var(--sans);font-weight:600;font-size:19px;color:var(--cream);letter-spacing:-.01em;">What is included in the package?</h3><p style="margin:0;color:rgba(244,246,248,.72);font-size:15.5px;line-height:1.8;">Nights at the 4-star ocean-front Sigló Hótel, full board (breakfast, mountain lunch, three-course dinners), your guaranteed vertical, full ski or snowboard equipment, a BCA avalanche safety kit (transceiver, shovel, probe, airbag), IFMGA guiding on every run, the ski shuttle, and unlimited hot tubs and sauna. Flights, insurance and non-heliski activities are not included.</p></div>
+      <div class="faqx__i" style="border-bottom:1px solid var(--line);padding:26px 0;"><h3 style="margin:0 0 10px;font-family:var(--sans);font-weight:600;font-size:19px;color:var(--cream);letter-spacing:-.01em;">How much vertical will I ski in a day?</h3><p style="margin:0;color:rgba(244,246,248,.72);font-size:15.5px;line-height:1.8;">Days are measured in vertical feet, not runs. A typical day is around 15,000&nbsp;ft — roughly 7 to 8 long descents — though great conditions bring far more (the record is 19 runs in a day). Across the week you ski 45,000–75,000&nbsp;ft depending on your package.</p></div>
+      <div class="faqx__i" style="border-bottom:1px solid var(--line);padding:26px 0;"><h3 style="margin:0 0 10px;font-family:var(--sans);font-weight:600;font-size:19px;color:var(--cream);letter-spacing:-.01em;">When is the heliskiing season?</h3><p style="margin:0;color:rgba(244,246,248,.72);font-size:15.5px;line-height:1.8;">The Troll Peninsula season runs from <b style="color:var(--blue-soft);font-weight:600;">10 March to 6 June</b> — ten weeks of stable Arctic light, from the Northern Lights in early season to the midnight sun in late spring.</p></div>
+      <div class="faqx__i" style="border-bottom:1px solid var(--line);padding:26px 0;"><h3 style="margin:0 0 10px;font-family:var(--sans);font-weight:600;font-size:19px;color:var(--cream);letter-spacing:-.01em;">What ability and fitness do I need?</h3><p style="margin:0;color:rgba(244,246,248,.72);font-size:15.5px;line-height:1.8;">Classic heliskiing suits confident off-piste skiers and snowboarders — a strong intermediate comfortable on ungroomed terrain and above will thrive. Your IFMGA guide matches the terrain to your group each day, and optional morning yoga helps you recover between helicopter days.</p></div>
+      <div class="faqx__i" style="border-bottom:1px solid var(--line);padding:26px 0;"><h3 style="margin:0 0 10px;font-family:var(--sans);font-weight:600;font-size:19px;color:var(--cream);letter-spacing:-.01em;">How large are the groups?</h3><p style="margin:0;color:rgba(244,246,248,.72);font-size:15.5px;line-height:1.8;">You ski in a group of four guests plus one IFMGA guide. Across the operation there are up to three rotating helicopter groups and a maximum of twelve guests, so the mountain never feels crowded.</p></div>
+      <div class="faqx__i" style="border-bottom:1px solid var(--line);padding:26px 0;"><h3 style="margin:0 0 10px;font-family:var(--sans);font-weight:600;font-size:19px;color:var(--cream);letter-spacing:-.01em;">Does booking through Heliski Travel cost extra?</h3><p style="margin:0;color:rgba(244,246,248,.72);font-size:15.5px;line-height:1.8;">No. We are the authorised booking agent for Viking Heliskiing — booking through us costs exactly the same as booking direct, with no markup and no booking fee, plus impartial advice on the right week and format. <a href="/contact" style="color:var(--blue-soft);text-decoration:underline;text-underline-offset:3px;">Ask us anything</a>.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 `;
 ---
-<Base heroImage="classic-hero" title="Classic Heliskiing in Iceland: Group Week | Heliski Travel" description="Classic Heliskiing in Iceland: 3, 4 or 5-day group week with 4 skiers + guide, 45,000ft per week, Sigló Hotel, IFMGA guides. From €6,790." active="packages" schema={productSchema}>
+<Base heroImage="classic-hero" title="Classic Heliskiing in Iceland: Group Week | Heliski Travel" description="Classic Heliskiing in Iceland: 3, 4 or 5-day group week with 4 skiers + guide, 45,000ft per week, Sigló Hotel, IFMGA guides. From €6,790." active="packages" schema={[productSchema, faqLd]}>
   <Fragment set:html={body} />
 </Base>
 
