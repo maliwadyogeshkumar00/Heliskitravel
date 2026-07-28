@@ -1,0 +1,34 @@
+---
+import Base from '../../layouts/Base.astro';
+const articleLd = { "@type":"Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes","headline":"Viking Heliskiing: What's Included in Your Week","description":"Exactly what's included in a Viking Heliskiing week in Iceland — guiding, safety kit, Sigló Hotel accommodation, meals and the vertical guarantee — and what costs extra.","image":"https://heliskitravel.com/images/iceland-hero.webp","author": { "@id": "https://heliskitravel.com/#vegard" },"publisher":{"@id":"https://heliskitravel.com/#org"},"datePublished":"2026-07-24","dateModified":"2026-07-24","mainEntityOfPage":"https://heliskitravel.com/field-notes/viking-heliskiing-whats-included/" };
+const faqLd = { "@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is included in a Viking Heliskiing package?","acceptedAnswer":{"@type":"Answer","text":"IFMGA-certified guiding, safety equipment (avalanche transceiver, airbag pack, radio), accommodation at Sigló Hotel, meals, in-programme transfers, and helicopter access with a weekly vertical guarantee on the classic week."}},{"@type":"Question","name":"Is the helicopter time included or charged per run?","acceptedAnswer":{"@type":"Answer","text":"Helicopter access is part of the package. The classic week guarantees around 45,000 vertical feet, with additional runs available on good days depending on your package."}},{"@type":"Question","name":"What is not included in the package?","acceptedAnswer":{"@type":"Answer","text":"Flights to Iceland, travel and heliski insurance, personal ski gear, and gratuities are not included. These are arranged separately."}},{"@type":"Question","name":"Are meals and accommodation included?","acceptedAnswer":{"@type":"Answer","text":"Yes. Your stay at Sigló Hotel in Siglufjörður and meals during the programme are included, along with transfers within the programme window."}}] };
+---
+<Base ogType="article" publishedTime="2026-07-24" modifiedTime="2026-07-24" heroImage="iceland-hero" title="Viking Heliskiing: What's Included in Your Week" description="Exactly what's included in a Viking Heliskiing week in Iceland — guiding, safety kit, Sigló Hotel accommodation, meals and the vertical guarantee — and what costs extra." active="" schema={[articleLd, faqLd]}>
+  <section>
+    <p><strong>Short answer:</strong> A Viking Heliskiing week includes guiding, safety equipment, helicopter access with a vertical guarantee, accommodation at <a href="/siglo-hotel/">Sigló Hotel</a>, meals and in-programme transfers. Not included: flights, insurance, personal gear and gratuities.</p>
+    <p>On this page: everything that's in the price, the vertical guarantee, accommodation and meals, guiding and safety, and what costs extra.</p>
+    <h2>What's included</h2>
+    <p>Every <a href="/classic-heliskiing/">Classic week</a> covers helicopter access to the terrain, IFMGA-certified guiding, all safety equipment, accommodation, meals and transfers during the programme. It is designed so that once you arrive in Siglufj&ouml;r&eth;ur, the skiing days are taken care of.</p>
+    <h2>The vertical guarantee</h2>
+    <p>The classic week guarantees roughly 45,000 vertical feet across the week, with more available on good-weather days. It is one reason the multi-day format exists — it protects your skiing against the odd down day.</p>
+    <h2>Accommodation and meals</h2>
+    <p>You stay at the design-led <a href="/siglo-hotel/">Sigló Hotel</a> on the harbour, a five-minute walk from the helipad, with meals included through the programme.</p>
+    <h2>Guiding and safety</h2>
+    <p>Guiding is by IFMGA-certified professionals, and safety equipment — transceiver, airbag pack, radio — is provided and briefed. Your job is to ski; theirs is to manage the mountain.</p>
+    <h2>What's not included</h2>
+    <p>Flights to Iceland, travel and heliski-specific insurance, personal skis and clothing, and gratuities are separate. Budget for these on top of the package.</p>
+    <h2>Optional extras</h2>
+    <p>Gear rental and additional nights can usually be arranged. Compare the <a href="/packages/">three packages</a> to see how inclusions scale from heli-assisted to private.</p>
+    <h2>Frequently asked questions</h2>
+    <h3>What is included in a Viking Heliskiing package?</h3>
+    <p>IFMGA-certified guiding, safety equipment (avalanche transceiver, airbag pack, radio), accommodation at Sigló Hotel, meals, in-programme transfers, and helicopter access with a weekly vertical guarantee on the classic week.</p>
+    <h3>Is the helicopter time included or charged per run?</h3>
+    <p>Helicopter access is part of the package. The classic week guarantees around 45,000 vertical feet, with additional runs available on good days depending on your package.</p>
+    <h3>What is not included in the package?</h3>
+    <p>Flights to Iceland, travel and heliski insurance, personal ski gear, and gratuities are not included. These are arranged separately.</p>
+    <h3>Are meals and accommodation included?</h3>
+    <p>Yes. Your stay at Sigló Hotel in Siglufjörður and meals during the programme are included, along with transfers within the programme window.</p>
+  </section>
+</Base>
