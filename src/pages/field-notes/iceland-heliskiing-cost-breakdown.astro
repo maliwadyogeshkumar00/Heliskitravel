@@ -1,0 +1,44 @@
+---
+import Base from '../../layouts/Base.astro';
+const articleLd = { "@type":"Article",
+  "inLanguage": "en-GB",
+  "articleSection": "Field Notes","headline":"Iceland Heliskiing Cost Breakdown: Your Total Trip Budget","description":"The full cost of an Iceland heliskiing trip beyond the package price — flights, transfers, insurance, gear and gratuities — with a sample total budget.","image":"https://heliskitravel.com/images/iceland-hero.webp","author": { "@id": "https://heliskitravel.com/#vegard" },"publisher":{"@id":"https://heliskitravel.com/#org"},"datePublished":"2026-07-20","dateModified":"2026-07-20","mainEntityOfPage":"https://heliskitravel.com/field-notes/iceland-heliskiing-cost-breakdown/" };
+const faqLd = { "@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the total cost of a heliski trip to Iceland?","acceptedAnswer":{"@type":"Answer","text":"The Viking package runs from about €3,490 (heli-assisted) to €82,990 (private week). On top of that, budget for flights to Iceland, transfers to the north, heliski-specific insurance, personal gear and gratuities — typically adding a few hundred to a couple of thousand euros per person."}},{"@type":"Question","name":"Are flights to Iceland included in the package?","acceptedAnswer":{"@type":"Answer","text":"No. International flights to Keflavik (and any onward flight to Akureyri) are booked separately. The package covers guiding, safety kit, accommodation, meals and in-programme transfers."}},{"@type":"Question","name":"Do I need special insurance for heliskiing in Iceland?","acceptedAnswer":{"@type":"Answer","text":"Yes. Standard travel policies rarely cover helicopter-accessed off-piste skiing. You need a policy that explicitly includes heliskiing and off-piste, including medical evacuation."}},{"@type":"Question","name":"How much should I budget for guide gratuities?","acceptedAnswer":{"@type":"Answer","text":"Tipping is discretionary but customary. Many guests budget a modest per-day amount per guide; we can give current guidance when you book."}}] };
+---
+<Base ogType="article" publishedTime="2026-07-20" modifiedTime="2026-07-20" heroImage="iceland-hero" title="Iceland Heliskiing Cost Breakdown: Your Total Trip Budget" description="The full cost of an Iceland heliskiing trip beyond the package price — flights, transfers, insurance, gear and gratuities — with a sample total budget." active="" schema={[articleLd, faqLd]}>
+  <section>
+    <p><strong>Short answer:</strong> The package price is the biggest line, but not the whole cost. On top of the Viking week (€3,490–€82,990), budget for flights, transfers to the north, heliski-specific insurance, personal gear and gratuities. For most guests the true out-of-pocket total is the package plus roughly €800–€2,000 per person.</p>
+    <p>On this page: each cost line explained, a sample total budget, and how to keep the number down.</p>
+    <h2>Package price: the biggest line item</h2>
+    <p>Your <a href="/packages/">package</a> covers guiding, safety equipment, accommodation at Sigl&oacute; Hotel, meals and in-programme transfers. It ranges from about €3,490 for <a href="/heli-assisted-touring/">heli-assisted touring</a> to €82,990 for a private-helicopter week.</p>
+    <h2>Flights to Iceland</h2>
+    <p>International flights to Keflav&iacute;k are separate and vary by origin and season. Some guests add a short domestic flight to Akureyri; others drive. Book flights once your dates are confirmed.</p>
+    <h2>Transfers to the north</h2>
+    <p>Siglufj&ouml;r&eth;ur is on the Troll Peninsula in North Iceland. In-programme transfers are included; travel outside the programme window is your own cost.</p>
+    <h2>Heliski-specific insurance</h2>
+    <p>Often overlooked and non-negotiable: you need cover that explicitly names heliskiing and off-piste, with medical evacuation. Standard ski policies usually exclude helicopter-accessed terrain.</p>
+    <h2>Gear and extras</h2>
+    <p>Safety equipment is provided, but personal skis, boots and clothing are yours. Rental is possible if you would rather travel light.</p>
+    <h2>Gratuities</h2>
+    <p>Tipping guides and lodge staff is customary and discretionary. Set aside a modest daily amount per person.</p>
+    <h2>A sample total budget</h2>
+    <table><thead><tr><th>Line</th><th>Typical</th></tr></thead><tbody>
+      <tr><td>Viking package (classic week)</td><td>from €6,790</td></tr>
+      <tr><td>Flights + onward travel</td><td>€300–€1,200</td></tr>
+      <tr><td>Heliski insurance</td><td>€80–€300</td></tr>
+      <tr><td>Gear / rental (optional)</td><td>€0–€400</td></tr>
+      <tr><td>Gratuities</td><td>€150–€400</td></tr>
+    </tbody></table>
+    <h2>How to keep the cost down</h2>
+    <p>Choose heli-assisted touring over a full heli week, travel in a group to share the helicopter, and book early for better flight prices. <a href="/contact/">Tell us your budget</a> and we will match you to the best-value option.</p>
+    <h2>Frequently asked questions</h2>
+    <h3>What is the total cost of a heliski trip to Iceland?</h3>
+    <p>The Viking package runs from about €3,490 (heli-assisted) to €82,990 (private week). On top of that, budget for flights to Iceland, transfers to the north, heliski-specific insurance, personal gear and gratuities — typically adding a few hundred to a couple of thousand euros per person.</p>
+    <h3>Are flights to Iceland included in the package?</h3>
+    <p>No. International flights to Keflavik (and any onward flight to Akureyri) are booked separately. The package covers guiding, safety kit, accommodation, meals and in-programme transfers.</p>
+    <h3>Do I need special insurance for heliskiing in Iceland?</h3>
+    <p>Yes. Standard travel policies rarely cover helicopter-accessed off-piste skiing. You need a policy that explicitly includes heliskiing and off-piste, including medical evacuation.</p>
+    <h3>How much should I budget for guide gratuities?</h3>
+    <p>Tipping is discretionary but customary. Many guests budget a modest per-day amount per guide; we can give current guidance when you book.</p>
+  </section>
+</Base>
