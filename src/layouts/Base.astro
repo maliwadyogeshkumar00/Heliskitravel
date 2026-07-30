@@ -51,6 +51,7 @@ const orgLd = {
   "@type":"TravelAgency",
   "@id": SITE + "/#org",
   "name":"Heliski Travel",
+  "alternateName":["HeliskiTravel","HeliskiTravel.com","Heliski Travel Iceland"],
   "url": SITE,
   "logo": { "@type":"ImageObject", "url": SITE + "/logo-google.png", "width":600, "height":600 },
   "image": ogImage,
@@ -82,7 +83,7 @@ const personLd = {
   "nationality":"Norwegian",
   "knowsAbout":["Heliskiing","Off-piste skiing","Ski touring","Troll Peninsula","Iceland ski holidays","Viking Heliskiing"]
 };
-const websiteLd = { "@type":"WebSite", "@id": SITE + "/#website", "url": SITE, "name":"Heliski Travel", "publisher": { "@id": SITE + "/#org" }, "inLanguage":"en-GB" };
+const websiteLd = { "@type":"WebSite", "@id": SITE + "/#website", "url": SITE, "name":"Heliski Travel", "alternateName":["HeliskiTravel","HeliskiTravel.com"], "publisher": { "@id": SITE + "/#org" }, "inLanguage":"en-GB" };
 const webpageLd = { "@type":"WebPage", "@id": canonical + "#webpage", "url": canonical, "name": title, "isPartOf": { "@id": SITE + "/#website" }, "about": { "@id": SITE + "/#org" }, "primaryImageOfPage": { "@type":"ImageObject", "url": ogImage }, "inLanguage":"en-GB", "speakable": { "@type":"SpeakableSpecification", "cssSelector":["h1",".gd-lede",".intro",".lede"] }, ...(description ? { "description": description } : {}), ...(slug ? { "breadcrumb": { "@id": canonical + "#breadcrumb" } } : {}) };
 const graph = [orgLd, personLd, websiteLd, webpageLd];
 if (breadcrumbLd) graph.push(breadcrumbLd);
