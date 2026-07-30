@@ -489,11 +489,21 @@ if(form){
     submitLabel.textContent='Sending…';
 
     fetch('https://formsubmit.co/ajax/'+ENQUIRY_EMAIL, { method:'POST', headers:{ 'Accept':'application/json' }, body: fd })
-      .then(function(r){ return r.json().catch(function(){ return {}; }); })
+      .then(function(r){
+        /* Only treat as sent on a real 2xx + provider success. A failed submit must NOT look successful. */
+        return r.json().catch(function(){ return {}; }).then(function(p){
+          var providerOk = (p.success === undefined) || (p.success === true) || (String(p.success).toLowerCase() === 'true');
+          if(!r.ok || !providerOk){ throw new Error((p && p.message) || ('Enquiry failed: HTTP '+r.status)); }
+          return p;
+        });
+      })
       .then(function(){
         form.style.display='none';
         donePanel.classList.add('show');
         donePanel.scrollIntoView({block:'center',behavior:'smooth'});
+        /* GA4 conversion via GTM — recommended event, no PII */
+        window.dataLayer = window.dataLayer || [];
+        try{ window.dataLayer.push({ event:'generate_lead', form_name:'heliski_enquiry', page_path: location.pathname }); }catch(_){}
         try{ window.dispatchEvent(new CustomEvent('lead-submitted')); }catch(_){}
       })
       .catch(function(){
