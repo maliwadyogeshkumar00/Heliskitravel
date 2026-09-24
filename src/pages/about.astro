@@ -1,9 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-// The Person entity (#vegard) is now defined site-wide in Base.astro. On the About page we
-// add a ProfilePage that points its mainEntity at that entity — the correct type for an
-// author/founder profile and avoids duplicating the Person node.
-const profileLd = { "@type":"ProfilePage","@id":"https://heliskitravel.com/about#profile","mainEntity":{ "@id":"https://heliskitravel.com/#vegard" } };
+const profileLd = { "@type":"AboutPage","@id":"https://heliskitravel.com/about#about","about":{ "@id":"https://heliskitravel.com/#org" } };
 const body = `
 
 <!-- HERO -->
@@ -15,34 +12,34 @@ const body = `
 </section>
 
 <!-- WHY (value first) -->
-<section class="why" aria-label="Why book through me">
+<section class="why" aria-label="Why book through us">
   <div class="shell">
     <div class="head">
-      <p class="eyebrow reveal">Why book through me</p>
+      <p class="eyebrow reveal">Why book through us</p>
       <h1 class="reveal">Same trip, no extra cost — and a straight answer before you commit.</h1>
     </div>
     <div class="grid">
-      <div class="card reveal"><span class="nx">01</span><h3>No extra cost</h3><p>Booking through me costs you nothing more than going direct. You get an expert in your corner, free.</p></div>
-      <div class="card reveal"><span class="nx">02</span><h3>Honest matching</h3><p>I'll tell you straight whether this trip is right for you — the package, the week, and the conditions that fit your group.</p></div>
-      <div class="card reveal"><span class="nx">03</span><h3>Insider access</h3><p>I've skied with Jóhann and Björgvin for years. You book with someone who genuinely knows the operation and the mountain.</p></div>
+      <div class="card reveal"><span class="nx">01</span><h3>No extra cost</h3><p>Booking through us costs you nothing more than going direct. You get an expert in your corner, free.</p></div>
+      <div class="card reveal"><span class="nx">02</span><h3>Honest matching</h3><p>We'll tell you straight whether this trip is right for you — the package, the week, and the conditions that fit your group.</p></div>
+      <div class="card reveal"><span class="nx">03</span><h3>Insider access</h3><p>We've worked with Viking Heliskiing's team for years. You book with a specialist who genuinely knows the operation and the mountain.</p></div>
     </div>
   </div>
 </section>
 
 <!-- PROFILE -->
-<section class="profile" aria-label="The Travel Manager">
+<section class="profile" aria-label="About Heliski Travel">
   <div class="shell">
     <div class="grid">
-      <div class="frame reveal"><img src="/brand/vegard-portrait.webp" srcset="/brand/vegard-portrait.webp 640w, /brand/vegard-portrait.webp 1080w, /brand/vegard-portrait.webp 1200w" sizes="(max-width:767px) 100vw, 620px" alt="Vegard Knudsen, Travel Manager at Heliski Travel" width="587" height="720" loading="lazy" decoding="async" /></div>
+      <div class="frame reveal"><img src="/images/gallery/heliski-guides-ridge-sunset-iceland.webp" srcset="/images/gallery/heliski-guides-ridge-sunset-iceland.webp 640w, /images/gallery/heliski-guides-ridge-sunset-iceland.webp 1080w, /images/gallery/heliski-guides-ridge-sunset-iceland.webp 1200w" sizes="(max-width:767px) 100vw, 620px" alt="Heliski guides on a ridge at sunset, Troll Peninsula, Iceland" width="587" height="720" loading="lazy" decoding="async" /></div>
       <div>
-        <p class="eyebrow reveal">The Travel Manager</p>
-        <h2 class="reveal">Vegard Knudsen</h2>
-        <p class="role reveal">Travel Manager · Heliski Travel</p>
-        <p class="posit reveal">A Norwegian ex-racer turned hospitality specialist — and the trusted agent for Viking Heliskiing Iceland. I match skiers to the right week, honestly, at no extra cost.</p>
+        <p class="eyebrow reveal">The Agency</p>
+        <h2 class="reveal">Heliski Travel</h2>
+        <p class="role reveal">Authorised booking agent, Viking Heliskiing Iceland</p>
+        <p class="posit reveal">The trusted booking agent for Viking Heliskiing on Iceland's Troll Peninsula. We match skiers to the right week, honestly, at no extra cost over booking direct.</p>
         <div class="cred reveal">
-          <div><span class="n">2×</span><span class="l">Junior National podiums</span></div>
-          <div><span class="n">20 yrs</span><span class="l">Travel &amp; media</span></div>
-          <div><span class="n">MBA</span><span class="l">Les Roches, CH</span></div>
+          <div><span class="n">0%</span><span class="l">Markup vs booking direct</span></div>
+          <div><span class="n">Mar-Jun</span><span class="l">Iceland heli season</span></div>
+          <div><span class="n">IFMGA</span><span class="l">Certified mountain guides</span></div>
         </div>
       </div>
     </div>
@@ -57,9 +54,9 @@ const body = `
       <blockquote class="reveal">"You're not just booking a ski trip. You're asking someone to <span>get this right.</span>"</blockquote>
     </div>
     <div class="prose">
-      <p class="first reveal">I grew up racing on snow in Norway — two podium finishes at the Norwegian Junior National Ski Championships, training alongside the Junior National Ski Team. Skiing wasn't a hobby. It was how I understood the world.</p>
-      <p class="reveal">After racing, I spent close to two decades in online travel and commercial media, before completing an MBA in Global Hospitality Management at Les Roches in Crans-Montana, Switzerland. I know how travel businesses work — and more importantly, I know what separates a good experience from an extraordinary one.</p>
-      <p class="reveal">My connection to Viking Heliskiing goes back further than this business. Jóhann and Björgvin are people I've known from the skiing world for years. When I first experienced what they'd built in Iceland, I knew I wanted to be part of it — not because it was a good commercial opportunity, but because it's genuinely one of the finest mountain experiences I've come across. Jóhann and Björgvin come from elite ski racing, and that perfectionism hasn't left them. It's what drives how they run this place, and why the hospitality here is genuinely unlike anything else in the mountains.</p>
+      <p class="first reveal">Heliski Travel exists for one reason: to make booking Viking Heliskiing simple, honest and right. We are the authorised booking agent for their Troll Peninsula operation in North Iceland, the single point of contact between you and one of the finest heliski experiences in the world.</p>
+      <p class="reveal">We come from travel and the mountains, and we know what separates a good ski trip from an extraordinary one. That is the standard we hold every booking to, from your first question to the moment you fly.</p>
+      <p class="reveal">Our relationship with Viking Heliskiing runs deep. Founders Johann and Bjorgvin come from elite ski racing, and that perfectionism has not left them. It drives how they run the operation, and it is why the hospitality here is genuinely unlike anything else in the mountains.</p>
       <p class="reveal">Viking Heliskiing is a small, focused operation built around quality over volume. I know the packages, the weeks, the conditions, and what kind of skier belongs on which trip. Booking through me costs you nothing extra — and you get someone who has skied with these people and will give you an honest answer about whether this trip is right for you.</p>
     </div>
   </div>
@@ -70,7 +67,7 @@ const body = `
   <div class="shell">
     <p class="eyebrow reveal">In their words</p>
     <div class="grid">
-      <div class="quote reveal"><div class="mark" aria-hidden="true">"</div><p>Vegard matched us to exactly the right week. Best ski experience of my life.</p><span class="by">Client · Oslo, 2026</span></div>
+      <div class="quote reveal"><div class="mark" aria-hidden="true">"</div><p>The Heliski Travel team matched us to exactly the right week. Best ski experience of my life.</p><span class="by">Client · Oslo, 2026</span></div>
       <div class="quote reveal"><div class="mark" aria-hidden="true">"</div><p>He told us what to expect — no overselling, just straight answers. We came back with stories we'll tell for years.</p><span class="by">Client · Stockholm, 2026</span></div>
     </div>
   </div>
@@ -81,10 +78,9 @@ const body = `
   <div class="shell">
     <div class="wrap">
       <p class="eyebrow reveal">Signed, by hand</p>
-      <p class="line reveal">If you're considering heliski Iceland, reach out. I'll tell you honestly whether it's the right trip for you — and if it is, I'll make sure it's done properly.</p>
+      <p class="line reveal">If you're considering heliski Iceland, reach out. We'll tell you honestly whether it's the right trip for you, and if it is, we'll make sure it's done properly.</p>
       <div class="sig reveal">
-        <img src="/brand/vegard-signature.webp" srcset="/brand/vegard-signature.webp 640w, /brand/vegard-signature.webp 1080w, /brand/vegard-signature.webp 1200w" sizes="(max-width:767px) 100vw, 620px" alt="Vegard Knudsen signature" width="220" height="124" loading="lazy" decoding="async" />
-        <div class="nm">Vegard Knudsen — Travel Manager, Heliski Travel</div>
+        <div class="nm">The Heliski Travel Team</div>
       </div>
       <div class="cta reveal"><a class="btn" href="/contact"><span>Plan your week</span> <span class="arw">→</span></a></div>
     </div>
@@ -94,7 +90,7 @@ const body = `
 <!-- FOOTER -->
 `;
 ---
-<Base schema={profileLd} heroImage="about-hero" title="About Heliski Travel: Norwegian-Run, Iceland-Based Agent" description="Heliski Travel is the trusted agent for Viking Heliskiing Iceland — founded by Norwegian ex-racer Vegard Knudsen to match skiers with the right Arctic powder week." active="about">
+<Base schema={profileLd} heroImage="about-hero" title="About Heliski Travel: Authorised Viking Heliskiing Agent" description="Heliski Travel is the authorised booking agent for Viking Heliskiing Iceland, matching skiers with the right Arctic powder week at no extra cost over booking direct." active="about">
   <Fragment set:html={body} />
 </Base>
 

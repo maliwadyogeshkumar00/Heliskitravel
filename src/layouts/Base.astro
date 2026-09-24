@@ -56,7 +56,6 @@ const orgLd = {
   "logo": { "@type":"ImageObject", "url": SITE + "/logo-google.png", "width":600, "height":600 },
   "image": ogImage,
   "sameAs": ["https://www.instagram.com/heliskitravel"],
-  "founder": { "@id": SITE + "/#vegard" },
   "knowsLanguage": ["en","no"],
   "email":"info@heliskitravel.com",
   "telephone":"+41797030917",
@@ -71,21 +70,9 @@ const orgLd = {
     { "@type":"Offer","itemOffered":{ "@type":"TouristTrip","name":"Heli-Assisted Touring — Iceland" },"url": SITE + "/heli-assisted-touring" }
   ]
 };
-// Founder as a first-class, site-wide entity (resolves #vegard on every page for the knowledge graph / E-E-A-T).
-const personLd = {
-  "@type":"Person",
-  "@id": SITE + "/#vegard",
-  "name":"Vegard Knudsen",
-  "jobTitle":"Founder & Heliski Travel Specialist",
-  "worksFor": { "@id": SITE + "/#org" },
-  "url": SITE + "/about",
-  "image": SITE + "/brand/vegard-portrait.webp",
-  "nationality":"Norwegian",
-  "knowsAbout":["Heliskiing","Off-piste skiing","Ski touring","Troll Peninsula","Iceland ski holidays","Viking Heliskiing"]
-};
 const websiteLd = { "@type":"WebSite", "@id": SITE + "/#website", "url": SITE, "name":"Heliski Travel", "alternateName":["HeliskiTravel","HeliskiTravel.com"], "publisher": { "@id": SITE + "/#org" }, "inLanguage":"en-GB" };
 const webpageLd = { "@type":"WebPage", "@id": canonical + "#webpage", "url": canonical, "name": title, "isPartOf": { "@id": SITE + "/#website" }, "about": { "@id": SITE + "/#org" }, "primaryImageOfPage": { "@type":"ImageObject", "url": ogImage }, "inLanguage":"en-GB", "speakable": { "@type":"SpeakableSpecification", "cssSelector":["h1",".gd-lede",".intro",".lede"] }, ...(description ? { "description": description } : {}), ...(slug ? { "breadcrumb": { "@id": canonical + "#breadcrumb" } } : {}) };
-const graph = [orgLd, personLd, websiteLd, webpageLd];
+const graph = [orgLd, websiteLd, webpageLd];
 if (breadcrumbLd) graph.push(breadcrumbLd);
 if (Array.isArray(schema)) graph.push(...schema);
 else if (schema) graph.push(schema);
@@ -145,7 +132,7 @@ const FAVICON = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' vi
   <meta property="og:image:alt" content={title} />
   {ogType === 'article' && publishedTime && <meta property="article:published_time" content={publishedTime} />}
   {ogType === 'article' && modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
-  {ogType === 'article' && <meta property="article:author" content="Vegard Knudsen" />}
+  {ogType === 'article' && <meta property="article:author" content="Heliski Travel" />}
   {ogType === 'article' && <meta property="article:publisher" content="https://heliskitravel.com" />}
   {ogType === 'article' && <meta property="article:section" content="Field Notes" />}
   <meta name="twitter:card" content="summary_large_image" />
